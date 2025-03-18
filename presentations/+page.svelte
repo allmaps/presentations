@@ -1,8 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte'
 
-  const presentationImports = import.meta.glob('./**/+page.svelte')
-  const presentationFiles = Object.keys(presentationImports)
+  const presentationImports = import.meta.glob('./*/*/+page.svelte')
+
+  console.log('presentationImports', presentationImports)
 
   type Presentation = {
     href: string
@@ -16,14 +17,29 @@
   onMount(async () => {
     const presentationsFromImports: Presentation[] = []
 
-    for await (const presentation of presentationFiles) {
-      const module = await import(presentation)
-
+    for (const [presentation, importPresentation] of Object.entries(
+      presentationImports
+    )) {
+      const module = await importPresentation()
       const href = presentation.replace('./', '').replace('/+page.svelte', '')
 
-      const title = module.title ? String(module.title) : href
-      const subtitle = module.subtitle
-      const date = module.date ? Number(module.date) : 0
+      let title = href
+      let subtitle: string | undefined
+      let date = 0
+
+      if (module && typeof module === 'object') {
+        if ('title' in module) {
+          title = String(module.title)
+        }
+
+        if ('subtitle' in module) {
+          subtitle = String(module.subtitle)
+        }
+
+        if ('date' in module) {
+          date = Number(module.date)
+        }
+      }
 
       presentationsFromImports.push({
         href,
