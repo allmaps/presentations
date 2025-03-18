@@ -3,8 +3,6 @@
 
   const presentationImports = import.meta.glob('./*/*/+page.svelte')
 
-  console.log('presentationImports', presentationImports)
-
   type Presentation = {
     href: string
     title: string
