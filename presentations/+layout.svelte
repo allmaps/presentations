@@ -30,7 +30,8 @@
   function handleSlideChanged(event: unknown) {
     if (event && typeof event === 'object' && 'currentSlide' in event) {
       $currentSlide = event.currentSlide as HTMLElement
-      displayLogo = !$currentSlide.classList.contains('section-no-logo')
+
+      displayLogo = !$currentSlide?.classList.contains('section-no-logo')
     }
   }
 
