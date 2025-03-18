@@ -1,3 +1,5 @@
+import { theme } from '@allmaps/tailwind'
+
 import type { Config } from 'tailwindcss'
 
 export default {
@@ -6,10 +8,5 @@ export default {
     './presentations/**/*.{html,js,svelte,ts}',
     './node_modules/@allmaps/ui/dist/components/**/*.{html,js,svelte,ts}'
   ],
-  theme: {
-    fontFamily: {
-      sans: ['Geograph', 'sans-serif'],
-      mono: ['DM Mono', 'monospace']
-    }
-  }
+  theme
 } satisfies Config
