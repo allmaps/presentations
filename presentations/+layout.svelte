@@ -62,7 +62,7 @@
     </div>
   </div>
   {#if displayLogo}
-    <div transition:fade class="absolute bottom-0 right-0 z-50 p-5">
+    <div transition:fade|global class="absolute bottom-0 right-0 z-50 p-5">
       <div class="w-14">
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <img
