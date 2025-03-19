@@ -1,9 +1,16 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte'
+
   import { onMount } from 'svelte'
+  interface Props {
+    children?: Snippet<[{ active: boolean }]>
+  }
+
+  let { children }: Props = $props()
 
   let container: HTMLElement
 
-  let active = false
+  let active = $state(false)
 
   onMount(() => {
     new MutationObserver((mutations) => {
@@ -25,5 +32,5 @@
 </script>
 
 <section bind:this={container}>
-  <slot {active} />
+  {@render children?.({ active })}
 </section>

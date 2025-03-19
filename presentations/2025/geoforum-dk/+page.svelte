@@ -1,4 +1,4 @@
-<script context="module">
+<script module>
   export const title = 'Introduction to Allmaps'
   export const subtitle = 'Netværk for historisk GIS og Geodata'
   export const date = Date.parse('13 March 2025')
@@ -51,14 +51,16 @@
     class="w-full h-full"
     data-src="https://collections.lib.uwm.edu/digital/collection/agdm/search/searchterm/denmark"
     data-preload
-  />
+></iframe>
 </section>
 
-<Slide let:active>
-  <MapThumbnails {active}>
-    <strong>Millions of digitized maps</strong> are available through IIIF, from
-    institutions around the world
-  </MapThumbnails>
+<Slide >
+  {#snippet children({ active })}
+    <MapThumbnails {active}>
+      <strong>Millions of digitized maps</strong> are available through IIIF, from
+      institutions around the world
+    </MapThumbnails>
+  {/snippet}
 </Slide>
 
 <!-- show danish map, iiif -->
@@ -271,7 +273,7 @@
     data-loop
     data-autoplay
     data-src="/images/allmaps-convening-boston/fifth-avenue.mp4"
-  />
+></video>
 </section>
 
 <section class="section-stretch">
@@ -328,10 +330,12 @@
   />
 </section>
 
-<Slide let:active>
-  <ManyMapMonsters {active}
-    ><strong>What Allmaps can do</strong></ManyMapMonsters
-  >
+<Slide >
+  {#snippet children({ active })}
+    <ManyMapMonsters {active}
+      ><strong>What Allmaps can do</strong></ManyMapMonsters
+    >
+  {/snippet}
 </Slide>
 
 <Slide>
@@ -342,7 +346,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2023/georeferencing-loc-venice.webm"
-  />
+></video>
 </Slide>
 
 <!--
@@ -420,7 +424,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2024/allmaps-explore.webm"
-  />
+></video>
   <div class="space-y-6 text-3xl">
     <p>Filter by year, institution, collection, scale, etc.</p>
   </div>
@@ -456,7 +460,7 @@
     class="w-full h-full"
     data-src="https://cursors.allmaps.org/?url=https://annotations.allmaps.org/maps/54ae7537d927568f"
     data-preload
-  />
+></iframe>
 </section>
 
 <section>
@@ -531,41 +535,43 @@
   >
 </Slide>
 
-<Slide let:active>
-  <WarpedMap
-    {active}
-    annotationUrl="https://annotations.allmaps.org/maps/6325db4998c7f13f"
-  >
-    <FlyTo
-      annotationUrl="https://annotations.allmaps.org/images/899328143b23dc0a"
-    />
+<Slide >
+  {#snippet children({ active })}
+    <WarpedMap
+      {active}
+      annotationUrl="https://annotations.allmaps.org/maps/6325db4998c7f13f"
+    >
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/images/899328143b23dc0a"
+      />
 
-    <FlyTo
-      annotationUrl="https://annotations.allmaps.org/images/9591a6ec92d0a977"
-    />
-    <FlyTo
-      annotationUrl="https://annotations.allmaps.org/images/70cc691781ff504a"
-    />
-    <FlyTo
-      annotationUrl="https://annotations.allmaps.org/images/d4338461602ebff8"
-    />
-    <FlyTo
-      annotationUrl="https://annotations.allmaps.org/images/cb1f20a39a8d7439"
-    />
-    <FlyTo
-      annotationUrl="https://annotations.allmaps.org/maps/d6e26a80608dccd2"
-    />
-    <FlyTo
-      annotationUrl="https://annotations.allmaps.org/maps/dbe2fbebd07ee477"
-    />
-    <FlyTo
-      annotationUrl="https://annotations.allmaps.org/images/38e7a057901b27db"
-    />
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/images/9591a6ec92d0a977"
+      />
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/images/70cc691781ff504a"
+      />
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/images/d4338461602ebff8"
+      />
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/images/cb1f20a39a8d7439"
+      />
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/maps/d6e26a80608dccd2"
+      />
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/maps/dbe2fbebd07ee477"
+      />
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/images/38e7a057901b27db"
+      />
 
-    <FlyTo
-      annotationUrl="https://annotations.allmaps.org/manifests/fc2c32dc51b145d8"
-    />
-  </WarpedMap>
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/manifests/fc2c32dc51b145d8"
+      />
+    </WarpedMap>
+  {/snippet}
 </Slide>
 
 <section>

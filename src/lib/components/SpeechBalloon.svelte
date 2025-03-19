@@ -1,5 +1,12 @@
 <script lang="ts">
-  export let backgroundColor = '#FF56BA'
+  import type { Snippet } from 'svelte'
+
+  interface Props {
+    backgroundColor?: string
+    children?: Snippet
+  }
+
+  let { backgroundColor = '#FF56BA', children }: Props = $props()
 </script>
 
 <div
@@ -25,7 +32,7 @@
     after:ml-[-0.5em]
     after:mb-[-1.19em]"
 >
-  <slot />
+  {@render children?.()}
 </div>
 
 <style scoped>

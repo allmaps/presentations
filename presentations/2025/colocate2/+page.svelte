@@ -1,4 +1,4 @@
-<script context="module">
+<script module>
   export const title = 'Introduction to Allmaps - Colocate² @ Stanford'
   export const date = Date.parse('26 Feb 2025')
   export const location = 'Stanford, CA'
@@ -52,7 +52,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2023/georeferencing-loc-venice.webm"
-  />
+></video>
 </section>
 
 <section>
@@ -267,7 +267,7 @@
     data-loop
     data-autoplay
     data-src="/images/open-maps-meeting-2024/building-inspector.mp4"
-  />
+></video>
 </section>
 
 <section>
@@ -296,7 +296,7 @@
     data-loop
     data-autoplay
     data-src="/images/open-maps-meeting-2024/lower-east-side-1854.mp4"
-  />
+></video>
 </section>
 
 <section>
@@ -335,10 +335,12 @@
   />
 </section>
 
-<Slide let:active>
-  <ManyMapMonsters {active}
-    ><strong>Some (new) features</strong></ManyMapMonsters
-  >
+<Slide >
+  {#snippet children({ active })}
+    <ManyMapMonsters {active}
+      ><strong>Some (new) features</strong></ManyMapMonsters
+    >
+  {/snippet}
 </Slide>
 
 <section>
@@ -434,7 +436,7 @@
     class="w-full h-full"
     data-src="https://cursors.allmaps.org/?url=https://annotations.allmaps.org/maps/8568d3e122117c6f"
     data-preload
-  />
+></iframe>
 </section>
 
 <section>
@@ -471,11 +473,13 @@
   </div>
 </section>
 
-<Slide let:active>
-  <MapThumbnails {active}>
-    <strong>Millions of digitized maps</strong> are available through IIIF, from
-    institutions around the world
-  </MapThumbnails>
+<Slide >
+  {#snippet children({ active })}
+    <MapThumbnails {active}>
+      <strong>Millions of digitized maps</strong> are available through IIIF, from
+      institutions around the world
+    </MapThumbnails>
+  {/snippet}
 </Slide>
 
 <section>
@@ -517,7 +521,7 @@
     class="w-full h-full"
     data-src="https://dev.here.allmaps.org/"
     data-preload
-  />
+></iframe>
 </section>
 
 <section>
@@ -528,7 +532,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2024/allmaps-explore.webm"
-  />
+></video>
   <div class="space-y-6 text-3xl">
     <p>Filter by year, institution, collection, scale, etc.</p>
   </div>
@@ -550,30 +554,32 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2024/open-data-homepage.webm"
-  />
+></video>
 </section>
 
-<Slide let:active>
-  <WarpedMap
-    {active}
-    annotationUrl="https://annotations.allmaps.org/maps/6325db4998c7f13f"
-  >
-    <FlyTo
-      annotationUrl="https://annotations.allmaps.org/images/899328143b23dc0a"
-    />
-    <FlyTo
-      annotationUrl="https://annotations.allmaps.org/manifests/a35b2badba5505ab"
-    />
-    <FlyTo
-      annotationUrl="https://annotations.allmaps.org/manifests/071c6ba31f9c88d4"
-    />
-    <FlyTo
-      annotationUrl="https://annotations.allmaps.org/manifests/fc2c32dc51b145d8"
-    />
-    <!-- <FlyTo
-      annotationUrl="https://gist.githubusercontent.com/sammeltassen/cba1cce96299c7eb4d2fe3ad47a0d07f/raw/174d5f47d9835c111f9b0fb04b8ae0e21aebccb4/sf-aerial-views.json"
-    /> -->
-  </WarpedMap>
+<Slide >
+  {#snippet children({ active })}
+    <WarpedMap
+      {active}
+      annotationUrl="https://annotations.allmaps.org/maps/6325db4998c7f13f"
+    >
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/images/899328143b23dc0a"
+      />
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/manifests/a35b2badba5505ab"
+      />
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/manifests/071c6ba31f9c88d4"
+      />
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/manifests/fc2c32dc51b145d8"
+      />
+      <!-- <FlyTo
+        annotationUrl="https://gist.githubusercontent.com/sammeltassen/cba1cce96299c7eb4d2fe3ad47a0d07f/raw/174d5f47d9835c111f9b0fb04b8ae0e21aebccb4/sf-aerial-views.json"
+      /> -->
+    </WarpedMap>
+  {/snippet}
 </Slide>
 
 <section>

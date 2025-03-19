@@ -1,7 +1,9 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte'
+
   import { onMount } from 'svelte'
 
-  import maplibregl, { Map, addProtocol } from 'maplibre-gl'
+  import maplibregl, { Map, LngLatBounds, addProtocol } from 'maplibre-gl'
   import { Protocol } from 'pmtiles'
 
   import { basemapStyle, addTerrain } from '@allmaps/basemap'
@@ -10,23 +12,32 @@
   import { parseAnnotation } from '@allmaps/annotation'
   import { fetchJson, computeBbox, combineBboxes } from '@allmaps/stdlib'
 
+  import type { LngLatBoundsLike } from 'maplibre-gl'
+
   import 'maplibre-gl/dist/maplibre-gl.css'
 
-  export let annotationUrl: string
-  export let active = true
+  interface Props {
+    annotationUrl: string
+    active?: boolean
+    children?: Snippet
+  }
 
-  let mounted = false
-  let initialized = false
+  let { annotationUrl, active = true, children }: Props = $props()
+
+  let mounted = $state(false)
+  let initialized = $state(false)
 
   let container: HTMLDivElement
   let map: Map
   let warpedMapLayer: WarpedMapLayer
 
-  let annoationUrls = new Set()
+  let annotationUrls = new Set()
 
   let currentAnnotationUrl = annotationUrl
 
-  async function boundsFromAnnotationUrl(annotationUrl: string) {
+  async function boundsFromAnnotationUrl(
+    annotationUrl: string
+  ): Promise<LngLatBoundsLike | undefined> {
     const annotation = await fetchJson(annotationUrl)
     const maps = parseAnnotation(annotation)
 
@@ -42,11 +53,11 @@
       } else {
         bbox = combineBboxes(bbox, computeBbox(polygon))
       }
-
-      computeBbox(polygon)
     }
 
-    return bbox
+    if (bbox) {
+      return new LngLatBounds([bbox[0], bbox[1]], [bbox[2], bbox[3]])
+    }
   }
 
   async function initializeMap() {
@@ -57,23 +68,27 @@
 
     map = new Map({
       container,
-      style: basemapStyle(),
+      style: basemapStyle('en'),
       maxPitch: 0,
-      preserveDrawingBuffer: true,
       hash: false,
       keyboard: false,
-      attributionControl: false
+      attributionControl: false,
+      canvasContextAttributes: {
+        preserveDrawingBuffer: true
+      }
     })
 
     addTerrain(map, maplibregl)
 
-    map.fitBounds(bounds, { padding: -350, animate: false })
+    if (bounds) {
+      map.fitBounds(bounds, { padding: -350, animate: false })
+    }
 
     map.on('load', async () => {
       warpedMapLayer = new WarpedMapLayer()
       map.addLayer(warpedMapLayer)
 
-      annoationUrls.add(currentAnnotationUrl)
+      annotationUrls.add(currentAnnotationUrl)
       await warpedMapLayer.addGeoreferenceAnnotationByUrl(currentAnnotationUrl)
       initialized = true
     })
@@ -83,7 +98,7 @@
     warpedMapLayer.clear()
     map?.remove()
     initialized = false
-    annoationUrls = new Set()
+    annotationUrls = new Set()
     currentAnnotationUrl = annotationUrl
   }
 
@@ -93,27 +108,30 @@
     }
 
     if (initialized) {
-      if (!annoationUrls.has(annotationUrl)) {
+      if (!annotationUrls.has(annotationUrl)) {
+
         await warpedMapLayer.addGeoreferenceAnnotationByUrl(annotationUrl)
       }
 
       const bounds = await boundsFromAnnotationUrl(annotationUrl)
 
-      map.fitBounds(bounds, { padding: 25, animate: true })
+      if (bounds) {
+        map.fitBounds(bounds, { padding: 25, animate: true })
+      }
 
-      annoationUrls.add(annotationUrl)
+      annotationUrls.add(annotationUrl)
 
       currentAnnotationUrl = annotationUrl
     }
   }
 
-  $: {
+  $effect(() => {
     if (mounted && active && !initialized) {
       initializeMap()
     } else if (mounted && !active && initialized) {
       setTimeout(() => removeMap(), 1000)
     }
-  }
+  })
 
   onMount(() => {
     mounted = true
@@ -124,14 +142,10 @@
         flyTo(customEvent.detail.annotationUrl)
       }
 
-      // console.log(customEvent.detail)
+
     })
 
     // new MutationObserver((mutations) => {
-    //   mutations.forEach((mutation) => {
-    //     // console.log(mutation)
-    //   })
-
     //   const element = container.querySelector(
     //     '.fragment.current-fragment'
     //   ) as HTMLElement
@@ -139,7 +153,6 @@
     //     flyTo(element.dataset.annotationUrl)
     //   } else if (active) {
     //     flyTo(annotationUrl)
-    //     console.log('nee', active)
     //   }
     // }).observe(container, {
     //   attributes: true,
@@ -149,5 +162,5 @@
 </script>
 
 <div class="w-screen h-screen" bind:this={container}>
-  <slot />
+  {@render children?.()}
 </div>

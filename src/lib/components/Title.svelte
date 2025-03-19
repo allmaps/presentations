@@ -1,8 +1,15 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte'
+
   import logo from '$lib/shared/images/allmaps-logo.svg'
   import logoInverted from '$lib/shared/images/allmaps-logo-inverted.svg'
 
-  export let dark = true
+  interface Props {
+    dark?: boolean
+    children?: Snippet
+  }
+
+  let { dark = true, children }: Props = $props()
 
   type Background = {
     image: string
@@ -47,6 +54,6 @@
 >
   <img class="w-44" alt="Allmaps logo" src={dark ? logoInverted : logo} />
   <div class="max-w-lg">
-    <slot />
+    {@render children?.()}
   </div>
 </section>

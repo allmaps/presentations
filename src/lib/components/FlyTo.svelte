@@ -1,7 +1,11 @@
 <script lang="ts">
   import { onMount } from 'svelte'
 
-  export let annotationUrl: string
+  interface Props {
+    annotationUrl: string
+  }
+
+  let { annotationUrl }: Props = $props()
 
   let container: HTMLDivElement
   let active = false

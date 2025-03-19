@@ -1,4 +1,6 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte'
+
   import { onMount, tick } from 'svelte'
   import { fade } from 'svelte/transition'
   import { page } from '$app/stores'
@@ -9,15 +11,19 @@
 
   import '@allmaps/ui/css/fonts.css'
   import 'reveal.js/dist/reveal.css'
-  // import 'reveal.js/plugin/highlight/monokai.css'
   import '$lib/highlight-styles/atom-one-light.css'
 
   import './theme.css'
   import './app.css'
+  interface Props {
+    children?: Snippet
+  }
+
+  let { children }: Props = $props()
 
   const showIndex = $page.route.id === '/'
 
-  let displayLogo = false
+  let displayLogo = $state(false)
 
   function handleLogoClick(event: MouseEvent) {
     if (event.shiftKey) {
@@ -54,23 +60,23 @@
 </script>
 
 {#if showIndex}
-  <slot />
+  {@render children?.()}
 {:else}
   <div class="reveal">
     <div class="slides">
-      <slot />
+      {@render children?.()}
     </div>
   </div>
   {#if displayLogo}
     <div transition:fade|global class="absolute bottom-0 right-0 z-50 p-5">
       <div class="w-14">
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <img
-          class="w-full inline cursor-pointer"
-          alt="Allmaps logo"
-          src={logo}
-          on:click={handleLogoClick}
-        />
+        <button onclick={handleLogoClick}>
+          <img
+            class="w-full inline cursor-pointer"
+            alt="Allmaps logo"
+            src={logo}
+          /></button
+        >
       </div>
     </div>
   {/if}

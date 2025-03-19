@@ -1,10 +1,17 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte'
+
   import MapMonster from '$lib/components/MapMonster.svelte'
 
-  export let active = true
+  interface Props {
+    active?: boolean
+    children?: Snippet
+  }
+
+  let { active = true, children }: Props = $props()
 
   let mapMonsterInterval: number | undefined
-  let mapMonsterCounter = 0
+  let mapMonsterCounter = $state(0)
 
   const mapMonstersClass = 'w-28'
 
@@ -19,14 +26,6 @@
     'pink',
     'blue'
   ] as const
-
-  $: {
-    if (active) {
-      start()
-    } else {
-      reset()
-    }
-  }
 
   function start() {
     mapMonsterInterval = setInterval(() => {
@@ -64,6 +63,14 @@
 
     return `scale(${scale}) rotate(${rotate}deg) translate(${translateX}px, ${translateY}px)`
   }
+
+  $effect(() => {
+    if (active) {
+      start()
+    } else {
+      reset()
+    }
+  })
 </script>
 
 <section class="gap-2 grid-cols-7 grid-rows-5">
@@ -77,7 +84,7 @@
     </div>
   {/each}
   <div class="col-span-3 row-span-2 place-self-center">
-    <slot></slot>
+    {@render children?.()}
   </div>
 
   {#each Array(20) as _, i (`${i}-${mapMonsterCounter}`)}

@@ -10,7 +10,7 @@
     date?: number
   }
 
-  let presentationsByYear: Map<number, Presentation[]> = new Map()
+  let presentationsByYear: Map<number, Presentation[]> = $state(new Map())
 
   onMount(async () => {
     const presentationsFromImports: Presentation[] = []

@@ -1,19 +1,18 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte'
+
   import mapThumbnails from './map-thumbnails.json'
 
-  export let active = true
+  interface Props {
+    active?: boolean
+    children?: Snippet
+  }
+
+  let { active = true, children }: Props = $props()
 
   let mapThumbnailInterval: number | undefined
   let shuffledMapThumbnails = shuffle(mapThumbnails)
-  let slicedMapThumbnails: string[] = []
-
-  $: {
-    if (active) {
-      start()
-    } else {
-      reset()
-    }
-  }
+  let slicedMapThumbnails: string[] = $state([])
 
   function start() {
     mapThumbnailInterval = setInterval(() => {
@@ -60,6 +59,13 @@
 
     return `scale(${scale}) rotate(${rotate}deg) translate(${translateX}px, ${translateY}px)`
   }
+  $effect(() => {
+    if (active) {
+      start()
+    } else {
+      reset()
+    }
+  })
 </script>
 
 <section>
@@ -77,7 +83,7 @@
       {/each}
     </div>
     <div class="p-4 z-50 bg-white/80 rounded-lg max-w-3xl">
-      <slot></slot>
+      {@render children?.()}
     </div>
   {/if}
 </section>

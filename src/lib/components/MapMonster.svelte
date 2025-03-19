@@ -1,4 +1,6 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte'
+
   import SpeechBalloon from '$lib/components/SpeechBalloon.svelte'
 
   type Color =
@@ -19,9 +21,14 @@
     '98.07 2.91 24.82 2.91 3.52 44.73 1.93 97.09 82.39 97.09 82.56 79.81 98.07 79.81 98.07 2.91'
   ]
 
-  export let color: Color = 'green'
-  export let mood: Mood = 'happy'
-  export let shape: number = 0
+  interface Props {
+    color?: Color
+    mood?: Mood
+    shape?: number
+    children?: Snippet
+  }
+
+  let { color = 'green', mood = 'happy', shape = 0, children }: Props = $props()
 
   const colors = {
     green: {
@@ -64,9 +71,9 @@
 </script>
 
 <div class="w-full flex flex-col justify-end items-end gap-8">
-  {#if $$slots.default}
+  {#if children}
     <SpeechBalloon backgroundColor={strokeColor}>
-      <slot />
+      {@render children?.()}
     </SpeechBalloon>
   {/if}
   <!-- <img alt="Map Monster" src={mapMonsters[color]} draggable="false" /> -->
