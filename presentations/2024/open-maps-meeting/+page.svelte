@@ -1,11 +1,6 @@
-<script module>
-  export const title = 'Introduction to Allmaps - Colocate² @ Stanford'
-  export const date = Date.parse('26 Feb 2025')
-  export const location = 'Stanford, CA'
-  export const coordinates = {
-    type: 'Point',
-    coordinates: [-122.16755, 37.42697]
-  }
+<script context="module">
+  export const title = 'Introduction to Allmaps - Open Maps Meeting'
+  export const date = Date.parse('05 Nov 2024')
 </script>
 
 <script lang="ts">
@@ -19,12 +14,15 @@
 </script>
 
 <svelte:head>
-  <title>{title}</title>
+  <title>Introduction to Allmaps - Open Maps Meeting</title>
 </svelte:head>
 
 <Title>
   <h1 class="text-white text-6xl mb-4">Introduction to Allmaps</h1>
-  <h2 class="text-white text-3xl mb-4">Colocate² @ Stanford</h2>
+  <h2 class="text-white text-3xl mb-4">Open Maps Meeting</h2>
+  <h3 class="text-white text-xl">
+    November 6, 2024, National Library, The Hague
+  </h3>
 </Title>
 
 <section>
@@ -37,9 +35,16 @@
     <div class="flex items-end h-full px-24 py-12">
       <MapMonster mood="happy" color="pink">
         <p class="p-4 max-w-xl">
-          Allmaps runs in the browser, no need for complicated GIS
-          infrastructure
+          Probably all of you know what georeferencing is?
         </p>
+      </MapMonster>
+    </div>
+  </div>
+
+  <div class="fragment absolute top-0 left-0 w-full h-full text-left text-4xl">
+    <div class="flex items-end h-full px-24 py-12">
+      <MapMonster mood="excited" color="green">
+        <p class="p-4 max-w-xl">Some of you even mught have used Allmaps!</p>
       </MapMonster>
     </div>
   </div>
@@ -52,7 +57,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2023/georeferencing-loc-venice.webm"
-  ></video>
+  />
 </section>
 
 <section>
@@ -184,134 +189,6 @@
   </pre>
 </section>
 
-<section>
-  <p>
-    The <strong class="text-blue-500">history</strong> and
-    <strong class="text-green-500">future</strong> of Allmaps
-  </p>
-</section>
-
-<section class="section-stretch">
-  <p>New York Public Library - NYPL Labs</p>
-  <img
-    alt="New York Public Library"
-    loading="lazy"
-    src="/images/allmaps-convening-boston/nypl.jpg"
-  />
-</section>
-
-<section>
-  <p>Map Warper</p>
-  <img
-    alt="Map Warper"
-    loading="lazy"
-    src="/images/open-maps-meeting-2024/mapwarper-9464-crop.webp"
-  />
-</section>
-
-<section>
-  <p>Map Warper</p>
-  <img
-    alt="Map Warper"
-    loading="lazy"
-    src="/images/open-maps-meeting-2024/mapwarper-9464-rectify.webp"
-  />
-</section>
-
-<section>
-  <p>Map Warper</p>
-  <img
-    alt="Map Warper"
-    loading="lazy"
-    src="/images/open-maps-meeting-2024/mapwarper-9464-preview.webp"
-  />
-</section>
-
-<section>
-  <p>Map Warper</p>
-  <img
-    alt="Map Warper"
-    loading="lazy"
-    src="/images/open-maps-meeting-2024/mapwarper-layer-883.webp"
-  />
-</section>
-
-<section>
-  <p>Building Inspector</p>
-  <video
-    class="shadow-lg"
-    muted
-    data-loop
-    data-autoplay
-    data-src="/images/open-maps-meeting-2024/building-inspector.mp4"
-  ></video>
-</section>
-
-<section>
-  <p>City directories</p>
-  <img
-    alt="City directory"
-    loading="lazy"
-    src="/images/open-maps-meeting-2024/city-directory.jpg"
-  />
-</section>
-
-<section>
-  <p>City directories</p>
-  <img
-    alt="City directory"
-    loading="lazy"
-    src="/images/open-maps-meeting-2024/city-directory-ocr.png"
-  />
-</section>
-
-<section>
-  <p>Combining it all</p>
-  <video
-    class="shadow-lg"
-    muted
-    data-loop
-    data-autoplay
-    data-src="/images/open-maps-meeting-2024/lower-east-side-1854.mp4"
-  ></video>
-</section>
-
-<section>
-  <p>Taking it to the streets</p>
-  <img
-    alt="City directory"
-    loading="lazy"
-    src="/images/open-maps-meeting-2024/route-map-by-lori-richmond-large-cropped.jpg"
-  />
-</section>
-
-<section>
-  <p>Taking it to the streets</p>
-  <img
-    alt="City directory"
-    loading="lazy"
-    src="/images/open-maps-meeting-2024/dutch-farmhouses-of-brooklyn-DSCF8162.jpg"
-  />
-</section>
-
-<section>
-  <p>Taking it to the streets</p>
-  <img
-    alt="City directory"
-    loading="lazy"
-    src="/images/open-maps-meeting-2024/dutch-farmhouses-of-brooklyn-DSCF8169.jpg"
-  />
-</section>
-
-<section>
-  <p>Maps by Decade</p>
-  <img
-    alt="Map Warper"
-    loading="lazy"
-    src="/images/open-maps-meeting-2024/maps-by-decade-large.gif"
-  />
-</section>
-
 <Slide>
   {#snippet children({ active })}
     <ManyMapMonsters {active}
@@ -380,40 +257,157 @@
     ></pre>
 </section>
 
-<section>
-  <p>Projection support in Allmaps</p>
-  <img
-    alt="Projections"
-    loading="lazy"
-    src="/images/colocate2-2025/allmaps-projections-1.webp"
-  />
-</section>
-
-<section>
-  <p>Projection support in Allmaps</p>
-  <img
-    alt="Projections"
-    loading="lazy"
-    src="/images/colocate2-2025/allmaps-projections-2.webp"
-  />
-</section>
-
-<section>
-  <p>Projection support in Allmaps</p>
-  <img
-    alt="Projections"
-    loading="lazy"
-    src="/images/colocate2-2025/allmaps-projections-3.webp"
-  />
-</section>
-
 <section class="section-stretch">
   <iframe
     title="Side by side"
     class="w-full h-full"
     data-src="https://cursors.allmaps.org/?url=https://annotations.allmaps.org/maps/8568d3e122117c6f"
     data-preload
-  ></iframe>
+  />
+</section>
+
+<section>
+  <p>
+    The <strong class="text-blue-500">history</strong> and
+    <strong class="text-green-500">future</strong> of Allmaps
+  </p>
+</section>
+
+<Slide>
+  {#snippet children({ active })}
+    <WarpedMap
+      {active}
+      annotationUrl="https://annotations.allmaps.org/images/3f2cea6d5506bfd9"
+    >
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/images/11a1070a3fdfb78e"
+      />
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/images/ea443ffaabb121e2"
+      />
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/maps/51c6caacf5f1e4d5"
+      />
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/maps/48da96d9296515a6"
+      />
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/maps/28ed75ea7a785f32"
+      />
+    </WarpedMap>
+  {/snippet}
+</Slide>
+
+<section>
+  <p>Map Warper</p>
+  <img
+    alt="Map Warper"
+    loading="lazy"
+    src="/images/open-maps-meeting-2024/mapwarper-9464-crop.webp"
+  />
+</section>
+
+<section>
+  <p>Map Warper</p>
+  <img
+    alt="Map Warper"
+    loading="lazy"
+    src="/images/open-maps-meeting-2024/mapwarper-9464-rectify.webp"
+  />
+</section>
+
+<section>
+  <p>Map Warper</p>
+  <img
+    alt="Map Warper"
+    loading="lazy"
+    src="/images/open-maps-meeting-2024/mapwarper-9464-preview.webp"
+  />
+</section>
+
+<section>
+  <p>Map Warper</p>
+  <img
+    alt="Map Warper"
+    loading="lazy"
+    src="/images/open-maps-meeting-2024/mapwarper-layer-883.webp"
+  />
+</section>
+
+<section>
+  <p>Building Inspector</p>
+  <video
+    class="shadow-lg"
+    muted
+    data-loop
+    data-autoplay
+    data-src="/images/open-maps-meeting-2024/building-inspector.mp4"
+  />
+</section>
+
+<section>
+  <p>City directories</p>
+  <img
+    alt="City directory"
+    loading="lazy"
+    src="/images/open-maps-meeting-2024/city-directory.jpg"
+  />
+</section>
+
+<section>
+  <p>City directories</p>
+  <img
+    alt="City directory"
+    loading="lazy"
+    src="/images/open-maps-meeting-2024/city-directory-ocr.png"
+  />
+</section>
+
+<section>
+  <p>Combining it all</p>
+  <video
+    class="shadow-lg"
+    muted
+    data-loop
+    data-autoplay
+    data-src="/images/open-maps-meeting-2024/lower-east-side-1854.mp4"
+  />
+</section>
+
+<section>
+  <p>Taking it to the streets</p>
+  <img
+    alt="City directory"
+    loading="lazy"
+    src="/images/open-maps-meeting-2024/route-map-by-lori-richmond-large-cropped.jpg"
+  />
+</section>
+
+<section>
+  <p>Taking it to the streets</p>
+  <img
+    alt="City directory"
+    loading="lazy"
+    src="/images/open-maps-meeting-2024/dutch-farmhouses-of-brooklyn-DSCF8162.jpg"
+  />
+</section>
+
+<section>
+  <p>Taking it to the streets</p>
+  <img
+    alt="City directory"
+    loading="lazy"
+    src="/images/open-maps-meeting-2024/dutch-farmhouses-of-brooklyn-DSCF8169.jpg"
+  />
+</section>
+
+<section>
+  <p>Maps by Decade</p>
+  <img
+    alt="Map Warper"
+    loading="lazy"
+    src="/images/open-maps-meeting-2024/maps-by-decade-large.gif"
+  />
 </section>
 
 <section>
@@ -427,7 +421,7 @@
     >
     <span class="fragment"
       >● <span class="text-red">
-        NYPL shuts Map Warper down <span class="font-thin"
+        NYPL shut Map Warper down <span class="font-thin"
           >(and most other tools, too)</span
         ></span
       ></span
@@ -498,7 +492,7 @@
     class="w-full h-full"
     data-src="https://dev.here.allmaps.org/"
     data-preload
-  ></iframe>
+  />
 </section>
 
 <section>
@@ -509,7 +503,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2024/allmaps-explore.webm"
-  ></video>
+  />
   <div class="space-y-6 text-3xl">
     <p>Filter by year, institution, collection, scale, etc.</p>
   </div>
@@ -520,7 +514,7 @@
 >
   <div>
     <p>
-      Open data section on <a class="underline" href="https://allmaps.org"
+      New open data section on <a class="underline" href="https://allmaps.org"
         >allmaps.org</a
       >!
     </p>
@@ -531,8 +525,10 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2024/open-data-homepage.webm"
-  ></video>
+  />
 </section>
+
+<section>Let's end this presentation with some more maps:</section>
 
 <Slide>
   {#snippet children({ active })}
@@ -541,20 +537,27 @@
       annotationUrl="https://annotations.allmaps.org/maps/6325db4998c7f13f"
     >
       <FlyTo
-        annotationUrl="https://annotations.allmaps.org/images/899328143b23dc0a"
+        annotationUrl="https://annotations.allmaps.org/maps/eaa990689f45a090"
       />
       <FlyTo
         annotationUrl="https://annotations.allmaps.org/manifests/a35b2badba5505ab"
       />
       <FlyTo
-        annotationUrl="https://annotations.allmaps.org/manifests/071c6ba31f9c88d4"
+        annotationUrl="https://annotations.allmaps.org/manifests/64d6e35b64564692"
+      />
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/images/8a753a3ec297626c"
       />
       <FlyTo
         annotationUrl="https://annotations.allmaps.org/manifests/fc2c32dc51b145d8"
       />
-      <!-- <FlyTo
-        annotationUrl="https://gist.githubusercontent.com/sammeltassen/cba1cce96299c7eb4d2fe3ad47a0d07f/raw/174d5f47d9835c111f9b0fb04b8ae0e21aebccb4/sf-aerial-views.json"
-      /> -->
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/manifests/071c6ba31f9c88d4"
+      />
+
+      <FlyTo
+        annotationUrl="https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/north_korea/20231123.json"
+      />
     </WarpedMap>
   {/snippet}
 </Slide>
@@ -572,3 +575,33 @@
     </div>
   </div>
 </section>
+
+<!--
+
+Een groot deel van het publiek kent Allmaps al, als een verzameling tools voor het werken met IIIF kaarten. Hoe werkt het?
+
+– Korte demonstratie van de workflow (Editor, Annotatie, Viewer).
+
+Dit is leuk voor één kaart of een paar kaarten in een IIIF Manifest. Maar zoals jullie misschien is opgevallen heet het project ALL maps.
+
+Wat verbindt de verschillende tools en welke ambitie ligt aan Allmaps ten grondslag?
+
+Een kaart vinden is best lastig:
+
+Je moet zoeken op een naam van een plek, maar namen veranderen en worden verschillend gespeld (en de metadata bevat niet altijd de moderne naam van een plek)
+Het is anders dan zoeken op een boek: kaartmakers zijn bij het bredere publiek vaak onbekend, edities zijn lastig te onderscheiden en er zijn heel veel kaarten met dezelfde naam (“Kaart van Den Haag”).
+Er zijn héél veel instellingen met kaarten, vaak ook dezelfde kaarten. Waar moet je zoeken naar wat? Bij archiefinstellingen moet je ook nog eens zoeken door meerdere archieven, met ieder hun eigen structuur. Soms hebben lokale instellingen de meeste kaarten van een bepaalde stad of streek; soms liggen ze aan de andere kant van de wereld opgeslagen (zoals met koloniaal materiaal). Hoe moet je dit allemaal weten?
+
+[Voorbeeld SpaceTime NYPL interface als eerder project.]
+
+Als veel kaarten, heel veel kaarten, gegeorefereerd zijn met Allmaps (en we hebben nu al X kaarten dus zijn behoorlijk goed op weg). Dan kunnen we deze geografisch ontsluiten.
+
+Wat betekent dat?
+
+– Zoek kaarten op basis van je huidige locatie. (Allmaps Here) Ideaal voor als mensen iets zoeken van een specifieke plek. Dit is een hele toegankelijke manier om kaarten, maar ook archiefmateriaal zoals plattegronden en ontwerptekeningen te ontsluiten. In plaats van gericht te zoeken, kun je zo terloops toch iets vinden.
+
+– Zoek kaarten door in te zoomen op het gebied op de wereldkaart (Allmaps Explore). Met behulp van statische PMTiles kunnen we een index maken voor de hele wereld, zonder dat hiervoor een database nodig is! De beelden worden altijd ingeladen vanaf de instelling.
+
+– Andere mogelijkheden: gebruik van metadata (als ‘ie goed is), classificeren van kaarten, berekenen van de schaal, etc.
+
+Kortom, uiteindelijk kan Allmaps toegang gaan bieden tot ALLE kaarten (en aanverwant materiaal) die met IIIF beschikbaar zijn. En dat betekent ook dat het voor onderzoekers en studenten veel toegankelijker wordt om dit materiaal te gebruiken. -->

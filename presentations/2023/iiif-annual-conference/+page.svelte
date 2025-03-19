@@ -1,117 +1,30 @@
+<script context="module">
+  export const title = 'Allmaps in Practice - IIIF Annual Conference 2023'
+  export const date = Date.parse('07 June 2023')
+</script>
+
 <script lang="ts">
+  import Slide from '$lib/components/Slide.svelte'
   import Title from '$lib/components/Title.svelte'
   import MapMonster from '$lib/components/MapMonster.svelte'
+  import ManyMapMonsters from '$lib/components/ManyMapMonsters.svelte'
+  import MapThumbnails from '$lib/components/MapThumbnails.svelte'
+  // import WarpedMap from '$lib/components/WarpedMap.svelte'
+  // import FlyTo from '$lib/components/FlyTo.svelte'
 
   import { currentSlide } from '$lib/shared/stores/reveal.js'
 
-  import mapThumbnails from './map-thumbnails.json'
   import './style.css'
 
-  function shuffle<T>(array: readonly T[]): T[] {
-    let arrayCopy: T[] = [...array]
-
-    let currentIndex = array.length,
-      randomIndex
-
-    while (currentIndex != 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex)
-      currentIndex--
-      ;[arrayCopy[currentIndex], arrayCopy[randomIndex]] = [
-        arrayCopy[randomIndex],
-        arrayCopy[currentIndex]
-      ]
-    }
-
-    return arrayCopy
-  }
-
-  function randomFromArray<T>(array: readonly T[]): T {
-    return array[Math.floor(Math.random() * array.length)]
-  }
-
-  const moods = ['happy', 'excited', 'neutral', 'sad'] as const
-
-  function randomMood() {
-    return randomFromArray(moods)
-  }
-
-  const colors = [
-    'green',
-    'purple',
-    'red',
-    'yellow',
-    'orange',
-    'pink',
-    'blue'
-  ] as const
-
-  function randomColor() {
-    return randomFromArray(colors)
-  }
-
-  function randomFromInterval(min: number, max: number) {
-    return Math.random() * (max - min) + min
-  }
-
-  function randomTransform() {
-    const scale = randomFromInterval(0.8, 1.2)
-    const rotate = randomFromInterval(-15, 15)
-    const translateX = randomFromInterval(-15, 15)
-    const translateY = randomFromInterval(-15, 15)
-
-    return `scale(${scale}) rotate(${rotate}deg) translate(${translateX}px, ${translateY}px)`
-  }
-
-  let mapMonsterInterval: number | undefined
-  let mapMonsterCounter = 0
-
-  const mapMonstersClass = 'w-28'
-
-  let sectionThumbnails: HTMLElement
-  let sectionMapMonsters: HTMLElement
-
-  let mapThumbnailInterval: number | undefined
-  let shuffledMapThumbnails = shuffle(mapThumbnails)
-  let slicedMapThumbnails: string[] = []
-
-  function newSlide(currentSlide: HTMLElement) {
-    if (sectionThumbnails === currentSlide) {
-      if (!mapThumbnailInterval) {
-        mapThumbnailInterval = setInterval(() => {
-          slicedMapThumbnails = shuffledMapThumbnails.slice(
-            0,
-            Math.min(slicedMapThumbnails.length + 1, mapThumbnails.length)
-          )
-        }, 200)
-      }
-    } else {
-      slicedMapThumbnails = []
-      clearInterval(mapThumbnailInterval)
-      mapThumbnailInterval = undefined
-    }
-
-    if (sectionMapMonsters === $currentSlide) {
-      if (!mapMonsterInterval) {
-        mapMonsterInterval = setInterval(() => {
-          mapMonsterCounter++
-        }, 1000)
-      }
-    } else {
-      mapMonsterCounter = 0
-      clearInterval(mapMonsterInterval)
-      mapMonsterInterval = undefined
-    }
-  }
-
-  $: {
-    if ($currentSlide) {
-      newSlide($currentSlide)
-    }
-  }
+  // $: {
+  //   if ($currentSlide) {
+  //     newSlide($currentSlide)
+  //   }
+  // }
 </script>
 
 <svelte:head>
-  <title>Allmaps in Practice - IIIF Annual Conference 2023</title>
+  <title>{title}</title>
 </svelte:head>
 
 <Title>
@@ -263,25 +176,15 @@
   </pre>
 </section>
 
-<section bind:this={sectionThumbnails}>
-  <div class="absolute top-0 left-0 w-full h-full">
-    {#each slicedMapThumbnails as url, i (i)}
-      <img
-        class="absolute w-56"
-        style:transform={randomTransform()}
-        style:left={randomFromInterval(-200, window.innerWidth) + 'px'}
-        style:top={randomFromInterval(-200, window.innerHeight) + 'px'}
-        alt="Random map thumbnail"
-        src={`/images/iiif-annual-conference-2023/map-thumbnails/${url}`}
-      />
-    {/each}
-  </div>
-  <p class="p-4 z-50 bg-white/50 rounded-lg max-w-3xl">
-    Using Georeference Annotations and IIIF, we can now georeference, warp and
-    overlay <strong>millions of digitized maps</strong> from institutions around
-    the world
-  </p>
-</section>
+<Slide>
+  {#snippet children({ active })}
+    <MapThumbnails {active}>
+      Using Georeference Annotations and IIIF, we can now georeference, warp and
+      overlay <strong>millions of digitized maps</strong> from institutions around
+      the world
+    </MapThumbnails>
+  {/snippet}
+</Slide>
 
 <!--
   Carta d'Italia alla scala di 1:500.000 / Touring Club Italiano (1950)
@@ -472,33 +375,15 @@
   </a>
 </section>
 
-<section bind:this={sectionMapMonsters} class="gap-2 grid-cols-7 grid-rows-5">
-  <!-- TODO other monsters! -->
-  {#each Array(9) as _, i (`${i}-${mapMonsterCounter}`)}
-    <div class={mapMonstersClass} style:transform={randomTransform()}>
-      <MapMonster
-        mood={randomMood()}
-        color={randomColor()}
-        shape={Math.floor(randomFromInterval(0, 5))}
-      />
-    </div>
-  {/each}
-  <div class="col-span-3 row-span-2">
-    Institutions around the world are starting to use Allmaps, <strong
-      >more than 23.000</strong
-    > georeferenced maps are already available
-  </div>
-
-  {#each Array(20) as _, i (`${i}-${mapMonsterCounter}`)}
-    <div class={mapMonstersClass} style:transform={randomTransform()}>
-      <MapMonster
-        mood={randomMood()}
-        color={randomColor()}
-        shape={Math.floor(randomFromInterval(0, 5))}
-      />
-    </div>
-  {/each}
-</section>
+<Slide>
+  {#snippet children({ active })}
+    <ManyMapMonsters {active}>
+      Institutions around the world are starting to use Allmaps, <strong
+        >more than 23.000</strong
+      > georeferenced maps are already available</ManyMapMonsters
+    >
+  {/snippet}
+</Slide>
 
 <section>
   <a href="https://latest.allmaps.org">

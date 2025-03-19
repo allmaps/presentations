@@ -1,3 +1,8 @@
+<script context="module">
+  export const title = 'Nieuwe versie Allmaps Viewer - Bijeenkomst NDE in Delft'
+  export const date = Date.parse('01 Jan 2022')
+</script>
+
 <script lang="ts">
   import Title from '$lib/components/Title.svelte'
 </script>
@@ -109,7 +114,7 @@
   https://polona.pl/iiif/item/NDk4NDM5OTg/manifest.json
   -->
 
-  <section class="section-stretch">
+<section class="section-stretch">
   <iframe
     title="Pharus-Plan maps from polona.pl"
     data-src="https://dev.viewer.allmaps.org/?url=https://raw.githubusercontent.com/allmaps/presentations/main/nde-delft-december-2022/annotations/polona.json"

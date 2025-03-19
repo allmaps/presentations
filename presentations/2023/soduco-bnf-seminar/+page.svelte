@@ -1,132 +1,17 @@
+<script module>
+  export const title = 'Soduco Bnf'
+  export const date = Date.parse('6 Nov 2023')
+</script>
+
 <script lang="ts">
   import Title from '$lib/components/Title.svelte'
   import MapMonster from '$lib/components/MapMonster.svelte'
+  import Slide from '$lib/components/Slide.svelte'
+  import ManyMapMonsters from '$lib/components/ManyMapMonsters.svelte'
+  import MapThumbnails from '$lib/components/MapThumbnails.svelte'
 
-  import { currentSlide } from '$lib/shared/stores/reveal.js'
-
-  import mapThumbnails from './map-thumbnails.json'
   import './style.css'
-
-  function shuffle<T>(array: readonly T[]): T[] {
-    let arrayCopy: T[] = [...array]
-
-    let currentIndex = array.length,
-      randomIndex
-
-    while (currentIndex != 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex)
-      currentIndex--
-      ;[arrayCopy[currentIndex], arrayCopy[randomIndex]] = [
-        arrayCopy[randomIndex],
-        arrayCopy[currentIndex]
-      ]
-    }
-
-    return arrayCopy
-  }
-
-  function randomFromArray<T>(array: readonly T[]): T {
-    return array[Math.floor(Math.random() * array.length)]
-  }
-
-  const moods = ['happy', 'excited', 'neutral', 'sad'] as const
-
-  function randomMood() {
-    return randomFromArray(moods)
-  }
-
-  const colors = [
-    'green',
-    'purple',
-    'red',
-    'yellow',
-    'orange',
-    'pink',
-    'blue'
-  ] as const
-
-  function randomColor() {
-    return randomFromArray(colors)
-  }
-
-  function randomFromInterval(min: number, max: number) {
-    return Math.random() * (max - min) + min
-  }
-
-  function randomTransform() {
-    const scale = randomFromInterval(0.8, 1.2)
-    const rotate = randomFromInterval(-15, 15)
-    const translateX = randomFromInterval(-15, 15)
-    const translateY = randomFromInterval(-15, 15)
-
-    return `scale(${scale}) rotate(${rotate}deg) translate(${translateX}px, ${translateY}px)`
-  }
-
-  let mapMonsterInterval1: number | undefined
-  let mapMonsterInterval2: number | undefined
-  let mapMonsterCounter = 0
-
-  const mapMonstersClass = 'w-28'
-
-  let sectionThumbnails: HTMLElement
-  let sectionMapMonsters1: HTMLElement
-  let sectionMapMonsters2: HTMLElement
-
-  let mapThumbnailInterval: number | undefined
-  let shuffledMapThumbnails = shuffle(mapThumbnails)
-  let slicedMapThumbnails: string[] = []
-
-  function newSlide(currentSlide: HTMLElement) {
-    if (sectionThumbnails === currentSlide) {
-      if (!mapThumbnailInterval) {
-        mapThumbnailInterval = setInterval(() => {
-          slicedMapThumbnails = shuffledMapThumbnails.slice(
-            0,
-            Math.min(slicedMapThumbnails.length + 1, mapThumbnails.length)
-          )
-        }, 200)
-      }
-    } else {
-      slicedMapThumbnails = []
-      clearInterval(mapThumbnailInterval)
-      mapThumbnailInterval = undefined
-    }
-
-    if (sectionMapMonsters1 === $currentSlide) {
-      if (!mapMonsterInterval1) {
-        mapMonsterInterval1 = setInterval(() => {
-          mapMonsterCounter++
-        }, 1000)
-      }
-    } else {
-      mapMonsterCounter = 0
-      clearInterval(mapMonsterInterval1)
-      mapMonsterInterval1 = undefined
-    }
-
-    if (sectionMapMonsters2 === $currentSlide) {
-      if (!mapMonsterInterval2) {
-        mapMonsterInterval2 = setInterval(() => {
-          mapMonsterCounter++
-        }, 1000)
-      }
-    } else {
-      mapMonsterCounter = 0
-      clearInterval(mapMonsterInterval2)
-      mapMonsterInterval2 = undefined
-    }
-  }
-
-  $: {
-    if ($currentSlide) {
-      newSlide($currentSlide)
-    }
-  }
 </script>
-
-<svelte:head>
-  <title>SODUCO-BNF seminar 2023</title>
-</svelte:head>
 
 <Title>
   <h2 class="text-white">Georeferencing with Allmaps<br />and IIIF</h2>
@@ -302,25 +187,15 @@
   </pre>
 </section>
 
-<section bind:this={sectionThumbnails}>
-  <div class="absolute top-0 left-0 w-full h-full">
-    {#each slicedMapThumbnails as url, i (i)}
-      <img
-        class="absolute w-56"
-        style:transform={randomTransform()}
-        style:left={randomFromInterval(-200, window.innerWidth) + 'px'}
-        style:top={randomFromInterval(-200, window.innerHeight) + 'px'}
-        alt="Random map thumbnail"
-        src={`/images/iiif-annual-conference-2023/map-thumbnails/${url}`}
-      />
-    {/each}
-  </div>
-  <p class="p-4 z-50 bg-white/50 rounded-lg max-w-3xl">
-    Using Georeference Annotations and IIIF, we can now georeference, warp and
-    overlay <strong>millions of digitized maps</strong> from institutions around
-    the world
-  </p>
-</section>
+<Slide>
+  {#snippet children({ active })}
+    <MapThumbnails {active}>
+      Using Georeference Annotations and IIIF, we can now georeference, warp and
+      overlay <strong>millions of digitized maps</strong> from institutions around
+      the world
+    </MapThumbnails>
+  {/snippet}
+</Slide>
 
 <section>
   <ol class="list-decimal px-40 space-y-8 text-4xl">
@@ -346,30 +221,11 @@
     </li>
   </ol>
 </section>
-
-<section bind:this={sectionMapMonsters1} class="gap-2 grid-cols-7 grid-rows-5">
-  <!-- TODO other monsters! -->
-  {#each Array(16) as _, i (`${i}-${mapMonsterCounter}`)}
-    <div class={mapMonstersClass} style:transform={randomTransform()}>
-      <MapMonster
-        mood={randomMood()}
-        color={randomColor()}
-        shape={Math.floor(randomFromInterval(0, 5))}
-      />
-    </div>
-  {/each}
-  <div class="col-span-3 row-span-1">Some new features:</div>
-
-  {#each Array(16) as _, i (`${i}-${mapMonsterCounter}`)}
-    <div class={mapMonstersClass} style:transform={randomTransform()}>
-      <MapMonster
-        mood={randomMood()}
-        color={randomColor()}
-        shape={Math.floor(randomFromInterval(0, 5))}
-      />
-    </div>
-  {/each}
-</section>
+<Slide>
+  {#snippet children({ active })}
+    <ManyMapMonsters {active}>Some new features:</ManyMapMonsters>
+  {/snippet}
+</Slide>
 
 <section>
   <!-- https://observablehq.com/@allmaps/leaflet-plugin -->
@@ -451,29 +307,11 @@
   </div>
 </section>
 
-<section bind:this={sectionMapMonsters2} class="gap-2 grid-cols-7 grid-rows-5">
-  <!-- TODO other monsters! -->
-  {#each Array(16) as _, i (`${i}-${mapMonsterCounter}`)}
-    <div class={mapMonstersClass} style:transform={randomTransform()}>
-      <MapMonster
-        mood={randomMood()}
-        color={randomColor()}
-        shape={Math.floor(randomFromInterval(0, 5))}
-      />
-    </div>
-  {/each}
-  <div class="col-span-3 row-span-1">Future plans:</div>
-
-  {#each Array(16) as _, i (`${i}-${mapMonsterCounter}`)}
-    <div class={mapMonstersClass} style:transform={randomTransform()}>
-      <MapMonster
-        mood={randomMood()}
-        color={randomColor()}
-        shape={Math.floor(randomFromInterval(0, 5))}
-      />
-    </div>
-  {/each}
-</section>
+<Slide>
+  {#snippet children({ active })}
+    <ManyMapMonsters {active}>Future plans:</ManyMapMonsters>
+  {/snippet}
+</Slide>
 
 <section>
   <p>Distortion analysis</p>
