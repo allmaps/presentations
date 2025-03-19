@@ -66,7 +66,7 @@
 <section>
   <p>Finding maps is not easy</p>
   <img
-    alt="mam Junction"
+    alt="Rotterdam Junction, NY"
     loading="lazy"
     src="/images/open-maps-meeting-2024/loc-rotterdam.webp"
   />
