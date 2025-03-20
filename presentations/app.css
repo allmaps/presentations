@@ -1,11 +1,136 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@source '../node_modules/@allmaps/ui/dist/components/**/*.{html,js,svelte,ts}';
+
+@theme {
+  --color-*: initial;
+  --color-blue: #63d8e6;
+  --color-darkblue: #3b44ad;
+  --color-purple: #c552b5;
+  --color-pink: #ff56ba;
+  --color-orange: #ff7415;
+  --color-red: #fe5e60;
+  --color-green: #64c18f;
+  --color-yellow: #ffc742;
+  --color-gray: #b2b2b2;
+  --color-black: #222222;
+  --color-white: #ffffff;
+  --color-inherit: inherit;
+  --color-current: currentColor;
+  --color-transparent: transparent;
+  --color-blue-100: #dff7fa;
+  --color-blue-200: #c0eff5;
+  --color-blue-300: #a1e7f0;
+  --color-blue-400: #82dfeb;
+  --color-blue-500: #63d8e6;
+  --color-blue-600: #4facb8;
+  --color-blue-700: #3b818a;
+  --color-blue-800: #27565c;
+  --color-blue-900: #132b2d;
+  --color-darkblue-100: #d7d9ee;
+  --color-darkblue-200: #b0b4de;
+  --color-darkblue-300: #898ecd;
+  --color-darkblue-400: #6269bd;
+  --color-darkblue-500: #3b44ad;
+  --color-darkblue-600: #2f368a;
+  --color-darkblue-700: #232867;
+  --color-darkblue-800: #171b45;
+  --color-darkblue-900: #0b0d22;
+  --color-purple-100: #f3dcf0;
+  --color-purple-200: #e7b9e1;
+  --color-purple-300: #dc97d2;
+  --color-purple-400: #d074c3;
+  --color-purple-500: #c552b5;
+  --color-purple-600: #9d4190;
+  --color-purple-700: #76316c;
+  --color-purple-800: #4e2048;
+  --color-purple-900: #271024;
+  --color-pink-100: #ffddf1;
+  --color-pink-200: #ffbbe3;
+  --color-pink-300: #ff99d5;
+  --color-pink-400: #ff77c7;
+  --color-pink-500: #ff56ba;
+  --color-pink-600: #cc4494;
+  --color-pink-700: #99336f;
+  --color-pink-800: #66224a;
+  --color-pink-900: #321125;
+  --color-orange-100: #ffe3d0;
+  --color-orange-200: #ffc7a1;
+  --color-orange-300: #ffab72;
+  --color-orange-400: #ff8f43;
+  --color-orange-500: #ff7415;
+  --color-orange-600: #cc5c10;
+  --color-orange-700: #99450c;
+  --color-orange-800: #662e08;
+  --color-orange-900: #321704;
+  --color-red-100: #fededf;
+  --color-red-200: #febebf;
+  --color-red-300: #fe9e9f;
+  --color-red-400: #fe7e7f;
+  --color-red-500: #fe5e60;
+  --color-red-600: #cb4b4c;
+  --color-red-700: #983839;
+  --color-red-800: #652526;
+  --color-red-900: #321213;
+  --color-green-100: #e0f2e8;
+  --color-green-200: #c1e6d2;
+  --color-green-300: #a2d9bb;
+  --color-green-400: #83cda5;
+  --color-green-500: #64c18f;
+  --color-green-600: #509a72;
+  --color-green-700: #3c7355;
+  --color-green-800: #284d39;
+  --color-green-900: #13261c;
+  --color-yellow-100: #fff3d9;
+  --color-yellow-200: #ffe8b3;
+  --color-yellow-300: #ffdd8d;
+  --color-yellow-400: #ffd267;
+  --color-yellow-500: #ffc742;
+  --color-yellow-600: #cc9f34;
+  --color-yellow-700: #997727;
+  --color-yellow-800: #664f1a;
+  --color-yellow-900: #32270d;
+  --color-gray-100: #efefef;
+  --color-gray-200: #e0e0e0;
+  --color-gray-300: #d0d0d0;
+  --color-gray-400: #c1c1c1;
+  --color-gray-500: #b2b2b2;
+  --color-gray-600: #8e8e8e;
+  --color-gray-700: #6a6a6a;
+  --color-gray-800: #474747;
+  --color-gray-900: #232323;
+
+  --font-*: initial;
+  --font-sans: Geograph, sans-serif;
+  --font-mono: DM Mono, monospace;
+
+  --text-color: #222222;
+
+  --transition-duration-0: 0ms;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 @layer base {
   section {
     @apply h-full w-full grid-flow-row auto-cols-fr p-8 gap-8 justify-items-center content-center;
-    @apply [&>*]:min-h-0;
+    @apply *:min-h-0;
   }
 
   .section-stretch {

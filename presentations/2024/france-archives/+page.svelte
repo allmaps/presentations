@@ -384,7 +384,7 @@
   <!-- https://annotations.allmaps.org/images/0cd4ee5d84dc9c65 -->
   <!-- Atlas Verniquet used as reference map -->
   <p>Custom Reference Map</p>
-  <div class="flex flex-row w-full [&>*]:min-w-0">
+  <div class="flex flex-row w-full *:min-w-0">
     <img
       alt="Georeferencing the plan of the diorama in the Allmaps Editor"
       loading="lazy"
@@ -416,7 +416,7 @@
   - For the Bonne map, the Bonne projection has been implemented in Proj4JS and used directly
   -->
   <p>Map Series</p>
-  <div class="flex flex-row gap-8 [&>*]:min-w-0">
+  <div class="flex flex-row gap-8 *:min-w-0">
     <img
       alt="Results in Allmaps Viewer"
       loading="lazy"

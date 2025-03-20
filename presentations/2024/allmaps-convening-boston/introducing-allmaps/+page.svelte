@@ -240,7 +240,7 @@
     Vanaf Het Hoogste Punt - exhibition about the first triangulation of the
     Netherlands
   </p>
-  <div class="flex flex-row gap-8 [&>*]:min-w-0">
+  <div class="flex flex-row gap-8 *:min-w-0">
     <img
       alt="Allmaps CLI"
       loading="lazy"

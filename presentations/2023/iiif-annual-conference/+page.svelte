@@ -445,7 +445,7 @@
 
 <section>
   <p>Converting Map Warper data to Georeference Annotations</p>
-  <div class="flex flex-row w-full [&>*]:min-w-0">
+  <div class="flex flex-row w-full *:min-w-0">
     <img
       alt="LMEC map in Allmaps Editor"
       loading="lazy"
@@ -503,7 +503,7 @@
   <!-- https://soduco.github.io/about/ -->
   <p>Source material: municipal atlasses and trade directories</p>
   <div
-    class="grid grid-cols-2 [&>*]:min-w-0 [&>*]:min-h-0 gap-4 items-center place-items-center"
+    class="grid grid-cols-2 *:min-w-0 *:min-h-0 gap-4 items-center place-items-center"
   >
     <img
       alt="Table of Parisian atlasses"
@@ -531,7 +531,7 @@
 <section>
   <!-- https://soduco.github.io/AllmapsAnnotations/ -->
   <p>Atlas Verniquet in Gallica and the David Rumsey Map Collection</p>
-  <div class="flex flex-row w-full [&>*]:min-w-0">
+  <div class="flex flex-row w-full *:min-w-0">
     <img
       alt="Atlas Verniquet in Gallica"
       loading="lazy"
@@ -573,7 +573,7 @@
 <section>
   <!-- https://icdar21-mapseg.github.io -->
   <p>Generating masks with image segmentation</p>
-  <div class="flex flex-row w-full [&>*]:min-w-0">
+  <div class="flex flex-row w-full *:min-w-0">
     <!-- svelte-ignore a11y-img-redundant-alt -->
     <img
       alt="Different types of image segmentation"
@@ -660,7 +660,7 @@
 
 <section>
   <p>Feature preview: thin plate spline map warping</p>
-  <div class="flex flex-row w-full [&>*]:min-w-0 gap-12">
+  <div class="flex flex-row w-full *:min-w-0 gap-12">
     <img
       alt="TPS map warping"
       loading="lazy"

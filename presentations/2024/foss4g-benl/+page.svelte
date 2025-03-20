@@ -410,7 +410,7 @@
   - For the Bonne map, the Bonne projection has been implemented in Proj4JS and used directly
   -->
   <p>Map Series</p>
-  <div class="flex flex-row gap-8 [&>*]:min-w-0">
+  <div class="flex flex-row gap-8 *:min-w-0">
     <img
       alt="Results in Allmaps Viewer"
       loading="lazy"

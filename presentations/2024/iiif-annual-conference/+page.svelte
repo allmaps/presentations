@@ -74,7 +74,7 @@
   <p>
     Option 2<br /><span class="font-light">Georeferencing using Allmaps</span>
   </p>
-  <div class="flex flex-row w-full [&>*]:min-w-0">
+  <div class="flex flex-row w-full *:min-w-0">
     <img
       alt="Single sheet in Allmaps Editor"
       loading="lazy"
@@ -105,7 +105,7 @@
   <!-- https://www.nationaalarchief.nl/onderzoeken/archief/4.TOPO/invnr/%40A~A7~A7.1 -->
   <!-- https://www.nationaalarchief.nl/onderzoeken/archief/4.TOPO/invnr/10.107/file/NL-HaNA_4.TOPO_10.107_R -->
   <p>Thousands of sheets, but hard to access</p>
-  <div class="flex flex-row h-full [&>*]:min-w-0">
+  <div class="flex flex-row h-full *:min-w-0">
     <img
       alt="Inventory published by the National Archives"
       loading="lazy"
@@ -144,7 +144,7 @@
   <!-- TMK Blad 25: Amsterdam -->
   <!-- https://dlc.services/iiif-img/7/4/6587b0b3-3090-451b-973b-0f1f997c7101/full/1000,/0/default.jpg -->
   <p>Corner coordinates</p>
-  <div class="flex flex-row gap-8 [&>*]:min-w-0">
+  <div class="flex flex-row gap-8 *:min-w-0">
     <img
       alt="Upper left corner"
       loading="lazy"
@@ -156,7 +156,7 @@
       src="/images/iiif-annual-conference-2024/tmk-25-upper-right.jpg"
     />
   </div>
-  <div class="flex flex-row gap-8 [&>*]:min-w-0">
+  <div class="flex flex-row gap-8 *:min-w-0">
     <img
       alt="Lower left corner"
       loading="lazy"
@@ -224,7 +224,7 @@
 
 <section>
   <p>Results in Allmaps Viewer</p>
-  <div class="flex flex-row gap-8 [&>*]:min-w-0">
+  <div class="flex flex-row gap-8 *:min-w-0">
     <img
       alt="Results in Allmaps Viewer"
       loading="lazy"
@@ -330,7 +330,7 @@
   <code class="text-2xl"
     >https://annotations.allmaps.org/manifests/23379602e8187445.geojson</code
   >
-  <div class="flex flex-row gap-8 [&>*]:min-w-0">
+  <div class="flex flex-row gap-8 *:min-w-0">
     <img
       alt="Atlas of the city of Lynn in Allmaps Viewer"
       loading="lazy"
@@ -390,7 +390,7 @@
 <section>
   <p>Or come to Delft!</p>
 
-  <div class="flex flex-row gap-8 [&>*]:min-w-0">
+  <div class="flex flex-row gap-8 *:min-w-0">
     <img
       alt="Allmaps Arcade cabinet #2"
       loading="lazy"

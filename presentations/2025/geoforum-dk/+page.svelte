@@ -82,7 +82,7 @@
 <section>
   <p>Georeferencing with Allmaps</p>
 
-  <div class="flex flex-row gap-8 [&>*]:min-w-0">
+  <div class="flex flex-row gap-8 *:min-w-0">
     <img
       alt="Georeferencing with Allmaps"
       loading="lazy"

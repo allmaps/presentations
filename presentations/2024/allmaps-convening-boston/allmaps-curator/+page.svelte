@@ -198,7 +198,7 @@
   <p class="underline">
     https://annotations.allmaps.org/@bertspaan/lists/boston-2024
   </p>
-  <div class="flex flex-row gap-8 [&>*]:min-w-0">
+  <div class="flex flex-row gap-8 *:min-w-0">
     <img
       alt="Trip to Boston #1"
       loading="lazy"
