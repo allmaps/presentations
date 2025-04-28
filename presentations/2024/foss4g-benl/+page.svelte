@@ -4,14 +4,23 @@
 </script>
 
 <script lang="ts">
+  import { onMount } from 'svelte'
+
   import Slide from '$lib/components/Slide.svelte'
   import Title from '$lib/components/Title.svelte'
   import MapMonster from '$lib/components/MapMonster.svelte'
   import ManyMapMonsters from '$lib/components/ManyMapMonsters.svelte'
   import MapThumbnails from '$lib/components/MapThumbnails.svelte'
 
-  // TODO: make!!!
   let slideSeconds = $state(0)
+
+  onMount(() => {
+    const interval = setInterval(() => {
+      slideSeconds++
+    }, 1000)
+
+    return () => clearInterval(interval)
+  })
 </script>
 
 <svelte:head>
@@ -382,13 +391,13 @@
     alt="Map with background"
     class={slideSeconds % 4 < 2 ? '' : 'hidden'}
     loading="lazy"
-    src="images/iiif-annual-conference-2023/tps/lowercountries_affine.png"
+    src="/images/iiif-annual-conference-2023/tps/lowercountries_affine.png"
   />
   <img
     alt="Map without background"
     class={slideSeconds % 4 < 2 ? 'hidden' : ''}
     loading="lazy"
-    src="images/iiif-annual-conference-2023/tps/lowercountries_affine_removebackground.png"
+    src="/images/iiif-annual-conference-2023/tps/lowercountries_affine_removebackground.png"
   />
 </section>
 

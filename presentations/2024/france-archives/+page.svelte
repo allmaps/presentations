@@ -1,3 +1,8 @@
+<script module>
+  export const title = 'France Archives'
+  export const date = Date.parse('27 Nov 2024')
+</script>
+
 <script lang="ts">
   import Title from '$lib/components/Title.svelte'
   import Slide from '$lib/components/Slide.svelte'

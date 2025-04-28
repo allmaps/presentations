@@ -37,7 +37,7 @@ To override a default styles of a `<section>`, you can use the following classes
 
 To add a new presentation, create a new subdirectory in [`presentations`](presentations). In this new subdirectory, create a file called `+page.svelte`.
 
-In this Svelte file, each slide is placed in a `<section>` elemtent. Each section is a [CSS grid](https://css-tricks.com/snippets/css/complete-guide-grid/) which you can customize with Tailwind classed.
+In this Svelte file, each slide is placed in a `<section>` element. Each section is a [CSS grid](https://css-tricks.com/snippets/css/complete-guide-grid/) which you can customize with Tailwind classed.
 
 Static files like images and JSON files can be placed in a new subdirectory in [`static`](static).
 
