@@ -560,17 +560,17 @@
 
   <div class="max-w-6xl">
     <span class="fragment text-pink"
-      >Convincing <em>federal</em> heritage institutions</span
+      ><s>Convincing</s> Empowering <em>federal</em> heritage institutions
+      <br />(experience, servers, licensing, ...)</span
     ><br />
     <span class="fragment text-orange">
-      Empower <em>federal</em> heritage institutions <br />(experience, servers,
-      licensing, ...)
+      Long term funding for data layers
     </span><br />
     <span class="fragment text-green">
-      Short term and long term funding for new tools
+      Short term funding for explorative tools
     </span><br />
     <span class="fragment text-blue">
-      Funding open source building blocks, together
+      Supporting open source building blocks, together
     </span>
   </div>
 </section>
