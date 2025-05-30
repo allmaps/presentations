@@ -3,9 +3,10 @@
 
   interface Props {
     annotationUrl: string
+    caption: string
   }
 
-  let { annotationUrl }: Props = $props()
+  let { annotationUrl, caption }: Props = $props()
 
   let container: HTMLDivElement
   let active = false
@@ -24,7 +25,7 @@
             active = currentActive
             container.dispatchEvent(
               new CustomEvent('flyTo', {
-                detail: { annotationUrl, active },
+                detail: { annotationUrl, caption, active },
                 bubbles: true
               })
             )
@@ -41,4 +42,5 @@
   class="fragment contents"
   bind:this={container}
   data-annotation-url={annotationUrl}
+  data-caption={caption}
 ></div>

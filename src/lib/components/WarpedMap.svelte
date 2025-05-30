@@ -14,15 +14,18 @@
 
   import type { LngLatBoundsLike } from 'maplibre-gl'
 
+  import MapMonster from '$lib/components/MapMonster.svelte'
+
   import 'maplibre-gl/dist/maplibre-gl.css'
 
   interface Props {
     annotationUrl: string
+    caption: string
     active?: boolean
     children?: Snippet
   }
 
-  let { annotationUrl, active = true, children }: Props = $props()
+  let { annotationUrl, caption, active = true, children }: Props = $props()
 
   let mounted = $state(false)
   let initialized = $state(false)
@@ -34,6 +37,7 @@
   let annotationUrls = new Set()
 
   let currentAnnotationUrl = annotationUrl
+  let currentCaption = $state(caption)
 
   async function boundsFromAnnotationUrl(
     annotationUrl: string
@@ -81,7 +85,7 @@
     addTerrain(map, maplibregl)
 
     if (bounds) {
-      map.fitBounds(bounds, { padding: -350, animate: false })
+      map.fitBounds(bounds, { padding: 25, animate: false })
     }
 
     map.on('load', async () => {
@@ -100,16 +104,16 @@
     initialized = false
     annotationUrls = new Set()
     currentAnnotationUrl = annotationUrl
+    currentCaption = caption
   }
 
-  async function flyTo(annotationUrl: string) {
+  async function flyTo(annotationUrl: string, caption: string) {
     if (annotationUrl === currentAnnotationUrl) {
       return
     }
 
     if (initialized) {
       if (!annotationUrls.has(annotationUrl)) {
-
         await warpedMapLayer.addGeoreferenceAnnotationByUrl(annotationUrl)
       }
 
@@ -122,6 +126,7 @@
       annotationUrls.add(annotationUrl)
 
       currentAnnotationUrl = annotationUrl
+      currentCaption = caption
     }
   }
 
@@ -139,10 +144,8 @@
     container.addEventListener('flyTo', (event: Event) => {
       const customEvent = event as CustomEvent
       if (customEvent.detail.active) {
-        flyTo(customEvent.detail.annotationUrl)
+        flyTo(customEvent.detail.annotationUrl, customEvent.detail.caption)
       }
-
-
     })
 
     // new MutationObserver((mutations) => {
@@ -164,3 +167,16 @@
 <div class="w-screen h-screen" bind:this={container}>
   {@render children?.()}
 </div>
+{#if currentCaption}
+  <div
+    class="pointer-events-none absolute top-0 left-0 w-full h-full text-left text-2xl"
+  >
+    <div class="flex items-end h-full px-24 py-12">
+      <MapMonster mood="excited" color="green">
+        <p class="p-4 max-w-xl">
+          {@html currentCaption}
+        </p>
+      </MapMonster>
+    </div>
+  </div>
+{/if}
