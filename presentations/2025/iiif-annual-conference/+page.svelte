@@ -204,7 +204,7 @@
   </div>
   <div>
     <p class="p-4 text-3xl">
-      <span class="text-orange">Feature request</span>
+      <span class="text-orange">Feature request </span>
       Using a historical reference map
     </p>
   </div>
@@ -239,50 +239,41 @@
 </section>
 
 <section>
-  <pre class="markdown">
-		<code
-      data-line-numbers="2-6|7-21|8,17|22-24|25-32|34-39"
-      data-trim
-      data-noescape
+  <pre class="yml">
+		<code data-line-numbers="2-6|7-18|19-24|25-31" data-trim data-noescape
       ><script type="text/template">
         ---
-        meta:
-          heading: Dune Landscape
-        viewer:
-          bbox: [4.156968,52.027832,4.173742,52.035224]
-          rotation: 0
-        allmaps:
-          - filename: dl-map-8-M.json
-            label: 	Cadastral map
+        meta: # Slide metadata
+          heading: Subtitle # Slide heading
+        viewer: # Viewer settings
+          bbox: [4.651103, 51.78665, 4.768242, 51.832353] # Viewer bounding box
+          rotation: 180 # Degrees
+        allmaps: # List of maps
+          - label: Map
+            attribution: # Optional attribution
+              name: Regionaal Archief Dordrecht
+              url: https://www.regionaalarchiefdordrecht.nl
+            annotation: annotation-01.json # Annotation filename
+            opacity: 100 # 0-100
             removeBackground:
-              color: "#ffffff"
-              threshold: 43
-              hardness: 70
-            attribution:
-              name:  Cultural Heritage Image Database
-              url: https://beeldbank.cultureelerfgoed.nl/rce-mediabank/detail/a76e9f7e-94d7-11e5-b204-37a940b03e23/media/188e14bd-0cfc-ddff-a573-62a8a4570f60?mode=detail&view=horizontal&rows=1&page=1&fq%5B%5D=search_s_entity_name:%22Kadastrale%20kaarten%22&fq%5B%5D=search_s_monuments_monument_province:%22Zuid-Holland%22&fq%5B%5D=search_s_monuments_monument_county:%22Monster%22&sort=order_s_objectnummer%20asc&filterAction
-          - filename: dl-map-8.json
-            label: 	Bonnekaart b458_1934
-            attribution:
-              name: TU Delft Library
-              url: https://www.tudelft.nl/en/library/collections/map-room/map-collection/historical-maps/bonne-maps-1865-1930
+              color: '#f0dbbc' # Hex color code
+              threshold: 20 # 0-100
+              hardness: 20 # 0-100
+            colorize: '#8c00ff' # Hex color code
+        xyz:
+          url: https://tile.openstreetmap.org/{z}/{x}/{y}.png # XZY url
+          label: OpenStreetMap # Label for layer
         geojson:
-          - filename: dl-8.geojson
-            label: Route
-        legend:
-          - label: Road
-            stroke: '#E8B500'
-            stroke-opacity: 1
-          - label: Neighborhood
-            stroke: '#C9C9C9'
-            stroke-opacity: 1
+          - filename: vector-01.geojson # Geojson filename
+            label: Building outline # Optional label for vector
+        legend: # Optional legend for geojson features
+          - label: Building
+            fill: #e30022 # Hex color code
+            fill-opacity: 70 # 0-100
+            stroke: #000000 # Hex color code
+            stroke-opacity: 100 # 0-100
+            circle: true # Use a circle
         ---
-
-        # The Walking Village
-
-        Historically, the coastal defenses of the Netherlands were the weakest at the level of Ter Heijde. In some places, the entire defense consisted of just one row of dunes. For this reason, the coastal village has been continually eroded by storms over the past centuries. Four times, in 1470, 1530, 1546 and 1570, this village was destroyed by the waves.
-
-        Usually, the houses threatened by the sea were demolished and rebuilt further inland. As the village was always moving, people sometimes called it the walking village. People have tried to counteract coastal erosion in all sorts of ways but this only really succeeded after stone dams were built in the sea in the nineteenth century.
       </script></code
     >
   </pre>
@@ -302,7 +293,32 @@
   </div>
 </section>
 
-<!-- @todo add slide about printing -->
+<section class="section-horizontal text-3xl">
+  <div>
+    <img
+      alt="Collage of overview map"
+      loading="lazy"
+      src="/images/iiif-annual-conference-2025/overview-map-collage.jpg"
+    />
+    <p class="p-4">From physical collage...</p>
+  </div>
+  <div>
+    <img
+      alt="Render of overview map"
+      loading="lazy"
+      src="/images/iiif-annual-conference-2025/overview-map-render.jpg"
+    />
+    <p class="p-4">...to digital render...</p>
+  </div>
+  <div>
+    <img
+      alt="Print of overview map"
+      loading="lazy"
+      src="/images/iiif-annual-conference-2025/overview-map-print.jpg"
+    />
+    <p class="p-4">back to print!</p>
+  </div>
+</section>
 
 <Slide>
   {#snippet children({ active })}
@@ -386,7 +402,31 @@
   {/snippet}
 </Slide>
 
-<!-- @todo add final slide with student names-->
+<section class="text-3xl">
+  <div class="max-w-5xl">
+    <p class="p-4">
+      <span class="text-orange">River Atlas</span> Nicolaos Charalambous (CY) Chaomin
+      Chen (CN) Sneha Gireesh (IN) Thomas Gkikas (GR) Ujal Gorchu (AZ) Eliott Moreau
+      (FR) Ana Nuño De Buen (MX) Kelly Olinger (US) Maria Stergiou (GR) Lenneke Slangen
+      (NL) Yuhe Tan (CN) Felix Verheyden (BE) Nien Heng Yang (TW) Han Yang (CN)
+    </p>
+    <p class="p-4">
+      <span class="text-orange">City Atlas</span> Carlos von Bertrab (MX), Mohil
+      Bhavsar (IN), Efi Chatzikonstantinou (GR), Evan Craig (US), Misha Frantsuzov
+      (RU), Sara Gohberg (RU), Ivanna Gressani (AR), Nathalia Kuipers (BR), Ximeng
+      Luo (CN), Andrea Ramos (MX), Lefkothea Spartioti (GR), Yi-an Tseng (TW)
+    </p>
+    <p class="p-4">
+      <span class="text-orange">Coast Atlas</span> Imane Amzil (MA), Claire Demeyere
+      (BE), Eleni Magnisli (GR), Britt De Schoenmakere (BE), Maria Gabriella Stabile
+      (BR), Ravenna Westerhout (NL) and Yingxin Zhang (CN)
+    </p>
+    <p class="p-4">
+      <span class="text-orange">Teaching team</span> Sanne van den Breemer, Juan
+      Benavides, Benjamin Groothuijse, Alfons Hooikaas and Jules Schoonman.
+    </p>
+  </div>
+</section>
 
 <!-- Bert -->
 <!--
