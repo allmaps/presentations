@@ -21,7 +21,23 @@
   <h3 class="text-white">Teaching with Allmaps</h3>
 </Title>
 
-<!-- @todo add introduction slide -->
+<Slide>
+  {#snippet children({ active })}
+    <WarpedMap
+      {active}
+      annotationUrl="https://annotations.allmaps.org/maps/435ccc0ea633df34"
+      caption="From IIIF Image..."
+      transformationType="straight"
+      hideMap={true}
+    >
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/maps/435ccc0ea633df34"
+        transformationType="polynomial"
+        caption="...to a map!"
+      />
+    </WarpedMap>
+  {/snippet}
+</Slide>
 
 <section class="section-stretch">
   <img
