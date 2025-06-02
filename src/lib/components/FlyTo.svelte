@@ -1,12 +1,14 @@
 <script lang="ts">
+  import type { TransformationType } from '@allmaps/transform'
   import { onMount } from 'svelte'
 
   interface Props {
     annotationUrl: string
+    transformationType?: TransformationType
     caption?: string
   }
 
-  let { annotationUrl, caption }: Props = $props()
+  let { annotationUrl, transformationType, caption }: Props = $props()
 
   let container: HTMLDivElement
   let active = false
@@ -25,7 +27,7 @@
             active = currentActive
             container.dispatchEvent(
               new CustomEvent('flyTo', {
-                detail: { annotationUrl, caption, active },
+                detail: { annotationUrl, transformationType, caption, active },
                 bubbles: true
               })
             )

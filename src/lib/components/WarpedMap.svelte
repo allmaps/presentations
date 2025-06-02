@@ -8,13 +8,13 @@
 
   import { basemapStyle, addTerrain } from '@allmaps/basemap'
   import { WarpedMapLayer } from '@allmaps/maplibre'
-  import { GcpTransformer } from '@allmaps/transform'
+  import { GcpTransformer, type TransformationType } from '@allmaps/transform'
   import { parseAnnotation } from '@allmaps/annotation'
   import { fetchJson, computeBbox, combineBboxes } from '@allmaps/stdlib'
 
   import FlyTo from '$lib/components/FlyTo.svelte'
 
-  import type { LngLatBoundsLike } from 'maplibre-gl'
+  import type { LngLatBoundsLike, StyleSpecification } from 'maplibre-gl'
 
   import MapMonster from '$lib/components/MapMonster.svelte'
 
@@ -23,11 +23,22 @@
   interface Props {
     annotationUrl: string
     caption?: string
+    transformationType?: string
     active?: boolean
+    hideMap?: boolean
+    padding?: number
     children?: Snippet
   }
 
-  let { annotationUrl, caption, active = true, children }: Props = $props()
+  let {
+    annotationUrl,
+    caption,
+    transformationType,
+    active = true,
+    padding = 50,
+    hideMap = false,
+    children
+  }: Props = $props()
 
   let mounted = $state(false)
   let initialized = $state(false)
@@ -38,11 +49,28 @@
 
   let annotationUrls = new Set()
 
+  const transformationTypes = [
+    'straight',
+    'helmert',
+    'polynomial',
+    'polynomial1',
+    'polynomial2',
+    'polynomial3',
+    'projective',
+    'thinPlateSpline'
+  ]
+
   let currentAnnotationUrl = annotationUrl
+  let currentTransformationType = (
+    transformationType && transformationTypes.includes(transformationType)
+      ? transformationType
+      : 'polynomial'
+  ) as TransformationType
   let currentCaption = $state(caption)
 
   async function boundsFromAnnotationUrl(
-    annotationUrl: string
+    annotationUrl: string,
+    transformationType: TransformationType = 'polynomial'
   ): Promise<LngLatBoundsLike | undefined> {
     const annotation = await fetchJson(annotationUrl)
     const maps = parseAnnotation(annotation)
@@ -50,7 +78,12 @@
     let bbox: [number, number, number, number] | undefined
 
     for (const map of maps) {
-      const transformer = new GcpTransformer(map.gcps, map.transformation?.type)
+      const differentHandedness =
+        transformationType === 'straight' || transformationType === 'helmert'
+
+      const transformer = new GcpTransformer(map.gcps, transformationType, {
+        differentHandedness
+      })
 
       const polygon = transformer.transformToGeo(map.resourceMask)
 
@@ -66,16 +99,25 @@
     }
   }
 
+  const emptyBaseMapStyle: StyleSpecification = {
+    ...basemapStyle('en'),
+    layers: []
+  }
+
   async function initializeMap() {
     const protocol = new Protocol()
     addProtocol('pmtiles', protocol.tile)
 
-    const bounds = await boundsFromAnnotationUrl(annotationUrl)
+    const bounds = await boundsFromAnnotationUrl(
+      annotationUrl,
+      currentTransformationType
+    )
+
+    const style = hideMap ? emptyBaseMapStyle : basemapStyle('en')
 
     map = new Map({
       container,
-      // @ts-expect-error incompatible MapLibre types
-      style: basemapStyle('en'),
+      style,
       maxPitch: 0,
       hash: false,
       keyboard: false,
@@ -85,11 +127,13 @@
       }
     })
 
-    // @ts-expect-error incompatible MapLibre types
-    addTerrain(map, maplibregl)
+    if (!hideMap) {
+      // @ts-expect-error incompatible MapLibre types
+      addTerrain(map, maplibregl)
+    }
 
     if (bounds) {
-      map.fitBounds(bounds, { padding: 25, animate: false })
+      map.fitBounds(bounds, { padding, animate: false })
     }
 
     map.on('load', async () => {
@@ -99,7 +143,16 @@
       map.addLayer(warpedMapLayer)
 
       annotationUrls.add(currentAnnotationUrl)
-      await warpedMapLayer.addGeoreferenceAnnotationByUrl(currentAnnotationUrl)
+
+      warpedMapLayer
+        .addGeoreferenceAnnotationByUrl(currentAnnotationUrl)
+        .then((ids) =>
+          warpedMapLayer.setMapsTransformationType(
+            ids,
+            currentTransformationType
+          )
+        )
+
       initialized = true
     })
   }
@@ -113,8 +166,30 @@
     currentCaption = caption
   }
 
-  async function flyTo(annotationUrl: string, caption: string) {
+  async function flyTo(
+    annotationUrl: string,
+    transformationType: TransformationType,
+    caption: string
+  ) {
     if (annotationUrl === currentAnnotationUrl) {
+      if (transformationType !== currentTransformationType) {
+        if (transformationTypes.includes(transformationType)) {
+          const mapIds = warpedMapLayer.getWarpedMapList().getMapIds()
+          warpedMapLayer.setMapsTransformationType(mapIds, transformationType)
+          const bounds = warpedMapLayer.getBounds()
+          if (bounds) {
+            map.fitBounds(bounds, { padding, animate: true })
+          }
+          currentTransformationType = transformationType
+        }
+      }
+      if (hideMap) {
+        // Show map again after first slide
+        const { layers } = basemapStyle('en')
+        layers.forEach((layer) => map.addLayer(layer, 'warped-map-layer'))
+        hideMap = false
+      }
+      currentCaption = caption
       return
     }
 
@@ -126,7 +201,7 @@
       const bounds = await boundsFromAnnotationUrl(annotationUrl)
 
       if (bounds) {
-        map.fitBounds(bounds, { padding: 25, animate: true })
+        map.fitBounds(bounds, { padding, animate: true })
       }
 
       annotationUrls.add(annotationUrl)
@@ -150,7 +225,9 @@
     container.addEventListener('flyTo', (event: Event) => {
       const customEvent = event as CustomEvent
       if (customEvent.detail.active) {
-        flyTo(customEvent.detail.annotationUrl, customEvent.detail.caption)
+        const { annotationUrl, transformationType, caption } =
+          customEvent.detail
+        flyTo(annotationUrl, transformationType, caption)
       }
     })
   })
