@@ -3,7 +3,7 @@
 
   interface Props {
     annotationUrl: string
-    caption: string
+    caption?: string
   }
 
   let { annotationUrl, caption }: Props = $props()

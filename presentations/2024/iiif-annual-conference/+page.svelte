@@ -259,7 +259,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2024/stanford-north-korea-maps.mp4"
-  />
+  ></video>
   <div
     class="fragment absolute bottom-0 right-0 w-1/2 h-full text-left text-2xl bg-white/0 flex items-end px-24 py-12"
   >
@@ -313,7 +313,7 @@
     class="w-full h-full"
     data-src="https://cursor.allmaps.org"
     data-preload
-  />
+  ></iframe>
 </section>
 
 <Slide>
@@ -365,7 +365,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2024/allmaps-explore.webm"
-  />
+  ></video>
 </section>
 
 <section class="section-stretch">
@@ -375,7 +375,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2024/allmaps-arcade.webm"
-  />
+  ></video>
 </section>
 
 <section class="section-stretch">
@@ -420,7 +420,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2024/open-data-homepage.webm"
-  />
+  ></video>
 
   <div
     class="fragment absolute bottom-0 right-0 w-[60%] h-full text-left bg-white/70 flex items-end px-24 py-12 drop-shadow-md"

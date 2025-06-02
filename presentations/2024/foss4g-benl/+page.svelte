@@ -91,7 +91,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2023/georeferencing-loc-venice.webm"
-  />
+  ></video>
 </section>
 
 <section>
@@ -348,7 +348,8 @@
     data-fragment-index="1"
     data-src="https://cursor.allmaps.org/?url=https%3A%2F%2Fannotations.allmaps.org%2Fimages%2F5afc515e4d10fd95"
     data-preload
-  />
+  ></iframe>
+
   <!-- https://dev.viewer.allmaps.org/?url=https%3A%2F%2Fannotations.allmaps.org%2Fimages%2F5afc515e4d10fd95 -->
 </section>
 
@@ -409,7 +410,7 @@
     data-loop
     data-autoplay
     data-src="/videos/soduco-bnf-seminar-2023/tps-metro-paris.mp4"
-  />
+  ></video>
 </section>
 
 <section>
@@ -442,7 +443,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2024/allmaps-explore.webm"
-  />
+  ></video>
 </section>
 
 <section class="section-horizontal section-stretch">

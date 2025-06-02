@@ -12,6 +12,8 @@
   import { parseAnnotation } from '@allmaps/annotation'
   import { fetchJson, computeBbox, combineBboxes } from '@allmaps/stdlib'
 
+  import FlyTo from '$lib/components/FlyTo.svelte'
+
   import type { LngLatBoundsLike } from 'maplibre-gl'
 
   import MapMonster from '$lib/components/MapMonster.svelte'
@@ -20,7 +22,7 @@
 
   interface Props {
     annotationUrl: string
-    caption: string
+    caption?: string
     active?: boolean
     children?: Snippet
   }
@@ -48,7 +50,7 @@
     let bbox: [number, number, number, number] | undefined
 
     for (const map of maps) {
-      const transformer = new GcpTransformer(map.gcps)
+      const transformer = new GcpTransformer(map.gcps, map.transformation?.type)
 
       const polygon = transformer.transformToGeo(map.resourceMask)
 
@@ -72,6 +74,7 @@
 
     map = new Map({
       container,
+      // @ts-expect-error incompatible MapLibre types
       style: basemapStyle('en'),
       maxPitch: 0,
       hash: false,
@@ -82,6 +85,7 @@
       }
     })
 
+    // @ts-expect-error incompatible MapLibre types
     addTerrain(map, maplibregl)
 
     if (bounds) {
@@ -90,6 +94,8 @@
 
     map.on('load', async () => {
       warpedMapLayer = new WarpedMapLayer()
+
+      // @ts-expect-error incompatible MapLibre types
       map.addLayer(warpedMapLayer)
 
       annotationUrls.add(currentAnnotationUrl)
@@ -147,24 +153,11 @@
         flyTo(customEvent.detail.annotationUrl, customEvent.detail.caption)
       }
     })
-
-    // new MutationObserver((mutations) => {
-    //   const element = container.querySelector(
-    //     '.fragment.current-fragment'
-    //   ) as HTMLElement
-    //   if (element && element.dataset.annotationUrl) {
-    //     flyTo(element.dataset.annotationUrl)
-    //   } else if (active) {
-    //     flyTo(annotationUrl)
-    //   }
-    // }).observe(container, {
-    //   attributes: true,
-    //   subtree: true
-    // })
   })
 </script>
 
 <div class="w-screen h-screen" bind:this={container}>
+  <FlyTo {annotationUrl} />
   {@render children?.()}
 </div>
 {#if currentCaption}

@@ -9,6 +9,7 @@
   import MapMonster from '$lib/components/MapMonster.svelte'
   import ManyMapMonsters from '$lib/components/ManyMapMonsters.svelte'
   import WarpedMap from '$lib/components/WarpedMap.svelte'
+  import XYZ from '$lib/components/XYZ.svelte'
   import FlyTo from '$lib/components/FlyTo.svelte'
 </script>
 
@@ -217,7 +218,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2025/documentation-slideshow-vijzelstraat.webm"
-  />
+  ></video>
   <p class="p-4 text-3xl">
     <span class="text-orange">City Atlas</span>
     Vijzelstraat documentation
@@ -231,7 +232,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2025/documentation-slideshow-defense-line.webm"
-  />
+  ></video>
   <p class="p-4 text-3xl">
     <span class="text-orange">Coast Atlas</span>
     Defense Line documentation
@@ -429,25 +430,61 @@
 </section>
 
 <!-- Bert -->
-<!--
-  - Iedereen wil een kaart vinden van z'n eigen huis!
-    - Show maps of a few of my houses, with marker?
-    - How to find these maps? Link pixels on digitized maps with geospatial coordinates
-  - Allmaps: georeferencing allows us to convert pixel coordinates to geospatial coordinates
-    - GCPs
-    - Interpolation, transformation algorithmms, with animation
-    - Laat kaart zien met driehoek, drie GCPs, en dan fade van ene algoritme naar andere
-  - Now we can warp maps and render them
-    - WebGL, Canvas API, XYZ tiles, print
-  - Allmaps Cursors
-  - En voorbeeld LMEC, oude straten op kaart
-  - Geospatial search!
-  - Allmaps Here
-    - Allmaps Here
-    - Find maps based on your current location
-    - Convert GPS location to pixel coordinates
-    - Render preview image with canvas renderer on Cloudflare Workers
-    - Met screenshot Signal, Slack, WhatsApp, etc.
-    - Try it now!
-  - En als ik nog tijd heb: projections?
- -->
+
+<Slide>Everyone wants to find a map of their own house!</Slide>
+<!-- Show maps of a few of my houses, with marker! -->
+
+<Slide>
+  {#snippet children({ active })}
+    <WarpedMap
+      {active}
+      annotationUrl="https://annotations.allmaps.org/maps/275c2eaa1606caba"
+    >
+      <!-- TODO add marker! -->
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/maps/b13851734072e204"
+      />
+
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/images/81a4dfe44aff986d"
+      />
+
+      <FlyTo
+        annotationUrl="https://annotations.allmaps.org/maps/55cec090c863a1bc"
+      />
+    </WarpedMap>
+  {/snippet}
+</Slide>
+
+<!-- Stationsplein Bussum https://annotations.allmaps.org/maps/5bddef1cbe5930bc -->
+<!-- eindhovev: maps/620dad197a139f8e -->
+<!-- Utrecht: https://annotations.allmaps.org/maps/d3107dde88ed6585 -->
+<!-- Of luchtfoto: https://annotations.allmaps.org/maps/b13851734072e204 -->
+
+<!-- Amsterdam: maps/435ccc0ea633df34 -->
+<!-- Of: /maps/c1aec8f01932cd7f -->
+<!-- Hezingen: https://annotations.allmaps.org/maps/55cec090c863a1bc -->
+<!-- Greenpoint: https://annotations.allmaps.org/images/81a4dfe44aff986d -->
+<!-- Oostenburg: maps/8596ac3d0e4cba98 -->
+
+<!-- Millions of IIIF maps -->
+<!-- 50,000 already georeferenced with Allmaps -->
+<!-- the goal: georeference them all, and make them easy to find, by their geospatial location -->
+<Slide
+  >Important: Georeference Annotation. Allmaps doesn't store images, only GCPs</Slide
+>
+<Slide>Image data comes from IIIF server</Slide>
+
+<!-- Georeferencing: transform pixel coordinates to geospatial coordinates -->
+<!-- Place GCPs, math will do the rest -->
+<!-- Show Allmaps transform code example -->
+<!-- GeoJSON  -->
+<!-- Cursors -->
+<!-- Render to PNG or SVG -->
+<!-- XYZ tile server -->
+<!-- LMEC -->
+<!-- Geospatial search, show API call -->
+<!-- Allmaps Here -->
+<!-- live demo?  -->
+<!-- Met screenshot Signal, Slack, WhatsApp, etc. -->
+<!-- Try it now!-->
