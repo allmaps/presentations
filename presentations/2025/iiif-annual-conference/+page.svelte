@@ -483,6 +483,23 @@
 <!-- Render to PNG or SVG -->
 <!-- XYZ tile server -->
 <!-- LMEC -->
+
+<section>
+  <div>
+    <img
+      alt="Downtown Boston subway lines on top of a 1769 map"
+      loading="lazy"
+      src="/images/iiif-annual-conference-2025/lmec-garrett-downtown-subway-lines-1769-map.webp"
+    />
+  </div>
+  <div>
+    <p class="p-4 text-3xl">
+      Downtown Boston subway lines on top of a 1769 map, made by Garrett Dash
+      Nelson
+    </p>
+  </div>
+</section>
+
 <!-- Geospatial search, show API call -->
 <!-- Allmaps Here -->
 <!-- live demo?  -->
