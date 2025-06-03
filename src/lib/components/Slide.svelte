@@ -2,11 +2,13 @@
   import type { Snippet } from 'svelte'
 
   import { onMount } from 'svelte'
-  interface Props {
+
+  type Props = {
+    showLogo?: boolean
     children?: Snippet<[{ active: boolean }]>
   }
 
-  let { children }: Props = $props()
+  let { children, showLogo = true }: Props = $props()
 
   let container: HTMLElement
 
@@ -31,6 +33,6 @@
   })
 </script>
 
-<section bind:this={container}>
+<section bind:this={container} class={{ 'section-no-logo': !showLogo }}>
   {@render children?.({ active })}
 </section>
