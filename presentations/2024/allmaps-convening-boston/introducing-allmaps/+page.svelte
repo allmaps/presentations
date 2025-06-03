@@ -59,7 +59,7 @@
     data-loop
     data-autoplay
     data-src="/images/allmaps-convening-boston/fifth-avenue.mp4"
-  />
+  ></video>
 </section>
 
 <section class="section-stretch">
@@ -137,7 +137,7 @@
     data-loop
     data-autoplay
     data-src="/images/open-maps-meeting-2024/building-inspector.mp4"
-  />
+  ></video>
 </section>
 
 <section>
@@ -166,7 +166,7 @@
     data-loop
     data-autoplay
     data-src="/images/open-maps-meeting-2024/lower-east-side-1854.mp4"
-  />
+  ></video>
 </section>
 
 <section>
@@ -261,7 +261,7 @@
     class="w-full h-full"
     data-src="https://bertspaan.nl/krayenhoff-animated/"
     data-preload
-  />
+  ></iframe>
 </section>
 
 <section>
@@ -331,7 +331,7 @@
     class="w-full h-full"
     data-src="https://dev.here.allmaps.org/"
     data-preload
-  />
+  ></iframe>
 </section>
 
 <section>
@@ -342,7 +342,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2024/allmaps-explore.webm"
-  />
+  ></video>
   <div class="space-y-6 text-3xl">
     <p>Filter by year, institution, collection, scale, etc.</p>
   </div>
@@ -422,7 +422,7 @@
     class="w-full h-full"
     data-src="https://cursors.allmaps.org"
     data-preload
-  />
+  ></iframe>
 </section>
 
 <section>
