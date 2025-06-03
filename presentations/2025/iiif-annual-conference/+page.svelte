@@ -26,14 +26,15 @@
   {#snippet children({ active })}
     <WarpedMap
       {active}
-      annotationUrl="https://annotations.allmaps.org/maps/435ccc0ea633df34"
+      annotationUrl="https://annotations.allmaps.org/manifests/f068318457a7df6a"
       caption="From IIIF Image..."
       transformationType="straight"
       hideMap={true}
     >
       <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/435ccc0ea633df34"
-        transformationType="polynomial"
+        annotationUrl="https://annotations.allmaps.org/manifests/f068318457a7df6a"
+        transformationType="thinPlateSpline"
+        padding={200}
         caption="...to a map!"
       />
     </WarpedMap>
@@ -42,17 +43,27 @@
 
 <section class="section-stretch">
   <img
+    alt="River Atlas mid terms"
+    loading="lazy"
+    src="/images/iiif-annual-conference-2023/berlage/berlage-photo-mid-term.jpg"
+  />
+  <div>
+    <p class="text-2xl">
+      Collaboration with The Berlage Center for<br />Advanced Studies in
+      Architecture and Urban Design
+      <br />at Delft University of Technology
+    </p>
+  </div>
+</section>
+
+<section class="section-stretch">
+  <img
     alt="Berlage Curriculum Structure"
     loading="lazy"
     src="/images/iiif-annual-conference-2025/berlage-curriculum-structure.jpg"
   />
   <div>
-    <p class="text-2xl">
-      Curriculum Structure of the postmaster’s program<br />
-      The Berlage Center for Advanced Studies in Architecture and Urban Design<br
-      />
-      Delft University of Technology
-    </p>
+    <p class="text-2xl">Curriculum Structure of the postmaster’s program</p>
   </div>
 </section>
 
@@ -63,12 +74,7 @@
     src="/images/iiif-annual-conference-2025/berlage-curriculum-structure-term-1.jpg"
   />
   <div>
-    <p class="text-2xl">
-      Curriculum Structure of the postmaster’s program<br />
-      The Berlage Center for Advanced Studies in Architecture and Urban Design<br
-      />
-      Delft University of Technology
-    </p>
+    <p class="text-2xl">Curriculum Structure of the postmaster’s program</p>
   </div>
   <div class="absolute top-0 left-0 w-full h-full text-left text-3xl">
     <div class="flex items-end h-full px-24 py-12">
@@ -184,38 +190,32 @@
   {/snippet}
 </Slide>
 
-<section class="section-horizontal text-2xl">
+<section class="text-2xl">
   <div>
     <img
       alt="Annotating maps in Placemark"
       loading="lazy"
       src="/images/iiif-annual-conference-2025/annotations-placemark-chao.jpg"
     />
-    <p class="p-4">Annotating maps in Placemark...</p>
   </div>
   <div>
-    <img
-      alt="Annotating maps in Felt"
-      loading="lazy"
-      src="/images/iiif-annual-conference-2025/annotations-felt-yingxin.jpg"
-    />
-    <p class="p-4">...and Felt</p>
+    <p class="p-4">Annotating maps with web-based GIS tools</p>
   </div>
   <div class="absolute fragment top-0 left-0 w-full h-full text-left text-3xl">
     <div class="flex items-end h-full px-24 py-12">
       <MapMonster mood="happy" color="pink">
-        <p class="p-4 max-w-xl">
-          The Allmaps Tile Server was used<br />to add historical maps
+        <p class="p-4 max-w-md">
+          Allmaps Tile Server turns georeferenced maps into<br />XYZ tile layers
         </p>
       </MapMonster>
     </div>
   </div>
 </section>
 
-<section>
+<!-- <section>
   <div>
     <img
-      alt="Annotating maps in Placemark"
+      alt=""
       loading="lazy"
       src="/images/iiif-annual-conference-2025/historical-reference-map.jpg"
     />
@@ -226,7 +226,7 @@
       Using a historical reference map
     </p>
   </div>
-</section>
+</section> -->
 
 <section>
   <video
@@ -342,38 +342,26 @@
   {#snippet children({ active })}
     <WarpedMap
       {active}
-      annotationUrl="https://annotations.allmaps.org/maps/9ac18cbd99225ac6"
-      caption="River Atlas<br><i>Fictional map of the Efteling in Rotterdam</i>"
+      annotationUrl="https://annotations.allmaps.org/images/e5c702e62b320f42"
+      caption="River Atlas<br><i>Speculative River Map</i>"
     >
       <FlyTo
-        annotationUrl="https://annotations.allmaps.org/images/e5c702e62b320f42"
-        caption="River Atlas<br><i>Speculative River Map</i>"
-      />
-      <FlyTo
-        annotationUrl="https://coastatlas.netlify.app/data/02-argumentation/02-seaside-buildings/allmaps/B4.json"
-        caption="Coast Atlas<br><i>Seaside Buildings</i>"
-      />
-      <FlyTo
-        annotationUrl="https://coastatlas.netlify.app/data/02-argumentation/01-an-engineered-landscape/allmaps/A4.json"
-        caption="Coast Atlas<br><i>An Engineered Landscape</i>"
+        annotationUrl="https://coastatlas.netlify.app/data/02-argumentation/03-military-remnants/allmaps/C1.json"
+        caption="Coast Atlas<br><i>A Rediscovered Shelter</i>"
+        transformationType="helmert"
       />
       <FlyTo
         annotationUrl="https://cityatlas.theberlage.nl/data/03-argumentation/01-uilenburg/annotations/200uilenburg.json"
-        caption="City Atlas<br><i>Uilenburg 1:200</i>"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/images/cc0df207d98ed534"
-        caption="City Atlas<br><i>Houthavens 1:200</i>"
+        caption="City Atlas<br><i>Uilenburg</i>"
       />
     </WarpedMap>
   {/snippet}
 </Slide>
 
-<section>
-  <!-- @todo make this more visual -->
+<!-- <section>
   <div>
     <img
-      alt="Student drawing"
+      alt=""
       loading="lazy"
       src="https://dlc.services/iiif-img/7/34/4ccf7bbb119a0db537fe96672084921f/full/2000,/0/default.jpg"
     />
@@ -381,7 +369,7 @@
   <div>
     <p class="p-4 text-3xl">Multiple maps combined in a single image</p>
   </div>
-</section>
+</section> -->
 
 <section class="section-horizontal text-2xl">
   <div>
@@ -410,38 +398,38 @@
   </div>
 </section>
 
-<Slide>
-  {#snippet children({ active })}
-    <WarpedMap
-      {active}
-      annotationUrl="https://cityatlas.theberlage.nl/data/05-installation/00-slide/annotations/corridor.json"
-      caption="City Atlas<br><i>Installation plan</i>"
-    ></WarpedMap>
-  {/snippet}
-</Slide>
-
-<section class="text-3xl">
+<section class="text-2xl text-left">
   <div class="max-w-5xl">
-    <p class="p-4">
-      <span class="text-orange">River Atlas</span> Nicolaos Charalambous (CY) Chaomin
-      Chen (CN) Sneha Gireesh (IN) Thomas Gkikas (GR) Ujal Gorchu (AZ) Eliott Moreau
-      (FR) Ana Nuño De Buen (MX) Kelly Olinger (US) Maria Stergiou (GR) Lenneke Slangen
-      (NL) Yuhe Tan (CN) Felix Verheyden (BE) Nien Heng Yang (TW) Han Yang (CN)
+    <p class="py-4 text-orange">
+      <a href="https://riveratlas.theberlage.nl/">riveratlas.theberlage.nl</a>
     </p>
-    <p class="p-4">
-      <span class="text-orange">City Atlas</span> Carlos von Bertrab (MX), Mohil
-      Bhavsar (IN), Efi Chatzikonstantinou (GR), Evan Craig (US), Misha Frantsuzov
-      (RU), Sara Gohberg (RU), Ivanna Gressani (AR), Nathalia Kuipers (BR), Ximeng
-      Luo (CN), Andrea Ramos (MX), Lefkothea Spartioti (GR), Yi-an Tseng (TW)
+    <p>
+      Nicolaos Charalambous (CY) Chaomin Chen (CN) Sneha Gireesh (IN) Thomas
+      Gkikas (GR) Ujal Gorchu (AZ) Eliott Moreau (FR) Ana Nuño De Buen (MX)
+      Kelly Olinger (US) Maria Stergiou (GR) Lenneke Slangen (NL) Yuhe Tan (CN)
+      Felix Verheyden (BE) Nien Heng Yang (TW) Han Yang (CN)
     </p>
-    <p class="p-4">
-      <span class="text-orange">Coast Atlas</span> Imane Amzil (MA), Claire Demeyere
-      (BE), Eleni Magnisli (GR), Britt De Schoenmakere (BE), Maria Gabriella Stabile
-      (BR), Ravenna Westerhout (NL) and Yingxin Zhang (CN)
+    <p class="py-4 text-orange">
+      <a href="https://cityatlas.theberlage.nl/">cityatlas.theberlage.nl</a>
     </p>
-    <p class="p-4">
-      <span class="text-orange">Teaching team</span> Sanne van den Breemer, Juan
-      Benavides, Benjamin Groothuijse, Alfons Hooikaas and Jules Schoonman.
+    <p>
+      Carlos von Bertrab (MX), Mohil Bhavsar (IN), Efi Chatzikonstantinou (GR),
+      Evan Craig (US), Misha Frantsuzov (RU), Sara Gohberg (RU), Ivanna Gressani
+      (AR), Nathalia Kuipers (BR), Ximeng Luo (CN), Andrea Ramos (MX), Lefkothea
+      Spartioti (GR), Yi-an Tseng (TW)
+    </p>
+    <p class="py-4 text-orange">
+      <a href="https://coastatlas.theberlage.nl/">coastatlas.theberlage.nl</a>
+    </p>
+    <p>
+      Imane Amzil (MA), Claire Demeyere (BE), Eleni Magnisli (GR), Britt De
+      Schoenmakere (BE), Maria Gabriella Stabile (BR), Ravenna Westerhout (NL)
+      and Yingxin Zhang (CN)
+    </p>
+    <p class="py-4 text-orange">teaching team</p>
+    <p>
+      Sanne van den Breemer, Juan Benavides, Benjamin Groothuijse, Alfons
+      Hooikaas and Jules Schoonman.
     </p>
   </div>
 </section>
