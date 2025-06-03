@@ -6,9 +6,10 @@
     annotationUrl: string
     transformationType?: TransformationType
     caption?: string
+    padding?: number
   }
 
-  let { annotationUrl, transformationType, caption }: Props = $props()
+  let { annotationUrl, transformationType, padding, caption }: Props = $props()
 
   let container: HTMLDivElement
   let active = false
@@ -27,7 +28,13 @@
             active = currentActive
             container.dispatchEvent(
               new CustomEvent('flyTo', {
-                detail: { annotationUrl, transformationType, caption, active },
+                detail: {
+                  annotationUrl,
+                  transformationType,
+                  padding,
+                  caption,
+                  active
+                },
                 bubbles: true
               })
             )
@@ -44,5 +51,7 @@
   class="fragment contents"
   bind:this={container}
   data-annotation-url={annotationUrl}
+  data-transformation-type={transformationType}
   data-caption={caption}
+  data-padding={padding}
 ></div>

@@ -30,12 +30,14 @@
     children?: Snippet
   }
 
+  const defaultPadding = 50
+
   let {
     annotationUrl,
     caption,
     transformationType,
     active = true,
-    padding = 50,
+    padding = defaultPadding,
     hideMap = false,
     children
   }: Props = $props()
@@ -169,6 +171,7 @@
   async function flyTo(
     annotationUrl: string,
     transformationType: TransformationType,
+    padding: number = defaultPadding,
     caption: string
   ) {
     if (annotationUrl === currentAnnotationUrl) {
@@ -225,16 +228,16 @@
     container.addEventListener('flyTo', (event: Event) => {
       const customEvent = event as CustomEvent
       if (customEvent.detail.active) {
-        const { annotationUrl, transformationType, caption } =
+        const { annotationUrl, transformationType, padding, caption } =
           customEvent.detail
-        flyTo(annotationUrl, transformationType, caption)
+        flyTo(annotationUrl, transformationType, padding, caption)
       }
     })
   })
 </script>
 
 <div class="w-screen h-screen" bind:this={container}>
-  <FlyTo {annotationUrl} />
+  <!-- <FlyTo {annotationUrl} /> -->
   {@render children?.()}
 </div>
 {#if currentCaption}
