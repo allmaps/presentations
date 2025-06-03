@@ -63,7 +63,7 @@
     src="/images/iiif-annual-conference-2025/berlage-curriculum-structure.jpg"
   />
   <div>
-    <p class="text-2xl">Curriculum Structure of the postmaster’s program</p>
+    <p class="text-3xl">Curriculum Structure of the postmaster’s program</p>
   </div>
 </section>
 
@@ -74,7 +74,7 @@
     src="/images/iiif-annual-conference-2025/berlage-curriculum-structure-term-1.jpg"
   />
   <div>
-    <p class="text-2xl">Curriculum Structure of the postmaster’s program</p>
+    <p class="text-3xl">Curriculum Structure of the postmaster’s program</p>
   </div>
   <div class="absolute top-0 left-0 w-full h-full text-left text-3xl">
     <div class="flex items-end h-full px-24 py-12">
@@ -176,7 +176,7 @@
   {/snippet}
 </Slide>
 
-<section class="text-2xl">
+<section class="text-3xl">
   <div>
     <img
       alt="Annotating maps in Placemark"
@@ -197,22 +197,6 @@
     </div>
   </div>
 </section>
-
-<!-- <section>
-  <div>
-    <img
-      alt=""
-      loading="lazy"
-      src="/images/iiif-annual-conference-2025/historical-reference-map.jpg"
-    />
-  </div>
-  <div>
-    <p class="p-4 text-3xl">
-      <span class="text-blue">Feature request </span>
-      Using a historical reference map
-    </p>
-  </div>
-</section> -->
 
 <section>
   <video
@@ -284,7 +268,7 @@
   <p class="text-3xl">Slide encoding in markdown with frontmatter</p>
 </section>
 
-<section>
+<!-- <section>
   <div>
     <img
       alt="Log of commits on GitHub"
@@ -294,6 +278,22 @@
   </div>
   <div>
     <p class="p-4 text-3xl">(Don't forget to squash commits...)</p>
+  </div>
+</section> -->
+
+<section>
+  <div>
+    <img
+      alt=""
+      loading="lazy"
+      src="/images/iiif-annual-conference-2025/historical-reference-map.jpg"
+    />
+  </div>
+  <div>
+    <p class="p-4 text-3xl">
+      <span class="text-blue">Feature requests </span>
+      Using a historical reference map
+    </p>
   </div>
 </section>
 
@@ -321,6 +321,33 @@
       src="/images/iiif-annual-conference-2025/overview-map-print.jpg"
     />
     <p class="p-4">back to print!</p>
+  </div>
+</section>
+
+<section class="section-horizontal text-3xl">
+  <div>
+    <img
+      alt="Annotating maps in Placemark"
+      loading="lazy"
+      src="/images/iiif-annual-conference-2025/city-atlas-publication.jpg"
+    />
+    <p class="p-4">City Atlas publication...</p>
+  </div>
+  <div>
+    <img
+      alt="Annotating maps in Felt"
+      loading="lazy"
+      src="/images/iiif-annual-conference-2025/city-atlas-exhibition.jpg"
+    />
+    <p class="p-4">...exhibition...</p>
+  </div>
+  <div>
+    <img
+      alt="Annotating maps in Felt"
+      loading="lazy"
+      src="/images/iiif-annual-conference-2025/city-atlas-app.jpg"
+    />
+    <p class="p-4">...and application</p>
   </div>
 </section>
 
@@ -356,33 +383,6 @@
     <p class="p-4 text-3xl">Multiple maps combined in a single image</p>
   </div>
 </section> -->
-
-<section class="section-horizontal text-2xl">
-  <div>
-    <img
-      alt="Annotating maps in Placemark"
-      loading="lazy"
-      src="/images/iiif-annual-conference-2025/city-atlas-publication.jpg"
-    />
-    <p class="p-4">City Atlas publication...</p>
-  </div>
-  <div>
-    <img
-      alt="Annotating maps in Felt"
-      loading="lazy"
-      src="/images/iiif-annual-conference-2025/city-atlas-exhibition.jpg"
-    />
-    <p class="p-4">...exhibition...</p>
-  </div>
-  <div>
-    <img
-      alt="Annotating maps in Felt"
-      loading="lazy"
-      src="/images/iiif-annual-conference-2025/city-atlas-app.jpg"
-    />
-    <p class="p-4">...and application</p>
-  </div>
-</section>
 
 <section class="text-2xl text-left">
   <div class="max-w-5xl">
