@@ -89,85 +89,71 @@
 
 <section class="section-horizontal text-2xl">
   <div>
+    <p class="p-4">Part I: Documentation</p>
     <img
       alt="Part I: Documentation"
       loading="lazy"
       src="/images/iiif-annual-conference-2025/pt-1-documentation.jpg"
     />
-    <p class="p-4">
-      Part I: Documentation<br />
-      <span class="fragment text-orange">
-        Georeferencing maps and analysing them</span
-      >
+    <p class="p-4 text-blue">
+      Georeferencing maps and<br />analysing them
     </p>
   </div>
-  <div>
+  <div class="fragment">
+    <p class="p-4">Part II: Argumentation</p>
     <img
       alt="Part II: Argumentation"
       loading="lazy"
       src="/images/iiif-annual-conference-2025/pt-2-argumentation.jpg"
     />
-    <p class="p-4">
-      Part II: Argumentation<br />
-      <span class="fragment text-orange"
-        >New drawings expressing a position about the site</span
-      >
+    <p class="p-4 text-blue">
+      New drawings expressing<br />a position about the site
     </p>
   </div>
-  <div>
+  <div class="fragment">
+    <p class="p-4">Part III: Installation</p>
     <img
       alt="Part III: Installation"
       loading="lazy"
       src="/images/iiif-annual-conference-2025/pt-3-installation.jpg"
     />
-    <p class="p-4">
-      Part III: Installation<br />
-      <span class="fragment text-orange">
-        Presentation in an exhibition, publication and digital app</span
-      >
+    <p class="p-4 text-blue">
+      Presentation in an exhibition,<br />publication and digital app
     </p>
   </div>
 </section>
 
 <section class="section-horizontal text-2xl">
   <div>
+    <p class="p-4">River Atlas (2022-23)</p>
     <img
       alt="Workshop 2022"
       loading="lazy"
       src="/images/iiif-annual-conference-2025/workshop-2022.jpg"
     />
-    <p class="p-4">
-      River Atlas (2022-23)<br />
-      <span class="text-orange">
-        TU Delft Library<br />Vrije Universiteit Amsterdam</span
-      >
+    <p class="text-blue p-4">
+      TU Delft Library<br />Vrije Universiteit Amsterdam
     </p>
   </div>
-  <div class="fragment">
+  <div>
+    <p class="p-4">City Atlas (2023-24)</p>
     <img
       alt="Workshop 2023"
       loading="lazy"
       src="/images/iiif-annual-conference-2025/workshop-2023.jpg"
     />
-    <p class="p-4">
-      City Atlas (2023-24)<br />
-      <span class="text-orange">
-        Stadsarchief Amsterdam<br />Allard Pierson</span
-      >
+    <p class="text-blue p-4">
+      Stadsarchief Amsterdam<br />Allard Pierson
     </p>
   </div>
-  <div class="fragment">
+  <div>
+    <p class="p-4">Coast Atlas (2024-25)</p>
     <img
       alt="Workshop 2024"
       loading="lazy"
       src="/images/iiif-annual-conference-2025/workshop-2024.jpg"
     />
-    <p class="p-4">
-      Coast Atlas (2024-25)<br />
-      <span class="text-orange"
-        >National Archives<br />Stadsarchief Rotterdam</span
-      >
-    </p>
+    <p class="text-blue p-4">National Archives<br />Stadsarchief Rotterdam</p>
   </div>
 </section>
 
@@ -222,7 +208,7 @@
   </div>
   <div>
     <p class="p-4 text-3xl">
-      <span class="text-orange">Feature request </span>
+      <span class="text-blue">Feature request </span>
       Using a historical reference map
     </p>
   </div>
@@ -237,7 +223,7 @@
     data-src="/videos/iiif-annual-conference-2025/documentation-slideshow-vijzelstraat.webm"
   ></video>
   <p class="p-4 text-3xl">
-    <span class="text-orange">City Atlas</span>
+    <span class="text-blue">City Atlas</span>
     Vijzelstraat documentation
   </p>
 </section>
@@ -251,7 +237,7 @@
     data-src="/videos/iiif-annual-conference-2025/documentation-slideshow-defense-line.webm"
   ></video>
   <p class="p-4 text-3xl">
-    <span class="text-orange">Coast Atlas</span>
+    <span class="text-blue">Coast Atlas</span>
     Defense Line documentation
   </p>
 </section>
@@ -400,36 +386,36 @@
 
 <section class="text-2xl text-left">
   <div class="max-w-5xl">
-    <p class="py-4 text-orange">
+    <p class="py-4">
       <a href="https://riveratlas.theberlage.nl/">riveratlas.theberlage.nl</a>
     </p>
-    <p>
+    <p class="text-blue">
       Nicolaos Charalambous (CY) Chaomin Chen (CN) Sneha Gireesh (IN) Thomas
       Gkikas (GR) Ujal Gorchu (AZ) Eliott Moreau (FR) Ana Nuño De Buen (MX)
       Kelly Olinger (US) Maria Stergiou (GR) Lenneke Slangen (NL) Yuhe Tan (CN)
       Felix Verheyden (BE) Nien Heng Yang (TW) Han Yang (CN)
     </p>
-    <p class="py-4 text-orange">
+    <p class="py-4">
       <a href="https://cityatlas.theberlage.nl/">cityatlas.theberlage.nl</a>
     </p>
-    <p>
+    <p class="text-blue">
       Carlos von Bertrab (MX), Mohil Bhavsar (IN), Efi Chatzikonstantinou (GR),
       Evan Craig (US), Misha Frantsuzov (RU), Sara Gohberg (RU), Ivanna Gressani
       (AR), Nathalia Kuipers (BR), Ximeng Luo (CN), Andrea Ramos (MX), Lefkothea
       Spartioti (GR), Yi-an Tseng (TW)
     </p>
-    <p class="py-4 text-orange">
+    <p class="py-4">
       <a href="https://coastatlas.theberlage.nl/">coastatlas.theberlage.nl</a>
     </p>
-    <p>
+    <p class="text-blue">
       Imane Amzil (MA), Claire Demeyere (BE), Eleni Magnisli (GR), Britt De
-      Schoenmakere (BE), Maria Gabriella Stabile (BR), Ravenna Westerhout (NL)
-      and Yingxin Zhang (CN)
+      Schoenmakere (BE), Maria Gabriella Stabile (BR), Ravenna Westerhout (NL),
+      Yingxin Zhang (CN)
     </p>
-    <p class="py-4 text-orange">teaching team</p>
-    <p>
+    <p class="py-4">teaching team</p>
+    <p class="text-blue">
       Sanne van den Breemer, Juan Benavides, Benjamin Groothuijse, Alfons
-      Hooikaas and Jules Schoonman.
+      Hooikaas, Jules Schoonman
     </p>
   </div>
 </section>
