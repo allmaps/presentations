@@ -446,7 +446,7 @@
 </section>
 
 <!-- Bert -->
-
+<!-- goal allmaps: make maps discoverable -->
 <Slide>Everyone wants to find a map of their own house!</Slide>
 <!-- Show maps of a few of my houses, with marker! -->
 
@@ -498,7 +498,6 @@
 <!-- Cursors -->
 <!-- Render to PNG or SVG -->
 <!-- XYZ tile server -->
-<!-- LMEC -->
 
 <section>
   <div>
@@ -517,6 +516,7 @@
 </section>
 
 <!-- Geospatial search, show API call -->
+<!-- https://annotations.allmaps.org/maps?intersects=53.79627,-1.54030 -->
 <!-- Allmaps Here -->
 <!-- live demo?  -->
 <!-- Met screenshot Signal, Slack, WhatsApp, etc. -->
