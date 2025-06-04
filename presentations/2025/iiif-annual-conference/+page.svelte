@@ -579,8 +579,8 @@
           'text-shadow-none hover:text-shadow-[5px_5px_10px] transition-all duration-200'
         ]}
       >
-        Allmaps can do more than display a digitized map on top of a geospatial
-        map!
+        Allmaps can do more than display digitized maps on top of geospatial
+        maps!
       </span>&nbsp;
     {/each}
   </p></Slide
