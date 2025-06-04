@@ -27,14 +27,14 @@
   {#snippet children({ active })}
     <WarpedMap
       {active}
-      annotationUrl="https://annotations.allmaps.org/manifests/f068318457a7df6a"
+      annotationUrl="https://annotations.allmaps.org/images/100f9b82bafa957c"
       caption="From IIIF Image..."
       transformationType="straight"
       hideMap={true}
     >
       <FlyTo
-        annotationUrl="https://annotations.allmaps.org/manifests/f068318457a7df6a"
-        transformationType="thinPlateSpline"
+        annotationUrl="https://annotations.allmaps.org/images/100f9b82bafa957c"
+        transformationType="polynomial"
         padding={200}
         caption="...to a map!"
       />
@@ -360,8 +360,8 @@
       caption="River Atlas<br><i>Speculative River Map</i>"
     >
       <FlyTo
-        annotationUrl="https://coastatlas.netlify.app/data/02-argumentation/03-military-remnants/allmaps/C1.json"
-        caption="Coast Atlas<br><i>A Rediscovered Shelter</i>"
+        annotationUrl="https://annotations.allmaps.org/images/c88621b32a073ee2"
+        caption="Coast Atlas<br><i>An Expanded Bunker</i>"
         transformationType="helmert"
       />
       <FlyTo
