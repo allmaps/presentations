@@ -518,7 +518,7 @@
       loading="lazy"
       src="/images/geoforum.dk/allmaps-editor-2.webp"
     />
-    <div>Placing control points is the hard part. Math does the rest.</div>
+    <div>Placing control points is the hard part. The rest is just math.</div>
   </div>
 
   <div class="absolute top-0 left-0 w-full h-full text-left text-3xl fragment">
@@ -787,6 +787,17 @@
       <a class="underline font-bold" href="https://here.allmaps.org"
         >here.allmaps.org</a
       >
+    </div>
+  </div>
+
+  <div class="absolute top-0 left-0 w-full h-full text-left text-3xl fragment">
+    <div class="flex items-end h-full px-24 py-12">
+      <MapMonster mood="excited" color="pink">
+        <p class="p-4 max-w-xl">
+          Join us tomorrow at 1:30 for the workshop "Getting started with
+          Allmaps"
+        </p>
+      </MapMonster>
     </div>
   </div>
 </Slide>
