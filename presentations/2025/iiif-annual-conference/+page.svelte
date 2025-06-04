@@ -13,6 +13,13 @@
   import XYZTiles from '$lib/components/XYZTiles.svelte'
   import Pin from '$lib/components/Pin.svelte'
   import LargeTextShadow from '$lib/components/LargeTextShadow.svelte'
+
+  function randomElement(array: any[]): any {
+    if (!array || array.length === 0) {
+      return null
+    }
+    return array[Math.floor(Math.random() * array.length)]
+  }
 </script>
 
 <svelte:head>
@@ -576,6 +583,24 @@
           index % 3 === 0 && 'text-green',
           index % 3 === 2 && 'text-pink',
           index % 3 === 1 && 'text-yellow',
+          randomElement([
+            'starting:-top-30',
+            'starting:-top-50',
+            'starting:-top-70',
+            'starting:top-30',
+            'starting:top-50',
+            'starting:top-70'
+          ]),
+          randomElement([
+            'starting:-left-30',
+            'starting:-left-50',
+            'starting:-left-70',
+            'starting:left-30',
+            'starting:left-50',
+            'starting:left-70'
+          ]),
+
+          'relative top-0 left-0 duration-2000',
           'text-shadow-none hover:text-shadow-[5px_5px_10px] transition-all duration-200'
         ]}
       >
