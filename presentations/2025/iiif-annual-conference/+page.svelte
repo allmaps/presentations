@@ -467,7 +467,7 @@
   {#snippet children({ active })}
     <MapThumbnails {active}>
       Using Allmaps, we can now georeference, warp and overlay <strong
-        >millions of digitized maps</strong
+        >millions of digitized IIIF maps</strong
       > from institutions around the world
     </MapThumbnails>
   {/snippet}
@@ -511,9 +511,7 @@
       loading="lazy"
       src="/images/geoforum.dk/allmaps-editor-2.webp"
     />
-    <div>
-      Placing control points is the hard part. Mathematics will do the rest.
-    </div>
+    <div>Placing control points is the hard part. Math will do the rest.</div>
   </div>
 
   <div class="absolute top-0 left-0 w-full h-full text-left text-3xl fragment">
@@ -567,6 +565,24 @@
       class="text-shadow-[10px_-10px_10px]
  text-shadow-orange">vice versa</strong
     >!
+  </p></Slide
+>
+
+<Slide
+  ><p class="text-3xl">
+    {#each Array.from({ length: 25 }) as _, index}
+      <span
+        class={[
+          index % 3 === 0 && 'text-green',
+          index % 3 === 2 && 'text-pink',
+          index % 3 === 1 && 'text-yellow',
+          'text-shadow-none hover:text-shadow-[5px_5px_10px] transition-all duration-200'
+        ]}
+      >
+        Allmaps can do more than display a digitized map on top of a geospatial
+        map!
+      </span>&nbsp;
+    {/each}
   </p></Slide
 >
 
