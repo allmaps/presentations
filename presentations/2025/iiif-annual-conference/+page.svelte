@@ -435,15 +435,14 @@
 
 <Slide>
   {#snippet children({ active })}
-    <!-- Oostenburg -->
+    <!-- Loman Atlas, Zuiderkerk -->
     <WarpedMap
       {active}
-      annotationUrl="https://annotations.allmaps.org/maps/8596ac3d0e4cba98"
-      marker={[5.15828, 52.28247]}
+      annotationUrl="https://annotations.allmaps.org/maps/ad0d77e4873b6209"
     >
-      <!-- Loman Atlas, Zuiderkerk -->
+      <!-- Oostenburg -->
       <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/ad0d77e4873b6209"
+        annotationUrl="https://annotations.allmaps.org/maps/8596ac3d0e4cba98"
       />
 
       <!-- Leeds map from National Library of Scotland -->
@@ -705,12 +704,23 @@
     />
   </div>
 </Slide>
+
 <Slide>
   <div>
     <img
       alt="Allmaps here"
       loading="lazy"
       src="/images/iiif-annual-conference-2025/allmaps-here-whatsapp.webp"
+    />
+  </div>
+</Slide>
+
+<Slide>
+  <div>
+    <img
+      alt="Allmaps here"
+      loading="lazy"
+      src="/images/iiif-annual-conference-2025/allmaps-here-signal.webp"
     />
   </div>
 </Slide>
