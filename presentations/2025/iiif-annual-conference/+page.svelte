@@ -518,7 +518,7 @@
       loading="lazy"
       src="/images/geoforum.dk/allmaps-editor-2.webp"
     />
-    <div>Placing control points is the hard part. Math will do the rest.</div>
+    <div>Placing control points is the hard part. Math does the rest.</div>
   </div>
 
   <div class="absolute top-0 left-0 w-full h-full text-left text-3xl fragment">
