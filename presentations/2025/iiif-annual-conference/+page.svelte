@@ -7,11 +7,12 @@
   import Slide from '$lib/components/Slide.svelte'
   import Title from '$lib/components/Title.svelte'
   import MapMonster from '$lib/components/MapMonster.svelte'
-  import ManyMapMonsters from '$lib/components/ManyMapMonsters.svelte'
   import MapThumbnails from '$lib/components/MapThumbnails.svelte'
   import WarpedMap from '$lib/components/WarpedMap.svelte'
-  import XYZ from '$lib/components/XYZ.svelte'
   import FlyTo from '$lib/components/FlyTo.svelte'
+  import XYZTiles from '$lib/components/XYZTiles.svelte'
+  import Pin from '$lib/components/Pin.svelte'
+  import LargeTextShadow from '$lib/components/LargeTextShadow.svelte'
 </script>
 
 <svelte:head>
@@ -421,70 +422,116 @@
 </section>
 
 <!-- Bert -->
-<!-- goal allmaps: make maps discoverable -->
-<Slide>Everyone wants to find a map of their own house!</Slide>
-<!-- Show maps of a few of my houses, with marker! -->
+
+<Slide>
+  <div class="max-w-3xl flex flex-col gap-20">
+    <p>People want to find maps <br /> that show their own house.</p>
+
+    <p>
+      <strong>Or maps around <br /> their <Pin /> current location.</strong>
+    </p>
+  </div></Slide
+>
 
 <Slide>
   {#snippet children({ active })}
+    <!-- Oostenburg -->
     <WarpedMap
       {active}
-      annotationUrl="https://annotations.allmaps.org/maps/275c2eaa1606caba"
+      annotationUrl="https://annotations.allmaps.org/maps/8596ac3d0e4cba98"
+      marker={[5.15828, 52.28247]}
     >
-      <!-- TODO add marker! -->
+      <!-- Loman Atlas, Zuiderkerk -->
       <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/b13851734072e204"
+        annotationUrl="https://annotations.allmaps.org/maps/ad0d77e4873b6209"
       />
 
+      <!-- Leeds map from National Library of Scotland -->
       <FlyTo
-        annotationUrl="https://annotations.allmaps.org/images/81a4dfe44aff986d"
-      />
-
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/55cec090c863a1bc"
+        annotationUrl="https://annotations.allmaps.org/maps/e251ec33fb39693d"
       />
     </WarpedMap>
   {/snippet}
 </Slide>
 
+<!-- Oostenburg: https://annotations.allmaps.org/maps/8596ac3d0e4cba98 -->
 <!-- Stationsplein Bussum https://annotations.allmaps.org/maps/5bddef1cbe5930bc -->
-<!-- eindhovev: maps/620dad197a139f8e -->
+<!-- Eindhoven: https://annotations.allmaps.org/maps/620dad197a139f8e -->
 <!-- Utrecht: https://annotations.allmaps.org/maps/d3107dde88ed6585 -->
 <!-- Of luchtfoto: https://annotations.allmaps.org/maps/b13851734072e204 -->
-
-<!-- Amsterdam: maps/435ccc0ea633df34 -->
-<!-- Of: /maps/c1aec8f01932cd7f -->
+<!-- Amsterdam: https://annotations.allmaps.org/maps/435ccc0ea633df34 -->
+<!-- Of: https://annotations.allmaps.org/maps/c1aec8f01932cd7f -->
 <!-- Hezingen: https://annotations.allmaps.org/maps/55cec090c863a1bc -->
 <!-- Greenpoint: https://annotations.allmaps.org/images/81a4dfe44aff986d -->
-<!-- Oostenburg: maps/8596ac3d0e4cba98 -->
 
 <Slide>
   {#snippet children({ active })}
     <MapThumbnails {active}>
-      Using Georeference Annotations and IIIF, we can now georeference, warp and
-      overlay <strong>millions of digitized maps</strong> from institutions around
-      the world
+      Using Allmaps, we can now georeference, warp and overlay <strong
+        >millions of digitized maps</strong
+      > from institutions around the world
     </MapThumbnails>
   {/snippet}
 </Slide>
 
-<Slide>50,000 already georeferenced with Allmaps</Slide>
-
-<!-- 50,000 already georeferenced with Allmaps -->
-<!-- the goal: georeference them all, and make them easy to find, by their geospatial location -->
 <Slide>
-  <!-- show with map monster! -->
-  Important: Allmaps only stores Georeference Annotations. image data comes from
-  IIIF servers</Slide
->
+  <p>
+    50,000 maps are already georeferenced with Allmaps <br /><span
+      class="font-light">and new ones are added every day</span
+    >
+  </p>
+  <div>
+    <a href="https://latest.allmaps.org">
+      <img
+        alt="Allmaps Latest"
+        loading="lazy"
+        src="/images/iiif-annual-conference-2025/allmaps-latest.webp"
+      /></a
+    >
+  </div>
+</Slide>
 
-<!-- Georeferencing: transform pixel coordinates to geospatial coordinates -->
-<!-- Place GCPs, math will do the rest -->
-<!-- Show Allmaps transform code example -->
+<section>
+  <div class="flex flex-row gap-8 items-center justify-center">
+    <img
+      alt="Georeferencing with Allmaps"
+      loading="lazy"
+      src="/images/geoforum.dk/allmaps-editor-1.webp"
+    />
+    <div>
+      Place control points to link <strong>pixel coordinates</strong> on the
+      digitized IIIF map with <strong>geospatial coordinates</strong>.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="flex flex-row gap-8 items-center justify-center">
+    <img
+      alt="Georeferencing with Allmaps"
+      loading="lazy"
+      src="/images/geoforum.dk/allmaps-editor-2.webp"
+    />
+    <div>
+      Placing control points is the hard part. Mathematics will do the rest.
+    </div>
+  </div>
+
+  <div class="absolute top-0 left-0 w-full h-full text-left text-3xl fragment">
+    <div class="flex items-end h-full px-24 py-12">
+      <MapMonster mood="excited" color="pink">
+        <p class="p-4 max-w-xl">
+          Important! Allmaps only stores georeference data, image data comes
+          from IIIF image servers!
+        </p>
+      </MapMonster>
+    </div>
+  </div>
+</section>
 
 <section>
   <div class="mb-12">
-    <p>Open source JavaScript modules</p>
+    <p>The core of Allmaps: transforming coordinates</p>
   </div>
   <pre class="javascript">
       <code data-line-numbers="" data-trim data-noescape
@@ -505,8 +552,24 @@
     ></pre>
 </section>
 
-<!-- GeoJSON  -->
-<!-- Cursors -->
+<Slide
+  ><p>
+    From <strong
+      class="text-shadow-[10px_10px_10px]
+ text-shadow-pink">pixel coordinates</strong
+    >
+    to
+    <strong
+      class="text-shadow-[-10px_-10px_10px]
+ text-shadow-yellow">geospatial coordinates</strong
+    >
+    and
+    <strong
+      class="text-shadow-[10px_-10px_10px]
+ text-shadow-orange">vice versa</strong
+    >!
+  </p></Slide
+>
 
 <section class="section-stretch">
   <iframe
@@ -517,10 +580,48 @@
   ></iframe>
 </section>
 
-<!-- Render to PNG or SVG -->
-<!-- XYZ tile server -->
+<Slide>
+  <div class="font-mono text-3xl">
+    {@html 'https://allmaps.xyz/images/b84754f0c53f0f4b/{z}/{x}/{y}@2x.png'}
+  </div>
+  <XYZTiles
+    allmapsId="images/b84754f0c53f0f4b"
+    xFrom={8120}
+    yFrom={5275}
+    z={14}
+    xCount={4}
+    yCount={2}
+  />
+
+  <div class="text-2xl max-w-xl">
+    A cloud function downloads a Georeference Annotation and IIIF images,
+    transforms the pixels and outputs PNG tiles
+  </div>
+</Slide>
 
 <Slide>
+  <div>
+    <p class="p-4 text-3xl">
+      Map of Leeds from the National Library of Scotland in QGIS as an XYZ tile
+      layer rendered by Allmaps
+    </p>
+  </div>
+  <div>
+    <img
+      alt="Map of Leeds from the National Library of Scotland in QGIS as an XYZ tile
+      layer rendered by Allmaps"
+      loading="lazy"
+      src="/images/iiif-annual-conference-2025/qgis-xyz-leeds.webp"
+    />
+  </div>
+</Slide>
+
+<Slide>
+  <div>
+    <p class="p-4 text-3xl">
+      SVG export of map rendered by Allmaps in Adobe Illustrator
+    </p>
+  </div>
   <div>
     <img
       alt="SVG export of Waterstaatskaart in Adobe Illustrator"
@@ -528,14 +629,15 @@
       src="/images/iiif-annual-conference-2025/waterstaatskaart-svg-illustrator.webp"
     />
   </div>
-  <div>
-    <p class="p-4 text-3xl">
-      SVG export of Waterstaatskaart generated by Allmaps in Adobe Illustrator
-    </p>
-  </div>
 </Slide>
 
 <Slide>
+  <div>
+    <p class="p-4 text-3xl">
+      Downtown Boston subway lines on top of a 1769 map, made by Garrett Dash
+      Nelson
+    </p>
+  </div>
   <div>
     <img
       alt="Downtown Boston subway lines on top of a 1769 map"
@@ -543,24 +645,97 @@
       src="/images/iiif-annual-conference-2025/lmec-garrett-downtown-subway-lines-1769-map.webp"
     />
   </div>
+</Slide>
+
+<Slide>
+  <a
+    class="underline text-4xl"
+    href="https://annotations.allmaps.org/maps.geojson?intersects=52.3696,4.9256"
+  >
+    https://annotations.allmaps.org/maps.geojson?intersects=52.3696,4.9256</a
+  >
   <div>
-    <p class="p-4 text-3xl">
-      Downtown Boston subway lines on top of a 1769 map, made by Garrett Dash
-      Nelson
-    </p>
+    <img
+      alt="Results of a geospatial query for maps in Amsterdam"
+      loading="lazy"
+      src="/images/iiif-annual-conference-2025/geo-query-geojson.webp"
+    />
+  </div>
+</Slide>
+
+<Slide><LargeTextShadow>COMBINING<br />IT ALL</LargeTextShadow></Slide>
+
+<Slide>
+  <div>
+    <a href="https://here.allmaps.org">
+      <img
+        alt="Allmaps here"
+        loading="lazy"
+        src="/images/iiif-annual-conference-2025/allmaps-here-leeds.webp"
+      />
+    </a>
   </div>
 </Slide>
 
 <Slide>
-  <a href="https://annotations.allmaps.org/maps?intersects=53.79627,-1.54030">
-    https://annotations.allmaps.org/maps?intersects=53.79627,-1.54030</a
+  <a
+    href="https://here.allmaps.org/maps/435ccc0ea633df34?geojson=https%3A%2F%2Famsterdamtimemachine.github.io%2Froutes%2F2025_geoweek.json&position=4.90056,52.37051"
+    >With a GeoJSON route</a
   >
-  <!-- how does it work? -->
+
+  <div>
+    <a
+      href="https://here.allmaps.org/maps/435ccc0ea633df34?geojson=https%3A%2F%2Famsterdamtimemachine.github.io%2Froutes%2F2025_geoweek.json&position=4.90056,52.37051"
+    >
+      <img
+        alt="Allmaps here with GeoJSON route"
+        loading="lazy"
+        src="/images/iiif-annual-conference-2025/allmaps-here-route.webp"
+      />
+    </a>
+  </div>
 </Slide>
 
-<!-- Geospatial search, show API call -->
-<!-- https://annotations.allmaps.org/maps?intersects=53.79627,-1.54030 -->
-<!-- Allmaps Here -->
-<!-- live demo?  -->
-<!-- Met screenshot Signal, Slack, WhatsApp, etc. -->
-<!-- Try it now!-->
+<Slide>
+  <div>
+    <img
+      alt="Allmaps here"
+      loading="lazy"
+      src="/images/iiif-annual-conference-2025/allmaps-here-slack.webp"
+    />
+  </div>
+</Slide>
+<Slide>
+  <div>
+    <img
+      alt="Allmaps here"
+      loading="lazy"
+      src="/images/iiif-annual-conference-2025/allmaps-here-whatsapp.webp"
+    />
+  </div>
+</Slide>
+
+<Slide>
+  <div>
+    <img
+      alt="Allmaps here"
+      loading="lazy"
+      src="/images/iiif-annual-conference-2025/allmaps-here-bluesky.webp"
+    />
+  </div>
+</Slide>
+
+<Slide>
+  <div
+    class="bg-[url(/images/iiif-annual-conference-2025/pins.svg)]
+      w-[900px] h-[900px] bg-center bg-contain bg-no-repeat
+      flex flex-col gap-4 items-center justify-center"
+  >
+    <div>Try Allmaps Here yourself:</div>
+    <div>
+      <a class="underline font-bold" href="https://here.allmaps.org"
+        >here.allmaps.org</a
+      >
+    </div>
+  </div>
+</Slide>
