@@ -34,13 +34,13 @@
   {#snippet children({ active })}
     <WarpedMap
       {active}
-      annotationUrl="https://annotations.allmaps.org/images/100f9b82bafa957c"
+      annotationUrl="https://annotations.allmaps.org/images/25b7d54b8a233aa0@93c54b242ae917f1"
       caption="From IIIF Image..."
       transformationType="straight"
       hideMap={true}
     >
       <FlyTo
-        annotationUrl="https://annotations.allmaps.org/images/100f9b82bafa957c"
+        annotationUrl="https://annotations.allmaps.org/images/25b7d54b8a233aa0@93c54b242ae917f1"
         transformationType="polynomial"
         padding={200}
         caption="...to a map!"
