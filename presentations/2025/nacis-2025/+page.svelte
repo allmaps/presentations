@@ -525,6 +525,11 @@
   />
 </section>
 
+<section>
+  <p>interoperable data makes Allmaps crossovers possible</p>
+  <a href="https://oldinsurancemaps.net/map/sanborn03204_018" target="blank"><img alt="oldinsurancemaps.net" src="/images/nacis-2025/oldinsurance.png"></a>
+</section>
+
 <section class="section-stretch !w-[65%]">
   <MapMonster mood="happy" color="blue">
     <h1 class="!text-white">Allmaps for Anywhere</h1>
@@ -620,7 +625,7 @@
           <img
             class="w-[80%]"
             alt="QR code that links to these slides"
-            src="/images/nacis-2025/qrcode.svg"
+            src="/images/nacis-2025/qrcode-white.svg"
           /></a
         >
       </div>
