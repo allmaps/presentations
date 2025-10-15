@@ -1,0 +1,141 @@
+{
+  "id": "https://annotations.allmaps.org/maps/b5ba4ba2cf5be63f",
+  "type": "Annotation",
+  "@context": [
+    "http://iiif.io/api/extension/georef/1/context.json",
+    "http://iiif.io/api/presentation/3/context.json"
+  ],
+  "created": "2025-10-14T21:49:41.048Z",
+  "modified": "2025-10-14T21:49:41.048Z",
+  "motivation": "georeferencing",
+  "target": {
+    "type": "SpecificResource",
+    "source": {
+      "id": "https://digital.library.louisville.edu/images/7b60d3f3-65c4-41bb-b8c6-e32aa6eee934%2Ffiles%2F6b86512a-8132-45ae-9439-efc0decbf535%2Ffcr:versions%2Fversion1",
+      "type": "ImageService2",
+      "height": 5523,
+      "width": 5277,
+      "partOf": [
+        {
+          "id": "https://digital.library.louisville.edu/concern/images/ulua_mendenhall_map__of_louisville_1906/manifest/canvas/7b60d3f3-65c4-41bb-b8c6-e32aa6eee934",
+          "type": "Canvas",
+          "label": {
+            "none": [
+              "MapofLouisville_1906.jpg"
+            ]
+          },
+          "partOf": [
+            {
+              "id": "https://digital.library.louisville.edu/concern/images/ulua_mendenhall_map__of_louisville_1906/manifest",
+              "type": "Manifest",
+              "label": {
+                "none": [
+                  "Mendenhall's New Index Map of Greater Louisville Ky."
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "selector": {
+      "type": "SvgSelector",
+      "value": "<svg width=\"5277\" height=\"5523\"><polygon points=\"0,0 0,5523 5277,5523 5277,0\" /></svg>"
+    }
+  },
+  "body": {
+    "type": "FeatureCollection",
+    "transformation": {
+      "type": "polynomial",
+      "options": {
+        "order": 1
+      }
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "resourceCoords": [
+            3301,
+            1770
+          ]
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -85.7410891,
+            38.2605925
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "resourceCoords": [
+            610,
+            2572
+          ]
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -85.8326412,
+            38.2507243
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "resourceCoords": [
+            2774,
+            3094
+          ]
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -85.7614394,
+            38.2292547
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "resourceCoords": [
+            3588,
+            723
+          ]
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -85.7211003,
+            38.2894289
+          ]
+        }
+      }
+    ],
+    "_allmaps": {
+      "id": "https://annotations.allmaps.org/maps/b5ba4ba2cf5be63f",
+      "version": "https://annotations.allmaps.org/maps/b5ba4ba2cf5be63f@cc031c39a8c72c86",
+      "image": {
+        "id": "https://annotations.allmaps.org/images/22b070a3a3fe8560",
+        "version": "https://annotations.allmaps.org/images/22b070a3a3fe8560@a2391242eb019ee2",
+        "canvases": [
+          {
+            "id": "https://annotations.allmaps.org/canvases/0363d4d569ee0b96",
+            "manifests": [
+              {
+                "id": "https://annotations.allmaps.org/manifests/0f8101bde57bfb01"
+              }
+            ]
+          }
+        ]
+      },
+      "scale": 0.33578,
+      "area": 258494837.57
+    }
+  }
+}
