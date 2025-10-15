@@ -1,117 +1,30 @@
+<script context="module">
+  export const title = 'Allmaps NACIS 2025'
+  export const date = Date.parse('15 Oct 2025')
+</script>
+
 <script lang="ts">
+  import Slide from '$lib/components/Slide.svelte'
   import Title from '$lib/components/Title.svelte'
+  import ManyMapMonsters from '$lib/components/ManyMapMonsters.svelte'
   import MapMonster from '$lib/components/MapMonster.svelte'
+  import MapThumbnails from '$lib/components/MapThumbnails.svelte'
+  import WarpedMap from '$lib/components/WarpedMap.svelte'
+  import FlyTo from '$lib/components/FlyTo.svelte'
+  import XYZTiles from '$lib/components/XYZTiles.svelte'
+  import Pin from '$lib/components/Pin.svelte'
+  import LargeTextShadow from '$lib/components/LargeTextShadow.svelte'
 
-  import { currentSlide } from '$lib/shared/stores/reveal.js'
-
-  import mapThumbnails from './map-thumbnails.json'
-  import './style.css'
-
-  function shuffle<T>(array: readonly T[]): T[] {
-    let arrayCopy: T[] = [...array]
-
-    let currentIndex = array.length,
-      randomIndex
-
-    while (currentIndex != 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex)
-      currentIndex--
-      ;[arrayCopy[currentIndex], arrayCopy[randomIndex]] = [
-        arrayCopy[randomIndex],
-        arrayCopy[currentIndex]
-      ]
+  function randomElement(array: any[]): any {
+    if (!array || array.length === 0) {
+      return null
     }
-
-    return arrayCopy
-  }
-
-  function randomFromArray<T>(array: readonly T[]): T {
     return array[Math.floor(Math.random() * array.length)]
-  }
-
-  const moods = ['happy', 'excited', 'neutral', 'sad'] as const
-
-  function randomMood() {
-    return randomFromArray(moods)
-  }
-
-  const colors = [
-    'green',
-    'purple',
-    'red',
-    'yellow',
-    'orange',
-    'pink',
-    'blue'
-  ] as const
-
-  function randomColor() {
-    return randomFromArray(colors)
-  }
-
-  function randomFromInterval(min: number, max: number) {
-    return Math.random() * (max - min) + min
-  }
-
-  function randomTransform() {
-    const scale = randomFromInterval(0.8, 1.2)
-    const rotate = randomFromInterval(-15, 15)
-    const translateX = randomFromInterval(-15, 15)
-    const translateY = randomFromInterval(-15, 15)
-
-    return `scale(${scale}) rotate(${rotate}deg) translate(${translateX}px, ${translateY}px)`
-  }
-
-  let mapMonsterInterval: number | undefined
-  let mapMonsterCounter = 0
-
-  const mapMonstersClass = 'w-28'
-
-  let sectionThumbnails: HTMLElement
-  let sectionMapMonsters: HTMLElement
-
-  let mapThumbnailInterval: number | undefined
-  let shuffledMapThumbnails = shuffle(mapThumbnails)
-  let slicedMapThumbnails: string[] = []
-
-  function newSlide(currentSlide: HTMLElement) {
-    if (sectionThumbnails === currentSlide) {
-      if (!mapThumbnailInterval) {
-        mapThumbnailInterval = setInterval(() => {
-          slicedMapThumbnails = shuffledMapThumbnails.slice(
-            0,
-            Math.min(slicedMapThumbnails.length + 1, mapThumbnails.length)
-          )
-        }, 200)
-      }
-    } else {
-      slicedMapThumbnails = []
-      clearInterval(mapThumbnailInterval)
-      mapThumbnailInterval = undefined
-    }
-
-    if (sectionMapMonsters === $currentSlide) {
-      if (!mapMonsterInterval) {
-        mapMonsterInterval = setInterval(() => {
-          mapMonsterCounter++
-        }, 1000)
-      }
-    } else {
-      mapMonsterCounter = 0
-      clearInterval(mapMonsterInterval)
-      mapMonsterInterval = undefined
-    }
-  }
-
-  $: {
-    if ($currentSlide) {
-      newSlide($currentSlide)
-    }
   }
 </script>
 
 <svelte:head>
-  <title>Allmaps NACIS 2025</title>
+  <title>{title}</title>
 </svelte:head>
 
 <Title>
@@ -135,23 +48,23 @@
 <section class="section-stretch">
   <img
     alt="LMEC digital collections"
-    src="images/nacis-2025/lmec-collections.png"
+    src="/images/nacis-2025/lmec-collections.png"
   />
 </section>
 
 <section class="section-stretch">
-  <img alt="LOC collections" src="images/nacis-2025/loc-collections.png" />
+  <img alt="LOC collections" src="/images/nacis-2025/loc-collections.png" />
 </section>
 
 <section class="section-stretch">
   <img
     alt="Rumsey collections"
-    src="images/nacis-2025/rumsey-collections.png"
+    src="/images/nacis-2025/rumsey-collections.png"
   />
 </section>
 
 <section class="section-stretch">
-  <img alt="AGSL collections" src="images/nacis-2025/agsl-collections.png" />
+  <img alt="AGSL collections" src="/images/nacis-2025/agsl-collections.png" />
 </section>
 
 <section>
@@ -176,30 +89,15 @@
   <h3>so what should we do with them?</h3>
 </section>
 
-<section bind:this={sectionMapMonsters} class="gap-2 grid-cols-7 grid-rows-5">
-  {#each Array(9) as _, i (`${i}-${mapMonsterCounter}`)}
-    <div class={mapMonstersClass} style:transform={randomTransform()}>
-      <MapMonster
-        mood={randomMood()}
-        color={randomColor()}
-        shape={Math.floor(randomFromInterval(0, 5))}
-      />
-    </div>
-  {/each}
-  <div class="col-span-3 row-span-2 place-self-center">
-    this is where<br /><strong>Allmaps</strong> comes in!
-  </div>
-
-  {#each Array(20) as _, i (`${i}-${mapMonsterCounter}`)}
-    <div class={mapMonstersClass} style:transform={randomTransform()}>
-      <MapMonster
-        mood={randomMood()}
-        color={randomColor()}
-        shape={Math.floor(randomFromInterval(0, 5))}
-      />
-    </div>
-  {/each}
-</section>
+<Slide>
+  {#snippet children({ active })}
+    <ManyMapMonsters {active}>
+      <div class="col-span-3 row-span-2 place-self-center">
+        this is where<br /><strong>Allmaps</strong> comes in!
+      </div>
+    </ManyMapMonsters>
+  {/snippet}
+</Slide>
 
 <section>
   <p>
@@ -254,6 +152,16 @@
   <iframe title="allmaps" src="https://allmaps.org"></iframe>
 </section>
 
+<Slide>
+  {#snippet children({ active })}
+    <MapThumbnails {active}>
+      Using Allmaps, we can now georeference, warp and overlay <strong
+        >millions of digitized IIIF maps</strong
+      > from institutions around the world
+    </MapThumbnails>
+  {/snippet}
+</Slide>
+
 <section>
   <p>with Allmaps, it's all about the annotation</p>
 </section>
@@ -284,13 +192,13 @@
             "target": {
                 "type": "SpecificResource",
                 "source": {
-                "id": "https://digital.library.louisville.edu/images/7b60d3f3-65c4-41bb-b8c6-e32aa6eee934%2Ffiles%2F6b86512a-8132-45ae-9439-efc0decbf535%2Ffcr:versions%2Fversion1",
+                "id": "https://digital.library.louisville.edu//images/7b60d3f3-65c4-41bb-b8c6-e32aa6eee934%2Ffiles%2F6b86512a-8132-45ae-9439-efc0decbf535%2Ffcr:versions%2Fversion1",
                 "type": "ImageService2",
                 "height": 5523,
                 "width": 5277,
                 "partOf": [
                     {
-                    "id": "https://digital.library.louisville.edu/concern/images/ulua_mendenhall_map__of_louisville_1906/manifest/canvas/7b60d3f3-65c4-41bb-b8c6-e32aa6eee934",
+                    "id": "https://digital.library.louisville.edu/concern//images/ulua_mendenhall_map__of_louisville_1906/manifest/canvas/7b60d3f3-65c4-41bb-b8c6-e32aa6eee934",
                     "type": "Canvas",
                     "label": {
                         "none": [
@@ -299,7 +207,7 @@
                     },
                     "partOf": [
                         {
-                        "id": "https://digital.library.louisville.edu/concern/images/ulua_mendenhall_map__of_louisville_1906/manifest",
+                        "id": "https://digital.library.louisville.edu/concern//images/ulua_mendenhall_map__of_louisville_1906/manifest",
                         "type": "Manifest",
                         "label": {
                             "none": [
@@ -394,8 +302,8 @@
                 "id": "https://annotations.allmaps.org/maps/b5ba4ba2cf5be63f",
                 "version": "https://annotations.allmaps.org/maps/b5ba4ba2cf5be63f@cc031c39a8c72c86",
                 "image": {
-                    "id": "https://annotations.allmaps.org/images/22b070a3a3fe8560",
-                    "version": "https://annotations.allmaps.org/images/22b070a3a3fe8560@a2391242eb019ee2",
+                    "id": "https://annotations.allmaps.org//images/22b070a3a3fe8560",
+                    "version": "https://annotations.allmaps.org//images/22b070a3a3fe8560@a2391242eb019ee2",
                     "canvases": [
                     {
                         "id": "https://annotations.allmaps.org/canvases/0363d4d569ee0b96",
@@ -450,7 +358,7 @@
   <img
     class="absolute"
     alt="louisville map from LOC"
-    src="images/nacis-2025/louisville-map.png"
+    src="/images/nacis-2025/louisville-map.png"
   />
 </section>
 
@@ -458,17 +366,17 @@
   <img
     class="absolute"
     alt="louisville map from LOC"
-    src="images/nacis-2025/louisville-map.png"
+    src="/images/nacis-2025/louisville-map.png"
   />
   <a
     class="absolute border-8 border-pink-300"
     href="https://www.loc.gov/item/79691615/"
     target="blank"
-    ><img alt="manifest" src="images/nacis-2025/manifest.png" /></a
+    ><img alt="manifest" src="/images/nacis-2025/manifest.png" /></a
   >
 </section>
 
-<section class="section-stretch !w-4/5">
+<section class="section-stretch !w-[65%]">
   <MapMonster mood="happy" color="green">
     <h1 class="!text-white">Allmaps for GIS</h1>
   </MapMonster>
@@ -478,7 +386,7 @@
   <img
     class="absolute"
     alt="louisville map from AGSL"
-    src="images/nacis-2025/louisville-agsl.png"
+    src="/images/nacis-2025/louisville-agsl.png"
   />
 </section>
 
@@ -486,13 +394,13 @@
   <img
     class="absolute"
     alt="louisville map from AGSL"
-    src="images/nacis-2025/louisville-agsl.png"
+    src="/images/nacis-2025/louisville-agsl.png"
   />
   <a
     class="absolute border-8 border-pink-300"
     href="https://editor.allmaps.org/images?url=https%3A%2F%2Fcollections.lib.uwm.edu%2Fiiif%2Finfo%2Fagdm%2F21153%2Fmanifest.json"
     target="blank"
-    ><img alt="manifest" src="images/nacis-2025/agsl-manifest.png" /></a
+    ><img alt="manifest" src="/images/nacis-2025/agsl-manifest.png" /></a
   >
 </section>
 
@@ -509,12 +417,12 @@
   <img
     class="absolute"
     alt="louisville map from AGSL"
-    src="images/nacis-2025/qgis.png"
+    src="/images/nacis-2025/qgis.png"
   />
   <img
     class="absolute"
     alt="louisville map from AGSL"
-    src="images/nacis-2025/xyz.png"
+    src="/images/nacis-2025/xyz.png"
   />
 </section>
 
@@ -522,11 +430,11 @@
   <img
     class="absolute"
     alt="louisville map from AGSL"
-    src="images/nacis-2025/qgis.png"
+    src="/images/nacis-2025/qgis.png"
   />
 </section>
 
-<section class="section-stretch !w-[90%]">
+<section class="section-stretch !w-[65%]">
   <MapMonster mood="confused" color="pink">
     <h1 class="!text-white">Allmaps for Educators</h1>
   </MapMonster>
@@ -578,10 +486,10 @@
 </section>
 
 <section class="section-stretch">
-  <img src="images/nacis-2025/city-atlas-gh.png" alt="city atlas gh" />
+  <img src="/images/nacis-2025/city-atlas-gh.png" alt="city atlas gh" />
 </section>
 
-<section class="section-stretch !w-[95%]">
+<section class="section-stretch !w-[65%]">
   <MapMonster mood="excited" color="orange">
     <h1 class="!text-white">Allmaps for Community</h1>
   </MapMonster>
@@ -590,31 +498,39 @@
 <section class="section-stretch">
   <img
     class="h-4/5 rounded p-2 border-2 border-gray-200"
-    src="images/nacis-2025/jan-post.png"
+    src="/images/nacis-2025/jan-post.png"
     alt="jan trachet allmaps linkedin post"
   />
 </section>
 
 <section class="section-stretch">
-  <img src="images/nacis-2025/trachet-scientists.jpeg" alt="trachet mapathon" />
-</section>
-
-<section class="section-stretch">
-  <img src="images/nacis-2025/trachet-index.jpeg" alt="trachet mapathon" />
-</section>
-
-<section class="section-stretch">
-  <img src="images/nacis-2025/trachet-allmaps.jpeg" alt="trachet mapathon" />
-</section>
-
-<section class="section-stretch">
   <img
-    src="images/nacis-2025/trachet-allmaps-tile.jpeg"
+    src="/images/nacis-2025/trachet-scientists.jpeg"
     alt="trachet mapathon"
   />
 </section>
 
-<section class="section-stretch !w-[93%]">
+<section class="section-stretch">
+  <img src="/images/nacis-2025/trachet-index.jpeg" alt="trachet mapathon" />
+</section>
+
+<section class="section-stretch">
+  <img src="/images/nacis-2025/trachet-allmaps.jpeg" alt="trachet mapathon" />
+</section>
+
+<section class="section-stretch">
+  <img
+    src="/images/nacis-2025/trachet-allmaps-tile.jpeg"
+    alt="trachet mapathon"
+  />
+</section>
+
+<section>
+  <p>interoperable data makes Allmaps crossovers possible</p>
+  <a href="https://oldinsurancemaps.net/map/sanborn03204_018" target="blank"><img alt="oldinsurancemaps.net" src="/images/nacis-2025/oldinsurance.png"></a>
+</section>
+
+<section class="section-stretch !w-[65%]">
   <MapMonster mood="happy" color="blue">
     <h1 class="!text-white">Allmaps for Anywhere</h1>
   </MapMonster>
@@ -623,42 +539,39 @@
 <section>
   <p>Here!</p>
   <a href="https://here.allmaps.org" target="blank"
-    ><img src="images/nacis-2025/here.png" alt="here" /></a
+    ><img src="/images/nacis-2025/here.png" alt="here" /></a
   >
 </section>
 
 <section>
   <p>... There?!</p>
   <a href="https://observablehq.com/d/47f259cec6c42178" target="blank"
-    ><img src="images/nacis-2025/there.png" alt="there" /></a
+    ><img src="/images/nacis-2025/there.png" alt="there" /></a
   >
 </section>
 
 <section>
-  <p>
-    Allmaps Annotation API supports geospatial queries
-  </p>
+  <p>Allmaps Annotation API supports geospatial queries</p>
   <code class="text-2xl"
-    ><a href="https://annotations.allmaps.org/maps?intersects=38.25266,-85.75173" target="blank">https://annotations.allmaps.org/maps?intersects=38.25266,-85.75173</a></code
+    ><a
+      href="https://annotations.allmaps.org/maps?intersects=38.25266,-85.75173"
+      target="blank"
+      >https://annotations.allmaps.org/maps?intersects=38.25266,-85.75173</a
+    ></code
   >
-  <img
-    alt="Allmaps Here"
-    loading="lazy"
-    src="/images/nacis-2025/lex.png"
-  />
+  <img alt="Allmaps Here" loading="lazy" src="/images/nacis-2025/lex.png" />
 </section>
 
-
 <section>
-  <p>reverse transforming spatial to pixel </p>
+  <p>reverse transforming spatial to pixel</p>
   <a
     href="https://observablehq.com/@allmaps/using-allmaps-to-draw-geojson-on-a-iiif-image"
     target="blank"
-    ><img src="images/nacis-2025/reverse-warp.png" alt="there" /></a
+    ><img src="/images/nacis-2025/reverse-warp.png" alt="there" /></a
   >
 </section>
 
-<section class="section-stretch !w-[80%]">
+<section class="section-stretch !w-[65%]">
   <MapMonster mood="excited" color="yellow">
     <h1 class="!text-white">Allmaps for Fun</h1>
   </MapMonster>
@@ -683,7 +596,9 @@
   </p>
 </section>
 
-<section class="section-horizontal section-stretch section-no-logo grid-cols-[1fr_60%]">
+<section
+  class="section-horizontal section-stretch section-no-logo grid-cols-[1fr_60%]"
+>
   <p>... or go to Delft!</p>
 
   <div class="flex flex-row gap-8 [&>*]:min-w-0">
@@ -695,7 +610,7 @@
     <img
       alt="Allmaps Arcade cabinet #1"
       loading="lazy"
-      src="/images/iiif-annual-conference-2024/arcade-cabinet-1.jpg"
+      src=" /images/iiif-annual-conference-2024/arcade-cabinet-1.jpg"
     />
   </div>
   <div
@@ -710,7 +625,7 @@
           <img
             class="w-[80%]"
             alt="QR code that links to these slides"
-            src="/images/nacis-2025/qrcode.svg"
+            src="/images/nacis-2025/qrcode-white.svg"
           /></a
         >
       </div>
