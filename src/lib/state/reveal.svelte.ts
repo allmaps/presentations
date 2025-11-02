@@ -33,12 +33,10 @@ export class RevealState {
   }
 
   handleFragmentShown(event: FragmentEvent) {
-    console.log('Fragment shown:', event.fragment)
     this.#lastFragmentShown = event.fragment
   }
 
   handleFragmentHidden(event: FragmentEvent) {
-    console.log('Fragment hidden:', event.fragment)
     this.#lastFragmentHidden = event.fragment
   }
 

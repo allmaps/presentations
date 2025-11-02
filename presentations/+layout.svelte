@@ -32,7 +32,6 @@
   const showIndex = $page.route.id === '/'
 
   function handleLogoClick(event: MouseEvent) {
-    console.log('Logo clicked', event)
     if (!reveal) {
       return
     }
