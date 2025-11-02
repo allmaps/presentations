@@ -16,6 +16,7 @@
   let { active = false, tileUrl, center, zoom, children }: Props = $props()
 
   let mounted = $state(false)
+  let initialized = $state(false)
 
   let container: HTMLDivElement
   let map: Map
@@ -50,6 +51,8 @@
       keyboard: false,
       attributionControl: false
     })
+
+    initialized = true
   }
 
   function removeMap() {
@@ -59,7 +62,7 @@
   $effect(() => {
     if (mounted && active) {
       initializeMap()
-    } else if (mounted && !active) {
+    } else if (initialized && !active) {
       setTimeout(() => removeMap(), 1000)
     }
   })

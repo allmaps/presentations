@@ -9,18 +9,8 @@
   import MapMonster from '$lib/components/MapMonster.svelte'
   import ManyMapMonsters from '$lib/components/ManyMapMonsters.svelte'
   import MapThumbnails from '$lib/components/MapThumbnails.svelte'
-  // import WarpedMap from '$lib/components/WarpedMap.svelte'
-  // import FlyTo from '$lib/components/FlyTo.svelte'
-
-  import { currentSlide } from '$lib/shared/stores/reveal.js'
 
   import './style.css'
-
-  // $: {
-  //   if ($currentSlide) {
-  //     newSlide($currentSlide)
-  //   }
-  // }
 </script>
 
 <svelte:head>

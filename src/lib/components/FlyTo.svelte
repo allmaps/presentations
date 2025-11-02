@@ -2,14 +2,16 @@
   import type { TransformationType } from '@allmaps/transform'
   import { onMount } from 'svelte'
 
-  interface Props {
+  type Props = {
     annotationUrl: string
     transformationType?: TransformationType
     caption?: string
     padding?: number
+    marker?: [number, number]
   }
 
-  let { annotationUrl, transformationType, padding, caption }: Props = $props()
+  let { annotationUrl, transformationType, padding, caption, marker }: Props =
+    $props()
 
   let container: HTMLDivElement
   let active = false
