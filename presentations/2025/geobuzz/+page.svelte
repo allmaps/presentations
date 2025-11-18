@@ -36,6 +36,15 @@
   </h5>
 </Title>
 
+<Title>
+  <h3 class="text-white">Watertijdreis</h3>
+  <h5 class="!text-white text-xl pt-4">
+    Rijksdienst voor het Cultureel Erfgoed<br />
+    Stichting Toegepast Onderzoek Waterbeheer<br />
+    Universiteitsbibliotheek Utrecht
+  </h5>
+</Title>
+
 <Slide>
   {#snippet children({ active })}
     <MapThumbnails {active}>
@@ -243,11 +252,12 @@
   <div
     class="fragment absolute bottom-0 right-0 w-[60%] text-left flex items-end px-24 py-12 drop-shadow-md"
   >
-    <MapMonster mood="confused" color="pink">
+    <MapMonster mood="neutral" color="green">
       <div class="max-w-md p-4">
-        Voor meer informatie kijk eens op <a href="https://allmaps.org/"
-          >allmaps.org</a
-        >
+        <p class="text-left text-[0.6em]">
+          Voor meer informatie<br />
+          zie <b><a href="https://allmaps.org/">allmaps.org</a></b>
+        </p>
       </div>
     </MapMonster>
   </div>
@@ -263,7 +273,7 @@
 </section>
 
 <section class="section-stretch">
-  <p>Werkt het ook voor kaartseries?</p>
+  <p>Maar werkt het ook voor kaartseries?</p>
   <img
     alt="Maps on four IIIF Canvasses that can be turned into one singe map"
     class="pb-20"
@@ -276,7 +286,7 @@
     <MapMonster mood="confused" color="pink">
       <div class="max-w-md p-4">
         <ul class="text-left text-[0.6em]">
-          <li>Met behulp van hoekpunten</li>
+          <li>Gebruikmakend van hoekpunten</li>
           <li>Toegang tot volledige kaartblad</li>
           <li>Dynamische mozaïeken</li>
         </ul>
@@ -284,10 +294,6 @@
     </MapMonster>
   </div>
 </section>
-
-<!-- ======================================================================================== -->
-<!-- ==== Kaartseries ======================================================================= -->
-<!-- ======================================================================================== -->
 
 <Slide>
   {#snippet children({ active })}
@@ -300,6 +306,19 @@
     />
   {/snippet}
 </Slide>
+
+<section class="section-stretch">
+  <p>Samenwerking met MSc Geomatics (TU Delft)</p>
+  <img
+    alt="Visit to the depot of the National Archives with students of the Geomatics Master of the Faculty of Architecture and the Built Environment"
+    loading="lazy"
+    src="/images/iiif-annual-conference-2024/na-visit-depot.jpg"
+  />
+</section>
+
+<!-- ======================================================================================== -->
+<!-- ==== Kaartseries ======================================================================= -->
+<!-- ======================================================================================== -->
 
 <Slide>
   {#snippet children({ active })}
