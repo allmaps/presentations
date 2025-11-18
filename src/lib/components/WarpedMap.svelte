@@ -27,6 +27,7 @@
     active?: boolean
     hideMap?: boolean
     padding?: number
+    fullMask?: boolean
     children?: Snippet
   }
 
@@ -39,6 +40,7 @@
     active = true,
     padding = defaultPadding,
     hideMap = false,
+    fullMask = false,
     children
   }: Props = $props()
 
@@ -69,10 +71,12 @@
       : 'polynomial'
   ) as TransformationType
   let currentCaption = $state(caption)
+  let currentFullMask = fullMask
 
   async function boundsFromAnnotationUrl(
     annotationUrl: string,
-    transformationType: TransformationType = 'polynomial'
+    transformationType: TransformationType = 'polynomial',
+    fullMask: boolean = false
   ): Promise<LngLatBoundsLike | undefined> {
     const annotation = await fetchJson(annotationUrl)
     const maps = parseAnnotation(annotation)
@@ -87,7 +91,18 @@
         differentHandedness
       })
 
-      const polygon = transformer.transformToGeo(map.resourceMask)
+      let resourceMask = map.resourceMask
+      if (fullMask) {
+        const { width, height } = map.resource
+        resourceMask = [
+          [0, 0],
+          [width, 0],
+          [width, height],
+          [0, height]
+        ]
+      }
+
+      const polygon = transformer.transformToGeo(resourceMask)
 
       if (!bbox) {
         bbox = computeBbox(polygon)
@@ -112,7 +127,8 @@
 
     const bounds = await boundsFromAnnotationUrl(
       annotationUrl,
-      currentTransformationType
+      currentTransformationType,
+      fullMask
     )
 
     const style = hideMap ? emptyBaseMapStyle : basemapStyle('en')
@@ -138,25 +154,35 @@
       map.fitBounds(bounds, { padding, animate: false })
     }
 
-    map.on('load', async () => {
-      warpedMapLayer = new WarpedMapLayer()
+    if (map.loaded()) {
+      addWarpedMapLayer()
+    } else {
+      map.on('load', addWarpedMapLayer)
+    }
+  }
 
-      // @ts-expect-error incompatible MapLibre types
-      map.addLayer(warpedMapLayer)
+  async function addWarpedMapLayer() {
+    warpedMapLayer = new WarpedMapLayer()
 
-      annotationUrls.add(currentAnnotationUrl)
+    // @ts-expect-error incompatible MapLibre types
+    map.addLayer(warpedMapLayer)
 
-      warpedMapLayer
-        .addGeoreferenceAnnotationByUrl(currentAnnotationUrl)
-        .then((ids) =>
-          warpedMapLayer.setMapsTransformationType(
-            ids,
-            currentTransformationType
-          )
-        )
+    annotationUrls.add(currentAnnotationUrl)
 
-      initialized = true
-    })
+    warpedMapLayer
+      .addGeoreferenceAnnotationByUrl(currentAnnotationUrl)
+      .then((ids) => {
+        warpedMapLayer.setMapsTransformationType(ids, currentTransformationType)
+        if (fullMask) {
+          for (const id of ids) {
+            const warpedMap = warpedMapLayer.getWarpedMap(id)
+            const resourceFullMask = warpedMap?.resourceFullMask
+            warpedMapLayer.setMapResourceMask(id, resourceFullMask)
+          }
+        }
+      })
+
+    initialized = true
   }
 
   function removeMap() {
@@ -172,19 +198,29 @@
     annotationUrl: string,
     transformationType: TransformationType,
     padding: number = defaultPadding,
-    caption: string
+    caption: string,
+    fullMask: boolean = false
   ) {
     if (annotationUrl === currentAnnotationUrl) {
       if (transformationType !== currentTransformationType) {
         if (transformationTypes.includes(transformationType)) {
           const mapIds = warpedMapLayer.getWarpedMapList().getMapIds()
           warpedMapLayer.setMapsTransformationType(mapIds, transformationType)
-          const bounds = warpedMapLayer.getBounds()
-          if (bounds) {
-            map.fitBounds(bounds, { padding, animate: true })
-          }
           currentTransformationType = transformationType
         }
+      }
+      if (fullMask !== currentFullMask) {
+        const mapIds = warpedMapLayer.getWarpedMapList().getMapIds()
+        for (const id of mapIds) {
+          const warpedMap = warpedMapLayer.getWarpedMap(id)
+          const resourceMask = warpedMap?.georeferencedMap.resourceMask
+          warpedMapLayer.setMapResourceMask(id, resourceMask)
+        }
+        currentFullMask = fullMask
+      }
+      const bounds = warpedMapLayer.getBounds()
+      if (bounds) {
+        await map.fitBounds(bounds, { padding, animate: true })
       }
       if (hideMap) {
         // Show map again after first slide
