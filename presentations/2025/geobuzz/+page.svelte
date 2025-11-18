@@ -32,13 +32,15 @@
   <h5 class="!text-white text-xl pt-4">
     Jules Schoonman (Allmaps, TU Delft Library)<br />
     Martijn Meijers (TU Delft, GIS-technologie)<br />
-    Josephine Spit & Gees Brouwer (De Geomaten)
+    Josephine Spit & Gees Brouwer (De Geomaten)<br />
+    ...
   </h5>
 </Title>
 
 <Title>
   <h3 class="text-white">Watertijdreis</h3>
   <h5 class="!text-white text-xl pt-4">
+    ...<br />
     Rijksdienst voor het Cultureel Erfgoed<br />
     Stichting Toegepast Onderzoek Waterbeheer<br />
     Universiteitsbibliotheek Utrecht
@@ -270,6 +272,18 @@
     data-src="https://here.allmaps.org/?position=5.303116,51.6889387"
     data-preload
   />
+  <div
+    class="fragment absolute bottom-0 right-0 w-[60%] text-left flex items-end px-24 py-12 drop-shadow-md"
+  >
+    <MapMonster mood="neutral" color="green">
+      <div class="max-w-md p-4">
+        <p class="text-left text-[0.6em]">
+          Probeer zelf op<br />
+          <b><a href="https://here.allmaps.org/">here.allmaps.org</a></b>
+        </p>
+      </div>
+    </MapMonster>
+  </div>
 </section>
 
 <section class="section-stretch">
@@ -310,9 +324,9 @@
 <section class="section-stretch">
   <p>Samenwerking met MSc Geomatics (TU Delft)</p>
   <img
-    alt="Visit to the depot of the National Archives with students of the Geomatics Master of the Faculty of Architecture and the Built Environment"
+    alt="Final presentation of the Geomatics Synthesis Project"
     loading="lazy"
-    src="/images/iiif-annual-conference-2024/na-visit-depot.jpg"
+    src="/images/iiif-annual-conference-2024/geomatics-presentation.jpg"
   />
 </section>
 
