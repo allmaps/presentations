@@ -227,20 +227,21 @@
     <WarpedMap
       {active}
       annotationUrl="https://annotations.allmaps.org/manifests/af012d4792961902"
-      caption="Loman Atlas"
-    />
-    <FlyTo
-      annotationUrl="https://sammeltassen.nl/iiif-manifests/allmaps/publieke-werken-1909.json"
-      caption="Publieke Werken (1909)"
-    />
-    <FlyTo
-      annotationUrl="https://sammeltassen.nl/iiif-manifests/allmaps/publieke-werken-1943.json"
-      caption="Publieke Werken (1943)"
-    />
-    <FlyTo
-      annotationUrl="https://sammeltassen.nl/iiif-manifests/allmaps/publieke-werken-1985.json"
-      caption="Publieke Werken (1985)"
-    />
+      caption="Loman Atlas (1876)"
+    >
+      <FlyTo
+        annotationUrl="https://sammeltassen.nl/iiif-manifests/allmaps/publieke-werken-1909.json"
+        caption="Publieke Werken (1909)"
+      />
+      <FlyTo
+        annotationUrl="https://sammeltassen.nl/iiif-manifests/allmaps/publieke-werken-1943.json"
+        caption="Publieke Werken (1943)"
+      />
+      <FlyTo
+        annotationUrl="https://sammeltassen.nl/iiif-manifests/allmaps/publieke-werken-1985.json"
+        caption="Publieke Werken (1985)"
+      />
+    </WarpedMap>
   {/snippet}
 </Slide>
 
