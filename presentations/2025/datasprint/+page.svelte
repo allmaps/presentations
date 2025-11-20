@@ -20,6 +20,7 @@
   <h3 class="text-white">Datasprint Amsterdam Time Machine/Create Lab</h3>
   <h5 class="!text-white text-xl pt-4">
     Jules Schoonman (Allmaps, TU Delft Library)<br />
+    Magriet Hoogvliet (Allard Pierson, UvA)
   </h5>
 </Title>
 
