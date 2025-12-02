@@ -48,23 +48,23 @@
 <section class="section-stretch">
   <img
     alt="LMEC digital collections"
-    src="/images/nacis-2025/lmec-collections.png"
+    src="/images/nacis-2025/lmec-collections.webp"
   />
 </section>
 
 <section class="section-stretch">
-  <img alt="LOC collections" src="/images/nacis-2025/loc-collections.png" />
+  <img alt="LOC collections" src="/images/nacis-2025/loc-collections.webp" />
 </section>
 
 <section class="section-stretch">
   <img
     alt="Rumsey collections"
-    src="/images/nacis-2025/rumsey-collections.png"
+    src="/images/nacis-2025/rumsey-collections.webp"
   />
 </section>
 
 <section class="section-stretch">
-  <img alt="AGSL collections" src="/images/nacis-2025/agsl-collections.png" />
+  <img alt="AGSL collections" src="/images/nacis-2025/agsl-collections.webp" />
 </section>
 
 <section>
@@ -138,7 +138,7 @@
     />
     <img
       alt="arcgis pro"
-      src="https://community.esri.com/legacyfs/online/371570_pastedImage_1.png"
+      src="/images/nacis-2025/arcgispro.webp"
     />
   </div>
 </section>
@@ -358,7 +358,7 @@
   <img
     class="absolute"
     alt="louisville map from LOC"
-    src="/images/nacis-2025/louisville-map.png"
+    src="/images/nacis-2025/louisville-map.webp"
   />
 </section>
 
@@ -366,13 +366,13 @@
   <img
     class="absolute"
     alt="louisville map from LOC"
-    src="/images/nacis-2025/louisville-map.png"
+    src="/images/nacis-2025/louisville-map.webp"
   />
   <a
     class="absolute border-8 border-pink-300"
     href="https://www.loc.gov/item/79691615/"
     target="blank"
-    ><img alt="manifest" src="/images/nacis-2025/manifest.png" /></a
+    ><img alt="manifest" src="/images/nacis-2025/manifest.webp" /></a
   >
 </section>
 
@@ -386,7 +386,7 @@
   <img
     class="absolute"
     alt="louisville map from AGSL"
-    src="/images/nacis-2025/louisville-agsl.png"
+    src="/images/nacis-2025/louisville-agsl.webp"
   />
 </section>
 
@@ -394,13 +394,13 @@
   <img
     class="absolute"
     alt="louisville map from AGSL"
-    src="/images/nacis-2025/louisville-agsl.png"
+    src="/images/nacis-2025/louisville-agsl.webp"
   />
   <a
     class="absolute border-8 border-pink-300"
     href="https://editor.allmaps.org/images?url=https%3A%2F%2Fcollections.lib.uwm.edu%2Fiiif%2Finfo%2Fagdm%2F21153%2Fmanifest.json"
     target="blank"
-    ><img alt="manifest" src="/images/nacis-2025/agsl-manifest.png" /></a
+    ><img alt="manifest" src="/images/nacis-2025/agsl-manifest.webp" /></a
   >
 </section>
 
@@ -417,12 +417,12 @@
   <img
     class="absolute"
     alt="louisville map from AGSL"
-    src="/images/nacis-2025/qgis.png"
+    src="/images/nacis-2025/qgis.webp"
   />
   <img
     class="absolute"
     alt="louisville map from AGSL"
-    src="/images/nacis-2025/xyz.png"
+    src="/images/nacis-2025/xyz.webp"
   />
 </section>
 
@@ -430,7 +430,7 @@
   <img
     class="absolute"
     alt="louisville map from AGSL"
-    src="/images/nacis-2025/qgis.png"
+    src="/images/nacis-2025/qgis.webp"
   />
 </section>
 
@@ -486,7 +486,7 @@
 </section>
 
 <section class="section-stretch">
-  <img src="/images/nacis-2025/city-atlas-gh.png" alt="city atlas gh" />
+  <img src="/images/nacis-2025/city-atlas-gh.webp" alt="city atlas gh" />
 </section>
 
 <section class="section-stretch !w-[65%]">
@@ -498,36 +498,36 @@
 <section class="section-stretch">
   <img
     class="h-4/5 rounded p-2 border-2 border-gray-200"
-    src="/images/nacis-2025/jan-post.png"
+    src="/images/nacis-2025/jan-post.webp"
     alt="jan trachet allmaps linkedin post"
   />
 </section>
 
 <section class="section-stretch">
   <img
-    src="/images/nacis-2025/trachet-scientists.jpeg"
+    src="/images/nacis-2025/trachet-scientists.webp"
     alt="trachet mapathon"
   />
 </section>
 
 <section class="section-stretch">
-  <img src="/images/nacis-2025/trachet-index.jpeg" alt="trachet mapathon" />
+  <img src="/images/nacis-2025/trachet-index.webp" alt="trachet mapathon" />
 </section>
 
 <section class="section-stretch">
-  <img src="/images/nacis-2025/trachet-allmaps.jpeg" alt="trachet mapathon" />
+  <img src="/images/nacis-2025/trachet-allmaps.webp" alt="trachet mapathon" />
 </section>
 
 <section class="section-stretch">
   <img
-    src="/images/nacis-2025/trachet-allmaps-tile.jpeg"
+    src="/images/nacis-2025/trachet-allmaps-tile.webp"
     alt="trachet mapathon"
   />
 </section>
 
 <section>
   <p>interoperable data makes Allmaps crossovers possible</p>
-  <a href="https://oldinsurancemaps.net/map/sanborn03204_018" target="blank"><img alt="oldinsurancemaps.net" src="/images/nacis-2025/oldinsurance.png"></a>
+  <a href="https://oldinsurancemaps.net/map/sanborn03204_018" target="blank"><img alt="oldinsurancemaps.net" src="/images/nacis-2025/oldinsurance.webp"></a>
 </section>
 
 <section class="section-stretch !w-[65%]">
@@ -539,14 +539,14 @@
 <section>
   <p>Here!</p>
   <a href="https://here.allmaps.org" target="blank"
-    ><img src="/images/nacis-2025/here.png" alt="here" /></a
+    ><img src="/images/nacis-2025/here.webp" alt="here" /></a
   >
 </section>
 
 <section>
   <p>... There?!</p>
   <a href="https://observablehq.com/d/47f259cec6c42178" target="blank"
-    ><img src="/images/nacis-2025/there.png" alt="there" /></a
+    ><img src="/images/nacis-2025/there.webp" alt="there" /></a
   >
 </section>
 
@@ -559,7 +559,7 @@
       >https://annotations.allmaps.org/maps?intersects=38.25266,-85.75173</a
     ></code
   >
-  <img alt="Allmaps Here" loading="lazy" src="/images/nacis-2025/lex.png" />
+  <img alt="Allmaps Here" loading="lazy" src="/images/nacis-2025/lex.webp" />
 </section>
 
 <section>
@@ -567,7 +567,7 @@
   <a
     href="https://observablehq.com/@allmaps/using-allmaps-to-draw-geojson-on-a-iiif-image"
     target="blank"
-    ><img src="/images/nacis-2025/reverse-warp.png" alt="there" /></a
+    ><img src="/images/nacis-2025/reverse-warp.webp" alt="there" /></a
   >
 </section>
 
