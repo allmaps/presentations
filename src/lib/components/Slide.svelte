@@ -1,38 +1,43 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte'
-
-  import { onMount } from 'svelte'
+  import { onMount, onDestroy, setContext } from 'svelte'
 
   type Props = {
     showLogo?: boolean
-    children?: Snippet<[{ active: boolean }]>
+    children: any
   }
 
-  let { children, showLogo = true }: Props = $props()
+  let { showLogo = true, children }: Props = $props()
 
   let container: HTMLElement
+  let observer: MutationObserver
 
-  let active = $state(false)
+  let slideState = $state({
+    active: false,
+    index: 0
+  })
+
+  setContext('slide', slideState)
 
   onMount(() => {
-    new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (
-          mutation.attributeName === 'class' &&
-          mutation.target instanceof HTMLElement
-        ) {
-          const currentActive = mutation.target.classList.contains('present')
-          if (currentActive !== active) {
-            active = currentActive
-          }
-        }
-      })
-    }).observe(container, {
+    observer = new MutationObserver(() => {
+      slideState.active = container.classList.contains('present')
+      if (container.dataset.fragment) {
+        slideState.index = Number(container.dataset.fragment) + 1
+      }
+    })
+
+    observer.observe(container, {
       attributes: true
     })
   })
+
+  onDestroy(() => {
+    observer.disconnect()
+  })
 </script>
 
-<section bind:this={container} class={{ 'section-no-logo': !showLogo }}>
-  {@render children?.({ active })}
+<section bind:this={container} class:section-no-logo={!showLogo}>
+  {#if slideState.active}
+    {@render children?.()}
+  {/if}
 </section>

@@ -8,7 +8,7 @@
   let { children }: Props = $props()
 </script>
 
-<div class="text-[13rem] break-all font-bold animating-shadow">
+<div class="text-[12rem] break-all font-bold animating-shadow">
   {@render children?.()}
 </div>
 

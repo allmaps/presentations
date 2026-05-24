@@ -1,22 +1,18 @@
 <script lang="ts">
   import type { Snippet } from 'svelte'
 
-  import { onMount } from 'svelte'
+  import { onDestroy, onMount } from 'svelte'
 
   import { Map } from 'maplibre-gl'
 
   interface Props {
-    active?: boolean
     tileUrl: string
     center: [number, number]
     zoom: number
     children?: Snippet
   }
 
-  let { active = false, tileUrl, center, zoom, children }: Props = $props()
-
-  let mounted = $state(false)
-  let initialized = $state(false)
+  let { tileUrl, center, zoom, children }: Props = $props()
 
   let container: HTMLDivElement
   let map: Map
@@ -55,20 +51,12 @@
     initialized = true
   }
 
-  function removeMap() {
-    map?.remove()
-  }
-
-  $effect(() => {
-    if (mounted && active) {
-      initializeMap()
-    } else if (initialized && !active) {
-      setTimeout(() => removeMap(), 1000)
-    }
+  onMount(() => {
+    initializeMap()
   })
 
-  onMount(() => {
-    mounted = true
+  onDestroy(() => {
+    map.remove()
   })
 </script>
 

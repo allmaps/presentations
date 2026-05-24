@@ -1,6 +1,6 @@
 import { setContext, getContext } from 'svelte'
-
-import type { Api as RevealApi } from 'reveal.js'
+import Reveal, { type Api as RevealApi } from 'reveal.js'
+import revealConfig from './reveal.config.js'
 
 const REVEAL_KEY = Symbol('reveal')
 
@@ -38,6 +38,12 @@ export class RevealState {
 
   handleFragmentHidden(event: FragmentEvent) {
     this.#lastFragmentHidden = event.fragment
+  }
+
+  initialize() {
+    const reveal = new Reveal(revealConfig)
+    reveal.initialize()
+    this.reveal = reveal
   }
 
   set reveal(reveal: RevealApi) {

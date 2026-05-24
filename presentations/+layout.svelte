@@ -1,10 +1,7 @@
 <script lang="ts">
-  import { onMount, onDestroy, tick } from 'svelte'
+  import { onMount, onDestroy } from 'svelte'
+  import { page } from '$app/state'
   import { fade } from 'svelte/transition'
-  import { page } from '$app/stores'
-
-  import Reveal, { type Api as RevealApi } from 'reveal.js'
-  import revealConfig from './reveal.config.js'
 
   import { setRevealState } from '$lib/state/reveal.svelte.js'
 
@@ -25,64 +22,60 @@
 
   let { children }: Props = $props()
 
-  const revealState = setRevealState()
+  let revealState = setRevealState()
 
-  let reveal: RevealApi | undefined
-
-  const showIndex = $page.route.id === '/'
+  const showIndex = page.url.pathname === '/'
 
   function handleLogoClick(event: MouseEvent) {
-    if (!reveal) {
-      return
-    }
-
-    if (event.shiftKey) {
-      reveal.prev()
-    } else {
-      reveal.next()
+    if (revealState.reveal) {
+      if (event.shiftKey) {
+        revealState.reveal.prev()
+      } else {
+        revealState.reveal.next()
+      }
     }
   }
 
   onMount(async () => {
     if (!showIndex) {
-      await tick()
+      revealState.initialize()
 
-      reveal = new Reveal(revealConfig)
-      reveal.initialize()
-
-      revealState.reveal = reveal
-
-      reveal.on('ready', revealState.handleSlideChanged.bind(revealState))
-      reveal.on(
-        'slidechanged',
-        revealState.handleSlideChanged.bind(revealState)
-      )
-      reveal.on(
-        'fragmentshown',
-        revealState.handleFragmentShown.bind(revealState)
-      )
-      reveal.on(
-        'fragmenthidden',
-        revealState.handleFragmentHidden.bind(revealState)
-      )
+      const reveal = revealState.reveal
+      if (reveal) {
+        reveal.on('ready', revealState.handleSlideChanged.bind(revealState))
+        reveal.on(
+          'slidechanged',
+          revealState.handleSlideChanged.bind(revealState)
+        )
+        reveal.on(
+          'fragmentshown',
+          revealState.handleFragmentShown.bind(revealState)
+        )
+        reveal.on(
+          'fragmenthidden',
+          revealState.handleFragmentHidden.bind(revealState)
+        )
+      }
     }
   })
 
   onDestroy(() => {
-    if (!reveal) {
-      return
+    const reveal = revealState.reveal
+    if (reveal) {
+      reveal.off('ready', revealState.handleSlideChanged.bind(revealState))
+      reveal.off(
+        'slidechanged',
+        revealState.handleSlideChanged.bind(revealState)
+      )
+      reveal.off(
+        'fragmentshown',
+        revealState.handleFragmentShown.bind(revealState)
+      )
+      reveal.off(
+        'fragmenthidden',
+        revealState.handleFragmentHidden.bind(revealState)
+      )
     }
-
-    reveal.off('ready', revealState.handleSlideChanged.bind(revealState))
-    reveal.off('slidechanged', revealState.handleSlideChanged.bind(revealState))
-    reveal.off(
-      'fragmentshown',
-      revealState.handleFragmentShown.bind(revealState)
-    )
-    reveal.off(
-      'fragmenthidden',
-      revealState.handleFragmentHidden.bind(revealState)
-    )
   })
 </script>
 

@@ -1,14 +1,14 @@
 <script lang="ts">
+  import { onDestroy, onMount } from 'svelte'
   import type { Snippet } from 'svelte'
 
   import mapThumbnails from './map-thumbnails.json'
 
   interface Props {
-    active?: boolean
     children?: Snippet
   }
 
-  let { active = true, children }: Props = $props()
+  let { children }: Props = $props()
 
   let mapThumbnailInterval: number | undefined
   let shuffledMapThumbnails = shuffle(mapThumbnails)
@@ -59,31 +59,23 @@
 
     return `scale(${scale}) rotate(${rotate}deg) translate(${translateX}px, ${translateY}px)`
   }
-  $effect(() => {
-    if (active) {
-      start()
-    } else {
-      reset()
-    }
-  })
+
+  onMount(() => start())
+  onDestroy(() => reset())
 </script>
 
-<section>
-  {#if active}
-    <div class="absolute top-0 left-0 w-full h-full">
-      {#each slicedMapThumbnails as url, i (i)}
-        <img
-          class="absolute w-56"
-          style:transform={randomTransform()}
-          style:left={randomFromInterval(-200, window.innerWidth) + 'px'}
-          style:top={randomFromInterval(-200, window.innerHeight) + 'px'}
-          alt="Random map thumbnail"
-          src={`/images/iiif-annual-conference-2023/map-thumbnails/${url}`}
-        />
-      {/each}
-    </div>
-    <div class="p-4 z-50 bg-white/80 rounded-lg max-w-3xl">
-      {@render children?.()}
-    </div>
-  {/if}
-</section>
+<div class="absolute top-0 left-0 w-full h-full">
+  {#each slicedMapThumbnails as url, i (i)}
+    <img
+      class="absolute w-56"
+      style:transform={randomTransform()}
+      style:left={randomFromInterval(-200, window.innerWidth) + 'px'}
+      style:top={randomFromInterval(-200, window.innerHeight) + 'px'}
+      alt="Random map thumbnail"
+      src={`/images/iiif-annual-conference-2023/map-thumbnails/${url}`}
+    />
+  {/each}
+</div>
+<div class="p-4 z-50 bg-white/80 rounded-lg max-w-3xl">
+  {@render children?.()}
+</div>

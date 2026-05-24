@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte'
+  import { onDestroy, onMount, type Snippet } from 'svelte'
 
   import MapMonster from '$lib/components/MapMonster.svelte'
 
@@ -8,7 +8,7 @@
     children?: Snippet
   }
 
-  let { active = true, children }: Props = $props()
+  let { children }: Props = $props()
 
   let mapMonsterInterval: number | undefined
   let mapMonsterCounter = $state(0)
@@ -64,16 +64,11 @@
     return `scale(${scale}) rotate(${rotate}deg) translate(${translateX}px, ${translateY}px)`
   }
 
-  $effect(() => {
-    if (active) {
-      start()
-    } else {
-      reset()
-    }
-  })
+  onMount(() => start())
+  onDestroy(() => reset())
 </script>
 
-<section class="gap-2 grid-cols-7 grid-rows-5">
+<div class="p-8 grid gap-2 grid-cols-7 grid-rows-5">
   {#each Array(9) as _, i (`${i}-${mapMonsterCounter}`)}
     <div class={mapMonstersClass} style:transform={randomTransform()}>
       <MapMonster
@@ -96,4 +91,4 @@
       />
     </div>
   {/each}
-</section>
+</div>
