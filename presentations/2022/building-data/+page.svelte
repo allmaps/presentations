@@ -1,5 +1,6 @@
 <script context="module">
-  export const title = 'Building Data'
+  export const title = 'Georeferencing Building Plans'
+  export const subtitle = 'Building Data'
   // Building Data: Architecture, Memory, and New Imaginaries: Proceedings of the 9th Annual Conference of the Jaap Bakema Study Centre
   //   Building Data: Architecture, Memory and New Imaginaries: 9th Annual Bakema Conference 2022 - Faculty of Architecture and the Built Environment, TU Delft and Het Nieuwe Instituut, Rotterdam, Rotterdam, Netherlands
   // Duration: 23 Nov 2022 → 24 Nov 2022

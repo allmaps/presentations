@@ -50,7 +50,7 @@
       hideBackground: true,
       annotations: {
         url: 'https://annotations.allmaps.org/maps/435ccc0ea633df34@3d263d75a9563b6a',
-        bearing: true,
+        useBearing: true,
         options: {
           transformationType: 'helmert',
           applyMask: false

@@ -1,5 +1,6 @@
 <script context="module">
   export const title = 'Watertijdreis'
+  export const subtitle = 'Geobuzz'
   export const date = Date.parse('18 November 2025')
 </script>
 
@@ -70,7 +71,7 @@
       hideBackground: true,
       annotations: {
         url: 'https://annotations.allmaps.org/images/112ec9cb81fd0850@9cac0b66003e7ce9',
-        bearing: true,
+        useBearing: true,
         options: {
           transformationType: 'helmert',
           applyMask: false

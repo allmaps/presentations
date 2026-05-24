@@ -1,5 +1,6 @@
 <script context="module">
-  export const title = 'Allmaps in Practice - IIIF Annual Conference 2023'
+  export const title = 'Allmaps in Practice'
+  export const subtitle = 'IIIF Annual Conference'
   export const date = Date.parse('07 June 2023')
 </script>
 

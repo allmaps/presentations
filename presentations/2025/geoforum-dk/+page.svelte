@@ -538,43 +538,43 @@
     {
       annotations: {
         url: 'https://annotations.allmaps.org/images/899328143b23dc0a',
-        bearing: true
+        useBearing: true
       }
     },
     {
       annotations: {
         url: 'https://annotations.allmaps.org/images/9591a6ec92d0a977',
-        bearing: true
+        useBearing: true
       }
     },
     {
       annotations: {
         url: 'https://annotations.allmaps.org/images/70cc691781ff504a',
-        bearing: true
+        useBearing: true
       }
     },
     {
       annotations: {
         url: 'https://annotations.allmaps.org/images/d4338461602ebff8',
-        bearing: true
+        useBearing: true
       }
     },
     {
       annotations: {
         url: 'https://annotations.allmaps.org/images/cb1f20a39a8d7439',
-        bearing: true
+        useBearing: true
       }
     },
     {
       annotations: {
         url: 'https://annotations.allmaps.org/maps/d6e26a80608dccd2',
-        bearing: true
+        useBearing: true
       }
     },
     {
       annotations: {
         url: 'https://annotations.allmaps.org/maps/dbe2fbebd07ee477',
-        bearing: true
+        useBearing: true
       }
     },
     {

@@ -1,5 +1,6 @@
 <script context="module">
-  export const title = 'Introduction to Allmaps - Open Maps Meeting'
+  export const title = 'Introduction to Allmaps'
+  export const subtitle = 'Open Maps Meeting'
   export const date = Date.parse('05 Nov 2024')
 </script>
 

@@ -1,5 +1,6 @@
 <script context="module">
-  export const title = 'Nieuwe versie Allmaps Viewer - Bijeenkomst NDE in Delft'
+  export const title = 'Nieuwe versie Allmaps Viewer'
+  export const subtitle = 'Verbonden Digitaal Erfgoed'
   export const date = Date.parse('01 Jan 2022')
 </script>
 

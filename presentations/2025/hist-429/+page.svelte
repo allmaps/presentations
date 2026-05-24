@@ -421,7 +421,7 @@
     {
       annotations: {
         url: 'https://annotations.allmaps.org/images/899328143b23dc0a',
-        bearing: true
+        useBearing: true
       }
     },
     {

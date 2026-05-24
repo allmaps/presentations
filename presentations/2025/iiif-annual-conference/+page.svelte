@@ -1,5 +1,6 @@
 <script context="module">
-  export const title = 'IIIF Annual Conference 2025 - Teaching with Allmaps'
+  export const title = 'Teaching with Allmaps'
+  export const subtitle = 'IIIF Annual Conference'
   export const date = Date.parse('4 June 2025')
 </script>
 
@@ -36,7 +37,7 @@
       hideBackground: true,
       annotations: {
         url: 'https://annotations.allmaps.org/images/25b7d54b8a233aa0@93c54b242ae917f1',
-        bearing: true,
+        useBearing: true,
         options: {
           transformationType: 'helmert'
         }
@@ -482,7 +483,7 @@
       // Oostenburg
       annotations: {
         url: 'https://annotations.allmaps.org/maps/8596ac3d0e4cba98',
-        bearing: true
+        useBearing: true
       }
     },
     {

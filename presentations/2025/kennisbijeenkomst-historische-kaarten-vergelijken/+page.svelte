@@ -50,63 +50,63 @@
       annotations: {
         // Prinsengrachtziekenhuis
         url: 'https://annotations.allmaps.org/maps/8dfa7c0a36f7336a',
-        bearing: true
+        useBearing: true
       }
     },
     {
       annotations: {
         // Bussum
         url: 'https://annotations.allmaps.org/maps/58c73354b12a3d6e',
-        bearing: true
+        useBearing: true
       }
     },
     {
       annotations: {
         // Eindhoven
         url: 'https://annotations.allmaps.org/maps/620dad197a139f8e',
-        bearing: true
+        useBearing: true
       }
     },
     {
       annotations: {
         // Utrecht
         url: 'https://annotations.allmaps.org/maps/d9e617c92b987711',
-        bearing: true
+        useBearing: true
       }
     },
     {
       annotations: {
         // Waag
         url: 'https://annotations.allmaps.org/maps/cb06d48aecf12e48',
-        bearing: true
+        useBearing: true
       }
     },
     {
       annotations: {
         // New York
         url: 'https://annotations.allmaps.org/maps/0c082ba891b4fd93',
-        bearing: true
+        useBearing: true
       }
     },
     {
       annotations: {
         // Hezingen
         url: 'https://annotations.allmaps.org/maps/905deea1cb4dc5a3',
-        bearing: true
+        useBearing: true
       }
     },
     {
       annotations: {
         // Oostenburg
         url: 'https://annotations.allmaps.org/maps/8596ac3d0e4cba98',
-        bearing: true
+        useBearing: true
       }
     },
     {
       annotations: {
         // Raalte
         url: 'https://annotations.allmaps.org/maps/e0f9d3f27e6cbca7',
-        bearing: true
+        useBearing: true
       }
     }
   ]}

@@ -1,5 +1,6 @@
 <script module>
-  export const title = 'Introduction to Allmaps - Colocate² @ Stanford'
+  export const title = 'Introduction to Allmaps'
+  export const subtitle = 'Colocate² @ Stanford'
   export const date = Date.parse('26 Feb 2025')
   export const location = 'Stanford, CA'
   export const coordinates = {
@@ -537,7 +538,7 @@
     {
       annotations: {
         url: 'https://annotations.allmaps.org/images/899328143b23dc0a',
-        bearing: true
+        useBearing: true
       }
     },
     {

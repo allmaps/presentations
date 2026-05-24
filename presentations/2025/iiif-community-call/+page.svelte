@@ -1,5 +1,6 @@
 <script context="module">
-  export const title = 'IIIF Community Call - Allmaps-IIIF Partnership'
+  export const title = 'Allmaps-IIIF Partnership'
+  export const subtitle = 'IIIF Community Call'
   export const date = Date.parse('10 December 2025')
 </script>
 

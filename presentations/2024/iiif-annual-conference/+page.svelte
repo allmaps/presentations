@@ -1,6 +1,7 @@
 <script context="module">
   export const title =
     'Unlocking the richness of digitized map series with IIIF and Allmaps'
+  export const subtitle = 'IIIF Annual Conference'
   export const date = Date.parse('4 June 2024')
 </script>
 
