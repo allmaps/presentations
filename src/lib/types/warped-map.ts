@@ -6,7 +6,8 @@ export type WarpedMapProps = {
   url: string
   caption?: string
   homepage?: string
-  bearing?: boolean
+  useBearing?: boolean
+  useBounds?: boolean
   options?: Partial<MapLibreWarpedMapLayerOptions>
   region?: [number, number, number, number]
   wiggle?: boolean

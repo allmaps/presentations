@@ -49,11 +49,16 @@
   let currentLocation = $derived(
     currentView.location ? currentView.location : {}
   )
-  let currentAnnotations = $derived(
-    currentView.annotations
-      ? getValueAsArray(currentView.annotations)
-      : undefined
-  )
+  let currentAnnotations = $derived.by(() => {
+    const annotations = currentView.annotations
+    if (annotations) {
+      const annotationsArr = getValueAsArray(annotations)
+      if (annotationsArr.length) {
+        return annotationsArr
+      }
+    }
+    return undefined
+  })
   let currentImageSlide = $derived(
     currentAnnotations?.some((annotations) => annotations.type === 'Image') ||
       false
@@ -302,8 +307,19 @@
 
       visibleMaps = mapIds
 
+      let mapIdsForBounds = []
+      const boundsFilter = currentAnnotations.filter(
+        (annotation) => annotation.useBounds === true
+      )
+      if (boundsFilter.length) {
+        boundsFilter.forEach(({ url }) => {
+          const ids = mapIdsByAnnotationUrl.get(url)
+          mapIdsForBounds.push(...ids)
+        })
+      } else mapIdsForBounds = mapIds
+
       // Get bounds of visible maps
-      let bounds = warpedMapLayer.getMapsBbox(mapIds, {
+      let bounds = warpedMapLayer.getMapsBbox(mapIdsForBounds, {
         projection: { definition: 'EPSG:4326' }
       })
       // Get optional bearing for map
@@ -311,7 +327,7 @@
       let center: maplibregl.LngLat | undefined
 
       const firstMapWithBearingProp = currentAnnotations.find(
-        (annotation) => annotation.bearing == true
+        (annotation) => annotation.useBearing == true
       )
       if (firstMapWithBearingProp) {
         const warpedMapIds = mapIdsByAnnotationUrl.get(
