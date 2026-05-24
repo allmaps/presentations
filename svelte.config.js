@@ -16,6 +16,10 @@ const config = {
     files: {
       routes: 'presentations'
     },
+    paths: {
+      base: '',
+      relative: false
+    },
     alias: {
       $lib: './src/lib',
       '$lib/*': './src/lib/*'
