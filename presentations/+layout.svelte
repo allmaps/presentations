@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount, onDestroy } from 'svelte'
+  import { onMount } from 'svelte'
   import { page } from '$app/state'
   import { fade } from 'svelte/transition'
 
@@ -36,46 +36,11 @@
     }
   }
 
-  onMount(async () => {
+  onMount(() => {
     if (!showIndex) {
       revealState.initialize()
-
-      const reveal = revealState.reveal
-      if (reveal) {
-        reveal.on('ready', revealState.handleSlideChanged.bind(revealState))
-        reveal.on(
-          'slidechanged',
-          revealState.handleSlideChanged.bind(revealState)
-        )
-        reveal.on(
-          'fragmentshown',
-          revealState.handleFragmentShown.bind(revealState)
-        )
-        reveal.on(
-          'fragmenthidden',
-          revealState.handleFragmentHidden.bind(revealState)
-        )
-      }
     }
-  })
-
-  onDestroy(() => {
-    const reveal = revealState.reveal
-    if (reveal) {
-      reveal.off('ready', revealState.handleSlideChanged.bind(revealState))
-      reveal.off(
-        'slidechanged',
-        revealState.handleSlideChanged.bind(revealState)
-      )
-      reveal.off(
-        'fragmentshown',
-        revealState.handleFragmentShown.bind(revealState)
-      )
-      reveal.off(
-        'fragmenthidden',
-        revealState.handleFragmentHidden.bind(revealState)
-      )
-    }
+    return revealState.destroy()
   })
 </script>
 

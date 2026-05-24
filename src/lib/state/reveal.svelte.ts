@@ -43,7 +43,21 @@ export class RevealState {
   initialize() {
     const reveal = new Reveal(revealConfig)
     reveal.initialize()
+    reveal.on('ready', this.handleSlideChanged.bind(this))
+    reveal.on('slidechanged', this.handleSlideChanged.bind(this))
+    reveal.on('fragmentshown', this.handleFragmentShown.bind(this))
+    reveal.on('fragmenthidden', this.handleFragmentHidden.bind(this))
     this.reveal = reveal
+  }
+
+  destroy() {
+    const reveal = this.reveal
+    if (reveal) {
+      reveal.off('ready', this.handleSlideChanged.bind(this))
+      reveal.off('slidechanged', this.handleSlideChanged.bind(this))
+      reveal.off('fragmentshown', this.handleFragmentShown.bind(this))
+      reveal.off('fragmenthidden', this.handleFragmentHidden.bind(this))
+    }
   }
 
   set reveal(reveal: RevealApi) {
