@@ -5,7 +5,7 @@
     date?: number
   }
 
-  const modules = import.meta.glob('./*/*/+page.svelte', {
+  const modules = import.meta.glob('./*/**/+page.svelte', {
     eager: true
   }) as Record<string, PresentationModule>
 
