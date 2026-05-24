@@ -1,66 +1,39 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
-
-  const presentationImports = import.meta.glob('./*/*/+page.svelte')
-
-  type Presentation = {
-    href: string
+  type PresentationModule = {
     title: string
     subtitle?: string
     date?: number
   }
 
-  let presentationsByYear: Map<number, Presentation[]> = $state(new Map())
+  const modules = import.meta.glob('./*/*/+page.svelte', {
+    eager: true
+  }) as Record<string, PresentationModule>
 
-  onMount(async () => {
-    const presentationsFromImports: Presentation[] = []
+  type Presentation = PresentationModule & {
+    href: string
+    year: number
+  }
 
-    for (const [presentation, importPresentation] of Object.entries(
-      presentationImports
-    )) {
-      const module = await importPresentation()
-      const href = presentation.replace('./', '').replace('/+page.svelte', '')
+  const presentationsByDate: Presentation[] = Object.entries(modules)
+    .map(([href, module]) => ({
+      href: href.replace('+page.svelte', ''),
+      title: module.title,
+      subtitle: module.subtitle,
+      date: module.date || 0,
+      year: module.date ? new Date(module.date).getFullYear() : 0
+    }))
+    .sort((a, b) => (b.date && a.date ? b.date - a.date : 0))
 
-      let title = href
-      let subtitle: string | undefined
-      let date = 0
-
-      if (module && typeof module === 'object') {
-        if ('title' in module) {
-          title = String(module.title)
-        }
-
-        if ('subtitle' in module) {
-          subtitle = String(module.subtitle)
-        }
-
-        if ('date' in module) {
-          date = Number(module.date)
-        }
-      }
-
-      presentationsFromImports.push({
-        href,
-        title,
-        subtitle,
-        date
-      })
-    }
-
-    presentationsByYear = Map.groupBy(
-      presentationsFromImports.toSorted((a, b) =>
-        b.date && a.date ? b.date - a.date : 0
-      ),
-      (presentation) =>
-        presentation.date ? new Date(presentation.date).getFullYear() : 0
-    )
-  })
+  const presentationsGroupedByYear = Map.groupBy(
+    presentationsByDate,
+    ({ year }) => year
+  )
 </script>
 
 <article class="p-8 max-w-lg mx-auto space-y-8">
   <h1 class="py-2 font-bold text-center">Presentations about Allmaps</h1>
   <ol class="space-y-8">
-    {#each [...presentationsByYear.entries()] as [year, presentations]}
+    {#each [...presentationsGroupedByYear.entries()] as [year, presentations]}
       <li class="space-y-2">
         <div class="font-bold">{year > 0 ? year : 'Other presentations'}:</div>
         <ol class="ml-4 list-disc">
