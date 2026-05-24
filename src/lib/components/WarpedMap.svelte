@@ -33,12 +33,13 @@
   let highlight = undefined
 
   let start = true
-  const initialIndex = index
-
+  let transitionCount = 0
   $effect(() => {
-    if (index !== initialIndex) {
+    if (index) {
+      transitionCount++
+    }
+    if (transitionCount > 1) {
       start = false
-      // Add fade in/out transition
       map.setPaintProperty('foreground', 'background-opacity-transition', {
         duration: DURATION
       })
