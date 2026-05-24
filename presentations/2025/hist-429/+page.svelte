@@ -1,4 +1,4 @@
-<script module>
+<script context="module">
   export const title = 'Introduction to Allmaps'
   export const subtitle = 'HIST 429 - Lancaster University'
   export const date = Date.parse('10 March 2025')
@@ -7,11 +7,9 @@
 <script lang="ts">
   import Slide from '$lib/components/Slide.svelte'
   import Title from '$lib/components/Title.svelte'
-  import MapMonster from '$lib/components/MapMonster.svelte'
   import ManyMapMonsters from '$lib/components/ManyMapMonsters.svelte'
   import MapThumbnails from '$lib/components/MapThumbnails.svelte'
-  import WarpedMap from '$lib/components/WarpedMap.svelte'
-  import FlyTo from '$lib/components/FlyTo.svelte'
+  import MapSlide from '$lib/components/MapSlide.svelte'
 </script>
 
 <svelte:head>
@@ -40,13 +38,11 @@
   >
 </Slide>
 
-<Slide >
-  {#snippet children({ active })}
-    <MapThumbnails {active}>
-      <strong>Millions of digitized maps</strong> are available through IIIF, from
-      institutions around the world
-    </MapThumbnails>
-  {/snippet}
+<Slide>
+  <MapThumbnails>
+    <strong>Millions of digitized maps</strong> are available through IIIF, from
+    institutions around the world
+  </MapThumbnails>
 </Slide>
 
 <section>
@@ -211,7 +207,7 @@
     data-loop
     data-autoplay
     data-src="/images/allmaps-convening-boston/fifth-avenue.mp4"
-></video>
+  ></video>
 </section>
 
 <section class="section-stretch">
@@ -268,12 +264,8 @@
   />
 </section>
 
-<Slide >
-  {#snippet children({ active })}
-    <ManyMapMonsters {active}
-      ><strong>What Allmaps can do</strong></ManyMapMonsters
-    >
-  {/snippet}
+<Slide>
+  <ManyMapMonsters><strong>What Allmaps can do</strong></ManyMapMonsters>
 </Slide>
 
 <Slide>
@@ -284,7 +276,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2023/georeferencing-loc-venice.webm"
-></video>
+  ></video>
 </Slide>
 
 <!--
@@ -362,7 +354,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2024/allmaps-explore.webm"
-></video>
+  ></video>
   <div class="space-y-6 text-3xl">
     <p>Filter by year, institution, collection, scale, etc.</p>
   </div>
@@ -398,7 +390,7 @@
     class="w-full h-full"
     data-src="https://cursors.allmaps.org"
     data-preload
-></iframe>
+  ></iframe>
 </section>
 
 <section>
@@ -419,27 +411,36 @@
   >
 </Slide>
 
-<Slide >
-  {#snippet children({ active })}
-    <WarpedMap
-      {active}
-      annotationUrl="https://annotations.allmaps.org/maps/6325db4998c7f13f"
-    >
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/images/899328143b23dc0a"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/manifests/a35b2badba5505ab"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/manifests/071c6ba31f9c88d4"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/manifests/fc2c32dc51b145d8"
-      />
-    </WarpedMap>
-  {/snippet}
-</Slide>
+<MapSlide
+  views={[
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/maps/6325db4998c7f13f'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/899328143b23dc0a',
+        bearing: true
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/manifests/a35b2badba5505ab'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/manifests/071c6ba31f9c88d4'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/manifests/fc2c32dc51b145d8'
+      }
+    }
+  ]}
+/>
 
 <Slide>
   <p>Tutorial:</p>

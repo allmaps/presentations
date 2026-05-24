@@ -9,9 +9,8 @@
   import MapMonster from '$lib/components/MapMonster.svelte'
   import ManyMapMonsters from '$lib/components/ManyMapMonsters.svelte'
   import MapThumbnails from '$lib/components/MapThumbnails.svelte'
-  import WarpedMap from '$lib/components/WarpedMap.svelte'
   import XYZ from '$lib/components/XYZ.svelte'
-  import FlyTo from '$lib/components/FlyTo.svelte'
+  import MapSlide from '$lib/components/MapSlide.svelte'
 </script>
 
 <svelte:head>
@@ -33,14 +32,11 @@
 </Title>
 
 <Slide>
-  {#snippet children({ active })}
-    <XYZ
-      {active}
-      tileUrl={'https://rtiles.waag.org/services/buildings/tiles/{z}/{x}/{y}.png'}
-      center={[4.6355, 52.3817]}
-      zoom={12}
-    />
-  {/snippet}
+  <XYZ
+    tileUrl={'https://rtiles.waag.org/services/buildings/tiles/{z}/{x}/{y}.png'}
+    center={[4.6355, 52.3817]}
+    zoom={12}
+  />
 </Slide>
 
 <section class="section-stretch">
@@ -71,27 +67,35 @@
   />
 </section>
 
-<Slide>
-  {#snippet children({ active })}
-    <WarpedMap
-      {active}
-      annotationUrl="https://annotations.allmaps.org/images/3f2cea6d5506bfd9"
-    >
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/images/11a1070a3fdfb78e"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/images/ea443ffaabb121e2"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/51c6caacf5f1e4d5"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/28ed75ea7a785f32"
-      />
-    </WarpedMap>
-  {/snippet}
-</Slide>
+<MapSlide
+  views={[
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/3f2cea6d5506bfd9'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/11a1070a3fdfb78e'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/ea443ffaabb121e2'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/maps/51c6caacf5f1e4d5'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/maps/28ed75ea7a785f32'
+      }
+    }
+  ]}
+/>
 
 <section>
   <p>Map Warper</p>
@@ -283,12 +287,10 @@
 </section>
 
 <Slide>
-  {#snippet children({ active })}
-    <MapThumbnails {active}>
-      <strong>Millions of digitized maps</strong> are available through IIIF, from
-      institutions around the world
-    </MapThumbnails>
-  {/snippet}
+  <MapThumbnails>
+    <strong>Millions of digitized maps</strong> are available through IIIF, from
+    institutions around the world
+  </MapThumbnails>
 </Slide>
 
 <section>
@@ -349,11 +351,7 @@
 </section>
 
 <Slide>
-  {#snippet children({ active })}
-    <ManyMapMonsters {active}
-      ><strong>Some (new) features</strong></ManyMapMonsters
-    >
-  {/snippet}
+  <ManyMapMonsters><strong>Some (new) features</strong></ManyMapMonsters>
 </Slide>
 
 <section>
@@ -436,30 +434,40 @@
 
 <section>Let's end this presentation with some more maps:</section>
 
-<Slide>
-  {#snippet children({ active })}
-    <WarpedMap
-      {active}
-      annotationUrl="https://annotations.allmaps.org/maps/6325db4998c7f13f"
-    >
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/eaa990689f45a090"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/manifests/a35b2badba5505ab"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/manifests/64d6e35b64564692"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/manifests/fc2c32dc51b145d8"
-      />
-      <FlyTo
-        annotationUrl="https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/north_korea/20231123.json"
-      />
-    </WarpedMap>
-  {/snippet}
-</Slide>
+<MapSlide
+  views={[
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/maps/6325db4998c7f13f'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/maps/eaa990689f45a090'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/manifests/a35b2badba5505ab'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/manifests/64d6e35b64564692'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/manifests/fc2c32dc51b145d8'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/north_korea/20231123.json'
+      }
+    }
+  ]}
+/>
 
 <section>
   <p>

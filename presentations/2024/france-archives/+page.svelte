@@ -33,7 +33,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2023/georeferencing-loc-venice.webm"
-  />
+  ></video>
 </section>
 
 <section>
@@ -199,14 +199,12 @@
 </section>
 
 <Slide>
-  {#snippet children({ active })}
-    <MapThumbnails {active}>
-      Using Georeference Annotations <br />
-      we can georeference, warp and overlay <br />
-      <strong>millions of digitized IIIF maps</strong> <br />
-      from institutions around the world
-    </MapThumbnails>
-  {/snippet}
+  <MapThumbnails>
+    Using Georeference Annotations <br />
+    we can georeference, warp and overlay <br />
+    <strong>millions of digitized IIIF maps</strong> <br />
+    from institutions around the world
+  </MapThumbnails>
 </Slide>
 
 <section>
@@ -290,7 +288,7 @@
     data-fragment-index="1"
     data-src="https://cursor.allmaps.org/?url=https%3A%2F%2Fannotations.allmaps.org%2Fmaps%2F12a2ad54ed9fdd00"
     data-preload
-  />
+  ></iframe>
   <!-- https://dev.viewer.allmaps.org/?url=https%3A%2F%2Fannotations.allmaps.org%2Fimages%2F5afc515e4d10fd95 -->
 </section>
 
@@ -351,9 +349,7 @@
 </section>
 
 <Slide>
-  {#snippet children({ active })}
-    <ManyMapMonsters {active}>Some cool features</ManyMapMonsters>
-  {/snippet}
+  <ManyMapMonsters>Some cool features</ManyMapMonsters>
 </Slide>
 
 <section>
@@ -366,7 +362,7 @@
     data-loop
     data-autoplay
     data-src="/videos/soduco-bnf-seminar-2023/barricades-background-removal.mp4"
-  />
+  ></video>
 </section>
 
 <section>
@@ -379,7 +375,7 @@
     data-loop
     data-autoplay
     data-src="/videos/soduco-bnf-seminar-2023/verniquet-colorize.mp4"
-  />
+  ></video>
 </section>
 
 <section>
@@ -411,7 +407,7 @@
     data-loop
     data-autoplay
     data-src="/videos/soduco-bnf-seminar-2023/tps-metro-paris.mp4"
-  />
+  ></video>
 </section>
 
 <section>
@@ -444,7 +440,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2024/allmaps-explore.webm"
-  />
+  ></video>
 </section>
 
 <section class="section-horizontal section-stretch">
@@ -454,7 +450,7 @@
     data-fragment-index="1"
     data-src="https://dev.viewer.allmaps.org/?url=https%3A%2F%2Fannotations.allmaps.org%2Fmaps%2Fb84eeaabaa842fa4"
     data-preload
-  />
+  ></iframe>
 </section>
 
 <section class="section-horizontal section-stretch">
@@ -464,7 +460,7 @@
     data-fragment-index="1"
     data-src="https://dev.viewer.allmaps.org/?url=https%3A%2F%2Fannotations.allmaps.org%2Fmaps%2Fcf4eb38cfd72a7e5"
     data-preload
-  />
+  ></iframe>
 </section>
 
 <section class="section-horizontal section-stretch">
@@ -474,7 +470,7 @@
     data-fragment-index="1"
     data-src="https://dev.viewer.allmaps.org/?url=https%3A%2F%2Fannotations.allmaps.org%2Fmaps%2F13d5de6e70269314"
     data-preload
-  />
+  ></iframe>
 </section>
 
 <section class="section-horizontal section-stretch">
@@ -484,7 +480,7 @@
     data-fragment-index="1"
     data-src="https://dev.viewer.allmaps.org/?url=https%3A%2F%2Fannotations.allmaps.org%2Fmaps%2Ff113f17cd646d4c6"
     data-preload
-  />
+  ></iframe>
 </section>
 
 <section class="section-horizontal section-stretch">
@@ -494,7 +490,7 @@
     data-fragment-index="1"
     data-src="https://dev.viewer.allmaps.org/?url=https%3A%2F%2Fannotations.allmaps.org%2Fmaps%2Fb364a1fd6f97c466"
     data-preload
-  />
+  ></iframe>
 </section>
 
 <section class="section-horizontal section-stretch">
@@ -504,7 +500,7 @@
     data-fragment-index="1"
     data-src="https://dev.viewer.allmaps.org/?url=https%3A%2F%2Fannotations.allmaps.org%2Fmaps%2Ff1434d4efbc1f61e"
     data-preload
-  />
+  ></iframe>
 </section>
 
 <section class="section-horizontal section-stretch">
@@ -514,7 +510,7 @@
     data-fragment-index="1"
     data-src="https://dev.viewer.allmaps.org/?url=https%3A%2F%2Fannotations.allmaps.org%2Fmaps%2Febc46e17cddd5c79"
     data-preload
-  />
+  ></iframe>
 </section>
 
 <section class="section-horizontal section-stretch">
@@ -524,7 +520,7 @@
     data-fragment-index="1"
     data-src="https://dev.viewer.allmaps.org/?url=https%3A%2F%2Fannotations.allmaps.org%2Fmaps%2F99e9a76cb7acfa5d"
     data-preload
-  />
+  ></iframe>
 </section>
 
 <section class="section-horizontal section-stretch">
@@ -534,7 +530,7 @@
     data-fragment-index="1"
     data-src="https://dev.viewer.allmaps.org/?url=https%3A%2F%2Fannotations.allmaps.org%2Fmaps%2F7e4ec228b6d3e8f4"
     data-preload
-  />
+  ></iframe>
 </section>
 
 <section class="section-horizontal section-stretch">
@@ -544,7 +540,7 @@
     data-fragment-index="1"
     data-src="https://dev.viewer.allmaps.org/?url=https%3A%2F%2Fannotations.allmaps.org%2Fmanifests%2Fa473b2e870064d6d"
     data-preload
-  />
+  ></iframe>
 </section>
 
 <section class="section-stretch">
@@ -554,7 +550,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2024/allmaps-arcade.webm"
-  />
+  ></video>
 </section>
 
 <section class="section-stretch">

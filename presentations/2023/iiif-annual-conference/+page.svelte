@@ -167,13 +167,11 @@
 </section>
 
 <Slide>
-  {#snippet children({ active })}
-    <MapThumbnails {active}>
-      Using Georeference Annotations and IIIF, we can now georeference, warp and
-      overlay <strong>millions of digitized maps</strong> from institutions around
-      the world
-    </MapThumbnails>
-  {/snippet}
+  <MapThumbnails>
+    Using Georeference Annotations and IIIF, we can now georeference, warp and
+    overlay <strong>millions of digitized maps</strong> from institutions around
+    the world
+  </MapThumbnails>
 </Slide>
 
 <!--
@@ -366,13 +364,11 @@
 </section>
 
 <Slide>
-  {#snippet children({ active })}
-    <ManyMapMonsters {active}>
-      Institutions around the world are starting to use Allmaps, <strong
-        >more than 23.000</strong
-      > georeferenced maps are already available</ManyMapMonsters
-    >
-  {/snippet}
+  <ManyMapMonsters>
+    Institutions around the world are starting to use Allmaps, <strong
+      >more than 23.000</strong
+    > georeferenced maps are already available</ManyMapMonsters
+  >
 </Slide>
 
 <section>

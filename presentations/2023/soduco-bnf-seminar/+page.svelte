@@ -188,13 +188,11 @@
 </section>
 
 <Slide>
-  {#snippet children({ active })}
-    <MapThumbnails {active}>
-      Using Georeference Annotations and IIIF, we can now georeference, warp and
-      overlay <strong>millions of digitized maps</strong> from institutions around
-      the world
-    </MapThumbnails>
-  {/snippet}
+  <MapThumbnails>
+    Using Georeference Annotations and IIIF, we can now georeference, warp and
+    overlay <strong>millions of digitized maps</strong> from institutions around
+    the world
+  </MapThumbnails>
 </Slide>
 
 <section>
@@ -222,9 +220,7 @@
   </ol>
 </section>
 <Slide>
-  {#snippet children({ active })}
-    <ManyMapMonsters {active}>Some new features:</ManyMapMonsters>
-  {/snippet}
+  <ManyMapMonsters>Some new features:</ManyMapMonsters>
 </Slide>
 
 <section>
@@ -308,9 +304,7 @@
 </section>
 
 <Slide>
-  {#snippet children({ active })}
-    <ManyMapMonsters {active}>Future plans:</ManyMapMonsters>
-  {/snippet}
+  <ManyMapMonsters>Future plans:</ManyMapMonsters>
 </Slide>
 
 <section>

@@ -8,8 +8,7 @@
   import Title from '$lib/components/Title.svelte'
   import MapMonster from '$lib/components/MapMonster.svelte'
   import MapThumbnails from '$lib/components/MapThumbnails.svelte'
-  import WarpedMap from '$lib/components/WarpedMap.svelte'
-  import FlyTo from '$lib/components/FlyTo.svelte'
+  import MapSlide from '$lib/components/MapSlide.svelte'
 </script>
 
 <svelte:head>
@@ -25,45 +24,53 @@
 </Title>
 
 <Slide>
-  {#snippet children({ active })}
-    <MapThumbnails {active}>
-      Talloze kaarten zijn gedigitaliseerd door archieven, bibliotheken en musea
-      wereldwijd
-      <div
-        class="fragment absolute top-0 left-0 w-full h-full text-left text-3xl"
-      >
-        <div class="flex items-end h-full px-24 py-12">
-          <MapMonster mood="happy" color="pink">
-            <p class="p-4 max-w-xl">
-              Vaak beschikbaar als open data dankzij het <b
-                >International Image Interoperability Framework</b
-              > (IIIF)
-            </p>
-          </MapMonster>
-        </div>
+  <MapThumbnails>
+    Talloze kaarten zijn gedigitaliseerd door archieven, bibliotheken en musea
+    wereldwijd
+    <div
+      class="fragment absolute top-0 left-0 w-full h-full text-left text-3xl"
+    >
+      <div class="flex items-end h-full px-24 py-12">
+        <MapMonster mood="happy" color="pink">
+          <p class="p-4 max-w-xl">
+            Vaak beschikbaar als open data dankzij het <b
+              >International Image Interoperability Framework</b
+            > (IIIF)
+          </p>
+        </MapMonster>
       </div>
-    </MapThumbnails>
-  {/snippet}
+    </div>
+  </MapThumbnails>
 </Slide>
 
-<Slide>
-  {#snippet children({ active })}
-    <WarpedMap
-      {active}
-      annotationUrl="https://annotations.allmaps.org/maps/435ccc0ea633df34@3d263d75a9563b6a"
-      caption="Allmaps maakt van een IIIF beeld..."
-      transformationType="straight"
-      hideMap={true}
-    >
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/435ccc0ea633df34@3d263d75a9563b6a"
-        transformationType="helmert"
-        padding={200}
-        caption="...een kaart!"
-      />
-    </WarpedMap>
-  {/snippet}
-</Slide>
+<MapSlide
+  views={[
+    {
+      caption: 'Allmaps maakt van een IIIF beeld...',
+      hideBackground: true,
+      annotations: {
+        url: 'https://annotations.allmaps.org/maps/435ccc0ea633df34@3d263d75a9563b6a',
+        bearing: true,
+        options: {
+          transformationType: 'helmert',
+          applyMask: false
+        }
+      }
+    },
+    {
+      location: {
+        duration: 3000
+      },
+      caption: '...een kaart!',
+      annotations: {
+        url: 'https://annotations.allmaps.org/maps/435ccc0ea633df34@3d263d75a9563b6a',
+        options: {
+          transformationType: 'polynomial'
+        }
+      }
+    }
+  ]}
+/>
 
 <section>
   <p>Opgeslagen als <b>Georeference Annotations</b>!</p>
@@ -208,7 +215,7 @@
     class="w-full h-full"
     data-src="https://here.allmaps.org/?position=4.8981663,52.3707822&geojson=https%3A%2F%2Famsterdamtimemachine.github.io%2Froutes%2F2025_geoweek.json"
     data-preload
-  />
+  ></iframe>
   <div
     class="fragment absolute bottom-0 right-0 w-[60%] text-left flex items-end px-24 py-12 drop-shadow-md z-20"
   >
@@ -223,28 +230,34 @@
   </div>
 </section>
 
-<Slide>
-  {#snippet children({ active })}
-    <WarpedMap
-      {active}
-      annotationUrl="https://annotations.allmaps.org/manifests/af012d4792961902"
-      caption="Loman Atlas (1876)"
-    >
-      <FlyTo
-        annotationUrl="https://sammeltassen.nl/iiif-manifests/allmaps/publieke-werken-1909.json"
-        caption="Publieke Werken (1909)"
-      />
-      <FlyTo
-        annotationUrl="https://sammeltassen.nl/iiif-manifests/allmaps/publieke-werken-1943.json"
-        caption="Publieke Werken (1943)"
-      />
-      <FlyTo
-        annotationUrl="https://sammeltassen.nl/iiif-manifests/allmaps/publieke-werken-1985.json"
-        caption="Publieke Werken (1985)"
-      />
-    </WarpedMap>
-  {/snippet}
-</Slide>
+<MapSlide
+  views={[
+    {
+      caption: 'Loman Atlas (1876)',
+      annotations: {
+        url: 'https://annotations.allmaps.org/manifests/af012d4792961902'
+      }
+    },
+    {
+      caption: 'Publieke Werken (1909)',
+      annotations: {
+        url: 'https://sammeltassen.nl/iiif-manifests/allmaps/publieke-werken-1909.json'
+      }
+    },
+    {
+      caption: 'Publieke Werken (1943)',
+      annotations: {
+        url: 'https://sammeltassen.nl/iiif-manifests/allmaps/publieke-werken-1943.json'
+      }
+    },
+    {
+      caption: 'Publieke Werken (1985)',
+      annotations: {
+        url: 'https://sammeltassen.nl/iiif-manifests/allmaps/publieke-werken-1985.json'
+      }
+    }
+  ]}
+/>
 
 <section class="section-stretch">
   <iframe
@@ -252,7 +265,7 @@
     class="w-full h-full"
     data-src="https://editor.allmaps.org/images?url=https%3A%2F%2Famsterdamtimemachine.github.io%2Fpica-toegankelijke-kaartcollectie%2Fdata%2Fcollection_all.json"
     data-preload
-  />
+  ></iframe>
   <div
     class="fragment absolute bottom-0 right-0 w-[60%] text-left bg-white/70 flex items-end px-24 py-12 drop-shadow-md z-20"
   >

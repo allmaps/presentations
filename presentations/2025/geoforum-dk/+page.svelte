@@ -10,8 +10,7 @@
   import MapMonster from '$lib/components/MapMonster.svelte'
   import ManyMapMonsters from '$lib/components/ManyMapMonsters.svelte'
   import MapThumbnails from '$lib/components/MapThumbnails.svelte'
-  import WarpedMap from '$lib/components/WarpedMap.svelte'
-  import FlyTo from '$lib/components/FlyTo.svelte'
+  import MapSlide from '$lib/components/MapSlide.svelte'
 </script>
 
 <svelte:head>
@@ -51,16 +50,14 @@
     class="w-full h-full"
     data-src="https://collections.lib.uwm.edu/digital/collection/agdm/search/searchterm/denmark"
     data-preload
-></iframe>
+  ></iframe>
 </section>
 
-<Slide >
-  {#snippet children({ active })}
-    <MapThumbnails {active}>
-      <strong>Millions of digitized maps</strong> are available through IIIF, from
-      institutions around the world
-    </MapThumbnails>
-  {/snippet}
+<Slide>
+  <MapThumbnails>
+    <strong>Millions of digitized maps</strong> are available through IIIF, from
+    institutions around the world
+  </MapThumbnails>
 </Slide>
 
 <!-- show danish map, iiif -->
@@ -273,7 +270,7 @@
     data-loop
     data-autoplay
     data-src="/images/allmaps-convening-boston/fifth-avenue.mp4"
-></video>
+  ></video>
 </section>
 
 <section class="section-stretch">
@@ -330,12 +327,8 @@
   />
 </section>
 
-<Slide >
-  {#snippet children({ active })}
-    <ManyMapMonsters {active}
-      ><strong>What Allmaps can do</strong></ManyMapMonsters
-    >
-  {/snippet}
+<Slide>
+  <ManyMapMonsters><strong>What Allmaps can do</strong></ManyMapMonsters>
 </Slide>
 
 <Slide>
@@ -346,7 +339,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2023/georeferencing-loc-venice.webm"
-></video>
+  ></video>
 </Slide>
 
 <!--
@@ -424,7 +417,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2024/allmaps-explore.webm"
-></video>
+  ></video>
   <div class="space-y-6 text-3xl">
     <p>Filter by year, institution, collection, scale, etc.</p>
   </div>
@@ -460,7 +453,7 @@
     class="w-full h-full"
     data-src="https://cursors.allmaps.org/?url=https://annotations.allmaps.org/maps/54ae7537d927568f"
     data-preload
-></iframe>
+  ></iframe>
 </section>
 
 <section>
@@ -535,44 +528,67 @@
   >
 </Slide>
 
-<Slide >
-  {#snippet children({ active })}
-    <WarpedMap
-      {active}
-      annotationUrl="https://annotations.allmaps.org/maps/6325db4998c7f13f"
-    >
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/images/899328143b23dc0a"
-      />
-
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/images/9591a6ec92d0a977"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/images/70cc691781ff504a"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/images/d4338461602ebff8"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/images/cb1f20a39a8d7439"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/d6e26a80608dccd2"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/dbe2fbebd07ee477"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/images/38e7a057901b27db"
-      />
-
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/manifests/fc2c32dc51b145d8"
-      />
-    </WarpedMap>
-  {/snippet}
-</Slide>
+<MapSlide
+  views={[
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/maps/6325db4998c7f13f'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/899328143b23dc0a',
+        bearing: true
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/9591a6ec92d0a977',
+        bearing: true
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/70cc691781ff504a',
+        bearing: true
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/d4338461602ebff8',
+        bearing: true
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/cb1f20a39a8d7439',
+        bearing: true
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/maps/d6e26a80608dccd2',
+        bearing: true
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/maps/dbe2fbebd07ee477',
+        bearing: true
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/38e7a057901b27db'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/manifests/fc2c32dc51b145d8'
+      }
+    }
+  ]}
+/>
 
 <section>
   <p>

@@ -8,12 +8,8 @@
   import Title from '$lib/components/Title.svelte'
   import MapMonster from '$lib/components/MapMonster.svelte'
   import MapThumbnails from '$lib/components/MapThumbnails.svelte'
-  import WarpedMap from '$lib/components/WarpedMap.svelte'
-  import FlyTo from '$lib/components/FlyTo.svelte'
-  import XYZTiles from '$lib/components/XYZTiles.svelte'
-  import Pin from '$lib/components/Pin.svelte'
-  import LargeTextShadow from '$lib/components/LargeTextShadow.svelte'
   import ManyMapMonsters from '$lib/components/ManyMapMonsters.svelte'
+  import MapSlide from '$lib/components/MapSlide.svelte'
 
   function randomElement(array: any[]): any {
     if (!array || array.length === 0) {
@@ -48,53 +44,56 @@
 </Title>
 
 <Slide>
-  {#snippet children({ active })}
-    <MapThumbnails {active}>
-      Talloze kaarten zijn gedigitaliseerd door archieven, bibliotheken en musea
-      wereldwijd
-      <div
-        class="fragment absolute top-0 left-0 w-full h-full text-left text-3xl"
-      >
-        <div class="flex items-end h-full px-24 py-12">
-          <MapMonster mood="happy" color="pink">
-            <p class="p-4 max-w-xl">
-              Vaak beschikbaar als open data dankzij het <b
-                >International Image Interoperability Framework</b
-              > (IIIF)
-            </p>
-          </MapMonster>
-        </div>
+  <MapThumbnails>
+    Talloze kaarten zijn gedigitaliseerd door archieven, bibliotheken en musea
+    wereldwijd
+    <div
+      class="fragment absolute top-0 left-0 w-full h-full text-left text-3xl"
+    >
+      <div class="flex items-end h-full px-24 py-12">
+        <MapMonster mood="happy" color="pink">
+          <p class="p-4 max-w-xl">
+            Vaak beschikbaar als open data dankzij het <b
+              >International Image Interoperability Framework</b
+            > (IIIF)
+          </p>
+        </MapMonster>
       </div>
-    </MapThumbnails>
-  {/snippet}
+    </div>
+  </MapThumbnails>
 </Slide>
 
-<Slide>
-  {#snippet children({ active })}
-    <WarpedMap
-      {active}
-      annotationUrl="https://annotations.allmaps.org/images/112ec9cb81fd0850@9cac0b66003e7ce9"
-      caption="Maar hoe maken we van een IIIF beeld..."
-      transformationType="straight"
-      hideMap={true}
-      fullMask={true}
-    >
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/images/112ec9cb81fd0850@9cac0b66003e7ce9"
-        transformationType="helmert"
-        padding={200}
-        caption="...een kaart?"
-      />
-    </WarpedMap>
-  {/snippet}
-</Slide>
+<MapSlide
+  views={[
+    {
+      caption: 'Maar hoe maken we van een IIIF beeld...',
+      hideBackground: true,
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/112ec9cb81fd0850@9cac0b66003e7ce9',
+        bearing: true,
+        options: {
+          transformationType: 'helmert',
+          applyMask: false
+        }
+      }
+    },
+    {
+      location: {
+        duration: 3000
+      },
+      caption: '...een kaart?',
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/112ec9cb81fd0850@9cac0b66003e7ce9',
+        options: {
+          transformationType: 'polynomial'
+        }
+      }
+    }
+  ]}
+/>
 
 <Slide>
-  {#snippet children({ active })}
-    <ManyMapMonsters {active}
-      ><strong>Dat kan met Allmaps!</strong></ManyMapMonsters
-    >
-  {/snippet}
+  <ManyMapMonsters><strong>Dat kan met Allmaps!</strong></ManyMapMonsters>
 </Slide>
 
 <section
@@ -271,7 +270,7 @@
     class="w-full h-full"
     data-src="https://here.allmaps.org/?position=5.303116,51.6889387"
     data-preload
-  />
+  ></iframe>
   <div
     class="fragment absolute bottom-0 right-0 w-[60%] text-left flex items-end px-24 py-12 drop-shadow-md"
   >
@@ -309,17 +308,14 @@
   </div>
 </section>
 
-<Slide>
-  {#snippet children({ active })}
-    <h2 class="absolute top-2 px-4 py-1 shadow-md z-20 bg-white rounded-lg">
-      Loman Atlas
-    </h2>
-    <WarpedMap
-      {active}
-      annotationUrl="https://annotations.allmaps.org/manifests/af012d4792961902"
-    />
-  {/snippet}
-</Slide>
+<MapSlide
+  views={{
+    caption: 'Loman Atlas',
+    annotations: {
+      url: 'https://annotations.allmaps.org/manifests/af012d4792961902'
+    }
+  }}
+/>
 
 <section class="section-stretch">
   <p>Samenwerking met MSc Geomatics (TU Delft)</p>
@@ -334,62 +330,20 @@
 <!-- ==== Kaartseries ======================================================================= -->
 <!-- ======================================================================================== -->
 
-<Slide>
-  {#snippet children({ active })}
-    <h2 class="absolute top-2 px-4 py-1 shadow-md z-20 bg-white rounded-lg">
-      Krayenhoff-kaart
-    </h2>
-    <WarpedMap
-      {active}
-      annotationUrl="https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/kraijenhoff/dlcs/latest.json"
-    />
-  {/snippet}
-</Slide>
+<MapSlide
+  views={{
+    caption: 'Krayenhoff-kaart',
+    annotations: {
+      url: 'https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/kraijenhoff/dlcs/latest.json'
+    }
+  }}
+/>
 
-<Slide>
-  {#snippet children({ active })}
-    <h2 class="absolute top-2 px-4 py-1 shadow-md z-20 bg-white rounded-lg">
-      Topografisch Militaire Kaart
-    </h2>
-    <WarpedMap
-      {active}
-      annotationUrl="https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/tmk/20231124.json"
-    />
-  {/snippet}
-</Slide>
-
-<Slide>
-  {#snippet children({ active })}
-    <h2 class="absolute top-2 px-4 py-1 shadow-md z-20 bg-white rounded-lg">
-      Bonnebladen
-    </h2>
-    <WarpedMap
-      {active}
-      annotationUrl="https://sammeltassen.nl/iiif-manifests/allmaps/bonnebladen-dans-1.json"
-    />
-  {/snippet}
-</Slide>
-
-<Slide>
-  {#snippet children({ active })}
-    <h2 class="absolute top-2 px-4 py-1 shadow-md z-20 bg-white rounded-lg">
-      Top 25
-    </h2>
-    <WarpedMap
-      {active}
-      annotationUrl="https://sammeltassen.nl/iiif-manifests/allmaps/top25-1.json"
-    />
-  {/snippet}
-</Slide>
-
-<Slide>
-  {#snippet children({ active })}
-    <h2 class="absolute top-2 px-4 py-1 shadow-md z-20 bg-white rounded-lg">
-      Waterstaatskaart
-    </h2>
-    <WarpedMap
-      {active}
-      annotationUrl="https://raw.githubusercontent.com/tu-delft-heritage/watertijdreis-data/refs/heads/main/content/annotations/09-1874-456827-georef.json"
-    />
-  {/snippet}
-</Slide>
+<MapSlide
+  views={{
+    caption: 'Waterstaatskaart',
+    annotations: {
+      url: 'https://raw.githubusercontent.com/tu-delft-heritage/watertijdreis-data/refs/heads/main/content/annotations/09-1874-456827-georef.json'
+    }
+  }}
+/>

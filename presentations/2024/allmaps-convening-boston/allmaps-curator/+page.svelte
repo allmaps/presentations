@@ -6,8 +6,7 @@
 <script lang="ts">
   import Slide from '$lib/components/Slide.svelte'
   import Title from '$lib/components/Title.svelte'
-  import WarpedMap from '$lib/components/WarpedMap.svelte'
-  import FlyTo from '$lib/components/FlyTo.svelte'
+  import MapSlide from '$lib/components/MapSlide.svelte'
 </script>
 
 <svelte:head>
@@ -51,21 +50,25 @@
   />
 </section>
 
-<Slide>
-  {#snippet children({ active })}
-    <WarpedMap
-      {active}
-      annotationUrl="https://annotations.allmaps.org/images/f45387289ede9d49"
-    >
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/manifests/071c6ba31f9c88d4"
-      />
-      <FlyTo
-        annotationUrl="https://raw.githubusercontent.com/bmmeijers/iiif-annotations/refs/heads/main/series/kraijenhoff/uu/latest.json"
-      />
-    </WarpedMap>
-  {/snippet}
-</Slide>
+<MapSlide
+  views={[
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/f45387289ede9d49'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/manifests/071c6ba31f9c88d4'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://raw.githubusercontent.com/bmmeijers/iiif-annotations/refs/heads/main/series/kraijenhoff/uu/latest.json'
+      }
+    }
+  ]}
+/>
 
 <!-- rely on instututiuons to create iiif manifests and collections -->
 <!--  -->

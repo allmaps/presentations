@@ -105,13 +105,11 @@
 </Slide>
 
 <Slide>
-  {#snippet children({ active })}
-    <MapThumbnails {active}>
-      <strong>Millions of digitized maps are available through IIIF,</strong>
-      <br />
-      from institutions around the world
-    </MapThumbnails>
-  {/snippet}
+  <MapThumbnails>
+    <strong>Millions of digitized maps are available through IIIF,</strong>
+    <br />
+    from institutions around the world
+  </MapThumbnails>
 </Slide>
 
 <Slide>

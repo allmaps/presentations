@@ -9,11 +9,6 @@
   import ManyMapMonsters from '$lib/components/ManyMapMonsters.svelte'
   import MapMonster from '$lib/components/MapMonster.svelte'
   import MapThumbnails from '$lib/components/MapThumbnails.svelte'
-  import WarpedMap from '$lib/components/WarpedMap.svelte'
-  import FlyTo from '$lib/components/FlyTo.svelte'
-  import XYZTiles from '$lib/components/XYZTiles.svelte'
-  import Pin from '$lib/components/Pin.svelte'
-  import LargeTextShadow from '$lib/components/LargeTextShadow.svelte'
 
   function randomElement(array: any[]): any {
     if (!array || array.length === 0) {
@@ -90,13 +85,11 @@
 </section>
 
 <Slide>
-  {#snippet children({ active })}
-    <ManyMapMonsters {active}>
-      <div class="col-span-3 row-span-2 place-self-center">
-        this is where<br /><strong>Allmaps</strong> comes in!
-      </div>
-    </ManyMapMonsters>
-  {/snippet}
+  <ManyMapMonsters>
+    <div class="col-span-3 row-span-2 place-self-center">
+      this is where<br /><strong>Allmaps</strong> comes in!
+    </div>
+  </ManyMapMonsters>
 </Slide>
 
 <section>
@@ -153,13 +146,11 @@
 </section>
 
 <Slide>
-  {#snippet children({ active })}
-    <MapThumbnails {active}>
-      Using Allmaps, we can now georeference, warp and overlay <strong
-        >millions of digitized IIIF maps</strong
-      > from institutions around the world
-    </MapThumbnails>
-  {/snippet}
+  <MapThumbnails>
+    Using Allmaps, we can now georeference, warp and overlay <strong
+      >millions of digitized IIIF maps</strong
+    > from institutions around the world
+  </MapThumbnails>
 </Slide>
 
 <section>
@@ -172,7 +163,7 @@
     class="w-full h-full"
     data-src="https://iiif.io/api/extension/georef/"
     data-preload
-  />
+  ></iframe>
 </section>
 
 <section>
@@ -334,7 +325,7 @@
     class="w-full h-full"
     data-src="https://allmaps.org/#open-data"
     data-preload
-  />
+  ></iframe>
 </section>
 
 <section>
@@ -347,7 +338,7 @@
     class="w-full h-full"
     data-src="https://viewer.allmaps.org/?url=https://annotations.allmaps.org/maps/b5ba4ba2cf5be63f"
     data-preload
-  />
+  ></iframe>
 </section>
 
 <section>
@@ -410,7 +401,7 @@
     class="w-full h-full"
     data-src="https://editor.allmaps.org/images?url=https%3A%2F%2Fcollections.lib.uwm.edu%2Fiiif%2Finfo%2Fagdm%2F21153%2Fmanifest.json"
     data-preload
-  />
+  ></iframe>
 </section>
 
 <section>
@@ -446,7 +437,7 @@
     class="w-full h-full"
     data-src="https://www.leventhalmap.org/articles/waltham-urban-atlas-essays/"
     data-preload
-  />
+  ></iframe>
 </section>
 
 <section>
@@ -527,7 +518,12 @@
 
 <section>
   <p>interoperable data makes Allmaps crossovers possible</p>
-  <a href="https://oldinsurancemaps.net/map/sanborn03204_018" target="blank"><img alt="oldinsurancemaps.net" src="/images/nacis-2025/oldinsurance.png"></a>
+  <a href="https://oldinsurancemaps.net/map/sanborn03204_018" target="blank"
+    ><img
+      alt="oldinsurancemaps.net"
+      src="/images/nacis-2025/oldinsurance.png"
+    /></a
+  >
 </section>
 
 <section class="section-stretch !w-[65%]">
@@ -584,7 +580,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2024/allmaps-arcade.webm"
-  />
+  ></video>
 </section>
 
 <section class="section-stretch">

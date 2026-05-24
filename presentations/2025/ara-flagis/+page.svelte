@@ -91,7 +91,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2023/georeferencing-loc-venice.webm"
-  />
+  ></video>
 </section>
 
 <section>
@@ -257,14 +257,12 @@
 </section>
 
 <Slide>
-  {#snippet children({ active })}
-    <MapThumbnails {active}>
-      Using Georeference Annotations <br />
-      we can georeference, warp and overlay <br />
-      <strong>millions of digitized IIIF maps</strong> <br />
-      from institutions around the world
-    </MapThumbnails>
-  {/snippet}
+  <MapThumbnails>
+    Using Georeference Annotations <br />
+    we can georeference, warp and overlay <br />
+    <strong>millions of digitized IIIF maps</strong> <br />
+    from institutions around the world
+  </MapThumbnails>
 </Slide>
 
 <section>
@@ -326,9 +324,7 @@
 </section>
 
 <Slide>
-  {#snippet children({ active })}
-    <ManyMapMonsters {active}>Some cool features</ManyMapMonsters>
-  {/snippet}
+  <ManyMapMonsters>Some cool features</ManyMapMonsters>
 </Slide>
 
 <section>
@@ -355,7 +351,7 @@
     data-loop
     data-autoplay
     data-src="/videos/soduco-bnf-seminar-2023/tps-metro-paris.mp4"
-  />
+  ></video>
 </section>
 
 <section>
@@ -525,7 +521,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2024/allmaps-explore.webm"
-  />
+  ></video>
 </section>
 
 <section class="">

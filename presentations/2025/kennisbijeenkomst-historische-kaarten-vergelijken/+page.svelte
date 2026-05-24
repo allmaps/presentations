@@ -11,10 +11,10 @@
   import MapMonster from '$lib/components/MapMonster.svelte'
   import MapThumbnails from '$lib/components/MapThumbnails.svelte'
   import ManyMapMonsters from '$lib/components/ManyMapMonsters.svelte'
-  import WarpedMap from '$lib/components/WarpedMap.svelte'
-  import FlyTo from '$lib/components/FlyTo.svelte'
+  import MapSlide from '$lib/components/MapSlide.svelte'
   import LargeTextShadow from '$lib/components/LargeTextShadow.svelte'
   import XYZ from '$lib/components/XYZ.svelte'
+  import { Annotation0FeaturePropertiesSchema } from '@allmaps/annotation'
 </script>
 
 <svelte:head>
@@ -44,69 +44,84 @@
 
 <Slide>Mijn leven in kaarten:</Slide>
 
-<Slide>
-  {#snippet children({ active })}
-    <!-- Prinsengrachtziekenhuis -->
-    <WarpedMap
-      {active}
-      annotationUrl="https://annotations.allmaps.org/maps/8dfa7c0a36f7336a"
-    >
-      <!-- Bussum -->
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/58c73354b12a3d6e"
-      />
-
-      <!-- Eindhoven -->
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/620dad197a139f8e"
-      />
-
-      <!-- Utrecht -->
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/d9e617c92b987711"
-      />
-
-      <!-- Waag -->
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/cb06d48aecf12e48"
-      />
-
-      <!-- New York -->
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/0c082ba891b4fd93"
-      />
-
-      <!-- Hezingen -->
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/905deea1cb4dc5a3"
-      />
-
-      <!-- Oostenburg -->
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/8596ac3d0e4cba98"
-      />
-
-      <!-- Raalte -->
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/e0f9d3f27e6cbca7"
-      />
-    </WarpedMap>
-  {/snippet}
-</Slide>
+<MapSlide
+  views={[
+    {
+      annotations: {
+        // Prinsengrachtziekenhuis
+        url: 'https://annotations.allmaps.org/maps/8dfa7c0a36f7336a',
+        bearing: true
+      }
+    },
+    {
+      annotations: {
+        // Bussum
+        url: 'https://annotations.allmaps.org/maps/58c73354b12a3d6e',
+        bearing: true
+      }
+    },
+    {
+      annotations: {
+        // Eindhoven
+        url: 'https://annotations.allmaps.org/maps/620dad197a139f8e',
+        bearing: true
+      }
+    },
+    {
+      annotations: {
+        // Utrecht
+        url: 'https://annotations.allmaps.org/maps/d9e617c92b987711',
+        bearing: true
+      }
+    },
+    {
+      annotations: {
+        // Waag
+        url: 'https://annotations.allmaps.org/maps/cb06d48aecf12e48',
+        bearing: true
+      }
+    },
+    {
+      annotations: {
+        // New York
+        url: 'https://annotations.allmaps.org/maps/0c082ba891b4fd93',
+        bearing: true
+      }
+    },
+    {
+      annotations: {
+        // Hezingen
+        url: 'https://annotations.allmaps.org/maps/905deea1cb4dc5a3',
+        bearing: true
+      }
+    },
+    {
+      annotations: {
+        // Oostenburg
+        url: 'https://annotations.allmaps.org/maps/8596ac3d0e4cba98',
+        bearing: true
+      }
+    },
+    {
+      annotations: {
+        // Raalte
+        url: 'https://annotations.allmaps.org/maps/e0f9d3f27e6cbca7',
+        bearing: true
+      }
+    }
+  ]}
+/>
 
 <!-- ======================================================================================== -->
 <!-- ==== Waag ============================================================================== -->
 <!-- ======================================================================================== -->
 
 <Slide>
-  {#snippet children({ active })}
-    <XYZ
-      {active}
-      tileUrl={'https://rtiles.waag.org/services/buildings/tiles/{z}/{x}/{y}.png'}
-      center={[4.6355, 52.3817]}
-      zoom={12}
-    />
-  {/snippet}
+  <XYZ
+    tileUrl={'https://rtiles.waag.org/services/buildings/tiles/{z}/{x}/{y}.png'}
+    center={[4.6355, 52.3817]}
+    zoom={12}
+  />
 </Slide>
 
 <!-- ======================================================================================== -->
@@ -475,15 +490,13 @@
 <!-- ======================================================================================== -->
 
 <Slide>
-  {#snippet children({ active })}
-    <MapThumbnails {active}>
-      Via IIIF zijn er <strong
-        >miljoenen<br />
-        kaarten beschikbaar</strong
-      ><br />
-      via archieven, bibliotheken, musea en universiteiten over de hele wereld.
-    </MapThumbnails>
-  {/snippet}
+  <MapThumbnails>
+    Via IIIF zijn er <strong
+      >miljoenen<br />
+      kaarten beschikbaar</strong
+    ><br />
+    via archieven, bibliotheken, musea en universiteiten over de hele wereld.
+  </MapThumbnails>
 </Slide>
 
 <Slide>
@@ -751,89 +764,81 @@
 <!-- ==== Kaartseries ======================================================================= -->
 <!-- ======================================================================================== -->
 
-<Slide>
-  {#snippet children({ active })}
-    <h2 class="absolute top-2 px-4 py-1 shadow-md z-20 bg-white rounded-lg">
-      Krayenhoff-kaart
-    </h2>
-    <WarpedMap
-      {active}
-      annotationUrl="https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/kraijenhoff/dlcs/latest.json"
-    />
-  {/snippet}
-</Slide>
+<MapSlide
+  views={{
+    caption: 'Krayenhoff-kaart',
+    annotations: [
+      {
+        url: 'https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/kraijenhoff/dlcs/latest.json'
+      }
+    ]
+  }}
+/>
 
-<Slide>
-  {#snippet children({ active })}
-    <h2 class="absolute top-2 px-4 py-1 shadow-md z-20 bg-white rounded-lg">
-      Topografisch Militaire Kaart
-    </h2>
-    <WarpedMap
-      {active}
-      annotationUrl="https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/tmk/20231124.json"
-    />
-  {/snippet}
-</Slide>
+<MapSlide
+  views={{
+    caption: 'Topografisch Militaire Kaart',
+    annotations: [
+      {
+        url: 'https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/tmk/20231124.json'
+      }
+    ]
+  }}
+/>
 
-<Slide>
-  {#snippet children({ active })}
-    <h2 class="absolute top-2 px-4 py-1 shadow-md z-20 bg-white rounded-lg">
-      Bonnebladen
-    </h2>
-    <WarpedMap
-      {active}
-      annotationUrl="https://sammeltassen.nl/iiif-manifests/allmaps/bonnebladen-dans-1.json"
-    />
-  {/snippet}
-</Slide>
+<MapSlide
+  views={{
+    caption: 'Bonnebladen',
+    annotations: [
+      {
+        url: 'https://sammeltassen.nl/iiif-manifests/allmaps/bonnebladen-dans-1.json'
+      }
+    ]
+  }}
+/>
 
-<Slide>
-  {#snippet children({ active })}
-    <h2 class="absolute top-2 px-4 py-1 shadow-md z-20 bg-white rounded-lg">
-      Top 25
-    </h2>
-    <WarpedMap
-      {active}
-      annotationUrl="https://sammeltassen.nl/iiif-manifests/allmaps/top25-1.json"
-    />
-  {/snippet}
-</Slide>
+<MapSlide
+  views={{
+    caption: 'Top 25',
+    annotations: [
+      {
+        url: 'https://sammeltassen.nl/iiif-manifests/allmaps/top25-1.json'
+      }
+    ]
+  }}
+/>
 
-<Slide>
-  {#snippet children({ active })}
-    <h2 class="absolute top-2 px-4 py-1 shadow-md z-20 bg-white rounded-lg">
-      Waterstaatskaart
-    </h2>
-    <WarpedMap
-      {active}
-      annotationUrl="https://raw.githubusercontent.com/tu-delft-heritage/watertijdreis-data/refs/heads/main/content/annotations/09-1874-456827-georef.json"
-    />
-  {/snippet}
-</Slide>
+<MapSlide
+  views={{
+    caption: 'Waterstaatskaart',
+    annotations: [
+      {
+        url: 'https://raw.githubusercontent.com/tu-delft-heritage/watertijdreis-data/refs/heads/main/content/annotations/09-1874-456827-georef.json'
+      }
+    ]
+  }}
+/>
 
-<Slide>
-  {#snippet children({ active })}
-    <h2 class="absolute top-2 px-4 py-1 shadow-md z-20 bg-white rounded-lg">
-      Atlas Loman
-    </h2>
-    <WarpedMap
-      {active}
-      annotationUrl="https://annotations.allmaps.org/manifests/af012d4792961902"
-    />
-  {/snippet}
-</Slide>
+<MapSlide
+  views={{
+    caption: 'Atlas Loman',
+    annotations: [
+      {
+        url: 'https://annotations.allmaps.org/manifests/af012d4792961902'
+      }
+    ]
+  }}
+/>
 
 <!-- ======================================================================================== -->
 <!-- ==== Zelf aan de slag ================================================================== -->
 <!-- ======================================================================================== -->
 
 <Slide>
-  {#snippet children({ active })}
-    <ManyMapMonsters {active}
-      >Zelf aan de slag met <strong>Allmaps</strong> en
-      <strong>IIIF</strong>!</ManyMapMonsters
-    >
-  {/snippet}
+  <ManyMapMonsters
+    >Zelf aan de slag met <strong>Allmaps</strong> en
+    <strong>IIIF</strong>!</ManyMapMonsters
+  >
 </Slide>
 
 <Slide>

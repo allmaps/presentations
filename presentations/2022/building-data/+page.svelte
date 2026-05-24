@@ -7,13 +7,6 @@
 </script>
 
 <script lang="ts">
-  import Slide from '$lib/components/Slide.svelte'
-  import Title from '$lib/components/Title.svelte'
-  import MapMonster from '$lib/components/MapMonster.svelte'
-  import ManyMapMonsters from '$lib/components/ManyMapMonsters.svelte'
-  import MapThumbnails from '$lib/components/MapThumbnails.svelte'
-  import WarpedMap from '$lib/components/WarpedMap.svelte'
-  import FlyTo from '$lib/components/FlyTo.svelte'
 </script>
 
 <svelte:head>

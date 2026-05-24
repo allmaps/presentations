@@ -8,11 +8,10 @@
   import Title from '$lib/components/Title.svelte'
   import MapMonster from '$lib/components/MapMonster.svelte'
   import MapThumbnails from '$lib/components/MapThumbnails.svelte'
-  import WarpedMap from '$lib/components/WarpedMap.svelte'
-  import FlyTo from '$lib/components/FlyTo.svelte'
   import XYZTiles from '$lib/components/XYZTiles.svelte'
   import Pin from '$lib/components/Pin.svelte'
   import LargeTextShadow from '$lib/components/LargeTextShadow.svelte'
+  import MapSlide from '$lib/components/MapSlide.svelte'
 
   function randomElement(array: any[]): any {
     if (!array || array.length === 0) {
@@ -30,24 +29,33 @@
   <h3 class="text-white">Teaching with Allmaps</h3>
 </Title>
 
-<Slide>
-  {#snippet children({ active })}
-    <WarpedMap
-      {active}
-      annotationUrl="https://annotations.allmaps.org/images/25b7d54b8a233aa0@93c54b242ae917f1"
-      caption="From IIIF Image..."
-      transformationType="straight"
-      hideMap={true}
-    >
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/images/25b7d54b8a233aa0@93c54b242ae917f1"
-        transformationType="polynomial"
-        padding={200}
-        caption="...to a map!"
-      />
-    </WarpedMap>
-  {/snippet}
-</Slide>
+<MapSlide
+  views={[
+    {
+      caption: 'From IIIF Image...',
+      hideBackground: true,
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/25b7d54b8a233aa0@93c54b242ae917f1',
+        bearing: true,
+        options: {
+          transformationType: 'helmert'
+        }
+      }
+    },
+    {
+      location: {
+        duration: 3000
+      },
+      caption: '...to a map!',
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/25b7d54b8a233aa0@93c54b242ae917f1',
+        options: {
+          transformationType: 'polynomial'
+        }
+      }
+    }
+  ]}
+/>
 
 <section class="section-stretch">
   <img
@@ -165,24 +173,31 @@
   </div>
 </section>
 
-<Slide>
-  {#snippet children({ active })}
-    <WarpedMap
-      {active}
-      annotationUrl="https://annotations.allmaps.org/manifests/752b29a50403371d"
-      caption="River Map<br>First revision, series 2 (1873-1907)<br><i>Rijkswaterstaat</i>"
-    >
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/manifests/af012d4792961902"
-        caption="Loman atlas of Amsterdam (1876)<br><i>Amsterdam City Archive</i>"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/35763f91a3ca51c5"
-        caption="Algemeene Kaart van de<br>Duinen en Duingronden (1828)<br><i>Nationaal Archief</i>"
-      />
-    </WarpedMap>
-  {/snippet}
-</Slide>
+<MapSlide
+  views={[
+    {
+      caption:
+        'River Map<br>First revision, series 2 (1873-1907)<br><i>Rijkswaterstaat</i>',
+      annotations: {
+        url: 'https://annotations.allmaps.org/manifests/752b29a50403371d'
+      }
+    },
+    {
+      caption:
+        'Loman atlas of Amsterdam (1876)<br><i>Amsterdam City Archive</i>"',
+      annotations: {
+        url: 'https://annotations.allmaps.org/manifests/af012d4792961902'
+      }
+    },
+    {
+      caption:
+        'Algemeene Kaart van de<br>Duinen en Duingronden (1828)<br><i>Nationaal Archief</i>',
+      annotations: {
+        url: 'https://annotations.allmaps.org/maps/35763f91a3ca51c5'
+      }
+    }
+  ]}
+/>
 
 <section class="text-3xl">
   <div>
@@ -359,25 +374,40 @@
   </div>
 </section>
 
-<Slide>
-  {#snippet children({ active })}
-    <WarpedMap
-      {active}
-      annotationUrl="https://annotations.allmaps.org/images/e5c702e62b320f42"
-      caption="River Atlas<br><i>Speculative River Map</i>"
-    >
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/images/c88621b32a073ee2"
-        caption="Coast Atlas<br><i>An Expanded Bunker</i>"
-        transformationType="helmert"
-      />
-      <FlyTo
-        annotationUrl="https://cityatlas.theberlage.nl/data/03-argumentation/01-uilenburg/annotations/200uilenburg.json"
-        caption="City Atlas<br><i>Uilenburg</i>"
-      />
-    </WarpedMap>
-  {/snippet}
-</Slide>
+<MapSlide
+  views={[
+    {
+      caption: 'River Atlas<br><i>Speculative River Map</i>',
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/e5c702e62b320f42'
+      }
+    },
+    {
+      caption: 'Coast Atlas<br><i>An Expanded Bunker</i>',
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/c88621b32a073ee2',
+        options: {
+          transformationType: 'helmert'
+        }
+      }
+    },
+    {
+      caption: 'Coast Atlas<br><i>An Expanded Bunker</i>',
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/c88621b32a073ee2'
+      }
+    },
+    {
+      caption: 'City Atlas<br><i>Uilenburg</i>',
+      annotations: {
+        url: 'https://cityatlas.theberlage.nl/data/03-argumentation/01-uilenburg/annotations/200uilenburg.json',
+        options: {
+          transformationType: 'helmert'
+        }
+      }
+    }
+  ]}
+/>
 
 <!-- <section>
   <div>
@@ -440,25 +470,29 @@
   </div></Slide
 >
 
-<Slide>
-  {#snippet children({ active })}
-    <!-- Loman Atlas, Zuiderkerk -->
-    <WarpedMap
-      {active}
-      annotationUrl="https://annotations.allmaps.org/maps/ad0d77e4873b6209"
-    >
-      <!-- Oostenburg -->
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/8596ac3d0e4cba98"
-      />
-
-      <!-- Leeds map from National Library of Scotland -->
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/e251ec33fb39693d"
-      />
-    </WarpedMap>
-  {/snippet}
-</Slide>
+<MapSlide
+  views={[
+    {
+      // Loman Atlas, Zuiderkerk
+      annotations: {
+        url: 'https://annotations.allmaps.org/maps/ad0d77e4873b6209'
+      }
+    },
+    {
+      // Oostenburg
+      annotations: {
+        url: 'https://annotations.allmaps.org/maps/8596ac3d0e4cba98',
+        bearing: true
+      }
+    },
+    {
+      // Leeds map from National Library of Scotland
+      annotations: {
+        url: 'https://annotations.allmaps.org/maps/e251ec33fb39693d'
+      }
+    }
+  ]}
+/>
 
 <!-- Oostenburg: https://annotations.allmaps.org/maps/8596ac3d0e4cba98 -->
 <!-- Stationsplein Bussum https://annotations.allmaps.org/maps/5bddef1cbe5930bc -->
@@ -471,13 +505,11 @@
 <!-- Greenpoint: https://annotations.allmaps.org/images/81a4dfe44aff986d -->
 
 <Slide>
-  {#snippet children({ active })}
-    <MapThumbnails {active}>
-      Using Allmaps, we can now georeference, warp and overlay <strong
-        >millions of digitized IIIF maps</strong
-      > from institutions around the world
-    </MapThumbnails>
-  {/snippet}
+  <MapThumbnails>
+    Using Allmaps, we can now georeference, warp and overlay <strong
+      >millions of digitized IIIF maps</strong
+    > from institutions around the world
+  </MapThumbnails>
 </Slide>
 
 <Slide>

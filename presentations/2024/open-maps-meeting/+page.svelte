@@ -9,8 +9,7 @@
   import MapMonster from '$lib/components/MapMonster.svelte'
   import ManyMapMonsters from '$lib/components/ManyMapMonsters.svelte'
   import MapThumbnails from '$lib/components/MapThumbnails.svelte'
-  import WarpedMap from '$lib/components/WarpedMap.svelte'
-  import FlyTo from '$lib/components/FlyTo.svelte'
+  import MapSlide from '$lib/components/MapSlide.svelte'
 </script>
 
 <svelte:head>
@@ -44,7 +43,7 @@
   <div class="fragment absolute top-0 left-0 w-full h-full text-left text-4xl">
     <div class="flex items-end h-full px-24 py-12">
       <MapMonster mood="excited" color="green">
-        <p class="p-4 max-w-xl">Some of you even mught have used Allmaps!</p>
+        <p class="p-4 max-w-xl">Some of you even might have used Allmaps!</p>
       </MapMonster>
     </div>
   </div>
@@ -57,7 +56,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2023/georeferencing-loc-venice.webm"
-  />
+  ></video>
 </section>
 
 <section>
@@ -190,11 +189,7 @@
 </section>
 
 <Slide>
-  {#snippet children({ active })}
-    <ManyMapMonsters {active}
-      ><strong>Some (new) features</strong></ManyMapMonsters
-    >
-  {/snippet}
+  <ManyMapMonsters><strong>Some (new) features</strong></ManyMapMonsters>
 </Slide>
 
 <section>
@@ -263,7 +258,7 @@
     class="w-full h-full"
     data-src="https://cursors.allmaps.org/?url=https://annotations.allmaps.org/maps/8568d3e122117c6f"
     data-preload
-  />
+  ></iframe>
 </section>
 
 <section>
@@ -273,30 +268,40 @@
   </p>
 </section>
 
-<Slide>
-  {#snippet children({ active })}
-    <WarpedMap
-      {active}
-      annotationUrl="https://annotations.allmaps.org/images/3f2cea6d5506bfd9"
-    >
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/images/11a1070a3fdfb78e"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/images/ea443ffaabb121e2"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/51c6caacf5f1e4d5"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/48da96d9296515a6"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/28ed75ea7a785f32"
-      />
-    </WarpedMap>
-  {/snippet}
-</Slide>
+<MapSlide
+  views={[
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/3f2cea6d5506bfd9'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/11a1070a3fdfb78e'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/ea443ffaabb121e2'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/maps/51c6caacf5f1e4d5'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/maps/48da96d9296515a6'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/maps/28ed75ea7a785f32'
+      }
+    }
+  ]}
+/>
 
 <section>
   <p>Map Warper</p>
@@ -342,7 +347,7 @@
     data-loop
     data-autoplay
     data-src="/images/open-maps-meeting-2024/building-inspector.mp4"
-  />
+  ></video>
 </section>
 
 <section>
@@ -371,7 +376,7 @@
     data-loop
     data-autoplay
     data-src="/images/open-maps-meeting-2024/lower-east-side-1854.mp4"
-  />
+  ></video>
 </section>
 
 <section>
@@ -445,12 +450,10 @@
 </section>
 
 <Slide>
-  {#snippet children({ active })}
-    <MapThumbnails {active}>
-      <strong>Millions of digitized maps</strong> are available through IIIF, from
-      institutions around the world
-    </MapThumbnails>
-  {/snippet}
+  <MapThumbnails>
+    <strong>Millions of digitized maps</strong> are available through IIIF, from
+    institutions around the world
+  </MapThumbnails>
 </Slide>
 
 <section>
@@ -492,7 +495,7 @@
     class="w-full h-full"
     data-src="https://dev.here.allmaps.org/"
     data-preload
-  />
+  ></iframe>
 </section>
 
 <section>
@@ -503,7 +506,7 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2024/allmaps-explore.webm"
-  />
+  ></video>
   <div class="space-y-6 text-3xl">
     <p>Filter by year, institution, collection, scale, etc.</p>
   </div>
@@ -525,42 +528,55 @@
     data-loop
     data-autoplay
     data-src="/videos/iiif-annual-conference-2024/open-data-homepage.webm"
-  />
+  ></video>
 </section>
 
 <section>Let's end this presentation with some more maps:</section>
 
-<Slide>
-  {#snippet children({ active })}
-    <WarpedMap
-      {active}
-      annotationUrl="https://annotations.allmaps.org/maps/6325db4998c7f13f"
-    >
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/maps/eaa990689f45a090"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/manifests/a35b2badba5505ab"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/manifests/64d6e35b64564692"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/images/8a753a3ec297626c"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/manifests/fc2c32dc51b145d8"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/manifests/071c6ba31f9c88d4"
-      />
-
-      <FlyTo
-        annotationUrl="https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/north_korea/20231123.json"
-      />
-    </WarpedMap>
-  {/snippet}
-</Slide>
+<MapSlide
+  views={[
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/maps/6325db4998c7f13f'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/maps/eaa990689f45a090'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/manifests/a35b2badba5505ab'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/manifests/64d6e35b64564692'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/8a753a3ec297626c'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/manifests/fc2c32dc51b145d8'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/manifests/071c6ba31f9c88d4'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/north_korea/20231123.json'
+      }
+    }
+  ]}
+/>
 
 <section>
   <p>

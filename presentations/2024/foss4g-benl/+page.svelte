@@ -257,14 +257,12 @@
 </section>
 
 <Slide>
-  {#snippet children({ active })}
-    <MapThumbnails {active}>
-      Using Georeference Annotations <br />
-      we can georeference, warp and overlay <br />
-      <strong>millions of digitized IIIF maps</strong> <br />
-      from institutions around the world
-    </MapThumbnails>
-  {/snippet}
+  <MapThumbnails>
+    Using Georeference Annotations <br />
+    we can georeference, warp and overlay <br />
+    <strong>millions of digitized IIIF maps</strong> <br />
+    from institutions around the world
+  </MapThumbnails>
 </Slide>
 
 <section>
@@ -381,9 +379,7 @@
 </section>
 
 <Slide>
-  {#snippet children({ active })}
-    <ManyMapMonsters {active}>Some cool features</ManyMapMonsters>
-  {/snippet}
+  <ManyMapMonsters>Some cool features</ManyMapMonsters>
 </Slide>
 
 <section>

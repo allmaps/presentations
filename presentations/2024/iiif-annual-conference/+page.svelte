@@ -317,12 +317,10 @@
 </section>
 
 <Slide>
-  {#snippet children({ active })}
-    <ManyMapMonsters {active}>
-      Converting pixel coordinates to geospatial coordinates:
-      <br /><strong>What else can we do with this?</strong>
-    </ManyMapMonsters>
-  {/snippet}
+  <ManyMapMonsters>
+    Converting pixel coordinates to geospatial coordinates:
+    <br /><strong>What else can we do with this?</strong>
+  </ManyMapMonsters>
 </Slide>
 
 <section>

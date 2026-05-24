@@ -14,8 +14,7 @@
   import MapMonster from '$lib/components/MapMonster.svelte'
   import ManyMapMonsters from '$lib/components/ManyMapMonsters.svelte'
   import MapThumbnails from '$lib/components/MapThumbnails.svelte'
-  import WarpedMap from '$lib/components/WarpedMap.svelte'
-  import FlyTo from '$lib/components/FlyTo.svelte'
+  import MapSlide from '$lib/components/MapSlide.svelte'
 </script>
 
 <svelte:head>
@@ -313,11 +312,7 @@
 </section>
 
 <Slide>
-  {#snippet children({ active })}
-    <ManyMapMonsters {active}
-      ><strong>Some (new) features</strong></ManyMapMonsters
-    >
-  {/snippet}
+  <ManyMapMonsters><strong>Some (new) features</strong></ManyMapMonsters>
 </Slide>
 
 <section>
@@ -451,12 +446,10 @@
 </section>
 
 <Slide>
-  {#snippet children({ active })}
-    <MapThumbnails {active}>
-      <strong>Millions of digitized maps</strong> are available through IIIF, from
-      institutions around the world
-    </MapThumbnails>
-  {/snippet}
+  <MapThumbnails>
+    <strong>Millions of digitized maps</strong> are available through IIIF, from
+    institutions around the world
+  </MapThumbnails>
 </Slide>
 
 <section>
@@ -534,30 +527,41 @@
   ></video>
 </section>
 
-<Slide>
-  {#snippet children({ active })}
-    <WarpedMap
-      {active}
-      annotationUrl="https://annotations.allmaps.org/maps/6325db4998c7f13f"
-    >
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/images/899328143b23dc0a"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/manifests/a35b2badba5505ab"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/manifests/071c6ba31f9c88d4"
-      />
-      <FlyTo
-        annotationUrl="https://annotations.allmaps.org/manifests/fc2c32dc51b145d8"
-      />
-      <!-- <FlyTo
-        annotationUrl="https://gist.githubusercontent.com/sammeltassen/cba1cce96299c7eb4d2fe3ad47a0d07f/raw/174d5f47d9835c111f9b0fb04b8ae0e21aebccb4/sf-aerial-views.json"
-      /> -->
-    </WarpedMap>
-  {/snippet}
-</Slide>
+<MapSlide
+  views={[
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/maps/6325db4998c7f13f'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/images/899328143b23dc0a',
+        bearing: true
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/manifests/a35b2badba5505ab'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/manifests/071c6ba31f9c88d4'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://annotations.allmaps.org/manifests/fc2c32dc51b145d8'
+      }
+    },
+    {
+      annotations: {
+        url: 'https://gist.githubusercontent.com/sammeltassen/cba1cce96299c7eb4d2fe3ad47a0d07f/raw/174d5f47d9835c111f9b0fb04b8ae0e21aebccb4/sf-aerial-views.json'
+      }
+    }
+  ]}
+/>
 
 <section>
   <p>
