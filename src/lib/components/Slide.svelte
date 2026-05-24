@@ -4,9 +4,10 @@
   type Props = {
     showLogo?: boolean
     children: any
+    preload?: boolean
   }
 
-  let { showLogo = true, children }: Props = $props()
+  let { showLogo = true, preload = false, children }: Props = $props()
 
   let container: HTMLElement
   let observer: MutationObserver
@@ -37,7 +38,7 @@
 </script>
 
 <section bind:this={container} class:section-no-logo={!showLogo}>
-  {#if slideState.active}
+  {#if slideState.active || preload}
     {@render children?.()}
   {/if}
 </section>

@@ -48,7 +48,7 @@
   <h1 class="text-white">The Allmaps - IIIF Partnership</h1>
 </Title>
 
-<Slide>
+<Slide preload>
   <p class="text-6xl">
     Allmaps is an open source project for curating, georeferencing and exploring
     IIIF maps
@@ -60,14 +60,14 @@
   </p>
 </Slide>
 
-<Slide>
+<Slide preload>
   <p>
     Two weeks ago, it was {@render jules()} Jules' birthday, and {@render bert()}
     Bert gave him a present.
   </p></Slide
 >
 
-<Slide>
+<Slide preload>
   <video
     class="shadow-xl rounded-xl"
     loop
@@ -78,9 +78,9 @@
   ></video>
 </Slide>
 
-<Slide>
+<Slide preload>
   <p><strong>What's needed to make this flipbook?</strong></p>
-  <ol class="space-y-8">
+  <ol class="space-y-8 p-8">
     <li>Lots of digitized maps, accessible in a standardized way;</li>
     <li class="fragment">An easy way to georeference these maps;</li>
     <li class="fragment">And then find them by their location;</li>
@@ -90,9 +90,9 @@
   </ol>
 </Slide>
 
-<Slide>
+<Slide preload>
   <p><strong>What's needed to make this flipbook?</strong></p>
-  <ol class="space-y-8">
+  <ol class="space-y-8 p-8">
     <li class="font-bold text-pink">
       Lots of digitized maps, accessible in a standardized way;
     </li>
@@ -112,9 +112,9 @@
   </MapThumbnails>
 </Slide>
 
-<Slide>
+<Slide preload>
   <p><strong>What's needed to make this flipbook?</strong></p>
-  <ol class="space-y-8">
+  <ol class="space-y-8 p-8">
     <li>Lots of digitized maps, accessible in a standardized way;</li>
     <li class="font-bold text-pink">An easy way to georeference these maps;</li>
     <li class="opacity-10">And then find them by their location;</li>
@@ -124,7 +124,7 @@
   </ol>
 </Slide>
 
-<Slide>
+<Slide preload>
   <a href="https://editor.allmaps.org"
     ><img
       alt="Allmaps Editor"
@@ -134,7 +134,7 @@
   >
 </Slide>
 
-<Slide>
+<Slide preload>
   <a href="https://editor.allmaps.org"
     ><img
       alt="Allmaps Editor"
@@ -144,7 +144,7 @@
   >
 </Slide>
 
-<Slide>
+<Slide preload>
   <a href="https://editor.allmaps.org"
     ><img
       alt="Allmaps Editor"
@@ -154,7 +154,7 @@
   >
 </Slide>
 
-<Slide>
+<Slide preload>
   <a href="https://editor.allmaps.org"
     ><img
       alt="Allmaps Editor"
@@ -164,7 +164,7 @@
   >
 </Slide>
 
-<Slide>
+<Slide preload>
   <p class="mb-8">
     Allmaps uses <strong>Georeference Annotations</strong>
     throughout its components. <br /> These web annotations are an
@@ -295,7 +295,7 @@
   </pre>
 </Slide>
 
-<Slide>
+<Slide preload>
   <a href="https://latest.allmaps.org"
     ><img
       alt="Allmaps Latest"
@@ -305,9 +305,9 @@
   >
 </Slide>
 
-<Slide>
+<Slide preload>
   <p><strong>What's needed to make this flipbook?</strong></p>
-  <ol class="space-y-8">
+  <ol class="space-y-8 p-8">
     <li>Lots of digitized maps, accessible in a standardized way;</li>
     <li>An easy way to georeference these maps;</li>
     <li class="font-bold text-pink">And then find them by their location;</li>
@@ -317,7 +317,7 @@
   </ol>
 </Slide>
 
-<Slide>
+<Slide preload>
   <p>
     Find maps by their geographic location <br />with the Allmaps Annotations
     API <Pin />
@@ -332,7 +332,7 @@
   >
 </Slide>
 
-<Slide>
+<Slide preload>
   <p>Or directly transform these annotations to GeoJSON</p>
   <a
     href="https://annotations.allmaps.org/maps.geojson?limit=5&intersects=52.35924,4.89964"
@@ -344,7 +344,7 @@
   >
 </Slide>
 
-<Slide>
+<Slide preload>
   <p>And view them in geojson.io</p>
   <img
     alt="Georeference Annotations by locations"
@@ -353,7 +353,7 @@
   />
 </Slide>
 
-<Slide>
+<Slide preload>
   <a href="https://here.allmaps.org"
     ><img
       alt="Allmaps Here"
@@ -363,7 +363,7 @@
   >
 </Slide>
 
-<Slide>
+<Slide preload>
   <a href="https://here.allmaps.org"
     ><img
       alt="Allmaps Here"
@@ -373,7 +373,7 @@
   >
 </Slide>
 
-<Slide>
+<Slide preload>
   <a href="https://here.allmaps.org"
     ><img
       alt="Allmaps Here"
@@ -383,9 +383,9 @@
   >
 </Slide>
 
-<Slide>
+<Slide preload>
   <p><strong>What's needed to make this flipbook?</strong></p>
-  <ol class="space-y-8">
+  <ol class="space-y-8 p-8">
     <li>Lots of digitized maps, accessible in a standardized way;</li>
     <li>An easy way to georeference these maps;</li>
     <li>And then find them by their location;</li>
@@ -395,7 +395,7 @@
   </ol>
 </Slide>
 
-<Slide>
+<Slide preload>
   <div class="mb-8">
     <p>Render to PNG with the Allmaps CanvasRenderer</p>
   </div>
@@ -420,7 +420,7 @@
     ></pre>
 </Slide>
 
-<Slide>
+<Slide preload>
   <p>Render a complete atlas to SVG</p>
   <img
     alt="Allmaps Tile Server"
@@ -429,7 +429,7 @@
   />
 </Slide>
 
-<Slide>
+<Slide preload>
   <h2 class="font-bold">Allmaps Tile Server</h2>
   <p>
     A proxy server that turns Georeference Annotations into a XYZ tile layer
@@ -441,7 +441,7 @@
   />
 </Slide>
 
-<Slide>
+<Slide preload>
   <p><strong>What's needed to make this flipbook?</strong></p>
   <p>(And do many other things with your map collections)</p>
   <LargeTextShadow>You need <br /> Allmaps!</LargeTextShadow></Slide
