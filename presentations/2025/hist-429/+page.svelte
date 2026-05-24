@@ -268,7 +268,7 @@
   <ManyMapMonsters><strong>What Allmaps can do</strong></ManyMapMonsters>
 </Slide>
 
-<Slide>
+<Slide preload>
   <div>Georeferencing a map with Allmaps Editor</div>
   <video
     class="shadow-lg"
