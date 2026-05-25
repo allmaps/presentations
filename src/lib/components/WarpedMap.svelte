@@ -3,6 +3,7 @@
 
   import maplibregl from 'maplibre-gl'
   import 'maplibre-gl/dist/maplibre-gl.css'
+  import type { SourceSpecification } from 'maplibre-gl'
 
   import { WarpedMapLayer } from '@allmaps/maplibre'
   import { computeWarpedMapBearing } from '@allmaps/bearing'
@@ -23,6 +24,7 @@
   import { bboxPolygon, featureCollection } from '@turf/turf'
 
   import type { WarpedMapProps, MapViewProps } from '$lib/types/warped-map'
+  import { getGeoJsonLayers } from '$lib/shared/geojson-layers'
 
   type Props = {
     views: MapViewProps[]
@@ -33,12 +35,9 @@
   let highlight = undefined
 
   let start = true
-  let transitionCount = 0
+  let initialIndex = index
   $effect(() => {
-    if (index) {
-      transitionCount++
-    }
-    if (transitionCount > 1) {
+    if (start && initialIndex !== index) {
       start = false
       map.setPaintProperty('foreground', 'background-opacity-transition', {
         duration: DURATION
@@ -64,20 +63,24 @@
     currentAnnotations?.some((annotations) => annotations.type === 'Image') ||
       false
   )
-  let currentHideBackground = $derived(
-    currentImageSlide || currentView.hideBackground
+  let currentHideBasemap = $derived(
+    currentImageSlide || currentView.hideBasemap
   )
   let currentPadding = $derived(currentView.padding)
-  let currentSources = $derived(currentView.sources)
+  let currentSources = $derived(
+    currentView.sources ? Object.keys(currentView.sources) : []
+  )
 
   let sprite = $derived(currentView.sprite)
 
   let map: maplibregl.Map
   let container: HTMLElement
   let mapLoaded = $state(false)
-  let mapIdsByAnnotationUrl = new Map()
+  let mapIdsByAnnotationUrl: Map<string, string[]> = new Map()
+  let layerIdsBySourceId: Map<string, string[]> = new Map()
   let visibleMaps: string[] = new Array()
-  let visibleLayers: Set<string> = new Set()
+  let visibleLayers: string[] = new Array()
+  let imagesAdded: Set<string> = new Set()
 
   // For debugging
   const debug = false
@@ -106,11 +109,13 @@
     }
   }
 
-  const loadAnnotations = async (maps: MapViewProps[]) => {
+  const loadAnnotations = async (views: MapViewProps[]) => {
+    if (debug) {
+      console.log('Loading all annotations...', views)
+    }
     // Add maps
-    const uniqueAnnotations = maps
-      .map((i) => i.annotations)
-      .flatMap((annotations) => (annotations ? annotations : []))
+    const uniqueAnnotations = views
+      .flatMap((i) => (i.annotations ? i.annotations : []))
       // Filter for unique URLs
       .reduce((acc: WarpedMapProps[], current) => {
         const annotationExists = acc.some(
@@ -137,7 +142,12 @@
               )
             )
             .then((id) => {
-              mapIdsByAnnotationUrl.set(url, [id])
+              if (id instanceof Error) {
+                console.error('Failed to add georeferenced map for', url, id)
+                mapIdsByAnnotationUrl.set(url, [])
+              } else {
+                mapIdsByAnnotationUrl.set(url, [id])
+              }
             })
         } else {
           // Add the georeference annotation
@@ -147,7 +157,18 @@
               useVisibility ? { visible: false } : { opacity: 0 }
             )
             .then((ids) => {
-              mapIdsByAnnotationUrl.set(url, ids)
+              const stringIds = ids.filter(
+                (i): i is string => typeof i === 'string'
+              )
+              const errors = ids.filter((i) => i instanceof Error)
+              if (errors.length) {
+                console.error(
+                  'Failed to add georeferenced map for',
+                  url,
+                  errors
+                )
+              }
+              mapIdsByAnnotationUrl.set(url, stringIds)
             })
         }
       })
@@ -155,14 +176,62 @@
     }
   }
 
+  const loadSources = async (views: MapViewProps[]) => {
+    if (debug) {
+      console.log('Loading all sources...', views)
+    }
+    views
+      .flatMap((i) => (i.sources ? Object.entries(i.sources) : []))
+      // Filter for unique keys
+      .reduce((acc: [string, maplibregl.SourceSpecification][], current) => {
+        const [currentId, currentSource] = current
+        const annotationExists = acc.some(([id]) => id === currentId)
+        if (!annotationExists) {
+          acc.push(current)
+        }
+        return acc
+      }, [])
+      .forEach(([id, source]) => {
+        if (source.type !== 'geojson' && source.type !== 'raster') return
+        map.addSource(id, source)
+        if (source.type === 'geojson') {
+          const layers = getGeoJsonLayers(id)
+          layers.forEach((layer) => {
+            map.addLayer(layer)
+          })
+          layerIdsBySourceId.set(
+            id,
+            layers.map((layer) => layer.id)
+          )
+        } else {
+          const layerId = `user-${source}-layer`
+          map.addLayer(
+            {
+              id: layerId,
+              type: 'raster',
+              source: id,
+              layout: { visibility: 'none' }
+            },
+            'warped-map-layer'
+          )
+          layerIdsBySourceId.set(id, [layerId])
+        }
+      })
+  }
+
   let highlightedMaps: string[] = []
   $effect(() => {
     if (mapLoaded && highlight) {
+      if (debug) {
+        console.log('Highlighting maps...', highlight)
+      }
       const ids = mapIdsByAnnotationUrl.get(highlight)
-      warpedMapLayer.setMapsOptions(ids, {
-        renderAppliableMask: true
-      })
-      highlightedMaps = ids
+      if (ids) {
+        warpedMapLayer.setMapsOptions(ids, {
+          renderAppliableMask: true
+        })
+        highlightedMaps = ids
+      }
     } else if (mapLoaded) {
       warpedMapLayer.setMapsOptions(highlightedMaps, {
         renderAppliableMask: false
@@ -171,55 +240,10 @@
   })
 
   $effect(() => {
-    if (mapLoaded) {
-      const sourceIds = currentSources ? Object.keys(currentSources) : []
-      visibleLayers.forEach((id) => {
-        if (!sourceIds.includes(id)) {
-          map.removeLayer(id)
-          visibleLayers.delete(id)
-        }
-      })
-      if (currentSources) {
-        Object.entries(currentSources).forEach(([id, source]) => {
-          // Currently only supporting raster and geojson layers
-          const layerType =
-            source.type === 'raster'
-              ? 'raster'
-              : source.type === 'geojson'
-                ? 'line'
-                : undefined
-          if (!map.getSource(id)) {
-            map.addSource(id, source)
-          }
-          if (layerType && !visibleLayers.has(id)) {
-            const layerOptions: maplibregl.LayerSpecification = {
-              id,
-              type: layerType,
-              source: id
-            }
-            if (layerType === 'line') {
-              layerOptions.layout = {
-                'line-join': 'round',
-                'line-cap': 'round'
-              }
-              layerOptions.paint = {
-                'line-color': colors.green.stroke,
-                'line-width': 8
-              }
-            }
-            map.addLayer(
-              layerOptions,
-              layerType === 'raster' ? 'warped-map-layer' : undefined
-            )
-          }
-          visibleLayers.add(id)
-        })
-      }
-    }
-  })
-
-  $effect(() => {
     if (mapLoaded && currentLocation && !currentAnnotations) {
+      if (debug) {
+        console.log('Flying to new location...', currentLocation)
+      }
       const flyToOptions = {
         ...currentLocation
       }
@@ -232,11 +256,14 @@
 
   $effect(() => {
     const alwaysShow = [warpedMapLayer?.id, 'foreground']
-    if (mapLoaded && currentHideBackground) {
+    if (mapLoaded && currentHideBasemap) {
+      if (debug) {
+        console.log('Changing basemap visibility...', currentHideBasemap)
+      }
       map.setPaintProperty('foreground', 'background-opacity', 1)
 
       for (const layer of map.getLayersOrder()) {
-        if (!alwaysShow.includes(layer)) {
+        if (!alwaysShow.includes(layer) && !layer.startsWith('user')) {
           map.setLayoutProperty(layer, 'visibility', 'none')
         }
       }
@@ -244,7 +271,7 @@
       map.setPaintProperty('foreground', 'background-opacity', 0)
 
       for (const layer of map.getLayersOrder()) {
-        if (!alwaysShow.includes(layer)) {
+        if (!alwaysShow.includes(layer) && !layer.startsWith('user')) {
           map.setLayoutProperty(layer, 'visibility', 'visible')
         }
       }
@@ -263,27 +290,29 @@
         .forEach((annotation) => {
           const { url, options } = annotation
           const annotationIds = mapIdsByAnnotationUrl.get(url)
-          warpedMapLayer.bringMapsToFront(annotationIds)
-          annotationIds.forEach((id: string) => {
-            optionsByMapId.set(
-              id,
-              useVisibility
-                ? {
-                    visible: true,
-                    ...DEFAULT_WARPED_MAP_OPTIONS,
-                    ...options
-                  }
-                : {
-                    opacity: 1,
-                    ...DEFAULT_WARPED_MAP_OPTIONS,
-                    ...options
-                  }
-            )
-            if (!visibleMaps.includes(id)) {
-              // No longer used!
-              newMapIds.push(id)
-            }
-          })
+          if (annotationIds) {
+            warpedMapLayer.bringMapsToFront(annotationIds)
+            annotationIds.forEach((id: string) => {
+              optionsByMapId.set(
+                id,
+                useVisibility
+                  ? {
+                      visible: true,
+                      ...DEFAULT_WARPED_MAP_OPTIONS,
+                      ...options
+                    }
+                  : {
+                      opacity: 1,
+                      ...DEFAULT_WARPED_MAP_OPTIONS,
+                      ...options
+                    }
+              )
+              if (!visibleMaps.includes(id)) {
+                // No longer used!
+                newMapIds.push(id)
+              }
+            })
+          }
         })
 
       // Check which maps to hide and show
@@ -302,6 +331,13 @@
               }
         )
       })
+      if (debug) {
+        console.log('Processing current annotations...', {
+          currentAnnotations,
+          optionsByMapId,
+          visibleMaps
+        })
+      }
       // Animation not working correctly
       // const animate = init ? false : slideDuration === 0 ? false : true
       warpedMapLayer.setMapsOptionsByMapId(optionsByMapId)
@@ -315,7 +351,9 @@
       if (boundsFilter.length) {
         boundsFilter.forEach(({ url }) => {
           const ids = mapIdsByAnnotationUrl.get(url)
-          mapIdsForBounds.push(...ids)
+          if (ids) {
+            mapIdsForBounds.push(...ids)
+          }
         })
       } else mapIdsForBounds = mapIds
 
@@ -324,7 +362,7 @@
         projection: { definition: 'EPSG:4326' }
       })
       // Get optional bearing for map
-      let bearing = 0
+      let bearing = currentLocation.bearing || 0
       let center: maplibregl.LngLat | undefined
 
       const firstMapWithBearingProp = currentAnnotations.find(
@@ -334,24 +372,29 @@
         const warpedMapIds = mapIdsByAnnotationUrl.get(
           firstMapWithBearingProp.url
         )
-        const warpedMap = warpedMapLayer.getWarpedMap(warpedMapIds[0])
 
-        const geoMasks = mapIds
-          .map((id) => {
-            const warpedMap = warpedMapLayer.getWarpedMap(id)
-            if (warpedMap) {
-              return warpedMap.geoMask
-            }
-          })
-          .filter(Boolean)
+        if (warpedMapIds?.length) {
+          const warpedMap = warpedMapLayer.getWarpedMap(warpedMapIds[0])
 
-        if (warpedMap) {
-          bearing = computeWarpedMapBearing(warpedMap)
+          const geoMasks = mapIds
+            .map((id) => {
+              const warpedMap = warpedMapLayer.getWarpedMap(id)
+              if (warpedMap) {
+                return warpedMap.geoMask
+              }
+            })
+            .filter(Boolean)
+
+          if (warpedMap) {
+            const computedBearing = computeWarpedMapBearing(warpedMap)
+            bearing = bearing + computedBearing
+          }
+
+          ;({ bounds, center } = getAxisAlignedBboxAndCenter(geoMasks, bearing))
         }
-
-        ;({ bounds, center } = getAxisAlignedBboxAndCenter(geoMasks, bearing))
       }
       if (bounds && debug) {
+        console.log('Updating bounds layer', bounds)
         const boundsSource = map.getSource('bounds') as maplibregl.GeoJSONSource
         const features = featureCollection([bboxPolygon(bounds)])
         if (boundsSource) {
@@ -359,10 +402,6 @@
         }
       }
       if (bounds) {
-        if (currentLocation.bearing) {
-          // This can be useful if original map is rotated
-          bearing = bearing + currentLocation.bearing
-        }
         const camera = map.cameraForBounds(bounds, {
           padding: currentPadding !== undefined ? currentPadding : PADDING
         })
@@ -396,6 +435,36 @@
     }
   })
 
+  $effect(() => {
+    if (mapLoaded) {
+      const currentVisibleLayers = currentSources.flatMap(
+        (sourceId) => layerIdsBySourceId.get(sourceId) || []
+      )
+      const layersToShow = currentVisibleLayers.filter(
+        (layer) => !visibleLayers.includes(layer)
+      )
+      const layersToHide = visibleLayers.filter(
+        (layer) => !currentVisibleLayers.includes(layer)
+      )
+      if (debug) {
+        console.log('Processing current map sources...', {
+          visibleLayers,
+          currentSources,
+          currentVisibleLayers,
+          layersToShow,
+          layersToHide
+        })
+      }
+      layersToHide.forEach((layer) => {
+        map.setLayoutProperty(layer, 'visibility', 'none')
+      })
+      layersToShow.forEach((layer) => {
+        map.setLayoutProperty(layer, 'visibility', 'visible')
+      })
+      visibleLayers = currentVisibleLayers
+    }
+  })
+
   onMount(() => {
     map = new maplibregl.Map({
       container,
@@ -414,9 +483,21 @@
 
       // @ts-expect-error
       map.addLayer(warpedMapLayer)
+
+      // Load additional style sources and georeference annotations
+      loadSources(views)
       await loadAnnotations(views)
 
       // symbolLayers.forEach((layer) => map.addLayer(layer))
+
+      map.on('styleimagemissing', async (event) => {
+        const id = event.id
+        if (!imagesAdded.has(id)) {
+          imagesAdded.add(id)
+          const image = await map.loadImage(id)
+          map.addImage(id, image.data)
+        }
+      })
 
       if (debug) {
         // Debug layer to show bounds

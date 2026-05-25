@@ -1,5 +1,5 @@
 import type { MapLibreWarpedMapLayerOptions } from '@allmaps/maplibre'
-import maplibregl from 'maplibre-gl'
+import type { SourceSpecification } from 'maplibre-gl'
 
 export type WarpedMapProps = {
   type?: 'Image'
@@ -28,10 +28,10 @@ export type MapViewProps = {
   caption?: string
   freeze?: boolean
   padding?: number
-  hideBackground?: boolean
+  hideBasemap?: boolean
   contain?: boolean
   sources?: {
-    [key: string]: maplibregl.SourceSpecification
+    [key: string]: SourceSpecification
   }
   annotations?: WarpedMapProps[] | WarpedMapProps
 }
