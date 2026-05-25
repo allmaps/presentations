@@ -14,12 +14,12 @@
   const viewsArray = getValueAsArray(views)
 
   let active = $state(false)
-  let index = $state(0)
+  let index: number | undefined = $state(undefined)
 
   let container: HTMLElement
   let observer: MutationObserver
 
-  let currentCaption = $derived(viewsArray[index]?.caption)
+  let currentCaption = $derived(index ? viewsArray[index]?.caption : undefined)
 
   onMount(() => {
     observer = new MutationObserver(() => {
@@ -40,7 +40,7 @@
 </script>
 
 <section bind:this={container}>
-  {#if active}
+  {#if active && index !== undefined}
     <WarpedMap views={viewsArray} {index} />
   {/if}
   {#if viewsArray.length > 1}
