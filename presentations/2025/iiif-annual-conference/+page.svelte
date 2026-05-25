@@ -34,7 +34,7 @@
   views={[
     {
       caption: 'From IIIF Image...',
-      hideBackground: true,
+      hideBasemap: true,
       annotations: {
         url: 'https://annotations.allmaps.org/images/25b7d54b8a233aa0@93c54b242ae917f1',
         useBearing: true,

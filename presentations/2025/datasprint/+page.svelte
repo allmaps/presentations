@@ -47,7 +47,7 @@
   views={[
     {
       caption: 'Allmaps maakt van een IIIF beeld...',
-      hideBackground: true,
+      hideBasemap: true,
       annotations: {
         url: 'https://annotations.allmaps.org/maps/435ccc0ea633df34@3d263d75a9563b6a',
         useBearing: true,

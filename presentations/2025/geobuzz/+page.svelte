@@ -68,7 +68,7 @@
   views={[
     {
       caption: 'Maar hoe maken we van een IIIF beeld...',
-      hideBackground: true,
+      hideBasemap: true,
       annotations: {
         url: 'https://annotations.allmaps.org/images/112ec9cb81fd0850@9cac0b66003e7ce9',
         useBearing: true,

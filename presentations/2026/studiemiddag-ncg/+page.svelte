@@ -69,7 +69,7 @@
         center: [5.372781, 52.15329],
         zoom: 11
       },
-      hideBackground: false,
+      hideBasemap: false,
       annotations: [
         {
           url: 'https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/kraijenhoff/dlcs/latest.json',
@@ -83,7 +83,7 @@
         center: [5.372781, 52.15329],
         zoom: 11
       },
-      hideBackground: false,
+      hideBasemap: false,
       annotations: [
         {
           url: 'https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/kraijenhoff/dlcs/latest.json',
@@ -194,7 +194,7 @@
       ]
     },
     {
-      hideBackground: true,
+      hideBasemap: true,
       annotations: [
         {
           url: 'https://annotations.allmaps.org/maps/72eec7d0508ffa18@a41d06a7f961e434',
