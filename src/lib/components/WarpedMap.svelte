@@ -376,7 +376,7 @@
         if (warpedMapIds?.length) {
           const warpedMap = warpedMapLayer.getWarpedMap(warpedMapIds[0])
 
-          const geoMasks = mapIds
+          const geoMasks = mapIdsForBounds
             .map((id) => {
               const warpedMap = warpedMapLayer.getWarpedMap(id)
               if (warpedMap) {
