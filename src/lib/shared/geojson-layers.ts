@@ -13,13 +13,14 @@ type LayerSpecification = maplibregl.LayerSpecification
 const SIMPLESTYLE_FALLBACKS = {
   markerColor: colors.green.fill,
   markerRadius: {
-    small: 4,
-    medium: 6,
-    large: 8
+    small: 6,
+    medium: 8,
+    large: 12
   },
   stroke: colors.green.stroke,
   strokeOpacity: 1,
   strokeWidth: 8,
+  circleStrokeWidth: 6,
   fill: colors.green.fill,
   fillOpacity: 0.6
 } as const
@@ -128,6 +129,21 @@ export const getGeoJsonLayers = (sourceId: string) => {
         'circle-color': getSimpleStyleColor(
           'marker-color',
           SIMPLESTYLE_FALLBACKS.markerColor
+        ),
+        'circle-opacity': getSimpleStyleNumber(
+          'fill-opacity',
+          SIMPLESTYLE_FALLBACKS.fillOpacity,
+          0,
+          1
+        ),
+        'circle-stroke-width': getSimpleStyleNumber(
+          'stroke-width',
+          SIMPLESTYLE_FALLBACKS.circleStrokeWidth,
+          0
+        ),
+        'circle-stroke-color': getSimpleStyleColor(
+          'stroke',
+          SIMPLESTYLE_FALLBACKS.stroke
         )
       },
       filter: ['all', ['==', '$type', 'Point'], ['!has', 'icon-image']]
