@@ -3,7 +3,6 @@
 
   import maplibregl from 'maplibre-gl'
   import 'maplibre-gl/dist/maplibre-gl.css'
-  import type { SourceSpecification } from 'maplibre-gl'
 
   import { WarpedMapLayer } from '@allmaps/maplibre'
   import { computeWarpedMapBearing } from '@allmaps/bearing'
