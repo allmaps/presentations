@@ -542,11 +542,13 @@
   })
 
   onDestroy(() => {
-    warpedMapLayer.clear()
-    map.remove()
+    if (mapLoaded) {
+      warpedMapLayer.clear()
+      map.remove()
+    }
   })
 </script>
 
 <svelte:window on:keydown={toggleVisibility} on:keyup={toggleVisibility} />
 
-<div class="h-screen w-screen" bind:this={container}></div>
+<div class="h-full w-full min-w-0 min-h-0" bind:this={container}></div>

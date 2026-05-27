@@ -39,7 +39,7 @@
   })
 </script>
 
-<section bind:this={container}>
+<section class="section-stretch p-0" bind:this={container}>
   {#if active && index !== undefined}
     <WarpedMap views={viewsArray} {index} />
   {/if}
