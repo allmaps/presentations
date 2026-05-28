@@ -2,12 +2,20 @@
   import { onMount, onDestroy, setContext } from 'svelte'
 
   type Props = {
-    showLogo?: boolean
-    children: any
+    hideLogo?: boolean
+    stretch?: boolean
+    fullScreen?: boolean
+    children?: any
     preload?: boolean
   }
 
-  let { showLogo = true, preload = false, children }: Props = $props()
+  let {
+    hideLogo = false,
+    preload = false,
+    stretch = false,
+    fullScreen = false,
+    children
+  }: Props = $props()
 
   let container: HTMLElement
   let observer: MutationObserver
@@ -37,7 +45,12 @@
   })
 </script>
 
-<section bind:this={container} class:section-no-logo={!showLogo}>
+<section
+  bind:this={container}
+  class:section-no-logo={hideLogo}
+  class:section-stretch={stretch}
+  class:p-0={fullScreen}
+>
   {#if slideState.active || preload}
     {@render children?.()}
   {/if}

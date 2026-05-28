@@ -456,7 +456,7 @@
   ></iframe>
 </section>
 
-<Slide showLogo={false}>
+<Slide hideLogo>
   <div></div>
   <div></div>
   <div></div>
