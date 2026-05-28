@@ -1,0 +1,61 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [4.488701, 52.163075, 0] },
+      "properties": {
+        "name": "Scheltema Leiden",
+        "icon-image": "/images/iiif-annual-conference-2026/iiif-logo-small.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [4.473213, 52.164778, 0] },
+      "properties": {
+        "name": "Naturalis Biodiversity Center",
+        "icon-image": "/images/iiif-annual-conference-2026/iiif-logo-small.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [4.478922, 52.159619, 0] },
+      "properties": {
+        "name": "Culture Cafe Leidse Lente",
+        "icon-image": "/images/iiif-annual-conference-2026/iiif-logo-small.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [4.90321, 52.383183, 0] },
+      "properties": {
+        "name": "Tolhuistuin",
+        "icon-image": "/images/iiif-annual-conference-2026/iiif-logo-small.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [4.327517, 52.081702, 0] },
+      "properties": {
+        "name": "Royal Library",
+        "icon-image": "/images/iiif-annual-conference-2026/iiif-logo-small.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [4.32667, 52.080674, 0] },
+      "properties": {
+        "name": "Nationaal Archief",
+        "icon-image": "/images/iiif-annual-conference-2026/iiif-logo-small.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [4.326093, 52.08103, 0] },
+      "properties": {
+        "name": "CBG | Center for family history",
+        "icon-image": "/images/iiif-annual-conference-2026/iiif-logo-small.png"
+      }
+    }
+  ]
+}
