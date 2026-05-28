@@ -27,10 +27,13 @@
 
   type Props = {
     views: MapViewProps[]
+    options?: {
+      duration?: number
+    }
     index: number
   }
 
-  let { views, index }: Props = $props()
+  let { views, index, options }: Props = $props()
   let highlight = undefined
 
   let start = true
@@ -248,6 +251,9 @@
       }
       if (currentImageSlide || start) {
         flyToOptions.duration = 0
+      } else if (!currentLocation.duration && options?.duration) {
+        // Cannot be added to the options above as "undefined" will be interpreted as zero
+        flyToOptions.duration = options.duration
       }
       map.flyTo(flyToOptions)
     }
@@ -416,6 +422,9 @@
         }
         if (currentImageSlide || start) {
           flyToOptions.duration = 0
+        } else if (!currentLocation.duration && options?.duration) {
+          // Cannot be added to the options above as "undefined" will be interpreted as zero
+          flyToOptions.duration = options.duration
         }
         map.flyTo(flyToOptions)
       }

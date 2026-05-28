@@ -7,9 +7,12 @@
 
   type Props = {
     views: MapViewProps | MapViewProps[]
+    options?: {
+      duration?: number
+    }
   }
 
-  let { views }: Props = $props()
+  let { views, options }: Props = $props()
 
   const viewsArray = getValueAsArray(views)
 
@@ -19,13 +22,17 @@
   let container: HTMLElement
   let observer: MutationObserver
 
-  let currentCaption = $derived(index ? viewsArray[index]?.caption : undefined)
+  let currentCaption = $derived(
+    index !== undefined ? viewsArray[index]?.caption : undefined
+  )
 
   onMount(() => {
     observer = new MutationObserver(() => {
       active = container.classList.contains('present')
       if (container.dataset.fragment) {
         index = Number(container.dataset.fragment) + 1
+      } else {
+        index = 0
       }
     })
 
@@ -41,7 +48,7 @@
 
 <section class="section-stretch p-0" bind:this={container}>
   {#if active && index !== undefined}
-    <WarpedMap views={viewsArray} {index} />
+    <WarpedMap views={viewsArray} {index} {options} />
   {/if}
   {#if viewsArray.length > 1}
     {#each viewsArray.slice(1)}
