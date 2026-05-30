@@ -2,21 +2,31 @@
   import { onMount, onDestroy } from 'svelte'
   import WarpedMap from './WarpedMap.svelte'
   import MapMonster from './MapMonster.svelte'
-  import { getValueAsArray } from '$lib/shared/functions'
+  import { getValueAsArray } from '$lib/shared/utils'
   import type { MapChapterProps } from '$lib/types/warped-map'
-  import type { SourceSpecification } from 'maplibre-gl'
+  import type { LayerSpecification, SourceSpecification } from 'maplibre-gl'
 
   type Props = {
     chapters: MapChapterProps | MapChapterProps[]
     isDarkMode?: boolean
     duration?: number
     locale?: string
+    showLabels?: boolean
     sources?: {
       [key: string]: SourceSpecification
     }
+    layers?: LayerSpecification[] | LayerSpecification
   }
 
-  let { chapters, isDarkMode, duration, locale, sources }: Props = $props()
+  let {
+    chapters,
+    isDarkMode,
+    duration,
+    locale,
+    showLabels,
+    layers,
+    sources
+  }: Props = $props()
 
   const chaptersArray = getValueAsArray(chapters)
 
@@ -52,7 +62,16 @@
 
 <section class="section-stretch p-0" bind:this={container}>
   {#if active && index !== undefined}
-    <WarpedMap chapters={chaptersArray} {index} {duration} />
+    <WarpedMap
+      chapters={chaptersArray}
+      {index}
+      {duration}
+      {layers}
+      {sources}
+      {showLabels}
+      {isDarkMode}
+      {locale}
+    />
   {/if}
   {#if chaptersArray.length > 1}
     {#each chaptersArray.slice(1)}

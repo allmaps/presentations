@@ -55,3 +55,14 @@ export const DEFAULT_COLORS = {
     fill: '#c1eff5'
   }
 }
+
+// From https://github.com/digidem/maplibre-storymap/blob/main/demo/index.html
+export const LAYER_TYPES = {
+  fill: ['fill-opacity'],
+  line: ['line-opacity'],
+  circle: ['circle-opacity', 'circle-stroke-opacity'],
+  symbol: ['icon-opacity', 'text-opacity'],
+  raster: ['raster-opacity'],
+  'fill-extrusion': ['fill-extrusion-opacity'],
+  heatmap: ['heatmap-opacity']
+}
