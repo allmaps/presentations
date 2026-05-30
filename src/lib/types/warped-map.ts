@@ -1,5 +1,5 @@
 import type { MapLibreWarpedMapLayerOptions } from '@allmaps/maplibre'
-import type { SourceSpecification } from 'maplibre-gl'
+import type { SourceSpecification, LayerSpecification } from 'maplibre-gl'
 
 export type WarpedMapProps = {
   type?: 'Image'
@@ -11,6 +11,13 @@ export type WarpedMapProps = {
   options?: Partial<MapLibreWarpedMapLayerOptions>
   region?: [number, number, number, number]
   wiggle?: boolean
+}
+
+export type MapLayerProps = {
+  layer: string
+  opacity?: number
+  visibility?: 'visible' | 'none'
+  duration?: number
 }
 
 export type MapChapterProps = {
@@ -30,8 +37,6 @@ export type MapChapterProps = {
   padding?: number
   hideBasemap?: boolean
   contain?: boolean
-  sources?: {
-    [key: string]: SourceSpecification
-  }
   warpedMaps?: WarpedMapProps[] | WarpedMapProps
+  layers?: MapLayerProps[] | MapLayerProps
 }
