@@ -12,6 +12,7 @@
   import Pin from '$lib/components/Pin.svelte'
   import LargeTextShadow from '$lib/components/LargeTextShadow.svelte'
   import MapSlide from '$lib/components/MapSlide.svelte'
+  import { getExploreLayers, maskLayerIds } from '$lib/shared/explore'
 </script>
 
 <svelte:head>
@@ -54,6 +55,31 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
 
 <MapSlide
   duration={4000}
+  sources={{
+    conference_locations: {
+      type: 'geojson',
+      data: '/geojson/iiif-annual-conference-2026/conference-locations.geojson'
+    },
+    masks: {
+      type: 'vector',
+      url: 'pmtiles://https://files.allmaps.org/maps.pmtiles',
+      maxzoom: 14
+    }
+  }}
+  layers={[
+    {
+      id: 'conference_locations',
+      type: 'symbol',
+      source: 'conference_locations',
+      layout: {
+        'icon-image': '/images/iiif-annual-conference-2026/iiif-logo-small.png'
+      },
+      paint: {
+        'icon-opacity': 0
+      }
+    },
+    ...getExploreLayers('none')
+  ]}
   chapters={[
     {
       location: {
@@ -125,6 +151,11 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
       padding: 80,
       warpedMaps: {
         url: 'https://annotations.allmaps.org/manifests/83deea6a606be0dc'
+      },
+      layers: {
+        layer: 'conference_locations',
+        opacity: 0,
+        duration: 4000
       }
     },
     {
@@ -132,11 +163,10 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
         center: [4.4887014, 52.1630747],
         zoom: 18
       },
-      sources: {
-        conference_locations: {
-          type: 'geojson',
-          data: '/geojson/iiif-annual-conference-2026/conference-locations.geojson'
-        }
+      layers: {
+        layer: 'conference_locations',
+        opacity: 0.8,
+        duration: 4000
       },
       padding: 80,
       warpedMaps: {
@@ -144,12 +174,6 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
       }
     },
     {
-      sources: {
-        conference_locations: {
-          type: 'geojson',
-          data: '/geojson/iiif-annual-conference-2026/conference-locations.geojson'
-        }
-      },
       padding: 60,
       warpedMaps: [
         {
@@ -161,12 +185,6 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
       ]
     },
     {
-      sources: {
-        conference_locations: {
-          type: 'geojson',
-          data: '/geojson/iiif-annual-conference-2026/conference-locations.geojson'
-        }
-      },
       warpedMaps: [
         {
           useBearing: true,
@@ -185,12 +203,6 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
       ]
     },
     {
-      sources: {
-        conference_locations: {
-          type: 'geojson',
-          data: '/geojson/iiif-annual-conference-2026/conference-locations.geojson'
-        }
-      },
       warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/8d600f869d79b7db',
@@ -210,12 +222,6 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
       ]
     },
     {
-      sources: {
-        conference_locations: {
-          type: 'geojson',
-          data: '/geojson/iiif-annual-conference-2026/conference-locations.geojson'
-        }
-      },
       warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/8d600f869d79b7db',
@@ -256,53 +262,41 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
       // 	center: [4.569164, 52.3022714],
       // 	zoom: 12
       // },
-      sources: {
-        conference_locations: {
-          type: 'geojson',
-          data: '/geojson/iiif-annual-conference-2026/conference-locations.geojson'
+      warpedMaps: {
+        url: 'https://annotations.allmaps.org/maps/85910a5bab900c3f@0c6e85b88adfb471',
+        caption: 'Jan Jansz Dou en Steven van Broeckhuysen, Rijnland (1746)',
+        useBearing: true,
+        options: {
+          removeColor: false,
+          colorize: false,
+          saturation: 1
         }
       },
-      hideBasemap: true,
-      warpedMaps: [
-        {
-          url: 'https://annotations.allmaps.org/maps/85910a5bab900c3f@0c6e85b88adfb471',
-          caption: 'Jan Jansz Dou en Steven van Broeckhuysen, Rijnland (1746)',
-          useBearing: true,
-          options: {
-            // transformationType: 'helmert',
-            // saturation: 1,
-            removeColor: false,
-            colorize: false,
-            saturation: 1
-          }
-        }
-      ]
+      layers: maskLayerIds.map((layer) => ({
+        layer,
+        visibility: 'none'
+      }))
     },
     {
       location: {
-        center: [4.7621975, 52.3080392],
-        zoom: 12
+        center: [0, 0],
+        zoom: 1,
+        duration: 30000,
+        bearing: 0
       },
-      sources: {
-        conference_locations: {
-          type: 'geojson',
-          data: '/geojson/iiif-annual-conference-2026/conference-locations.geojson'
+      warpedMaps: {
+        url: 'https://annotations.allmaps.org/maps/85910a5bab900c3f@0c6e85b88adfb471',
+        caption: 'Jan Jansz Dou en Steven van Broeckhuysen, Rijnland (1746)',
+        options: {
+          removeColor: false,
+          colorize: false,
+          saturation: 1
         }
       },
-      warpedMaps: [
-        {
-          url: 'https://annotations.allmaps.org/maps/85910a5bab900c3f@0c6e85b88adfb471',
-          caption: 'Jan Jansz Dou en Steven van Broeckhuysen, Rijnland (1746)',
-          options: {
-            removeColor: true,
-            removeColorColor: '#D3D3D3',
-            removeColorThreshold: 0.7,
-            removeColorHardness: 0.2,
-            saturation: 0
-            // colorize: true
-          }
-        }
-      ]
+      layers: maskLayerIds.map((layer) => ({
+        layer,
+        visibility: 'visible'
+      }))
     }
   ]}
 ></MapSlide>

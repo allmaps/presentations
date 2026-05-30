@@ -8,6 +8,7 @@
 <script lang="ts">
   import Title from '$lib/components/Title.svelte'
   import MapSlide from '$lib/components/MapSlide.svelte'
+  import { DEFAULT_COLORS } from '$lib/shared/constants'
 </script>
 
 <svelte:head>
@@ -20,6 +21,26 @@
 </Title>
 
 <MapSlide
+  sources={{
+    spoorbaanhartlijn: {
+      type: 'geojson',
+      data: '/geojson/studiemiddag-ncg/spoorbaanhartlijn.geojson'
+    }
+  }}
+  layers={{
+    id: 'spoorbaanhartlijn',
+    type: 'line',
+    source: 'spoorbaanhartlijn',
+    layout: {
+      'line-join': 'round',
+      'line-cap': 'round'
+    },
+    paint: {
+      'line-color': DEFAULT_COLORS.green.stroke,
+      'line-opacity': 0,
+      'line-width': 8
+    }
+  }}
   chapters={[
     {
       warpedMaps: [
@@ -91,11 +112,10 @@
             'Choro-topographische kaart (Universiteitsbibliotheek Utrecht)'
         }
       ],
-      sources: {
-        spoorbaanhartlijn: {
-          type: 'geojson',
-          data: '/geojson/studiemiddag-ncg/spoorbaanhartlijn.geojson'
-        }
+      layers: {
+        layer: 'spoorbaanhartlijn',
+        opacity: 1,
+        duration: 4000
       }
     },
     {
