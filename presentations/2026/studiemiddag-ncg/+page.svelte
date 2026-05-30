@@ -20,9 +20,9 @@
 </Title>
 
 <MapSlide
-  views={[
+  chapters={[
     {
-      annotations: [
+      warpedMaps: [
         {
           type: 'Image',
           url: 'https://dlc.services/iiif-img/v3/7/13/e27aee8f-889a-4c66-922b-474013e1a8e2',
@@ -36,7 +36,7 @@
       location: {
         duration: 0
       },
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://raw.githubusercontent.com/bmmeijers/iiif-annotations/refs/heads/develop/series/kraijenhoff/dlcs/bladwijzer.json',
           caption: 'Bladwijzer Choro-topographische kaart (Vrije Universiteit)',
@@ -48,7 +48,7 @@
     },
     // {
     // 	freeze: true,
-    // 	annotations: [
+    // 	warpedMaps: [
     // 		{
     // 			url: 'https://raw.githubusercontent.com/bmmeijers/iiif-annotations/refs/heads/develop/series/kraijenhoff/dlcs/bladwijzer.json',
     // 			caption: 'Bladwijzer Choro-topographische kaart (Vrije Universiteit)',
@@ -70,7 +70,7 @@
         zoom: 11
       },
       hideBasemap: false,
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/kraijenhoff/dlcs/latest.json',
           caption:
@@ -84,7 +84,7 @@
         zoom: 11
       },
       hideBasemap: false,
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/kraijenhoff/dlcs/latest.json',
           caption:
@@ -103,7 +103,7 @@
         center: [5.372781, 52.15329],
         zoom: 12
       },
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://sammeltassen.nl/iiif-manifests/allmaps/tmk-na-nettekeningen.json',
           caption: 'TMK (Nettekeningen, Nationaal Archief)'
@@ -115,7 +115,7 @@
         center: [5.372781, 52.15329],
         zoom: 13
       },
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/tmk/20231124.json',
           caption: 'TMK (gedrukt, TU Delft)'
@@ -127,7 +127,7 @@
         center: [5.372781, 52.15329],
         zoom: 13
       },
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/tmk/20231124.json',
           caption: 'TMK (gedrukt, TU Delft)',
@@ -147,7 +147,7 @@
         center: [5.372781, 52.15329],
         zoom: 14
       },
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/26810e0f9911cff1@729e3460665e3431',
           caption: 'Bonneblad 428 (minuut, Nationaal Archief)'
@@ -155,7 +155,7 @@
       ]
     },
     {
-      annotations: [
+      warpedMaps: [
         {
           type: 'Image',
           url: 'https://service.archief.nl/iip/iipsrv?IIIF=61/1a/81/b6/3d/52/49/a1/86/a3/58/f7/dd/09/0d/95/d91bbf02-5b00-4d20-a149-f70d6f4daabf.jp2',
@@ -167,7 +167,7 @@
     // 	location: {
     // 		duration: 0
     // 	},
-    // 	annotations: [
+    // 	warpedMaps: [
     // 		{
     // 			url: 'https://annotations.allmaps.org/maps/aef01d5f163bca37',
     // 			caption: 'Amersfoort en omstreken (Universiteit Leiden)',
@@ -183,7 +183,7 @@
       location: {
         duration: 0
       },
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/72eec7d0508ffa18@a41d06a7f961e434',
           caption:
@@ -195,7 +195,7 @@
     },
     {
       hideBasemap: true,
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/72eec7d0508ffa18@a41d06a7f961e434',
           caption:

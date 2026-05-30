@@ -412,30 +412,30 @@
 </Slide>
 
 <MapSlide
-  views={[
+  chapters={[
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/maps/6325db4998c7f13f'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/images/899328143b23dc0a',
         useBearing: true
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/manifests/a35b2badba5505ab'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/manifests/071c6ba31f9c88d4'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/manifests/fc2c32dc51b145d8'
       }
     }

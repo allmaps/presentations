@@ -45,65 +45,65 @@
 <Slide>Mijn leven in kaarten:</Slide>
 
 <MapSlide
-  views={[
+  chapters={[
     {
-      annotations: {
+      warpedMaps: {
         // Prinsengrachtziekenhuis
         url: 'https://annotations.allmaps.org/maps/8dfa7c0a36f7336a',
         useBearing: true
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         // Bussum
         url: 'https://annotations.allmaps.org/maps/58c73354b12a3d6e',
         useBearing: true
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         // Eindhoven
         url: 'https://annotations.allmaps.org/maps/620dad197a139f8e',
         useBearing: true
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         // Utrecht
         url: 'https://annotations.allmaps.org/maps/d9e617c92b987711',
         useBearing: true
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         // Waag
         url: 'https://annotations.allmaps.org/maps/cb06d48aecf12e48',
         useBearing: true
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         // New York
         url: 'https://annotations.allmaps.org/maps/0c082ba891b4fd93',
         useBearing: true
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         // Hezingen
         url: 'https://annotations.allmaps.org/maps/905deea1cb4dc5a3',
         useBearing: true
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         // Oostenburg
         url: 'https://annotations.allmaps.org/maps/8596ac3d0e4cba98',
         useBearing: true
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         // Raalte
         url: 'https://annotations.allmaps.org/maps/e0f9d3f27e6cbca7',
         useBearing: true
@@ -765,9 +765,9 @@
 <!-- ======================================================================================== -->
 
 <MapSlide
-  views={{
+  chapters={{
     caption: 'Krayenhoff-kaart',
-    annotations: [
+    warpedMaps: [
       {
         url: 'https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/kraijenhoff/dlcs/latest.json'
       }
@@ -776,9 +776,9 @@
 />
 
 <MapSlide
-  views={{
+  chapters={{
     caption: 'Topografisch Militaire Kaart',
-    annotations: [
+    warpedMaps: [
       {
         url: 'https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/tmk/20231124.json'
       }
@@ -787,9 +787,9 @@
 />
 
 <MapSlide
-  views={{
+  chapters={{
     caption: 'Bonnebladen',
-    annotations: [
+    warpedMaps: [
       {
         url: 'https://sammeltassen.nl/iiif-manifests/allmaps/bonnebladen-dans-1.json'
       }
@@ -798,9 +798,9 @@
 />
 
 <MapSlide
-  views={{
+  chapters={{
     caption: 'Top 25',
-    annotations: [
+    warpedMaps: [
       {
         url: 'https://sammeltassen.nl/iiif-manifests/allmaps/top25-1.json'
       }
@@ -809,9 +809,9 @@
 />
 
 <MapSlide
-  views={{
+  chapters={{
     caption: 'Waterstaatskaart',
-    annotations: [
+    warpedMaps: [
       {
         url: 'https://raw.githubusercontent.com/tu-delft-heritage/watertijdreis-data/refs/heads/main/content/annotations/09-1874-456827-georef.json'
       }
@@ -820,9 +820,9 @@
 />
 
 <MapSlide
-  views={{
+  chapters={{
     caption: 'Atlas Loman',
-    annotations: [
+    warpedMaps: [
       {
         url: 'https://annotations.allmaps.org/manifests/af012d4792961902'
       }

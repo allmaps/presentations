@@ -529,61 +529,61 @@
 </Slide>
 
 <MapSlide
-  views={[
+  chapters={[
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/maps/6325db4998c7f13f'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/images/899328143b23dc0a',
         useBearing: true
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/images/9591a6ec92d0a977',
         useBearing: true
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/images/70cc691781ff504a',
         useBearing: true
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/images/d4338461602ebff8',
         useBearing: true
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/images/cb1f20a39a8d7439',
         useBearing: true
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/maps/d6e26a80608dccd2',
         useBearing: true
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/maps/dbe2fbebd07ee477',
         useBearing: true
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/images/38e7a057901b27db'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/manifests/fc2c32dc51b145d8'
       }
     }

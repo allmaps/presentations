@@ -12,7 +12,6 @@
   import Pin from '$lib/components/Pin.svelte'
   import LargeTextShadow from '$lib/components/LargeTextShadow.svelte'
   import MapSlide from '$lib/components/MapSlide.svelte'
-  import { DURATION } from '$lib/shared/constants'
 </script>
 
 <svelte:head>
@@ -54,15 +53,15 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
 -->
 
 <MapSlide
-  options={{ duration: 4000 }}
-  views={[
+  duration={4000}
+  chapters={[
     {
       location: {
         center: [4.492428816867406, 52.15899314207719],
         zoom: 18
       },
       hideBasemap: true,
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/maps/18db05c7aa4e7554',
         useBearing: true,
         caption: 'Gemeente Leyden in 9 sectien',
@@ -74,7 +73,7 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
     },
     {
       hideBasemap: true,
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/maps/18db05c7aa4e7554',
         useBearing: true,
         caption: 'Gemeente Leyden in 9 sectien',
@@ -86,7 +85,7 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
     },
     {
       hideBasemap: true,
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/maps/18db05c7aa4e7554',
         useBearing: true,
         caption: 'Gemeente Leyden in 9 sectien',
@@ -99,7 +98,7 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
     },
     {
       hideBasemap: true,
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/maps/18db05c7aa4e7554',
         useBearing: true,
         options: {
@@ -112,7 +111,7 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
     },
     {
       padding: 200,
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/maps/18db05c7aa4e7554',
         caption: 'Gemeente Leyden in 9 sectien',
         options: {
@@ -124,7 +123,7 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
     },
     {
       padding: 80,
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/manifests/83deea6a606be0dc'
       }
     },
@@ -140,7 +139,7 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
         }
       },
       padding: 80,
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/manifests/83deea6a606be0dc'
       }
     },
@@ -152,7 +151,7 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
         }
       },
       padding: 60,
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/6a74aa1b0a1cd30f@6eed53e93a15ae63',
           caption: 'Nieuwe kaart der stad Leyden',
@@ -168,7 +167,7 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
           data: '/geojson/iiif-annual-conference-2026/conference-locations.geojson'
         }
       },
-      annotations: [
+      warpedMaps: [
         {
           useBearing: true,
           url: 'https://annotations.allmaps.org/maps/37672d5c9b23bca5@4cad8ccd1996b94f',
@@ -192,7 +191,7 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
           data: '/geojson/iiif-annual-conference-2026/conference-locations.geojson'
         }
       },
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/8d600f869d79b7db',
           caption: 'Stratenboek',
@@ -217,7 +216,7 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
           data: '/geojson/iiif-annual-conference-2026/conference-locations.geojson'
         }
       },
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/8d600f869d79b7db',
           caption: 'Stratenboek',
@@ -236,14 +235,14 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
       ]
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/maps/e671f14b3ee110cd@aabc56ed3f9d2bfd',
         homepage: 'https://id.rijksmuseum.nl/200548636',
         caption: 'Plattegrond van de verwoestingen door de buskruitramp, 1807'
       }
     },
     {
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/82172b1fdbcd8c40@e8a555b5056c4886',
           caption:
@@ -264,7 +263,7 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
         }
       },
       hideBasemap: true,
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/85910a5bab900c3f@0c6e85b88adfb471',
           caption: 'Jan Jansz Dou en Steven van Broeckhuysen, Rijnland (1746)',
@@ -290,7 +289,7 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
           data: '/geojson/iiif-annual-conference-2026/conference-locations.geojson'
         }
       },
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/85910a5bab900c3f@0c6e85b88adfb471',
           caption: 'Jan Jansz Dou en Steven van Broeckhuysen, Rijnland (1746)',

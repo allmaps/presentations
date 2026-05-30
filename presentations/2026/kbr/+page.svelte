@@ -42,10 +42,10 @@
 </Slide>
 
 <MapSlide
-  views={[
+  chapters={[
     {
       hideBasemap: true,
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/c885f02932de4c78',
           options: {
@@ -60,7 +60,7 @@
     },
     {
       hideBasemap: true,
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/c885f02932de4c78',
           options: {
@@ -78,7 +78,7 @@
         duration: 4000
       },
       hideBasemap: true,
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/c885f02932de4c78',
           options: {
@@ -92,7 +92,7 @@
     },
     {
       hideBasemap: true,
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/c885f02932de4c78',
           options: {
@@ -106,7 +106,7 @@
     },
     {
       hideBasemap: true,
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/c885f02932de4c78',
           options: {
@@ -123,7 +123,7 @@
       location: {
         duration: 4000
       },
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/c885f02932de4c78',
           options: {
@@ -137,7 +137,7 @@
     },
     {
       padding: 100,
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/c885f02932de4c78',
           options: {
@@ -154,7 +154,7 @@
       location: {
         duration: 4000
       },
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/c885f02932de4c78',
           options: {
@@ -167,7 +167,7 @@
       ]
     },
     {
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/c885f02932de4c78',
           options: {
@@ -182,7 +182,7 @@
       ]
     },
     {
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/c885f02932de4c78',
           options: {
@@ -198,7 +198,7 @@
       ]
     },
     {
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/c885f02932de4c78',
           options: {
@@ -215,7 +215,7 @@
       ]
     },
     {
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/c885f02932de4c78',
           options: {
@@ -236,7 +236,7 @@
       location: {
         duration: 4000
       },
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/c885f02932de4c78',
           options: {
@@ -257,7 +257,7 @@
       location: {
         duration: 4000
       },
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/c885f02932de4c78',
           options: {
@@ -278,7 +278,7 @@
       ]
     },
     {
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/c885f02932de4c78',
           options: {
@@ -297,7 +297,7 @@
       ]
     },
     {
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/c885f02932de4c78',
           options: {
@@ -317,7 +317,7 @@
       ]
     },
     {
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/c885f02932de4c78',
           options: {
@@ -341,7 +341,7 @@
         center: [3, 52],
         zoom: 6
       },
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/c885f02932de4c78',
           options: {
@@ -365,7 +365,7 @@
         center: [3, 52],
         zoom: 6
       },
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/c885f02932de4c78',
           options: {
@@ -391,7 +391,7 @@
         center: [0, 55],
         zoom: 5
       },
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/c885f02932de4c78',
           options: {
@@ -414,7 +414,7 @@
       location: {
         duration: 4000
       },
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/images/d734eef02dbeabf2',
           options: {
@@ -451,7 +451,7 @@
     // 	location: {
     // 		duration: 4000
     // 	},
-    // 	annotations: [
+    // 	warpedMaps: [
     // 		{
     // 			url: 'https://annotations.allmaps.org/images/d734eef02dbeabf2',
     // 			options: {
@@ -479,7 +479,7 @@
       location: {
         duration: 4000
       },
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/135dfd2d58dc26ec',
           options: {
@@ -509,7 +509,7 @@
       location: {
         duration: 4000
       },
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/135dfd2d58dc26ec',
           options: {
@@ -540,7 +540,7 @@
       location: {
         duration: 4000
       },
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/135dfd2d58dc26ec',
           options: {
@@ -568,7 +568,7 @@
       ]
     },
     {
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/images/fd42960171d74e7b',
           options: {
@@ -589,7 +589,7 @@
       ]
     },
     {
-      annotations: [
+      warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/images/fd42960171d74e7b',
           options: {

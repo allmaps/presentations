@@ -39,11 +39,11 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
 -->
 
 <MapSlide
-  options={{ duration: 4000 }}
-  views={[
+  duration={4000}
+  chapters={[
     {
       hideBasemap: true,
-      annotations: [
+      warpedMaps: [
         {
           caption: 'Kermis op de Nieuwmarkt',
           useBearing: true,
@@ -58,7 +58,7 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
     },
     {
       hideBasemap: false,
-      annotations: [
+      warpedMaps: [
         {
           caption: 'Kermis op de Nieuwmarkt',
           useBearing: true,
@@ -75,7 +75,7 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
     },
     {
       hideBasemap: false,
-      annotations: [
+      warpedMaps: [
         {
           caption: 'Officieel Plan der Tentoonstelling',
           useBearing: true,
@@ -90,7 +90,7 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
     },
     {
       hideBasemap: false,
-      annotations: [
+      warpedMaps: [
         {
           caption: 'Balthasar Florisz van Berckenrode',
           useBearing: true,
@@ -100,7 +100,7 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
     },
     {
       hideBasemap: false,
-      annotations: [
+      warpedMaps: [
         {
           caption: 'Het Watergraafs of Diemermeer',
           useBearing: true,
@@ -110,7 +110,7 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
     },
     {
       hideBasemap: false,
-      annotations: [
+      warpedMaps: [
         {
           caption: 'Stadsdeel Zuidoost',
           useBearing: true,
@@ -127,7 +127,7 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
         center: [4.9804, 52.3166],
         zoom: 15
       },
-      annotations: [
+      warpedMaps: [
         {
           caption: 'Stadsdeel Zuidoost',
           // useBearing: true,
@@ -142,7 +142,7 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
     },
     {
       hideBasemap: false,
-      annotations: [
+      warpedMaps: [
         {
           caption: 'Lijnen der Amsterdamsche Tram Omnibus-Maatschappij',
           useBearing: true,
@@ -155,7 +155,7 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
     },
     {
       hideBasemap: false,
-      annotations: [
+      warpedMaps: [
         {
           caption: 'Plan tot uitbreiding van Amsterdam (Van Niftrik)',
           useBearing: true,
@@ -169,7 +169,7 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
     },
     {
       hideBasemap: false,
-      annotations: [
+      warpedMaps: [
         {
           caption: 'Plan tot uitbreiding van Amsterdam (Van Niftrik)',
           useBearing: true,
@@ -185,7 +185,7 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
     },
     {
       hideBasemap: false,
-      annotations: [
+      warpedMaps: [
         {
           caption:
             'Ontwerp eener Verbindingslijn van de Spoorwegen te Amsterdam',
@@ -200,7 +200,7 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
     },
     {
       hideBasemap: false,
-      annotations: [
+      warpedMaps: [
         {
           caption: 'Uitbreidingsplan van de Gemeente Watergraafsmeer',
           useBearing: true,
@@ -214,7 +214,7 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
     },
     {
       hideBasemap: false,
-      annotations: [
+      warpedMaps: [
         {
           caption: 'Plan Havenwerken te Amsterdam',
           useBearing: true,
@@ -228,7 +228,7 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
     },
     {
       hideBasemap: false,
-      annotations: [
+      warpedMaps: [
         {
           caption: 'Uitbreiding van Amsterdam',
           useBearing: true,
@@ -242,7 +242,7 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
     },
     {
       hideBasemap: false,
-      annotations: [
+      warpedMaps: [
         {
           caption:
             'Uitlegging der Stad Amsterdam aan de IJ-zijde met een brug over het IJ',
@@ -258,7 +258,7 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
 
     {
       hideBasemap: false,
-      annotations: [
+      warpedMaps: [
         {
           caption:
             'Amsterdam Uitgelegen aan de IJ-zijde, Ontwerp van JSON. Galman',
@@ -274,7 +274,7 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
 
     {
       hideBasemap: false,
-      annotations: [
+      warpedMaps: [
         {
           caption: 'Ontwerp van een brug over het IJ',
           useBearing: true,
@@ -290,10 +290,10 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
 ></MapSlide>
 
 <MapSlide
-  views={[
+  chapters={[
     {
       hideBasemap: false,
-      annotations: [
+      warpedMaps: [
         {
           caption: 'AmsterdamREALTIME',
           // useBearing: true,
@@ -308,7 +308,7 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
     },
     {
       hideBasemap: false,
-      annotations: [
+      warpedMaps: [
         {
           caption: 'AmsterdamREALTIME (opacity)',
           // useBearing: true,
@@ -325,7 +325,7 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
     {
       hideBasemap: false,
       // padding: -200,
-      annotations: [
+      warpedMaps: [
         {
           caption: 'AmsterdamREALTIME (No background',
           // useBearing: true,

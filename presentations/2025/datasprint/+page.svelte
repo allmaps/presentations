@@ -44,11 +44,11 @@
 </Slide>
 
 <MapSlide
-  views={[
+  chapters={[
     {
       caption: 'Allmaps maakt van een IIIF beeld...',
       hideBasemap: true,
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/maps/435ccc0ea633df34@3d263d75a9563b6a',
         useBearing: true,
         options: {
@@ -62,7 +62,7 @@
         duration: 3000
       },
       caption: '...een kaart!',
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/maps/435ccc0ea633df34@3d263d75a9563b6a',
         options: {
           transformationType: 'polynomial'
@@ -231,28 +231,28 @@
 </section>
 
 <MapSlide
-  views={[
+  chapters={[
     {
       caption: 'Loman Atlas (1876)',
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/manifests/af012d4792961902'
       }
     },
     {
       caption: 'Publieke Werken (1909)',
-      annotations: {
+      warpedMaps: {
         url: 'https://sammeltassen.nl/iiif-manifests/allmaps/publieke-werken-1909.json'
       }
     },
     {
       caption: 'Publieke Werken (1943)',
-      annotations: {
+      warpedMaps: {
         url: 'https://sammeltassen.nl/iiif-manifests/allmaps/publieke-werken-1943.json'
       }
     },
     {
       caption: 'Publieke Werken (1985)',
-      annotations: {
+      warpedMaps: {
         url: 'https://sammeltassen.nl/iiif-manifests/allmaps/publieke-werken-1985.json'
       }
     }

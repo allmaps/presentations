@@ -529,35 +529,35 @@
 </section>
 
 <MapSlide
-  views={[
+  chapters={[
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/maps/6325db4998c7f13f'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/images/899328143b23dc0a',
         useBearing: true
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/manifests/a35b2badba5505ab'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/manifests/071c6ba31f9c88d4'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/manifests/fc2c32dc51b145d8'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://gist.githubusercontent.com/sammeltassen/cba1cce96299c7eb4d2fe3ad47a0d07f/raw/174d5f47d9835c111f9b0fb04b8ae0e21aebccb4/sf-aerial-views.json'
       }
     }

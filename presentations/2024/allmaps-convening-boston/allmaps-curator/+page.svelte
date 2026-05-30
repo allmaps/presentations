@@ -52,19 +52,19 @@
 </section>
 
 <MapSlide
-  views={[
+  chapters={[
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/images/f45387289ede9d49'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/manifests/071c6ba31f9c88d4'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://raw.githubusercontent.com/bmmeijers/iiif-annotations/refs/heads/main/series/kraijenhoff/uu/latest.json'
       }
     }

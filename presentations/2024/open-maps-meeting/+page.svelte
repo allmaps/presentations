@@ -270,34 +270,34 @@
 </section>
 
 <MapSlide
-  views={[
+  chapters={[
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/images/3f2cea6d5506bfd9'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/images/11a1070a3fdfb78e'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/images/ea443ffaabb121e2'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/maps/51c6caacf5f1e4d5'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/maps/48da96d9296515a6'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/maps/28ed75ea7a785f32'
       }
     }
@@ -535,44 +535,44 @@
 <section>Let's end this presentation with some more maps:</section>
 
 <MapSlide
-  views={[
+  chapters={[
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/maps/6325db4998c7f13f'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/maps/eaa990689f45a090'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/manifests/a35b2badba5505ab'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/manifests/64d6e35b64564692'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/images/8a753a3ec297626c'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/manifests/fc2c32dc51b145d8'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/manifests/071c6ba31f9c88d4'
       }
     },
     {
-      annotations: {
+      warpedMaps: {
         url: 'https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/north_korea/20231123.json'
       }
     }

@@ -65,11 +65,11 @@
 </Slide>
 
 <MapSlide
-  views={[
+  chapters={[
     {
       caption: 'Maar hoe maken we van een IIIF beeld...',
       hideBasemap: true,
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/images/112ec9cb81fd0850@9cac0b66003e7ce9',
         useBearing: true,
         options: {
@@ -83,7 +83,7 @@
         duration: 3000
       },
       caption: '...een kaart?',
-      annotations: {
+      warpedMaps: {
         url: 'https://annotations.allmaps.org/images/112ec9cb81fd0850@9cac0b66003e7ce9',
         options: {
           transformationType: 'polynomial'
@@ -310,9 +310,9 @@
 </section>
 
 <MapSlide
-  views={{
+  chapters={{
     caption: 'Loman Atlas',
-    annotations: {
+    warpedMaps: {
       url: 'https://annotations.allmaps.org/manifests/af012d4792961902'
     }
   }}
@@ -332,18 +332,18 @@
 <!-- ======================================================================================== -->
 
 <MapSlide
-  views={{
+  chapters={{
     caption: 'Krayenhoff-kaart',
-    annotations: {
+    warpedMaps: {
       url: 'https://raw.githubusercontent.com/bmmeijers/iiif-annotations/main/series/kraijenhoff/dlcs/latest.json'
     }
   }}
 />
 
 <MapSlide
-  views={{
+  chapters={{
     caption: 'Waterstaatskaart',
-    annotations: {
+    warpedMaps: {
       url: 'https://raw.githubusercontent.com/tu-delft-heritage/watertijdreis-data/refs/heads/main/content/annotations/09-1874-456827-georef.json'
     }
   }}
