@@ -1,5 +1,5 @@
 import type maplibregl from 'maplibre-gl'
-import colors from './colors'
+import { DEFAULT_COLORS } from './constants'
 
 // https://github.com/mapbox/simplestyle-spec/tree/master/1.1.0
 type SimpleStyleColorProperty = 'marker-color' | 'stroke' | 'fill'
@@ -11,17 +11,17 @@ type MapLibreExpression = maplibregl.ExpressionSpecification
 type LayerSpecification = maplibregl.LayerSpecification
 
 const SIMPLESTYLE_FALLBACKS = {
-  markerColor: colors.green.fill,
+  markerColor: DEFAULT_COLORS.green.fill,
   markerRadius: {
     small: 6,
     medium: 8,
     large: 12
   },
-  stroke: colors.green.stroke,
+  stroke: DEFAULT_COLORS.green.stroke,
   strokeOpacity: 1,
   strokeWidth: 8,
   circleStrokeWidth: 6,
-  fill: colors.green.fill,
+  fill: DEFAULT_COLORS.green.fill,
   fillOpacity: 0.6
 } as const
 

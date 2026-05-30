@@ -4,17 +4,21 @@
   import MapMonster from './MapMonster.svelte'
   import { getValueAsArray } from '$lib/shared/functions'
   import type { MapViewProps } from '$lib/types/warped-map'
+  import type { SourceSpecification } from 'maplibre-gl'
 
   type Props = {
-    views: MapViewProps | MapViewProps[]
-    options?: {
-      duration?: number
+    chapters: MapViewProps | MapViewProps[]
+    isDarkMode?: boolean
+    duration?: number
+    locale?: string
+    sources?: {
+      [key: string]: SourceSpecification
     }
   }
 
-  let { views, options }: Props = $props()
+  let { chapters, isDarkMode, duration, locale, sources }: Props = $props()
 
-  const viewsArray = getValueAsArray(views)
+  const chaptersArray = getValueAsArray(chapters)
 
   let active = $state(false)
   let index: number | undefined = $state(undefined)
@@ -23,7 +27,7 @@
   let observer: MutationObserver
 
   let currentCaption = $derived(
-    index !== undefined ? viewsArray[index]?.caption : undefined
+    index !== undefined ? chaptersArray[index]?.caption : undefined
   )
 
   onMount(() => {
@@ -48,10 +52,10 @@
 
 <section class="section-stretch p-0" bind:this={container}>
   {#if active && index !== undefined}
-    <WarpedMap views={viewsArray} {index} {options} />
+    <WarpedMap chapters={chaptersArray} {index} {duration} />
   {/if}
-  {#if viewsArray.length > 1}
-    {#each viewsArray.slice(1)}
+  {#if chaptersArray.length > 1}
+    {#each chaptersArray.slice(1)}
       <div class="hidden fragment"></div>
     {/each}
   {/if}

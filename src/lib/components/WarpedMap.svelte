@@ -3,37 +3,43 @@
 
   import maplibregl from 'maplibre-gl'
   import 'maplibre-gl/dist/maplibre-gl.css'
+  import type { SourceSpecification } from 'maplibre-gl'
 
   import { WarpedMapLayer } from '@allmaps/maplibre'
   import { computeWarpedMapBearing } from '@allmaps/bearing'
 
-  import colors from '$lib/shared/colors'
   import { getAxisAlignedBboxAndCenter } from '$lib/shared/bounds'
   import { createFauxGeoreferencedMap } from '$lib/shared/image-annotation'
   import { getLayers, getStyleWithoutLayers } from '$lib/shared/basemap'
   import { getValueAsArray } from '$lib/shared/functions'
   import {
-    PADDING,
-    FLAVOR,
+    DEFAULT_PADDING,
+    DEFAULT_LIGHT_FLAVOR,
     DEFAULT_WARPED_MAP_OPTIONS,
-    LOCALE,
-    DURATION
+    DEFAULT_LOCALE,
+    DEFAULT_DURATION,
+    DEFAULT_COLORS,
+    DEFAULT_DARK_FLAVOR
   } from '$lib/shared/constants'
 
   import { bboxPolygon, featureCollection } from '@turf/turf'
 
   import type { WarpedMapProps, MapViewProps } from '$lib/types/warped-map'
-  import { getGeoJsonLayers } from '$lib/shared/geojson-layers'
+  import { getGeoJsonLayers } from '$lib/shared/geojson'
 
   type Props = {
-    views: MapViewProps[]
-    options?: {
-      duration?: number
-    }
+    chapters: MapViewProps[]
     index: number
+    isDarkMode?: boolean
+    duration?: number
+    locale?: string
+    sources?: {
+      [key: string]: SourceSpecification
+    }
   }
 
-  let { views, index, options }: Props = $props()
+  let { chapters, index, isDarkMode, duration, locale, sources }: Props =
+    $props()
   let highlight = undefined
 
   let start = true
@@ -42,27 +48,27 @@
     if (start && initialIndex !== index) {
       start = false
       map.setPaintProperty('foreground', 'background-opacity-transition', {
-        duration: DURATION
+        duration: duration || DEFAULT_DURATION
       })
     }
   })
 
-  let currentView = $derived(views[index])
+  let currentView = $derived(chapters[index])
   let currentLocation = $derived(
     currentView.location ? currentView.location : {}
   )
-  let currentAnnotations = $derived.by(() => {
-    const annotations = currentView.annotations
-    if (annotations) {
-      const annotationsArr = getValueAsArray(annotations)
-      if (annotationsArr.length) {
-        return annotationsArr
+  let currentWarpedMaps = $derived.by(() => {
+    const warpedMaps = currentView.warpedMaps
+    if (warpedMaps) {
+      const warpedMapsArr = getValueAsArray(warpedMaps)
+      if (warpedMapsArr.length) {
+        return warpedMapsArr
       }
     }
     return undefined
   })
   let currentImageSlide = $derived(
-    currentAnnotations?.some((annotations) => annotations.type === 'Image') ||
+    currentWarpedMaps?.some((warpedMaps) => warpedMaps.type === 'Image') ||
       false
   )
   let currentHideBasemap = $derived(
@@ -89,10 +95,11 @@
   const useVisibility = false
 
   // Initialize style and layers
-  const styleWithoutLayers = getStyleWithoutLayers(FLAVOR)
-  const styleLayers = getLayers(FLAVOR)
-  const symbolLayers = getLayers(FLAVOR, undefined, {
-    lang: LOCALE,
+  const flavor = isDarkMode ? DEFAULT_DARK_FLAVOR : DEFAULT_LIGHT_FLAVOR
+  const styleWithoutLayers = getStyleWithoutLayers(flavor)
+  const styleLayers = getLayers(flavor)
+  const symbolLayers = getLayers(flavor, undefined, {
+    lang: locale ? locale : DEFAULT_LOCALE,
     labelsOnly: true
   })
   const warpedMapLayer = new WarpedMapLayer(
@@ -111,13 +118,13 @@
     }
   }
 
-  const loadAnnotations = async (views: MapViewProps[]) => {
+  const loadAnnotations = async (chapters: MapViewProps[]) => {
     if (debug) {
-      console.log('Loading all annotations...', views)
+      console.log('Loading all warped maps...', chapters)
     }
     // Add maps
-    const uniqueAnnotations = views
-      .flatMap((i) => (i.annotations ? i.annotations : []))
+    const uniqueAnnotations = chapters
+      .flatMap((i) => (i.warpedMaps ? i.warpedMaps : []))
       // Filter for unique URLs
       .reduce((acc: WarpedMapProps[], current) => {
         const annotationExists = acc.some(
@@ -178,12 +185,13 @@
     }
   }
 
-  const loadSources = async (views: MapViewProps[]) => {
+  const loadSources = async (chapters: MapViewProps[]) => {
     if (debug) {
-      console.log('Loading all sources...', views)
+      console.log('Loading all sources...', chapters)
     }
-    views
+    chapters
       .flatMap((i) => (i.sources ? Object.entries(i.sources) : []))
+      .concat(sources ? Object.entries(sources) : [])
       // Filter for unique keys
       .reduce((acc: [string, maplibregl.SourceSpecification][], current) => {
         const [currentId, currentSource] = current
@@ -242,7 +250,7 @@
   })
 
   $effect(() => {
-    if (mapLoaded && currentLocation && !currentAnnotations) {
+    if (mapLoaded && currentLocation && !currentWarpedMaps) {
       if (debug) {
         console.log('Flying to new location...', currentLocation)
       }
@@ -251,9 +259,8 @@
       }
       if (currentImageSlide || start) {
         flyToOptions.duration = 0
-      } else if (!currentLocation.duration && options?.duration) {
-        // Cannot be added to the options above as "undefined" will be interpreted as zero
-        flyToOptions.duration = options.duration
+      } else if (!currentLocation.duration && duration) {
+        flyToOptions.duration = duration
       }
       map.flyTo(flyToOptions)
     }
@@ -284,11 +291,11 @@
   })
 
   $effect(() => {
-    if (mapLoaded && currentAnnotations) {
+    if (mapLoaded && currentWarpedMaps) {
       // Get all IDs
       const optionsByMapId = new Map()
       const newMapIds = new Array()
-      currentAnnotations
+      currentWarpedMaps
         .slice()
         // For correct order
         .reverse()
@@ -337,8 +344,8 @@
         )
       })
       if (debug) {
-        console.log('Processing current annotations...', {
-          currentAnnotations,
+        console.log('Processing current warped maps...', {
+          currentWarpedMaps,
           optionsByMapId,
           visibleMaps
         })
@@ -350,7 +357,7 @@
       visibleMaps = mapIds
 
       let mapIdsForBounds = []
-      const boundsFilter = currentAnnotations.filter(
+      const boundsFilter = currentWarpedMaps.filter(
         (annotation) => annotation.useBounds === true
       )
       if (boundsFilter.length) {
@@ -370,7 +377,7 @@
       let bearing = currentLocation.bearing || 0
       let center: maplibregl.LngLat | undefined
 
-      const firstMapWithBearingProp = currentAnnotations.find(
+      const firstMapWithBearingProp = currentWarpedMaps.find(
         (annotation) => annotation.useBearing == true
       )
       if (firstMapWithBearingProp) {
@@ -408,7 +415,8 @@
       }
       if (bounds) {
         const camera = map.cameraForBounds(bounds, {
-          padding: currentPadding !== undefined ? currentPadding : PADDING
+          padding:
+            currentPadding !== undefined ? currentPadding : DEFAULT_PADDING
         })
         // Add optional center if bearing is used
         if (camera && center) {
@@ -422,9 +430,8 @@
         }
         if (currentImageSlide || start) {
           flyToOptions.duration = 0
-        } else if (!currentLocation.duration && options?.duration) {
-          // Cannot be added to the options above as "undefined" will be interpreted as zero
-          flyToOptions.duration = options.duration
+        } else if (!currentLocation.duration && duration) {
+          flyToOptions.duration = duration
         }
         map.flyTo(flyToOptions)
       }
@@ -445,9 +452,10 @@
 
   $effect(() => {
     if (mapLoaded) {
-      const currentVisibleLayers = currentSources.flatMap(
-        (sourceId) => layerIdsBySourceId.get(sourceId) || []
-      )
+      const alwaysVisible = sources ? Object.keys(sources) : []
+      const currentVisibleLayers = alwaysVisible
+        .concat(currentSources)
+        .flatMap((sourceId) => layerIdsBySourceId.get(sourceId) || [])
       const layersToShow = currentVisibleLayers.filter(
         (layer) => !visibleLayers.includes(layer)
       )
@@ -493,8 +501,8 @@
       map.addLayer(warpedMapLayer)
 
       // Load additional style sources and georeference annotations
-      loadSources(views)
-      await loadAnnotations(views)
+      loadSources(chapters)
+      await loadAnnotations(chapters)
 
       // symbolLayers.forEach((layer) => map.addLayer(layer))
 
@@ -525,7 +533,7 @@
             'line-cap': 'round'
           },
           paint: {
-            'line-color': colors.blue.stroke,
+            'line-color': DEFAULT_COLORS.blue.stroke,
             'line-width': 8
           }
         })

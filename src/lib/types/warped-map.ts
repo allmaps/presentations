@@ -33,5 +33,5 @@ export type MapViewProps = {
   sources?: {
     [key: string]: SourceSpecification
   }
-  annotations?: WarpedMapProps[] | WarpedMapProps
+  warpedMaps?: WarpedMapProps[] | WarpedMapProps
 }

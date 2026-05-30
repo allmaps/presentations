@@ -1,5 +1,4 @@
 import { layers, namedFlavor } from '@protomaps/basemaps'
-import { DURATION } from '$lib/shared/constants'
 import type { Flavor } from '@protomaps/basemaps'
 
 type DefaultFlavors = 'light' | 'dark' | 'white' | 'grayscale' | 'black'
