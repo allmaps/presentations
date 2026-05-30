@@ -13,7 +13,7 @@ export type WarpedMapProps = {
   wiggle?: boolean
 }
 
-export type MapViewProps = {
+export type MapChapterProps = {
   location?: {
     zoom?: number
     center?: [number, number]

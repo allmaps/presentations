@@ -24,11 +24,11 @@
 
   import { bboxPolygon, featureCollection } from '@turf/turf'
 
-  import type { WarpedMapProps, MapViewProps } from '$lib/types/warped-map'
+  import type { WarpedMapProps, MapChapterProps } from '$lib/types/warped-map'
   import { getGeoJsonLayers } from '$lib/shared/geojson'
 
   type Props = {
-    chapters: MapViewProps[]
+    chapters: MapChapterProps[]
     index: number
     isDarkMode?: boolean
     duration?: number
@@ -118,7 +118,7 @@
     }
   }
 
-  const loadAnnotations = async (chapters: MapViewProps[]) => {
+  const loadAnnotations = async (chapters: MapChapterProps[]) => {
     if (debug) {
       console.log('Loading all warped maps...', chapters)
     }
@@ -185,7 +185,7 @@
     }
   }
 
-  const loadSources = async (chapters: MapViewProps[]) => {
+  const loadSources = async (chapters: MapChapterProps[]) => {
     if (debug) {
       console.log('Loading all sources...', chapters)
     }

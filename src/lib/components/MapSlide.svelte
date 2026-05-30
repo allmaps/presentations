@@ -3,11 +3,11 @@
   import WarpedMap from './WarpedMap.svelte'
   import MapMonster from './MapMonster.svelte'
   import { getValueAsArray } from '$lib/shared/functions'
-  import type { MapViewProps } from '$lib/types/warped-map'
+  import type { MapChapterProps } from '$lib/types/warped-map'
   import type { SourceSpecification } from 'maplibre-gl'
 
   type Props = {
-    chapters: MapViewProps | MapViewProps[]
+    chapters: MapChapterProps | MapChapterProps[]
     isDarkMode?: boolean
     duration?: number
     locale?: string
