@@ -46,7 +46,7 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
     <li>What is Allmaps?</li>
     <li>How does Allmaps work?</li>
     <li>What can you do with Allmaps?</li>
-    <li>How is the project supported?</li>
+    <li>How is the project organized?</li>
   </ol>
 </Slide>
 
@@ -102,8 +102,9 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
   duration={4000}
   chapters={[
     ...createExplainer(
-      'https://annotations.allmaps.org/maps/e9aa6ec10276bf65@1212074a61061117',
-      'Van Berckenrodekaart (17th century)'
+      'https://annotations.allmaps.org/maps/e9aa6ec10276bf65@d2d0044d129ea2d5',
+      'Van Berckenrodekaart (17th century)',
+      { center: [4.897004, 52.3691733], zoom: 16, duration: 5000 }
     )
   ]}
 ></MapSlide>

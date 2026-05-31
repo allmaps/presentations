@@ -1,9 +1,13 @@
 import type { MapChapterProps } from '$lib/types/warped-map'
 
-const explainer = (annotationUrl: string, caption?: string) => {
+const explainer = (
+  annotationUrl: string,
+  caption?: string,
+  tpsLocation?: MapChapterProps['location']
+) => {
   return [
     {
-      caption: 'The IIIF Image',
+      caption: 'IIIF Image',
       hideBasemap: true,
       warpedMaps: [
         {
@@ -51,7 +55,7 @@ const explainer = (annotationUrl: string, caption?: string) => {
       ]
     },
     {
-      caption: 'Overlaying on a map',
+      caption: 'Overlaying on a web map',
       padding: 200,
       warpedMaps: [
         {
@@ -66,7 +70,8 @@ const explainer = (annotationUrl: string, caption?: string) => {
       ]
     },
     {
-      caption: 'Displaying vectors',
+      location: tpsLocation,
+      caption: 'Analyzing map distortions',
       padding: 25,
       warpedMaps: [
         {
@@ -77,13 +82,15 @@ const explainer = (annotationUrl: string, caption?: string) => {
             renderGcps: true,
             renderTransformedGcps: true,
             renderVectors: true,
-            transformationType: 'polynomial'
+            transformationType: 'polynomial',
+            opacity: 0.8
           }
         }
       ]
     },
     {
-      caption: 'Using Thin Plate Spline transformation',
+      location: tpsLocation,
+      caption: 'A better fit?',
       padding: 25,
       warpedMaps: [
         {
@@ -94,7 +101,27 @@ const explainer = (annotationUrl: string, caption?: string) => {
             renderGcps: true,
             renderTransformedGcps: true,
             renderVectors: true,
-            transformationType: 'thinPlateSpline'
+            transformationType: 'thinPlateSpline',
+            opacity: 0.8
+          }
+        }
+      ]
+    },
+    {
+      location: tpsLocation,
+      caption: 'A better fit?',
+      padding: 25,
+      warpedMaps: [
+        {
+          url: annotationUrl,
+          caption,
+          options: {
+            applyMask: true,
+            renderGcps: true,
+            renderTransformedGcps: true,
+            renderVectors: true,
+            transformationType: 'thinPlateSpline',
+            opacity: 1
           }
         }
       ]

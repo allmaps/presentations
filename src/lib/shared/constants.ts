@@ -13,6 +13,7 @@ export const DEFAULT_WARPED_MAP_OPTIONS: Partial<MapLibreWarpedMapLayerOptions> 
     colorize: false,
     removeColor: false,
     saturation: 1,
+    opacity: 1,
     renderMask: false,
     renderFullMask: false,
     renderGcps: false,
