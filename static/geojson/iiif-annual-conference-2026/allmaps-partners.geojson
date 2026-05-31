@@ -1,1 +1,159 @@
-{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[-122.170857,37.429661]},"bbox":[-122.1860658,37.4189865,-122.1520382,37.4433992],"properties":{"name":"Stanford University","label":"Stanford University, Stanford, CA, USA","type":"innovator"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-72.926602,41.313837]},"bbox":[-72.9335628,41.307288,-72.9187683,41.3253268],"properties":{"name":"Yale University","label":"Yale University, New Haven, CT, USA","type":"innovator"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[3.72752,51.04738]},"properties":{"name":"Universiteit Gent","label":"Universiteit Gent, Gent, OV, België","type":"contributor"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-1.25421,51.770733]},"bbox":[-1.2581889,51.769046,-1.2503205,51.7732674],"properties":{"name":"University of Oxford","label":"University of Oxford, Oxford, Engeland, Verenigd Koninkrijk","type":"supporter"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-4.068874,52.414343]},"bbox":[-4.0688958,52.4139661,-4.066707,52.414971],"properties":{"name":"National Library of Wales","label":"National Library of Wales, Aberystwyth, Wales, Verenigd Koninkrijk","type":"supporter"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.177058,39.770318]},"bbox":[-86.190716,39.767162,-86.168536,39.788717],"properties":{"name":"Universiteit van Indiana","label":"Universiteit van Indiana, Indianapolis, IN, USA","type":"supporter"}},{"type":"Feature","properties":{"name":"New York Public Library","type":"supporter"},"geometry":{"type":"Point","coordinates":[-73.9823155,40.7532049]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-96.35232003890609,30.6123433026594]},"bbox":[-96.3765554,30.5886121,-96.3237716,30.6323156],"properties":{"name":"Texas A&M University","label":"Texas A&M University, College Station, TX, USA","type":"supporter"}},{"type":"Feature","properties":{"name":"University of Chicago","type":"supporter"},"geometry":{"type":"Point","coordinates":[-87.6005371,41.7909091]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[4.893055,52.368805]},"properties":{"name":"Universiteit van Amsterdam","label":"Allard Pierson Museum, Amsterdam, NH, Nederland","type":"supporter"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[16.357589,48.232306]},"properties":{"name":"University of Vienna","label":"Universitätsbibliothek, Wenen, Oostenrijk","type":"supporter"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[24.739421,59.430631]},"bbox":[24.7370712,59.4298105,24.7401496,59.4309041],"properties":{"name":"National Library of Estonia","label":"Nationale Bibliotheek van Estland, Tallinn, HA, Estland","type":"supporter"}},{"type":"Feature","properties":{"name":"TU Delft","type":"contributor"},"geometry":{"type":"Point","coordinates":[4.3752172,52.0025922]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-71.079212,42.349277]},"bbox":[-71.0792691,42.3488003,-71.0773093,42.3498471],"properties":{"name":"Boston Public Library","label":"Boston Public Library, Boston, MA, USA","type":"contributor"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.881445,43.076621]},"bbox":[-87.8865781,43.0734527,-87.8775031,43.0818904],"properties":{"name":"University of Wisconsin-Milwaukee","label":"University of Wisconsin-Milwaukee, Milwaukee, WI, USA","type":"contributor"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[4.896451,52.370605]},"bbox":[4.896189,52.3704435,4.8968306,52.3707584],"properties":{"name":"KNAW","label":"Spinhuis, Amsterdam, NH, Nederland","type":"contributor"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[5.383564,52.15814]},"properties":{"name":"Rijksdienst voor het Cultureel Erfgoed","label":"Rijksdienst voor het Cultureel Erfgoed, Amersfoort, UT, Nederland","type":"contributor"}}]}
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-122.170857, 37.429661] },
+      "bbox": [-122.1860658, 37.4189865, -122.1520382, 37.4433992],
+      "properties": {
+        "name": "Stanford University",
+        "label": "Stanford University, Stanford, CA, USA",
+        "type": "innovator"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-72.926602, 41.313837] },
+      "bbox": [-72.9335628, 41.307288, -72.9187683, 41.3253268],
+      "properties": {
+        "name": "Yale University",
+        "label": "Yale University, New Haven, CT, USA",
+        "type": "innovator"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [3.72752, 51.04738] },
+      "properties": {
+        "name": "Universiteit Gent",
+        "label": "Universiteit Gent, Gent, OV, België",
+        "type": "contributor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-1.25421, 51.770733] },
+      "bbox": [-1.2581889, 51.769046, -1.2503205, 51.7732674],
+      "properties": {
+        "name": "University of Oxford",
+        "label": "University of Oxford, Oxford, Engeland, Verenigd Koninkrijk",
+        "type": "supporter"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-4.068874, 52.414343] },
+      "bbox": [-4.0688958, 52.4139661, -4.066707, 52.414971],
+      "properties": {
+        "name": "National Library of Wales",
+        "label": "National Library of Wales, Aberystwyth, Wales, Verenigd Koninkrijk",
+        "type": "supporter"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-86.177058, 39.770318] },
+      "bbox": [-86.190716, 39.767162, -86.168536, 39.788717],
+      "properties": {
+        "name": "Universiteit van Indiana",
+        "label": "Universiteit van Indiana, Indianapolis, IN, USA",
+        "type": "supporter"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "New York Public Library", "type": "supporter" },
+      "geometry": { "type": "Point", "coordinates": [-73.9823155, 40.7532049] }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-96.35232003890609, 30.6123433026594]
+      },
+      "bbox": [-96.3765554, 30.5886121, -96.3237716, 30.6323156],
+      "properties": {
+        "name": "Texas A&M University",
+        "label": "Texas A&M University, College Station, TX, USA",
+        "type": "supporter"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "University of Chicago", "type": "supporter" },
+      "geometry": { "type": "Point", "coordinates": [-87.6005371, 41.7909091] }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [4.893055, 52.368805] },
+      "properties": {
+        "name": "Universiteit van Amsterdam",
+        "label": "Allard Pierson Museum, Amsterdam, NH, Nederland",
+        "type": "supporter"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [16.357589, 48.232306] },
+      "properties": {
+        "name": "University of Vienna",
+        "label": "Universitätsbibliothek, Wenen, Oostenrijk",
+        "type": "supporter"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [24.739421, 59.430631] },
+      "bbox": [24.7370712, 59.4298105, 24.7401496, 59.4309041],
+      "properties": {
+        "name": "National Library of Estonia",
+        "label": "Nationale Bibliotheek van Estland, Tallinn, HA, Estland",
+        "type": "supporter"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "TU Delft", "type": "contributor" },
+      "geometry": { "type": "Point", "coordinates": [4.3752172, 52.0025922] }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-71.079212, 42.349277] },
+      "bbox": [-71.0792691, 42.3488003, -71.0773093, 42.3498471],
+      "properties": {
+        "name": "Boston Public Library",
+        "label": "Boston Public Library, Boston, MA, USA",
+        "type": "contributor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-87.881445, 43.076621] },
+      "bbox": [-87.8865781, 43.0734527, -87.8775031, 43.0818904],
+      "properties": {
+        "name": "University of Wisconsin-Milwaukee",
+        "label": "University of Wisconsin-Milwaukee, Milwaukee, WI, USA",
+        "type": "contributor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [4.896451, 52.370605] },
+      "bbox": [4.896189, 52.3704435, 4.8968306, 52.3707584],
+      "properties": {
+        "name": "KNAW",
+        "label": "Spinhuis, Amsterdam, NH, Nederland",
+        "type": "contributor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [5.383564, 52.15814] },
+      "properties": {
+        "name": "Rijksdienst voor het Cultureel Erfgoed",
+        "label": "Rijksdienst voor het Cultureel Erfgoed, Amersfoort, UT, Nederland",
+        "type": "contributor"
+      }
+    }
+  ]
+}
