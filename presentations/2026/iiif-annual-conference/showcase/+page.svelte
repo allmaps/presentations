@@ -13,6 +13,7 @@
   import LargeTextShadow from '$lib/components/LargeTextShadow.svelte'
   import { mapToResourceMaskSvgPolygon } from '@allmaps/stdlib'
   import MapSlide from '$lib/components/MapSlide.svelte'
+  import createExplainer from '$lib/shared/explainer'
 </script>
 
 <svelte:head>
@@ -40,7 +41,28 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
 
 <MapSlide
   duration={4000}
+  sources={{
+    allmaps_partners: {
+      type: 'geojson',
+      data: '/geojson/iiif-annual-conference-2026/allmaps-partners.geojson'
+    }
+  }}
+  layers={{
+    id: 'allmaps_partners',
+    type: 'symbol',
+    source: 'allmaps_partners',
+    layout: {
+      'icon-image': '/images/iiif-annual-conference-2026/iiif-logo-small.png'
+    },
+    paint: {
+      'icon-opacity': 0
+    }
+  }}
   chapters={[
+    ...createExplainer(
+      'https://annotations.allmaps.org/maps/e9aa6ec10276bf65@1212074a61061117',
+      'Amstelredamum emporium Hollandiæ primarium totiusque Europæ celeberrimum'
+    ),
     {
       hideBasemap: true,
       warpedMaps: [
@@ -58,6 +80,10 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
     },
     {
       hideBasemap: false,
+      // layers: {
+      //   layer: 'allmaps_partners',
+      //   opacity: 1
+      // },
       warpedMaps: [
         {
           caption: 'Kermis op de Nieuwmarkt',
