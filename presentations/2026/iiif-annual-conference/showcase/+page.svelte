@@ -11,9 +11,10 @@
   import MapThumbnails from '$lib/components/MapThumbnails.svelte'
   import Pin from '$lib/components/Pin.svelte'
   import LargeTextShadow from '$lib/components/LargeTextShadow.svelte'
-  import { mapToResourceMaskSvgPolygon } from '@allmaps/stdlib'
   import MapSlide from '$lib/components/MapSlide.svelte'
   import createExplainer from '$lib/shared/explainer'
+  import { getExploreLayers, maskLayerIds } from '$lib/shared/explore'
+  import { DEFAULT_COLORS } from '$lib/shared/constants'
 </script>
 
 <svelte:head>
@@ -23,7 +24,7 @@
 <Title>
   <!-- Defined white style because tailwind class text-white is overwritten by reveal -->
   <h2 class="text-white" style="color: white">Allmaps</h2>
-  <p class="text-white text-xl">IIIF Showcase</p>
+  <p class="text-white text-3xl font-light">IIIF Showcase</p>
 </Title>
 
 <!--
@@ -39,30 +40,259 @@ Amsterdam 1200
 https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322b2463f9
 -->
 
+<Slide preload>
+  <h2 class="font-medium">Contents</h2>
+  <ol>
+    <li>What is Allmaps?</li>
+    <li>How does Allmaps work?</li>
+    <li>What can you do with Allmaps?</li>
+    <li>How is the project supported?</li>
+  </ol>
+</Slide>
+
+<Slide preload>
+  <p>
+    Allmaps is an open source platform for <br />
+    curating, georeferencing and exploring IIIF maps
+  </p>
+
+  <div class="fragment absolute top-0 left-0 w-full h-full text-left text-4xl">
+    <div class="flex items-end h-full px-24 py-12">
+      <MapMonster mood="happy" color="pink">
+        <p class="p-4 max-w-xl">
+          Allmaps runs in the browser, no need for complicated GIS
+          infrastructure
+        </p>
+      </MapMonster>
+    </div>
+  </div>
+</Slide>
+
+<Slide>
+  <MapThumbnails>
+    <strong>Millions of digitized maps</strong> are available through IIIF, from
+    institutions around the world
+  </MapThumbnails>
+</Slide>
+
+<Slide preload>
+  <h2 class="font-medium">The goal of Allmaps</h2>
+
+  <div class="max-w-6xl">
+    <span class="fragment text-pink">
+      make <em>all</em> digitized maps more easy to find and use
+    </span>
+    <span class="fragment"
+      >● <span class="text-orange">make these maps searchable by location</span
+      ></span
+    >
+    <span class="fragment"
+      >● <span class="text-green"
+        >publish all georeference data as open data</span
+      ></span
+    >
+    <span class="fragment"
+      >● <span>and finally, combine all of this in a single user interface</span
+      ></span
+    >
+  </div>
+</Slide>
+
 <MapSlide
   duration={4000}
-  sources={{
-    allmaps_partners: {
-      type: 'geojson',
-      data: '/geojson/iiif-annual-conference-2026/allmaps-partners.geojson'
-    }
-  }}
-  layers={{
-    id: 'allmaps_partners',
-    type: 'symbol',
-    source: 'allmaps_partners',
-    layout: {
-      'icon-image': '/images/iiif-annual-conference-2026/iiif-logo-small.png'
-    },
-    paint: {
-      'icon-opacity': 0
-    }
-  }}
   chapters={[
     ...createExplainer(
       'https://annotations.allmaps.org/maps/e9aa6ec10276bf65@1212074a61061117',
-      'Amstelredamum emporium Hollandiæ primarium totiusque Europæ celeberrimum'
-    ),
+      'Van Berckenrodekaart (17th century)'
+    )
+  ]}
+></MapSlide>
+
+<Slide preload>
+  <p class="mb-8">
+    Allmaps uses <strong>Georeference Annotations</strong><br />an
+    <a class="underline" href="https://iiif.io/api/extension/georef/">
+      official extension</a
+    > to the IIIF Presentation API
+  </p>
+  <pre class="javascript">
+		<code data-line-numbers="1-115|17-23|24-28|39-50" data-trim data-noescape
+      ><script type="text/template">
+{
+  "type": "AnnotationPage",
+  "@context": [
+    "http://www.w3.org/ns/anno.jsonld"
+  ],
+  "items": [
+    {
+      "@context": [
+        "http://iiif.io/api/extension/georef/1/context.json",
+        "http://iiif.io/api/presentation/3/context.json"
+      ],
+      "id": "https://annotations.allmaps.org/maps/26e384d4efabdb32",
+      "type": "Annotation",
+      "motivation": "georeferencing",
+      "target": {
+        "type": "SpecificResource",
+        "source": {
+          // Reference to a IIIF resource
+          "@id": "https://cdm21033.contentdm.oclc.org/digital/iiif/krt/1022",
+          "type": "ImageService2",
+          "height": 4292,
+          "width": 3493
+        },
+        "selector": {
+          // Optional SVG Selector to select the cartographic part of an image
+          "type": "SvgSelector",
+          "value": "<svg><polygon points=\"196,3324 861,3323 856,4061 369,4057 370,3925 305,3852 191,3851\" /></svg>"
+        }
+      },
+      "body": {
+        "type": "FeatureCollection",
+        "transformation": {
+          "type": "polynomial",
+          "options": {
+            "order": 1
+          }
+        },
+        "features": [
+          {
+            // A list of ground control points (GCPs):
+            // resource coordinates and corresponding geospatial coordinates
+            "type": "Feature",
+            "properties": {
+              "resourceCoords": [578, 3779]
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [97.1805877, 3.2578402]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "resourceCoords": [349, 3855]
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [95.7576865, 2.8399231]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "resourceCoords": [834, 3724]
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [98.6704303, 3.5887634]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "resourceCoords": [396, 3629]
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [96.1302895, 4.1471109]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "resourceCoords": [845, 4039]
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [98.7838046, 1.7403690]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "resourceCoords": [252, 3345]
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [95.3060364, 5.7804199]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "resourceCoords": [625, 3441]
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [97.4831471, 5.2443204]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+      </script></code
+    >
+  </pre>
+</Slide>
+
+<MapSlide
+  duration={4000}
+  sources={{
+    conference_locations: {
+      type: 'geojson',
+      data: '/geojson/iiif-annual-conference-2026/conference-locations.geojson'
+    },
+    tolhuistuin: {
+      type: 'geojson',
+      data: '/geojson/iiif-annual-conference-2026/tolhuistuin.geojson'
+    },
+    masks: {
+      type: 'vector',
+      url: 'pmtiles://https://files.allmaps.org/maps.pmtiles',
+      maxzoom: 14
+    }
+  }}
+  layers={[
+    {
+      id: 'conference_locations',
+      type: 'symbol',
+      source: 'conference_locations',
+      layout: {
+        'icon-image': '/images/iiif-annual-conference-2026/iiif-logo-small.png'
+      },
+      paint: {
+        'icon-opacity': 0
+      }
+    },
+    {
+      id: 'tolhuistuin-fill',
+      type: 'fill',
+      source: 'tolhuistuin',
+      paint: {
+        'fill-color': DEFAULT_COLORS.orange.fill,
+        'fill-opacity': 0
+      }
+    },
+    {
+      id: 'tolhuistuin-stroke',
+      type: 'line',
+      source: 'tolhuistuin',
+      layout: {
+        'line-join': 'round',
+        'line-cap': 'round'
+      },
+      paint: {
+        'line-color': DEFAULT_COLORS.orange.stroke,
+        'line-opacity': 0,
+        'line-width': 8
+      }
+    },
+    ...getExploreLayers('none')
+  ]}
+  chapters={[
     {
       hideBasemap: true,
       warpedMaps: [
@@ -111,16 +341,6 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
             transformationType: 'polynomial',
             removeColor: false
           }
-        }
-      ]
-    },
-    {
-      hideBasemap: false,
-      warpedMaps: [
-        {
-          caption: 'Balthasar Florisz van Berckenrode',
-          useBearing: true,
-          url: 'https://annotations.allmaps.org/maps/435ccc0ea633df34@490148243d067653'
         }
       ]
     },
@@ -281,7 +501,6 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
         }
       ]
     },
-
     {
       hideBasemap: false,
       warpedMaps: [
@@ -297,7 +516,6 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
         }
       ]
     },
-
     {
       hideBasemap: false,
       warpedMaps: [
@@ -310,62 +528,114 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
             removeColor: false
           }
         }
+      ],
+      layers: [
+        {
+          layer: 'tolhuistuin-fill',
+          opacity: 0
+        },
+        {
+          layer: 'tolhuistuin-stroke',
+          opacity: 0
+        }
       ]
+    },
+    {
+      location: {
+        center: [4.903313633324896, 52.38319823430248],
+        zoom: 18
+      },
+      warpedMaps: [
+        {
+          caption: 'Ontwerp van een brug over het IJ',
+          useBearing: true,
+          url: 'https://annotations.allmaps.org/maps/71628683c7e65a64@4784e6a3f5467075',
+          options: {
+            applyMask: true,
+            removeColor: false
+          }
+        }
+      ],
+      layers: [
+        ...maskLayerIds.map((layer) => ({
+          layer,
+          visibility: 'none' as const
+        })),
+        {
+          layer: 'tolhuistuin-fill',
+          opacity: 1
+        },
+        {
+          layer: 'tolhuistuin-stroke',
+          opacity: 1
+        }
+      ]
+    },
+    {
+      location: {
+        center: [0, 0],
+        zoom: 1,
+        duration: 50000
+      },
+      layers: maskLayerIds.map((layer) => ({
+        layer,
+        visibility: 'visible' as const
+      }))
     }
   ]}
 ></MapSlide>
 
+<Slide preload hideLogo stretch>
+  <iframe
+    title="Side by side"
+    class="w-full h-full"
+    data-src="https://allmaps.org/iiif-partnership"
+  ></iframe>
+</Slide>
+
 <MapSlide
-  chapters={[
-    {
-      hideBasemap: false,
-      warpedMaps: [
-        {
-          caption: 'AmsterdamREALTIME',
-          // useBearing: true,
-          url: 'https://annotations.allmaps.org/maps/94f5fd271764fa21@f90e3745ea365664',
-          options: {
-            applyMask: true,
-            transformationType: 'polynomial',
-            removeColor: false
-          }
-        }
-      ]
-    },
-    {
-      hideBasemap: false,
-      warpedMaps: [
-        {
-          caption: 'AmsterdamREALTIME (opacity)',
-          // useBearing: true,
-          url: 'https://annotations.allmaps.org/maps/94f5fd271764fa21@f90e3745ea365664',
-          options: {
-            applyMask: true,
-            transformationType: 'polynomial',
-            opacity: 0.5,
-            removeColor: false
-          }
-        }
-      ]
-    },
-    {
-      hideBasemap: false,
-      // padding: -200,
-      warpedMaps: [
-        {
-          caption: 'AmsterdamREALTIME (No background',
-          // useBearing: true,
-          url: 'https://annotations.allmaps.org/maps/94f5fd271764fa21@f90e3745ea365664',
-          options: {
-            applyMask: true,
-            transformationType: 'polynomial',
-            opacity: 1,
-            removeColor: true,
-            removeColorColor: '#000',
-            removeColorThreshold: 0.2
-          }
-        }
-      ]
+  sources={{
+    allmaps_partners: {
+      type: 'geojson',
+      data: '/geojson/iiif-annual-conference-2026/allmaps-partners.geojson'
     }
-  ]}
+  }}
+  layers={{
+    id: 'allmaps_partners',
+    type: 'symbol',
+    source: 'allmaps_partners',
+    layout: {
+      'icon-image': '/images/iiif-annual-conference-2026/iiif-logo-small.png'
+    },
+    paint: {
+      'icon-opacity': 0
+    }
+  }}
+  chapters={{
+    caption: 'Innovators, Supporters, and Contributors',
+    location: {
+      center: [-48.715718, 45.0214871513297],
+      zoom: 2
+    },
+    layers: {
+      layer: 'allmaps_partners',
+      opacity: 1
+    }
+  }}
 ></MapSlide>
+
+<Slide horizontal preload>
+  <div class="grid content-center">
+    <p>
+      Thanks! See <a href="https://allmaps.org" class="underline">allmaps.org</a
+      > for more information.
+    </p>
+  </div>
+  <video
+    class="shadow-lg"
+    muted
+    data-loop
+    data-autoplay
+    data-src="/videos/iiif-annual-conference-2024/open-data-homepage.webm"
+  ></video>
+</Slide>
