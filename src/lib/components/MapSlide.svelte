@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte'
+  import { fade } from 'svelte/transition'
   import WarpedMap from './WarpedMap.svelte'
   import MapMonster from './MapMonster.svelte'
   import { getValueAsArray } from '$lib/shared/utils'
@@ -92,6 +93,7 @@
   {#if currentChapterCaption}
     <div
       class="pointer-events-none absolute top-0 left-0 w-full h-full text-left text-2xl"
+      transition:fade
     >
       <div class="flex items-end h-full px-24 py-12">
         <MapMonster mood="excited" color="green">
@@ -105,6 +107,7 @@
   {#if currentWarpedMapsHaveCaptions}
     <div
       class="absolute text-left max-w-xl min-w-0 text-xl left-6 top-6 px-4 py-1 shadow-md z-20 bg-white rounded-lg"
+      transition:fade
     >
       {#each currentWarpedMaps as warpedMap}
         {#if warpedMap.caption}
