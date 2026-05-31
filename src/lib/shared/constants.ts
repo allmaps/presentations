@@ -13,16 +13,14 @@ export const DEFAULT_WARPED_MAP_OPTIONS: Partial<MapLibreWarpedMapLayerOptions> 
     colorize: false,
     removeColor: false,
     saturation: 1,
-    renderAppliableMask: false,
-    renderFullMask: false,
     renderMask: false,
+    renderFullMask: false,
     renderGcps: false,
     renderTransformedGcps: false,
     renderVectors: false,
     renderGrid: false,
     transformationType: undefined,
-    // Fix until undefined works
-    distortionMeasure: ''
+    distortionMeasure: undefined
   }
 
 export const DEFAULT_COLORS = {

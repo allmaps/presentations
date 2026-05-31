@@ -89,7 +89,6 @@
 
   // For debugging
   const debug = false
-  const useVisibility = false
 
   // Initialize style and layers
   const flavor = isDarkMode ? DEFAULT_DARK_FLAVOR : DEFAULT_LIGHT_FLAVOR
@@ -99,9 +98,7 @@
     lang: locale ? locale : DEFAULT_LOCALE,
     labelsOnly: true
   })
-  const warpedMapLayer = new WarpedMapLayer(
-    useVisibility ? { visible: false } : undefined
-  )
+  const warpedMapLayer = new WarpedMapLayer({ visible: false })
 
   async function loadAnnotations(chapters: MapChapterProps[]) {
     if (debug) {
@@ -130,26 +127,15 @@
             wiggle: annotation.wiggle
           })
             .then((georeferencedMap) =>
-              warpedMapLayer.addGeoreferencedMap(
-                georeferencedMap,
-                useVisibility ? { visible: false } : { opacity: 0 }
-              )
+              warpedMapLayer.addGeoreferencedMap(georeferencedMap, {
+                visible: false
+              })
             )
-            .then((id) => {
-              if (id instanceof Error) {
-                console.error('Failed to add georeferenced map for', url, id)
-                mapIdsByAnnotationUrl.set(url, [])
-              } else {
-                mapIdsByAnnotationUrl.set(url, [id])
-              }
-            })
+            .then((id) => mapIdsByAnnotationUrl.set(url, [id]))
         } else {
           // Add the georeference annotation
           return warpedMapLayer
-            .addGeoreferenceAnnotationByUrl(
-              url,
-              useVisibility ? { visible: false } : { opacity: 0 }
-            )
+            .addGeoreferenceAnnotationByUrl(url, { visible: false })
             .then((ids) => {
               const stringIds = ids.filter(
                 (i): i is string => typeof i === 'string'
@@ -185,20 +171,11 @@
           if (annotationIds) {
             warpedMapLayer.bringMapsToFront(annotationIds)
             annotationIds.forEach((id: string) => {
-              optionsByMapId.set(
-                id,
-                useVisibility
-                  ? {
-                      visible: true,
-                      ...DEFAULT_WARPED_MAP_OPTIONS,
-                      ...options
-                    }
-                  : {
-                      opacity: 1,
-                      ...DEFAULT_WARPED_MAP_OPTIONS,
-                      ...options
-                    }
-              )
+              optionsByMapId.set(id, {
+                visible: true,
+                ...DEFAULT_WARPED_MAP_OPTIONS,
+                ...options
+              })
               if (!visibleMaps.includes(id)) {
                 // No longer used!
                 newMapIds.push(id)
@@ -213,15 +190,10 @@
       const mapIds = optionsByMapId.keys().toArray()
 
       mapsToHide.forEach((id) => {
-        optionsByMapId.set(
-          id,
-          useVisibility
-            ? { visible: false, ...DEFAULT_WARPED_MAP_OPTIONS }
-            : {
-                opacity: 0,
-                ...DEFAULT_WARPED_MAP_OPTIONS
-              }
-        )
+        optionsByMapId.set(id, {
+          visible: false,
+          ...DEFAULT_WARPED_MAP_OPTIONS
+        })
       })
       if (debug) {
         console.log('Setting current warped maps...', {
@@ -232,7 +204,7 @@
       }
       // Animation not working correctly
       // const animate = init ? false : slideDuration === 0 ? false : true
-      warpedMapLayer.setMapsOptionsByMapId(optionsByMapId)
+      warpedMapLayer.setMapsOptions((mapId) => optionsByMapId.get(mapId))
 
       visibleMaps = mapIds
 
@@ -250,9 +222,7 @@
       } else mapIdsForBounds = mapIds
 
       // Get bounds of visible maps
-      let bounds = warpedMapLayer.getMapsBbox(mapIdsForBounds, {
-        projection: { definition: 'EPSG:4326' }
-      })
+      let bounds = warpedMapLayer.getMapsBounds(mapIdsForBounds)
       // Get optional bearing for map
       let bearing = currentLocation.bearing || 0
       let center: maplibregl.LngLat | undefined
@@ -279,19 +249,19 @@
 
           if (warpedMap) {
             const computedBearing = computeWarpedMapBearing(warpedMap)
-            bearing = bearing + computedBearing
+            bearing = computedBearing - bearing
           }
 
           ;({ bounds, center } = getAxisAlignedBboxAndCenter(geoMasks, bearing))
         }
       }
       if (bounds && debug) {
-        console.log('Updating bounds layer', bounds)
-        const boundsSource = map.getSource('bounds') as maplibregl.GeoJSONSource
-        const features = featureCollection([bboxPolygon(bounds)])
-        if (boundsSource) {
-          boundsSource.setData(features)
-        }
+        // console.log('Updating bounds layer', bounds)
+        // const boundsSource = map.getSource('bounds') as maplibregl.GeoJSONSource
+        // const features = featureCollection([bboxPolygon(bounds)])
+        // if (boundsSource) {
+        //   boundsSource.setData(features)
+        // }
       }
       if (bounds) {
         const camera = map.cameraForBounds(bounds, {
@@ -306,7 +276,7 @@
           ...camera,
           // Apply manual overrides
           ...currentLocation,
-          bearing: -bearing
+          bearing
         }
         if (currentImageSlide || start) {
           flyToOptions.duration = 0
@@ -317,16 +287,7 @@
       }
     } else if (mapLoaded) {
       // Hide all maps
-      warpedMapLayer.setMapsOptions(
-        visibleMaps,
-        useVisibility
-          ? { visible: false }
-          : {
-              opacity: 0,
-              renderPoints: false,
-              renderLines: false
-            }
-      )
+      warpedMapLayer.setMapsOptions(visibleMaps, { visible: false })
     }
   }
 
@@ -338,13 +299,13 @@
       const ids = mapIdsByAnnotationUrl.get(highlight)
       if (ids) {
         warpedMapLayer.setMapsOptions(ids, {
-          renderAppliableMask: true
+          renderMask: true
         })
         highlightedMaps = ids
       }
     } else if (mapLoaded) {
       warpedMapLayer.setMapsOptions(highlightedMaps, {
-        renderAppliableMask: false
+        renderMask: false
       })
     }
   }

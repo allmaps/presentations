@@ -9,29 +9,29 @@ importers:
   .:
     dependencies:
       '@allmaps/annotation':
-        specifier: 1.0.0-beta.33
-        version: 1.0.0-beta.33
+        specifier: 1.0.0-beta.37
+        version: 1.0.0-beta.37
       '@allmaps/basemap':
-        specifier: 1.0.0-beta.5
-        version: 1.0.0-beta.5
+        specifier: 1.0.0-beta.9
+        version: 1.0.0-beta.9
       '@allmaps/bearing':
-        specifier: 1.0.0-beta.11
-        version: 1.0.0-beta.11
+        specifier: 1.0.0-beta.12
+        version: 1.0.0-beta.12
       '@allmaps/maplibre':
+        specifier: 1.0.0-beta.43
+        version: 1.0.0-beta.43
+      '@allmaps/stdlib':
         specifier: 1.0.0-beta.41
         version: 1.0.0-beta.41
-      '@allmaps/stdlib':
-        specifier: 1.0.0-beta.34
-        version: 1.0.0-beta.34
       '@allmaps/tailwind':
-        specifier: 1.0.0-beta.17
-        version: 1.0.0-beta.17
+        specifier: 1.0.0-beta.21
+        version: 1.0.0-beta.21
       '@allmaps/transform':
-        specifier: 1.0.0-beta.45
-        version: 1.0.0-beta.45
+        specifier: 1.0.0-beta.52
+        version: 1.0.0-beta.52
       '@allmaps/ui':
-        specifier: 1.0.0-beta.35
-        version: 1.0.0-beta.35(@sveltejs/kit@2.21.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1)))(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1)))(svelte@5.33.13)
+        specifier: 1.0.0-beta.43
+        version: 1.0.0-beta.43(@sveltejs/kit@2.21.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0)))(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0)))(svelte@5.33.13)
       '@protomaps/basemaps':
         specifier: ^5.7.2
         version: 5.7.2
@@ -50,13 +50,13 @@ importers:
     devDependencies:
       '@sveltejs/adapter-static':
         specifier: ^3.0.8
-        version: 3.0.8(@sveltejs/kit@2.21.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1)))(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1)))
+        version: 3.0.8(@sveltejs/kit@2.21.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0)))(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0)))
       '@sveltejs/kit':
         specifier: ^2.21.1
-        version: 2.21.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1)))(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1))
+        version: 2.21.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0)))(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0))
       '@sveltejs/vite-plugin-svelte':
         specifier: ^4.0.4
-        version: 4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1))
+        version: 4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0))
       '@tailwindcss/postcss':
         specifier: ^4.1.8
         version: 4.1.8
@@ -92,7 +92,7 @@ importers:
         version: 5.33.13
       svelte-check:
         specifier: ^4.2.1
-        version: 4.2.1(picomatch@4.0.2)(svelte@5.33.13)(typescript@5.8.3)
+        version: 4.2.1(picomatch@4.0.4)(svelte@5.33.13)(typescript@5.8.3)
       tailwindcss:
         specifier: ^4.1.8
         version: 4.1.8
@@ -104,76 +104,58 @@ importers:
         version: 5.8.3
       vite:
         specifier: ^5.4.19
-        version: 5.4.19(lightningcss@1.30.1)
+        version: 5.4.19(lightningcss@1.32.0)
 
 packages:
 
-  '@allmaps/annotation@1.0.0-beta.33':
-    resolution: {integrity: sha512-P/gQgnhqksHij4zNrja2VfBvOJBeM0TA6FIhUZGzJUQnPA0tSe7PNn9/oQAJsYjD/QcOvwBt4rLgN/blX2yTRw==}
+  '@allmaps/annotation@1.0.0-beta.37':
+    resolution: {integrity: sha512-KupGu59+pbwefd7x5Og3CzJiiMvot/DN7vkC7IXhOgCYMlMwMslq2mfRRyfQvFQ/FxZJqH152ZwPRz81M9XbGw==}
 
-  '@allmaps/annotation@1.0.0-beta.36':
-    resolution: {integrity: sha512-8f79ItFD4TxFfyVJ4Wo96Qayxz2Gizy8XZ0u/10YRFWgDV2ZnQAGfSlZh3ITW1759npYQzruRzyeU68D1RXOPA==}
+  '@allmaps/basemap@1.0.0-beta.9':
+    resolution: {integrity: sha512-UZv5CeTxdXCA3oaIQJKrh4xrRbdDHpaxw+mxJ/Sd3rgYq5NO/2sHmQTWHDkMdKh0j74YB6JaXA6HeG9zCFD1mA==}
 
-  '@allmaps/basemap@1.0.0-beta.5':
-    resolution: {integrity: sha512-q88hAH3euC07SUo/XGSee3a3y4iD3K0RpG7dGuORAG02PaQD3NJfubeD/M4d+SBVw0hh8/eA7r3no/Mvakdy/g==}
+  '@allmaps/bearing@1.0.0-beta.12':
+    resolution: {integrity: sha512-GQrpV3aiiz7lLt1SULUgoAHjcuwgY/EovbPFbr2YW/xykSJ6BJAWPALLmloNke8lHvdZbiy1Fy32TsrrbjDhbw==}
 
-  '@allmaps/bearing@1.0.0-beta.11':
-    resolution: {integrity: sha512-bRlLaNkCDyOK+NQipo3E4wCCm9BpFP0Lt1tdgUyrwozz5I+Irf+ZLQGBbLXK9+s/qG2wDeI2iPFPVTM4CFWL3A==}
-
-  '@allmaps/id@1.0.0-beta.37':
-    resolution: {integrity: sha512-6hODPDzFPgCUX26JJABRMqlOHCZB+sN5nrzvN//z7ukfDqaXDM6L95LODc9vAzs85TVHIUYPIYvpiDQbpkL1Qg==}
+  '@allmaps/id@1.0.0-beta.38':
+    resolution: {integrity: sha512-POedcGDJxqpxI9UicmQF5DxfzgsBFIT5ZyKyaJCJ6Kf9P6j6RX7iPhrUEpDG1HQGOQDbwIu7rwMWf8KjHhHh1g==}
     engines: {node: '>=v19.0.0'}
 
-  '@allmaps/iiif-parser@1.0.0-beta.43':
-    resolution: {integrity: sha512-vYg5Cb3qn3E/WittmzD281FkP9/IQaMamOwhPhZMTTQoIV5kv+P1QFVccZav43AOmem+Y3imvn5r9RwEP9rstw==}
+  '@allmaps/iiif-parser@1.0.0-beta.48':
+    resolution: {integrity: sha512-4wjmhbmIqT8gjA9ukJWSzpIU0AhSN8pJHPcOpN2QjBUqJ6Qo262wlJML7iEwqWY4s7yR4TfqI6CASmscUHf4bg==}
 
-  '@allmaps/iiif-parser@1.0.0-beta.47':
-    resolution: {integrity: sha512-GG9Oz2MIzdB4B8x/t2UuNx1Lc0Im7oHnGZoFLjNUeSuzq53m1/wLTEgvxQKabH4JVUMSXlPVZHc7BzO+eE7r0Q==}
+  '@allmaps/maplibre@1.0.0-beta.43':
+    resolution: {integrity: sha512-iT+VMiv9vi3kVuHwbNaf5MA5BVD7m8RphEXk3BKfw4wJqgmP+Li6syK+QEiAfEPLpNUH3XoaLpvPqUZJAv45Qg==}
 
-  '@allmaps/maplibre@1.0.0-beta.41':
-    resolution: {integrity: sha512-noV6osoj20mozv48KEOn2+jtO1J1wjOkCuRNDAv/PNnmGJYyFbBBsWtIcM7lMxdydn27lDJh9P46uTrXgFq7Ew==}
+  '@allmaps/project@1.0.0-beta.9':
+    resolution: {integrity: sha512-IVmlvLCMIOKsfGO10Ul1lXrssvJyKzOcAF/3+U2RZXVQMRIC4nfpOGrgWZGrY36YaJI+pih6rvgS77+S1+QYOw==}
 
-  '@allmaps/project@1.0.0-beta.8':
-    resolution: {integrity: sha512-NFz4C69HwFUPEitan2I0hm5lvKlk9xRDNdvnwbo7I/J06+vLMJWGFqKEkReBwC583BxroByeUTa732cG/UaadQ==}
+  '@allmaps/render@1.0.0-beta.83':
+    resolution: {integrity: sha512-psSkzbA3Lld5fJ1ei5BCIDnWdqkHWwmnyjiySOFE50UUdUEwRmjevwSOyLF5D2UjmNPss0/VF5UYHtmhHDdPkg==}
 
-  '@allmaps/render@1.0.0-beta.82':
-    resolution: {integrity: sha512-M/zg0xeeeRXlTYozKo6Uw0OMZ+uLLH7S5plNWF4THxSSRBjXjCrzaiAVI/xklqtBW6CCe2QF4pxIkJWgUN3HWg==}
+  '@allmaps/stdlib@1.0.0-beta.41':
+    resolution: {integrity: sha512-NCsH52fElzNB8Ui9A/+FZQrxzP+P1z8l/DMx8YtF/E10Z2WHHlgSD2vnbqas5FqH5MI/HX3XtJwfPslzD/aquA==}
 
-  '@allmaps/stdlib@1.0.0-beta.34':
-    resolution: {integrity: sha512-4YBWGqEQ8DhUmqP9YDcWg7sBz53xWUUlMvARJoM7nmwUFX6VJxfUBzG9KKdncrcPcPr9tU/Azt/eUaBkWy1kOg==}
+  '@allmaps/tailwind@1.0.0-beta.21':
+    resolution: {integrity: sha512-rDqyoiCKCnDPS5mHmM8RqB0kxQiD6hFSlUpAQsvJgZ+GFh8Oj2PMgWRml8V4SGupzVZZoEmenYNDKIdPsKjx/w==}
 
-  '@allmaps/stdlib@1.0.0-beta.40':
-    resolution: {integrity: sha512-KanrEDClErcu6bSd+4kDsRW8rO6P9hHO6n2WJxmZYpbUzUQ1gPBWv1+AB0sxAMoK1hwV3NPkqtvNEJ12M3NETw==}
+  '@allmaps/transform@1.0.0-beta.52':
+    resolution: {integrity: sha512-ZgIEWJcBk07S652v+DtsJCVMZJSz7Sf4+nW+WeZIrfXRzO2hmyro7D7ZKFsFeyx3g5uuKy5tP8aLEk+WOTISJw==}
 
-  '@allmaps/tailwind@1.0.0-beta.17':
-    resolution: {integrity: sha512-t6U1m+b5iVbqBee9aPsGJKLqUiRtY4OzocnJKT4RSS+MJa1i5v7YqKRLmY2oBIi/mcQjUJMUr5EmRBQ+R/qckQ==}
+  '@allmaps/triangulate@1.0.0-beta.33':
+    resolution: {integrity: sha512-J421DxpLLpRnilIJF7A4D63fr6VFNe1a9TBDUiHyNdOMkCJhrBHh8KsTXIe2JYTysVJwuHBox1fxPQZcGw8ovA==}
 
-  '@allmaps/tailwind@1.0.0-beta.20':
-    resolution: {integrity: sha512-kUM2qH4EurYmKbk4yW2ni7J/pZqCnOK/XdaSXeVqREfkWNynrH5di/j3byxtqD1+xYBeI/Fft4JTShKWrZZedA==}
+  '@allmaps/types@1.0.0-beta.23':
+    resolution: {integrity: sha512-pRnkcXGBppzc190NY1NTVQ79qDdQquJFSiXdXOIfzY/UVvdfwDMH27g5Bf7Tnk/eTRrfa/UtoWguUv1vlKa/7A==}
 
-  '@allmaps/transform@1.0.0-beta.45':
-    resolution: {integrity: sha512-hHZikWpQ/jErqxbOzxk++VTPUWbKDe51yN6evXAkaniVLBkk9PHY8fvnSZB3zw7WI8q9jmm3BTiclsTa6zyDuw==}
-
-  '@allmaps/transform@1.0.0-beta.51':
-    resolution: {integrity: sha512-tX241cGwMrSFse7vAUO7GRDinHzMy3Pv9Ik/S8ZZQGdjxQHPsKvK7X56NXLUGfsrk7Ls/TjqN9R5Pzo1NnpUng==}
-
-  '@allmaps/triangulate@1.0.0-beta.32':
-    resolution: {integrity: sha512-I8BOLOhPNW4H3+OvgTvBBie0tT3QdjqJbw4SgoFvlVYbPZQPwMWUU6sRGB9kpuww8vGICTkODBZsC6E+jtmx0w==}
-
-  '@allmaps/types@1.0.0-beta.18':
-    resolution: {integrity: sha512-M+mkruiip8+wwi9hlMidJMEVYEO3AOj+05c44unV1rk+OjIfFBWtbMCX8m2QU99Cq/jJWmuDSXwbUqoQ5m+nZA==}
-
-  '@allmaps/types@1.0.0-beta.22':
-    resolution: {integrity: sha512-93XNs2YoKoxzlx9eGsu4+h67pZ39QE5/N2OWdWjsrqcfOLJw3vWb9x2LjoMrWEl7hkB2raY71gbyqtkoGIfKiw==}
-
-  '@allmaps/ui@1.0.0-beta.35':
-    resolution: {integrity: sha512-G1nyjCDzFz/f6Tuhne8fow/IPionnyo/jQ3A6uHRv46uLOCup29FSoo8lmqX+Wgho7DO1tMCgzzpN7Ze6JQX1g==}
+  '@allmaps/ui@1.0.0-beta.43':
+    resolution: {integrity: sha512-FX6q5PSMrWrWLPIOiuJw1bpYnG/MMHn0NxRMYUcJR6A96sNpnA6cXovvxqyV1If/NPPhTN6tNL06aTZat6f4sA==}
     peerDependencies:
       '@sveltejs/kit': ^2.0.0
       svelte: ^4.2.7
 
-  '@allmaps/warpedmaplayer@1.0.0-beta.42':
-    resolution: {integrity: sha512-OnJ/A4AWg/0BeCz5Hf1MrAxwddr4mWsAYKr358FjRGCT+SBXtv75o5se0Hbjl8fuRt8Z32fM8p/nJL8IOexGug==}
+  '@allmaps/warpedmaplayer@1.0.0-beta.43':
+    resolution: {integrity: sha512-ebdkDKl4M4JtDevNQldjpUwZL3zHjLuqN0ToKT3YakHiTXHdEC1Htpx9bdqiFOgP5I7m3qqElKvLyCo1m6Fz6Q==}
 
   '@alloc/quick-lru@5.2.0':
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
@@ -339,14 +321,14 @@ packages:
     resolution: {integrity: sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  '@floating-ui/core@1.7.1':
-    resolution: {integrity: sha512-azI0DrjMMfIug/ExbBaeDVJXcY0a7EPvPjb2xAJPa4HeimBX+Z18HK8QQR3jb6356SnDDdxx+hinMLcJEDdOjw==}
+  '@floating-ui/core@1.7.5':
+    resolution: {integrity: sha512-1Ih4WTWyw0+lKyFMcBHGbb5U5FtuHJuujoyyr5zTaWS5EYMeT6Jb2AuDeftsCsEuchO+mM2ij5+q9crhydzLhQ==}
 
-  '@floating-ui/dom@1.7.1':
-    resolution: {integrity: sha512-cwsmW/zyw5ltYTUeeYJ60CnQuPqmGwuGVhG9w0PRaRKkAyi38BT5CKrpIbb+jtahSwUl04cWzSx9ZOIxeS6RsQ==}
+  '@floating-ui/dom@1.7.6':
+    resolution: {integrity: sha512-9gZSAI5XM36880PPMm//9dfiEngYoC6Am2izES1FF406YFsjvyBMmeJ2g4SAju3xWwtuynNRFL2s9hgxpLI5SQ==}
 
-  '@floating-ui/utils@0.2.9':
-    resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
+  '@floating-ui/utils@0.2.11':
+    resolution: {integrity: sha512-RiB/yIh78pcIxl6lLMG0CgBXAZ2Y0eVHqMPYugu+9U0AeT6YBeiJpf7lbdJNIugFP5SIjwNRgo4DhR1Qxi26Gg==}
 
   '@humanwhocodes/config-array@0.13.0':
     resolution: {integrity: sha512-DZLEEqFWQFiyK6h5YIeynKx7JlvCYWL0cImfSRXZ9l4Sg2efkFGTuFf6vzXjK1cq6IYkU+Eg/JizXw+TD2vRNw==}
@@ -361,8 +343,8 @@ packages:
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
     deprecated: Use @eslint/object-schema instead
 
-  '@internationalized/date@3.8.1':
-    resolution: {integrity: sha512-PgVE6B6eIZtzf9Gu5HvJxRK3ufUFz9DhspELuhW/N0GuMGMTLvPQNRkHP2hTuP9lblOk+f+1xi96sPiPXANXAA==}
+  '@internationalized/date@3.12.2':
+    resolution: {integrity: sha512-FY1Y+H64NDs+HAF6omlnWxm3mEpfgaCSWtL5l551ZZfImA+kGjPFgrnJrGjH6lfmLL0g8Z/mBu1R3kufeCp6Jw==}
 
   '@isaacs/fs-minipass@4.0.1':
     resolution: {integrity: sha512-wgm9Ehl2jpeqP3zw/7mo3kRHFp5MEDhqAdwy1fTGkHAwnkGOVsgpvQhL8B5n1qlb01jV3n/bI0ZfZp5lWA1k4w==}
@@ -400,8 +382,14 @@ packages:
   '@mapbox/point-geometry@0.1.0':
     resolution: {integrity: sha512-6j56HdLTwWGO0fJPlrZtdU/B13q8Uwmo18Ck2GnGgN9PCFyKTZ3UbXeEdRFh18i9XQ92eH2VdtpJHpBD3aripQ==}
 
+  '@mapbox/point-geometry@1.1.0':
+    resolution: {integrity: sha512-YGcBz1cg4ATXDCM/71L9xveh4dynfGmcLDqufR+nQQy3fKwsAZsWd/x4621/6uJaeB9mwOHE6hPeDgXz9uViUQ==}
+
   '@mapbox/tiny-sdf@2.0.6':
     resolution: {integrity: sha512-qMqa27TLw+ZQz5Jk+RcwZGH7BQf5G/TrutJhspsca/3SHwmgKQ1iq+d3Jxz5oysPVYTGP6aXxCo5Lk9Er6YBAA==}
+
+  '@mapbox/tiny-sdf@2.2.0':
+    resolution: {integrity: sha512-LVL4wgI9YAum5V+LNVQO6QgFBPw7/MIIY4XJPNsPDMrjEwcE+JfKk1LuIl8GnF197ejVdC9QdPaxrx5gfgdGXg==}
 
   '@mapbox/unitbezier@0.0.1':
     resolution: {integrity: sha512-nMkuDXFv60aBr9soUG5q+GvZYL+2KZHVvsqFCzqnkGEf46U2fvmytHaEVc1/YZbiLn8X+eR3QzX1+dwDO1lxlw==}
@@ -409,17 +397,32 @@ packages:
   '@mapbox/vector-tile@1.3.1':
     resolution: {integrity: sha512-MCEddb8u44/xfQ3oD+Srl/tNcQoqTw3goGk2oLsrFxOTc3dUp+kAnby3PvAeeBYSMSjSPD1nd1AJA6W49WnoUw==}
 
+  '@mapbox/vector-tile@2.0.5':
+    resolution: {integrity: sha512-pXj8m7KTsqZt+1jsE0xIpGvqTSbblfkuEJL/NJmNePMtEwxO8V3XMDo9WMSfDeqHvCtBI9Lmt4mGcGR10zecmw==}
+
   '@mapbox/whoots-js@3.1.0':
     resolution: {integrity: sha512-Es6WcD0nO5l+2BOQS4uLfNPYQaNDfbot3X1XUoloz+x0mPDS3eeORZJl06HXjwBG1fOGwCRnzK88LMdxKRrd6Q==}
     engines: {node: '>=6.0.0'}
 
-  '@maplibre/maplibre-gl-style-spec@20.4.0':
-    resolution: {integrity: sha512-AzBy3095fTFPjDjmWpR2w6HVRAZJ6hQZUCwk5Plz6EyfnfuQW1odeW5i2Ai47Y6TBA2hQnC+azscjBSALpaWgw==}
-    hasBin: true
+  '@maplibre/geojson-vt@5.0.4':
+    resolution: {integrity: sha512-KGg9sma45S+stfH9vPCJk1J0lSDLWZgCT9Y8u8qWZJyjFlP8MNP1WGTxIMYJZjDvVT3PDn05kN1C95Sut1HpgQ==}
+
+  '@maplibre/geojson-vt@6.1.0':
+    resolution: {integrity: sha512-2eIY4gZxeKIVOZVNkAMb+5NgXhgsMQpOveTQAvnp53LYqHGJZDidk7Ew0Tged9PThidpbS+NFTh0g4zivhPDzQ==}
 
   '@maplibre/maplibre-gl-style-spec@23.3.0':
     resolution: {integrity: sha512-IGJtuBbaGzOUgODdBRg66p8stnwj9iDXkgbYKoYcNiiQmaez5WVRfXm4b03MCDwmZyX93csbfHFWEJJYHnn5oA==}
     hasBin: true
+
+  '@maplibre/maplibre-gl-style-spec@24.8.5':
+    resolution: {integrity: sha512-EzEJmMt6thioRH7GI9LWS7ahXTcAhAPGWCe6oTP2Ps4YnsXOOAfeqx854lZaiDnwURfHmcCKV1mr6oo0i23x6w==}
+    hasBin: true
+
+  '@maplibre/mlt@1.1.11':
+    resolution: {integrity: sha512-dKvjKdITw9d0y3ndGkSqLUEpWCizMtdq8NB06cHohH/JZ2sJoM7dClR9wzJLUWykjbw9RXDFmhjjNBnNW27mzw==}
+
+  '@maplibre/vt-pbf@4.3.0':
+    resolution: {integrity: sha512-jIvp8F5hQCcreqOOpEt42TJMUlsrEcpf/kI1T2v85YrQRV6PPXUcEXUg5karKtH6oh47XJZ4kHu56pUkOuqA7w==}
 
   '@melt-ui/svelte@0.76.2':
     resolution: {integrity: sha512-7SbOa11tXUS95T3fReL+dwDs5FyJtCEqrqG3inRziDws346SYLsxOQ6HmX+4BkIsQh1R8U3XNa+EMmdMt38lMA==}
@@ -582,8 +585,8 @@ packages:
       svelte: ^5.0.0-next.96 || ^5.0.0
       vite: ^5.0.0
 
-  '@swc/helpers@0.5.17':
-    resolution: {integrity: sha512-5IKx/Y13RsYd+sauPb2x+U/xZikHjolzfuDgTAl/Tdf3Q8rslRvC19NKDLgAJQ6wsqADk10ntlv08nPFw/gO/A==}
+  '@swc/helpers@0.5.23':
+    resolution: {integrity: sha512-5lSsMOTXURePglDfvuAQUqkGek9Hg2kksOYay2m0+XR++b2NWYL/4sWyuvVBIs8oKnJaxkdi9whaL/sqN13afw==}
 
   '@tailwindcss/node@4.1.8':
     resolution: {integrity: sha512-OWwBsbC9BFAJelmnNcrKuf+bka2ZxCE2A4Ft53Tkg4uoiE67r/PMEYwCsourC26E+kmxfwE0hVzMdxqeW+xu7Q==}
@@ -691,17 +694,11 @@ packages:
   '@turf/bbox@7.3.5':
     resolution: {integrity: sha512-oG1ya/HtBjAIg4TimbWx+nOYPbY0bCvt82Bq8tm6sBw3qqtbOyRSfDz79Sq90TnH7DXJprJ1qnVGKNtZ6jemfw==}
 
-  '@turf/bearing@7.2.0':
-    resolution: {integrity: sha512-Jm0Xt3GgHjRrWvBtAGvgfnADLm+4exud2pRlmCYx8zfiKuNXQFkrcTZcOiJOgTfG20Agq28iSh15uta47jSIbg==}
-
   '@turf/bearing@7.3.5':
     resolution: {integrity: sha512-/qabIt/IuPsGlE6RukJ0zOirc6afNxoK7fK1WBNVnHuJjeOpSkW+7q1QW5XQGXBMv3odcD0ZgRR+MBiAHduYSA==}
 
   '@turf/bezier-spline@7.3.5':
     resolution: {integrity: sha512-54qnreNRvV9BeTGz2YXJyma+m8HMusuXWw3AkG0bIJGtqJMHqFKC/rWOcYxVj1VM2ScoTgglFxvq7GtSna+KMw==}
-
-  '@turf/boolean-clockwise@7.2.0':
-    resolution: {integrity: sha512-0fJeFSARxy6ealGBM4Gmgpa1o8msQF87p2Dx5V6uSqzT8VPDegX1NSWl4b7QgXczYa9qv7IAABttdWP0K7Q7eQ==}
 
   '@turf/boolean-clockwise@7.3.5':
     resolution: {integrity: sha512-VpDIpTKBjH4oPbzx1ns18TWcosi+qCRtgU1HIJHLj4NWyLNr7TX86DvomCvZRPfsFxkYYgkFlqHBG1a29dcyqQ==}
@@ -769,9 +766,6 @@ packages:
   '@turf/clean-coords@7.3.5':
     resolution: {integrity: sha512-e0ZTqVWiQaCI/b8EFb+HAS8lCDomWafAKxQuIv0IYks0GwOlVTDWTwsY2RX2685j2Y+QssqOsyHsPZCtAjc3YQ==}
 
-  '@turf/clone@7.2.0':
-    resolution: {integrity: sha512-JlGUT+/5qoU5jqZmf6NMFIoLDY3O7jKd53Up+zbpJ2vzUp6QdwdNzwrsCeONhynWM13F0MVtPXH4AtdkrgFk4g==}
-
   '@turf/clone@7.3.5':
     resolution: {integrity: sha512-qfIaHj3410QEcTpiCRnTzhq8YrUp2gWrUIPLBAEFykopNxJkq1du1VrRzvuAo36ap2UV7KppkS6wGNypbcxswQ==}
 
@@ -796,9 +790,6 @@ packages:
   '@turf/convex@7.3.5':
     resolution: {integrity: sha512-d/pq86he+/GB/2ObuBHapeT15QFsCPhhGab3uE4YjogLMbD8qtu0sRGF+cvvPRDNuCLycOBL/xgFLnf9SteYlA==}
 
-  '@turf/destination@7.2.0':
-    resolution: {integrity: sha512-8DUxtOO0Fvrh1xclIUj3d9C5WS20D21F5E+j+X9Q+ju6fcM4huOqTg5ckV1DN2Pg8caABEc5HEZJnGch/5YnYQ==}
-
   '@turf/destination@7.3.5':
     resolution: {integrity: sha512-x6ylChhOlIbucRSw7wF6z2gSEqqQl+dE0nSH5AL/ojZkqqGYahiw+2P4A8ZMuDM6rzH+FIqRYDes0o4nSArZCw==}
 
@@ -813,9 +804,6 @@ packages:
 
   '@turf/distance-weight@7.3.5':
     resolution: {integrity: sha512-GpV2h5ZkbWMdUFe5BWm9lfeLFMnYR8CRj6HiguZBLesarSub6I0UNO1u8UhkRGi26YLGnFlBh7c4KyaakNx1Gg==}
-
-  '@turf/distance@7.2.0':
-    resolution: {integrity: sha512-HBjjXIgEcD/wJYjv7/6OZj5yoky2oUvTtVeIAqO3lL80XRvoYmVg6vkOIu6NswkerwLDDNT9kl7+BFLJoHbh6Q==}
 
   '@turf/distance@7.3.5':
     resolution: {integrity: sha512-uQAC63zg/l91KUxzfhqio7Ii3+UXTrPOVJScIdRj6EO6+9XHI4kC+AdyIS4cPAv14sZfJLIBxzMnzcGrss+kEA==}
@@ -841,9 +829,6 @@ packages:
   '@turf/great-circle@7.3.5':
     resolution: {integrity: sha512-VAio6hwPJIheSzrvsMkLDMHkCfHyOi4H4r1Y2ynb2oMiGiqZjkQ7jIFlRYBcTyO2RnwEOgwM/d3kwRImAwMVBA==}
 
-  '@turf/helpers@7.2.0':
-    resolution: {integrity: sha512-cXo7bKNZoa7aC7ydLmUR02oB3IgDe7MxiPuRz3cCtYQHn+BJ6h1tihmamYDWWUlPHgSNF0i3ATc4WmDECZafKw==}
-
   '@turf/helpers@7.3.5':
     resolution: {integrity: sha512-E/NMGV5MwbjjP7AJXBtsanC3yY8N2MQ87IGdIgkB2ji5AtBpwnH4L3gEqpYN4RlCJJWbLbzO91BbKv2waUd0eg==}
 
@@ -855,9 +840,6 @@ packages:
 
   '@turf/intersect@7.3.5':
     resolution: {integrity: sha512-v11Do9ySbsE08ffiwboQeFKvYByyxzvAz0ls837A9T3rSC+8vKMmK815S+C5v8CBMLNhuBCSgqnOIV3zonNICQ==}
-
-  '@turf/invariant@7.2.0':
-    resolution: {integrity: sha512-kV4u8e7Gkpq+kPbAKNC21CmyrXzlbBgFjO1PhrHPgEdNqXqDawoZ3i6ivE3ULJj2rSesCjduUaC/wyvH/sNr2Q==}
 
   '@turf/invariant@7.3.5':
     resolution: {integrity: sha512-ZVIvsBvjr8lO7WxC5zYNjRsjSDvyGvWkJMjuWaJjTU8x+1tmfNnw3gDX/TI2Sit83gcRYLYkNo23lB/udqx/Hg==}
@@ -910,14 +892,8 @@ packages:
   '@turf/mask@7.3.5':
     resolution: {integrity: sha512-zs9bBtdANOsSkG7xiLFYforeI2nszXu0QwPv3vkaX747oEVdcyd0nSW81aQRmSWw/fvhXja++8duIVXOIYr4ng==}
 
-  '@turf/meta@7.2.0':
-    resolution: {integrity: sha512-igzTdHsQc8TV1RhPuOLVo74Px/hyPrVgVOTgjWQZzt3J9BVseCdpfY/0cJBdlSRI4S/yTmmHl7gAqjhpYH5Yaw==}
-
   '@turf/meta@7.3.5':
     resolution: {integrity: sha512-r+ohqxoyqeigFB0oFrQx/YEHIkOKqcKpCjvZkvZs7Tkv+IFco5MezAd2zd4rzK+0DfFgDP3KpJc7HqrYjvEjhg==}
-
-  '@turf/midpoint@7.2.0':
-    resolution: {integrity: sha512-AMn5S9aSrbXdE+Q4Rj+T5nLdpfpn+mfzqIaEKkYI021HC0vb22HyhQHsQbSeX+AWcS4CjD1hFsYVcgKI+5qCfw==}
 
   '@turf/midpoint@7.3.5':
     resolution: {integrity: sha512-y92O2YDDBkZp7jAUuUPgof/HiXHjJSkKjEtQRjWXZcjTlzHd/Fqg6/twarY2wNkENK2EuaaiV9MDy74FeRG2Ow==}
@@ -978,9 +954,6 @@ packages:
 
   '@turf/rectangle-grid@7.3.5':
     resolution: {integrity: sha512-SVtXOJIz7FYaRUinxb0HfE/GNSJU6eU9tlKQaERDo/vG7wjPoTCDvnH8p4BdE5GRdXZMjvBUhtNdMj+M3rGRjQ==}
-
-  '@turf/rewind@7.2.0':
-    resolution: {integrity: sha512-SZpRAZiZsE22+HVz6pEID+ST25vOdpAMGk5NO1JeqzhpMALIkIGnkG+xnun2CfYHz7wv8/Z0ADiAvei9rkcQYA==}
 
   '@turf/rewind@7.3.5':
     resolution: {integrity: sha512-4AZdDh55JeCoKWLS5AC6MuXqAvoqSpj2WigtowtA3JIJ/1J4SclRrV6BGq/Xemwm5yKtRePHazBVUmG5uU75og==}
@@ -1295,8 +1268,8 @@ packages:
     resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
     engines: {node: '>=0.10.0'}
 
-  delaunator@5.0.1:
-    resolution: {integrity: sha512-8nvh+XBe96aCESrGOqMp/84b13H9cdKbG5P2ejQCh4d4sK9RL4371qou9drQjMhvnPmhWl5hnmqbEE0fXr9Xnw==}
+  delaunator@5.1.0:
+    resolution: {integrity: sha512-AGrQ4QSgssa1NGmWmLPqN5NY2KajF5MqxetNEO+o0n3ZwZZeTmt7bBnvzHWrmkZFxGgr4HdyFgelzgi06otLuQ==}
 
   dequal@2.0.3:
     resolution: {integrity: sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==}
@@ -1304,6 +1277,10 @@ packages:
 
   detect-libc@2.0.4:
     resolution: {integrity: sha512-3UDv+G9CsCKO1WKMGw9fwq/SWJYbI0c5Y7LU1AXYoDdbhE2AHQ6N6Nb34sG8Fj7T5APy8qXDCKuuIHd1BR0tVA==}
+    engines: {node: '>=8'}
+
+  detect-libc@2.1.2:
+    resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
     engines: {node: '>=8'}
 
   devalue@5.1.1:
@@ -1322,6 +1299,9 @@ packages:
 
   earcut@3.0.1:
     resolution: {integrity: sha512-0l1/0gOjESMeQyYaK5IDiPNvFeu93Z/cO0TjZh9eZ1vyCtZnA7KMZ8rQggpsJHIbGSdrqYq9OhuveadOVHCshw==}
+
+  earcut@3.0.2:
+    resolution: {integrity: sha512-X7hshQbLyMJ/3RPhyObLARM2sNxxmRALLKx1+NVFFnQ9gKzmCrxm9+uLIAdBcvc8FNLpctqlQ2V6AE92Ol9UDQ==}
 
   enhanced-resolve@5.18.1:
     resolution: {integrity: sha512-ZSW3ma5GkcQBIpwZTSRAI8N71Uuwgs93IezB7mf7R60tC8ZbJideoDNKjHn2O9KIlx6rkGTTEk1xUCK2E1Y2Yg==}
@@ -1455,8 +1435,8 @@ packages:
   flowbite@1.8.1:
     resolution: {integrity: sha512-lXTcO8a6dRTPFpINyOLcATCN/pK1Of/jY4PryklPllAiqH64tSDUsOdQpar3TO59ZXWwugm2e92oaqwH6X90Xg==}
 
-  focus-trap@7.6.5:
-    resolution: {integrity: sha512-7Ke1jyybbbPZyZXFxEftUtxFGLMpE2n6A+z//m4CRDlj0hW+o3iYSmh8nFlYMurOiJVDmJRilUQtJr08KfIxlg==}
+  focus-trap@7.8.0:
+    resolution: {integrity: sha512-/yNdlIkpWbM0ptxno3ONTuf+2g318kh2ez3KSeZN5dZ8YC6AAmgeWz+GasYYiBJPFaYcSAPeu4GfhUaChzIJXA==}
 
   fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
@@ -1481,6 +1461,9 @@ packages:
 
   gl-matrix@3.4.3:
     resolution: {integrity: sha512-wcCp8vu8FT22BnvKVPjXa/ICBWRq/zjFfdofZy1WSpQZpphblv12/bOQLBC1rMM7SGOFS9ltVmKOHil5+Ml7gA==}
+
+  gl-matrix@3.4.4:
+    resolution: {integrity: sha512-latSnyDNt/8zYUB6VIJ6PCh2jBjJX6gnDsoCZ7LyW7GkqrD51EWwa9qCoGixj8YqBtETQK/xY7OmpTF8xz1DdQ==}
 
   glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
@@ -1546,8 +1529,8 @@ packages:
     resolution: {integrity: sha512-X7rqawQBvfdjS10YU1y1YVreA3SsLrW9dX2CewP2EbBJM4ypVNLDkO5y04gejPwKIY9lR+7r9gn3rFPt/kmWFg==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
 
-  is-any-array@2.0.1:
-    resolution: {integrity: sha512-UtilS7hLRu++wb/WBAw9bNuP1Eg04Ivn1vERJck8zJthEvXCBEBpGR/33u/xLKWEQf95803oalHrVDptcAvFdQ==}
+  is-any-array@3.0.0:
+    resolution: {integrity: sha512-o4h+tylWykC4BD1vaejp6gDxoM13bwW8FGuNs4yIKpj8xbBJcRxJx8vZpq0dCr7ZDEfeKjmsi/euolKhX6f/ww==}
 
   is-extglob@2.1.1:
     resolution: {integrity: sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==}
@@ -1602,6 +1585,9 @@ packages:
   kdbush@4.0.2:
     resolution: {integrity: sha512-WbCVYJ27Sz8zi9Q7Q0xHC+05iwkm3Znipc2XTlrnJbsHMYktW4hPhXUE8Ys1engBrvffoSCqbil1JQAa7clRpA==}
 
+  kdbush@4.1.0:
+    resolution: {integrity: sha512-e9vurzrXJQrFX6ckpHP3bvj5l+9CnYzkxDNnNQ1h2QTqdWsUAJgXiKdGNcOa1EY85dU8KbQ+z/FdQdB7P+9yfQ==}
+
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
@@ -1620,8 +1606,20 @@ packages:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
 
+  lightningcss-android-arm64@1.32.0:
+    resolution: {integrity: sha512-YK7/ClTt4kAK0vo6w3X+Pnm0D2cf2vPHbhOXdoNti1Ga0al1P4TBZhwjATvjNwLEBCnKvjJc2jQgHXH0NEwlAg==}
+    engines: {node: '>= 12.0.0'}
+    cpu: [arm64]
+    os: [android]
+
   lightningcss-darwin-arm64@1.30.1:
     resolution: {integrity: sha512-c8JK7hyE65X1MHMN+Viq9n11RRC7hgin3HhYKhrMyaXflk5GVplZ60IxyoVtzILeKr+xAJwg6zK6sjTBJ0FKYQ==}
+    engines: {node: '>= 12.0.0'}
+    cpu: [arm64]
+    os: [darwin]
+
+  lightningcss-darwin-arm64@1.32.0:
+    resolution: {integrity: sha512-RzeG9Ju5bag2Bv1/lwlVJvBE3q6TtXskdZLLCyfg5pt+HLz9BqlICO7LZM7VHNTTn/5PRhHFBSjk5lc4cmscPQ==}
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [darwin]
@@ -1632,8 +1630,20 @@ packages:
     cpu: [x64]
     os: [darwin]
 
+  lightningcss-darwin-x64@1.32.0:
+    resolution: {integrity: sha512-U+QsBp2m/s2wqpUYT/6wnlagdZbtZdndSmut/NJqlCcMLTWp5muCrID+K5UJ6jqD2BFshejCYXniPDbNh73V8w==}
+    engines: {node: '>= 12.0.0'}
+    cpu: [x64]
+    os: [darwin]
+
   lightningcss-freebsd-x64@1.30.1:
     resolution: {integrity: sha512-kmW6UGCGg2PcyUE59K5r0kWfKPAVy4SltVeut+umLCFoJ53RdCUWxcRDzO1eTaxf/7Q2H7LTquFHPL5R+Gjyig==}
+    engines: {node: '>= 12.0.0'}
+    cpu: [x64]
+    os: [freebsd]
+
+  lightningcss-freebsd-x64@1.32.0:
+    resolution: {integrity: sha512-JCTigedEksZk3tHTTthnMdVfGf61Fky8Ji2E4YjUTEQX14xiy/lTzXnu1vwiZe3bYe0q+SpsSH/CTeDXK6WHig==}
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [freebsd]
@@ -1644,8 +1654,20 @@ packages:
     cpu: [arm]
     os: [linux]
 
+  lightningcss-linux-arm-gnueabihf@1.32.0:
+    resolution: {integrity: sha512-x6rnnpRa2GL0zQOkt6rts3YDPzduLpWvwAF6EMhXFVZXD4tPrBkEFqzGowzCsIWsPjqSK+tyNEODUBXeeVHSkw==}
+    engines: {node: '>= 12.0.0'}
+    cpu: [arm]
+    os: [linux]
+
   lightningcss-linux-arm64-gnu@1.30.1:
     resolution: {integrity: sha512-gB72maP8rmrKsnKYy8XUuXi/4OctJiuQjcuqWNlJQ6jZiWqtPvqFziskH3hnajfvKB27ynbVCucKSm2rkQp4Bw==}
+    engines: {node: '>= 12.0.0'}
+    cpu: [arm64]
+    os: [linux]
+
+  lightningcss-linux-arm64-gnu@1.32.0:
+    resolution: {integrity: sha512-0nnMyoyOLRJXfbMOilaSRcLH3Jw5z9HDNGfT/gwCPgaDjnx0i8w7vBzFLFR1f6CMLKF8gVbebmkUN3fa/kQJpQ==}
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [linux]
@@ -1656,8 +1678,20 @@ packages:
     cpu: [arm64]
     os: [linux]
 
+  lightningcss-linux-arm64-musl@1.32.0:
+    resolution: {integrity: sha512-UpQkoenr4UJEzgVIYpI80lDFvRmPVg6oqboNHfoH4CQIfNA+HOrZ7Mo7KZP02dC6LjghPQJeBsvXhJod/wnIBg==}
+    engines: {node: '>= 12.0.0'}
+    cpu: [arm64]
+    os: [linux]
+
   lightningcss-linux-x64-gnu@1.30.1:
     resolution: {integrity: sha512-piWx3z4wN8J8z3+O5kO74+yr6ze/dKmPnI7vLqfSqI8bccaTGY5xiSGVIJBDd5K5BHlvVLpUB3S2YCfelyJ1bw==}
+    engines: {node: '>= 12.0.0'}
+    cpu: [x64]
+    os: [linux]
+
+  lightningcss-linux-x64-gnu@1.32.0:
+    resolution: {integrity: sha512-V7Qr52IhZmdKPVr+Vtw8o+WLsQJYCTd8loIfpDaMRWGUZfBOYEJeyJIkqGIDMZPwPx24pUMfwSxxI8phr/MbOA==}
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [linux]
@@ -1668,8 +1702,20 @@ packages:
     cpu: [x64]
     os: [linux]
 
+  lightningcss-linux-x64-musl@1.32.0:
+    resolution: {integrity: sha512-bYcLp+Vb0awsiXg/80uCRezCYHNg1/l3mt0gzHnWV9XP1W5sKa5/TCdGWaR/zBM2PeF/HbsQv/j2URNOiVuxWg==}
+    engines: {node: '>= 12.0.0'}
+    cpu: [x64]
+    os: [linux]
+
   lightningcss-win32-arm64-msvc@1.30.1:
     resolution: {integrity: sha512-mSL4rqPi4iXq5YVqzSsJgMVFENoa4nGTT/GjO2c0Yl9OuQfPsIfncvLrEW6RbbB24WtZ3xP/2CCmI3tNkNV4oA==}
+    engines: {node: '>= 12.0.0'}
+    cpu: [arm64]
+    os: [win32]
+
+  lightningcss-win32-arm64-msvc@1.32.0:
+    resolution: {integrity: sha512-8SbC8BR40pS6baCM8sbtYDSwEVQd4JlFTOlaD3gWGHfThTcABnNDBda6eTZeqbofalIJhFx0qKzgHJmcPTnGdw==}
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [win32]
@@ -1680,8 +1726,18 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  lightningcss-win32-x64-msvc@1.32.0:
+    resolution: {integrity: sha512-Amq9B/SoZYdDi1kFrojnoqPLxYhQ4Wo5XiL8EVJrVsB8ARoC1PWW6VGtT0WKCemjy8aC+louJnjS7U18x3b06Q==}
+    engines: {node: '>= 12.0.0'}
+    cpu: [x64]
+    os: [win32]
+
   lightningcss@1.30.1:
     resolution: {integrity: sha512-xi6IyHML+c9+Q3W0S4fCQJOym42pyurFiJUHEcEyHS0CeKzia4yZDEsLlqOFykxOdHpNy0NmvVO31vcSqAxJCg==}
+    engines: {node: '>= 12.0.0'}
+
+  lightningcss@1.32.0:
+    resolution: {integrity: sha512-NXYBzinNrblfraPGyrbPoD19C1h9lfI/1mzgWYvXUTe414Gz/X1FD2XBZSZM7rRTrMA8JL3OtAaGifrIKhQ5yQ==}
     engines: {node: '>= 12.0.0'}
 
   lilconfig@2.1.0:
@@ -1695,8 +1751,8 @@ packages:
     resolution: {integrity: sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==}
     engines: {node: '>=10'}
 
-  lodash-es@4.17.21:
-    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+  lodash-es@4.18.1:
+    resolution: {integrity: sha512-J8xewKD/Gk22OZbhpOVSwcs60zhd95ESDwezOFuA3/099925PdHJ7OFHNTGtajL3AlZkykD32HykiMo+BIBI8A==}
 
   lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
@@ -1707,8 +1763,8 @@ packages:
   maplibre-contour@0.1.0:
     resolution: {integrity: sha512-H8muT7JWYE4oLbFv7L2RSbIM1NOu5JxjA9P/TQqhODDnRChE8ENoDkQIWOKgfcKNU77ypLk2ggGoh4/pt4UPLA==}
 
-  maplibre-gl@4.7.1:
-    resolution: {integrity: sha512-lgL7XpIwsgICiL82ITplfS7IGwrB1OJIw/pCvprDp2dhmSSEBgmPzYRvwYYYvJGJD7fxUv1Tvpih4nZ6VrLuaA==}
+  maplibre-gl@5.24.0:
+    resolution: {integrity: sha512-ALyFxgtd5R+65UqZ/++lOqwWcC0SNho9c27fYSyLmG7AfnAul2o46F05aDJGPbFU57wos9dgcIySHs0Xe6ia3A==}
     engines: {node: '>=16.14.0', npm: '>=8.1.0'}
 
   maplibre-gl@5.5.0:
@@ -1720,7 +1776,7 @@ packages:
     engines: {node: '>= 8'}
 
   mgrs@1.0.0:
-    resolution: {integrity: sha1-+5FYjnjJACVnI5XLQLJffNatGCk=}
+    resolution: {integrity: sha512-awNbTOqCxK1DBGjalK3xqWIstBZgN6fxsMSiXLs9/spqWkF2pAhb2rrYCFSsr1/tT7PhcDGjZndG8SWYn0byYA==}
 
   micromatch@4.0.8:
     resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}
@@ -1749,17 +1805,17 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  ml-array-max@1.2.4:
-    resolution: {integrity: sha512-BlEeg80jI0tW6WaPyGxf5Sa4sqvcyY6lbSn5Vcv44lp1I2GR6AWojfUvLnGTNsIXrZ8uqWmo8VcG1WpkI2ONMQ==}
+  ml-array-max@2.0.0:
+    resolution: {integrity: sha512-QQZ4kENwpWmyNb98UXRDFXrmtIXuXtt1+bSbda/2KA85+F+rrJP8hZk6QOkCQXM2Th9mUDYdq/PNByPdT9ID4A==}
 
-  ml-array-min@1.2.3:
-    resolution: {integrity: sha512-VcZ5f3VZ1iihtrGvgfh/q0XlMobG6GQ8FsNyQXD3T+IlstDv85g8kfV0xUG1QPRO/t21aukaJowDzMTc7j5V6Q==}
+  ml-array-min@2.0.0:
+    resolution: {integrity: sha512-GRj6Ky6sW9vGL6yIjgsHmXZ9YgrdmcQ8nCxPqEGeKc6dkfYg1XDYxGFxADUjNuZyoCd5PUscWAS4N+cFaX6hFg==}
 
-  ml-array-rescale@1.3.7:
-    resolution: {integrity: sha512-48NGChTouvEo9KBctDfHC3udWnQKNKEWN0ziELvY3KG25GR5cA8K8wNVzracsqSW1QEkAXjTNx+ycgAv06/1mQ==}
+  ml-array-rescale@2.0.0:
+    resolution: {integrity: sha512-2GGtKfSno94/kIloWGvpp/U5Q5vLvLrza+SAaGsLeo6Xj4mEbA6Gqx+oTfZFkxnd1grT2X007HfJNs3T5BsiVg==}
 
-  ml-matrix@6.12.1:
-    resolution: {integrity: sha512-TJ+8eOFdp+INvzR4zAuwBQJznDUfktMtOB6g/hUcGh3rcyjxbz4Te57Pgri8Q9bhSQ7Zys4IYOGhFdnlgeB6Lw==}
+  ml-matrix@6.12.2:
+    resolution: {integrity: sha512-GC+BnW+pBh8Auap8goAxY0senAmF0IEoc3HNVSfnfbvGw0buuDIYb9kAKMS1l+GiwJ1rfK2bzJ8IHhwjzATSFA==}
 
   monotone-chain-convex-hull@1.1.0:
     resolution: {integrity: sha512-iZGaoO2qtqIWaAfscTtsH2LolE06U4JzTw8AgtjT/yzYIA0aoAHDdwBtsesnQXfVRvS375Wu0Y1+FqdI5Y22GA==}
@@ -1783,8 +1839,8 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  nanoid@5.1.5:
-    resolution: {integrity: sha512-Ir/+ZpE9fDsNH0hQ3C68uyThDXzYcim2EqcZ8zn8Chtt1iylPT9xXJB0kPCnqzgcEGikO9RxSrh63MsmVCU7Fw==}
+  nanoid@5.1.11:
+    resolution: {integrity: sha512-v+KEsUv2ps74PaSKv0gHTxTCgMXOIfBEbaqa6w6ISIGC7ZsvHN4N9oJ8d4cmf0n5oTzQz2SLmThbQWhjd/8eKg==}
     engines: {node: ^18 || >=20}
     hasBin: true
 
@@ -1833,6 +1889,10 @@ packages:
     resolution: {integrity: sha512-XDF38WCH3z5OV/OVa8GKUNtLAyneuzbCisx7QUCF8Q6Nutx0WnJrQe5O+kOtBlLfRNUws98Y58Lblp+NJG5T4Q==}
     hasBin: true
 
+  pbf@4.0.2:
+    resolution: {integrity: sha512-J0ajxARhZfpUEebxYs1vhMGMuLSXtBe1e+fFPDrf2uA2hgo+UshKfNUWOz92HJNz6/NFEXseQPddnHkTreWRqg==}
+    hasBin: true
+
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
@@ -1840,8 +1900,8 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
 
-  picomatch@4.0.2:
-    resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
+  picomatch@4.0.4:
+    resolution: {integrity: sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==}
     engines: {node: '>=12'}
 
   pmtiles@3.2.1:
@@ -1890,6 +1950,9 @@ packages:
 
   potpack@2.0.0:
     resolution: {integrity: sha512-Q+/tYsFU9r7xoOJ+y/ZTtdVQwTWfzjbiXBDMM/JKUux3+QPP02iUuIoeBQ+Ot6oEDlC+/PGjB/5A3K7KKb7hcw==}
+
+  potpack@2.1.0:
+    resolution: {integrity: sha512-pcaShQc1Shq0y+E7GqJqvZj8DTthWV1KeHGdi0Z6IAin2Oi3JnLCOfwnCo84qc+HAp52wT9nK9H7FAJp5a44GQ==}
 
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
@@ -1970,6 +2033,9 @@ packages:
 
   robust-predicates@3.0.2:
     resolution: {integrity: sha512-IXgzBWvWQwE6PrDI05OvmXUIruQTcoMDzRsOd5CDvHCVLcLHMTSYvOK5Cm46kWqlV3yAbuSpBZdJ5oP5OUoStg==}
+
+  robust-predicates@3.0.3:
+    resolution: {integrity: sha512-NS3levdsRIUOmiJ8FZWCP7LG3QpJyrs/TE0Zpf1yvZu8cAJJ6QMW92H1c7kWpdIHo8RvmLxN/o2JXTKHp74lUA==}
 
   rollup@4.41.1:
     resolution: {integrity: sha512-cPmwD3FnFv8rKMBc1MxWCwVQFxwf1JEmSX3iQXrRVVG15zerAIXRjMFVWnd5Q5QvgKF7Aj+5ykXFhUl+QGnyOw==}
@@ -2062,8 +2128,8 @@ packages:
   sweepline-intersections@1.5.0:
     resolution: {integrity: sha512-AoVmx72QHpKtItPu72TzFL+kcYjd67BPLDoR0LarIk+xyaRg+pDTMFXndIEvZf9xEKnJv6JdhgRMnocoG0D3AQ==}
 
-  tabbable@6.2.0:
-    resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
+  tabbable@6.4.0:
+    resolution: {integrity: sha512-05PUHKSNE8ou2dwIxTngl4EzcnsCDZGJ/iCLtDflR/SHB/ny14rXc+qU5P4mG9JkusiV7EivzY9Mhm55AzAvCg==}
 
   tailwindcss@4.1.8:
     resolution: {integrity: sha512-kjeW8gjdxasbmFKpVGrGd5T4i40mV5J2Rasw48QARfYeQ8YS9x02ON9SFWax3Qf616rt4Cp3nVNIj6Hd1mP3og==}
@@ -2209,140 +2275,112 @@ packages:
   zimmerframe@1.1.2:
     resolution: {integrity: sha512-rAbqEGa8ovJy4pyBxZM70hg4pE6gDgaQ0Sl9M3enG3I0d6H4XSAM3GeNGLKnsBpuijUow064sf7ww1nutC5/3w==}
 
-  zod@3.25.48:
-    resolution: {integrity: sha512-0X1mz8FtgEIvaxGjdIImYpZEaZMrund9pGXm3M6vM7Reba0e2eI71KPjSCGXBfwKDPwPoywf6waUKc3/tFvX2Q==}
+  zod@4.4.3:
+    resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
 
 snapshots:
 
-  '@allmaps/annotation@1.0.0-beta.33':
+  '@allmaps/annotation@1.0.0-beta.37':
     dependencies:
-      zod: 3.25.48
+      zod: 4.4.3
 
-  '@allmaps/annotation@1.0.0-beta.36':
-    dependencies:
-      zod: 3.25.48
-
-  '@allmaps/basemap@1.0.0-beta.5':
+  '@allmaps/basemap@1.0.0-beta.9':
     dependencies:
       '@protomaps/basemaps': 5.7.2
       maplibre-contour: 0.1.0
-      maplibre-gl: 4.7.1
+      maplibre-gl: 5.24.0
 
-  '@allmaps/bearing@1.0.0-beta.11':
+  '@allmaps/bearing@1.0.0-beta.12':
     dependencies:
-      '@allmaps/annotation': 1.0.0-beta.36
-      '@allmaps/project': 1.0.0-beta.8
-      '@allmaps/stdlib': 1.0.0-beta.40
-      '@allmaps/transform': 1.0.0-beta.51
+      '@allmaps/annotation': 1.0.0-beta.37
+      '@allmaps/project': 1.0.0-beta.9
+      '@allmaps/stdlib': 1.0.0-beta.41
+      '@allmaps/transform': 1.0.0-beta.52
 
-  '@allmaps/id@1.0.0-beta.37': {}
+  '@allmaps/id@1.0.0-beta.38': {}
 
-  '@allmaps/iiif-parser@1.0.0-beta.43':
+  '@allmaps/iiif-parser@1.0.0-beta.48':
     dependencies:
-      zod: 3.25.48
+      zod: 4.4.3
 
-  '@allmaps/iiif-parser@1.0.0-beta.47':
+  '@allmaps/maplibre@1.0.0-beta.43':
     dependencies:
-      zod: 3.25.48
+      '@allmaps/bearing': 1.0.0-beta.12
+      '@allmaps/project': 1.0.0-beta.9
+      '@allmaps/render': 1.0.0-beta.83
+      '@allmaps/stdlib': 1.0.0-beta.41
+      '@allmaps/warpedmaplayer': 1.0.0-beta.43
+      maplibre-gl: 5.24.0
 
-  '@allmaps/maplibre@1.0.0-beta.41':
+  '@allmaps/project@1.0.0-beta.9':
     dependencies:
-      '@allmaps/project': 1.0.0-beta.8
-      '@allmaps/render': 1.0.0-beta.82
-      '@allmaps/stdlib': 1.0.0-beta.40
-      '@allmaps/warpedmaplayer': 1.0.0-beta.42
-      maplibre-gl: 4.7.1
-
-  '@allmaps/project@1.0.0-beta.8':
-    dependencies:
-      '@allmaps/stdlib': 1.0.0-beta.40
-      '@allmaps/transform': 1.0.0-beta.51
+      '@allmaps/stdlib': 1.0.0-beta.41
+      '@allmaps/transform': 1.0.0-beta.52
       proj4: 2.20.8
 
-  '@allmaps/render@1.0.0-beta.82':
+  '@allmaps/render@1.0.0-beta.83':
     dependencies:
-      '@allmaps/annotation': 1.0.0-beta.36
-      '@allmaps/id': 1.0.0-beta.37
-      '@allmaps/iiif-parser': 1.0.0-beta.47
-      '@allmaps/project': 1.0.0-beta.8
-      '@allmaps/stdlib': 1.0.0-beta.40
-      '@allmaps/tailwind': 1.0.0-beta.20
-      '@allmaps/transform': 1.0.0-beta.51
-      '@allmaps/triangulate': 1.0.0-beta.32
-      '@allmaps/types': 1.0.0-beta.22
+      '@allmaps/annotation': 1.0.0-beta.37
+      '@allmaps/id': 1.0.0-beta.38
+      '@allmaps/iiif-parser': 1.0.0-beta.48
+      '@allmaps/project': 1.0.0-beta.9
+      '@allmaps/stdlib': 1.0.0-beta.41
+      '@allmaps/tailwind': 1.0.0-beta.21
+      '@allmaps/transform': 1.0.0-beta.52
+      '@allmaps/triangulate': 1.0.0-beta.33
+      '@allmaps/types': 1.0.0-beta.23
       comlink: 4.4.2
-      lodash-es: 4.17.21
+      lodash-es: 4.18.1
       point-in-polygon-hao: 1.2.4
+      proj4: 2.20.8
       rbush: 4.0.1
 
-  '@allmaps/stdlib@1.0.0-beta.34':
+  '@allmaps/stdlib@1.0.0-beta.41':
     dependencies:
-      '@allmaps/annotation': 1.0.0-beta.33
-      '@allmaps/iiif-parser': 1.0.0-beta.43
-      '@turf/rewind': 7.2.0
-      hex-rgb: 5.0.0
-      monotone-chain-convex-hull: 1.1.0
-      rgb-hex: 4.1.0
-      svg-parser: 2.0.4
-
-  '@allmaps/stdlib@1.0.0-beta.40':
-    dependencies:
-      '@allmaps/annotation': 1.0.0-beta.36
-      '@allmaps/iiif-parser': 1.0.0-beta.47
-      '@turf/rewind': 7.2.0
+      '@allmaps/annotation': 1.0.0-beta.37
+      '@allmaps/iiif-parser': 1.0.0-beta.48
+      '@turf/rewind': 7.3.5
       '@types/lodash-es': 4.17.12
       hex-rgb: 5.0.0
-      lodash-es: 4.17.21
+      lodash-es: 4.18.1
       monotone-chain-convex-hull: 1.1.0
       rgb-hex: 4.1.0
       svg-parser: 2.0.4
 
-  '@allmaps/tailwind@1.0.0-beta.17': {}
+  '@allmaps/tailwind@1.0.0-beta.21': {}
 
-  '@allmaps/tailwind@1.0.0-beta.20': {}
-
-  '@allmaps/transform@1.0.0-beta.45':
+  '@allmaps/transform@1.0.0-beta.52':
     dependencies:
-      '@allmaps/stdlib': 1.0.0-beta.34
-      '@turf/distance': 7.2.0
-      '@turf/midpoint': 7.2.0
-      ml-matrix: 6.12.1
+      '@allmaps/stdlib': 1.0.0-beta.41
+      ml-matrix: 6.12.2
 
-  '@allmaps/transform@1.0.0-beta.51':
+  '@allmaps/triangulate@1.0.0-beta.33':
     dependencies:
-      '@allmaps/stdlib': 1.0.0-beta.40
-      '@turf/distance': 7.2.0
-      '@turf/midpoint': 7.2.0
-      ml-matrix: 6.12.1
-
-  '@allmaps/triangulate@1.0.0-beta.32':
-    dependencies:
-      '@allmaps/stdlib': 1.0.0-beta.40
-      '@allmaps/types': 1.0.0-beta.22
+      '@allmaps/stdlib': 1.0.0-beta.41
+      '@allmaps/types': 1.0.0-beta.23
       '@kninnug/constrainautor': 4.1.0
-      delaunator: 5.0.1
-      point-in-polygon-hao: 1.2.4
+      delaunator: 5.1.0
+      kdbush: 4.1.0
+      robust-predicates: 3.0.3
 
-  '@allmaps/types@1.0.0-beta.18': {}
+  '@allmaps/types@1.0.0-beta.23': {}
 
-  '@allmaps/types@1.0.0-beta.22': {}
-
-  '@allmaps/ui@1.0.0-beta.35(@sveltejs/kit@2.21.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1)))(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1)))(svelte@5.33.13)':
+  '@allmaps/ui@1.0.0-beta.43(@sveltejs/kit@2.21.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0)))(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0)))(svelte@5.33.13)':
     dependencies:
-      '@allmaps/iiif-parser': 1.0.0-beta.43
-      '@allmaps/tailwind': 1.0.0-beta.17
-      '@allmaps/types': 1.0.0-beta.18
-      '@sveltejs/kit': 2.21.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1)))(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1))
+      '@allmaps/iiif-parser': 1.0.0-beta.48
+      '@allmaps/tailwind': 1.0.0-beta.21
+      '@allmaps/types': 1.0.0-beta.23
+      '@sveltejs/kit': 2.21.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0)))(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0))
       bits-ui: 0.21.16(svelte@5.33.13)
       flowbite: 1.8.1
-      lodash-es: 4.17.21
+      lodash-es: 4.18.1
       svelte: 5.33.13
 
-  '@allmaps/warpedmaplayer@1.0.0-beta.42':
+  '@allmaps/warpedmaplayer@1.0.0-beta.43':
     dependencies:
-      '@allmaps/project': 1.0.0-beta.8
-      '@allmaps/render': 1.0.0-beta.82
-      '@allmaps/stdlib': 1.0.0-beta.40
+      '@allmaps/project': 1.0.0-beta.9
+      '@allmaps/render': 1.0.0-beta.83
+      '@allmaps/stdlib': 1.0.0-beta.41
 
   '@alloc/quick-lru@5.2.0': {}
 
@@ -2443,16 +2481,16 @@ snapshots:
 
   '@eslint/js@8.57.1': {}
 
-  '@floating-ui/core@1.7.1':
+  '@floating-ui/core@1.7.5':
     dependencies:
-      '@floating-ui/utils': 0.2.9
+      '@floating-ui/utils': 0.2.11
 
-  '@floating-ui/dom@1.7.1':
+  '@floating-ui/dom@1.7.6':
     dependencies:
-      '@floating-ui/core': 1.7.1
-      '@floating-ui/utils': 0.2.9
+      '@floating-ui/core': 1.7.5
+      '@floating-ui/utils': 0.2.11
 
-  '@floating-ui/utils@0.2.9': {}
+  '@floating-ui/utils@0.2.11': {}
 
   '@humanwhocodes/config-array@0.13.0':
     dependencies:
@@ -2466,9 +2504,9 @@ snapshots:
 
   '@humanwhocodes/object-schema@2.0.3': {}
 
-  '@internationalized/date@3.8.1':
+  '@internationalized/date@3.12.2':
     dependencies:
-      '@swc/helpers': 0.5.17
+      '@swc/helpers': 0.5.23
 
   '@isaacs/fs-minipass@4.0.1':
     dependencies:
@@ -2493,7 +2531,7 @@ snapshots:
 
   '@kninnug/constrainautor@4.1.0':
     dependencies:
-      robust-predicates: 3.0.2
+      robust-predicates: 3.0.3
 
   '@mapbox/geojson-rewind@0.5.2':
     dependencies:
@@ -2504,7 +2542,11 @@ snapshots:
 
   '@mapbox/point-geometry@0.1.0': {}
 
+  '@mapbox/point-geometry@1.1.0': {}
+
   '@mapbox/tiny-sdf@2.0.6': {}
+
+  '@mapbox/tiny-sdf@2.2.0': {}
 
   '@mapbox/unitbezier@0.0.1': {}
 
@@ -2512,17 +2554,19 @@ snapshots:
     dependencies:
       '@mapbox/point-geometry': 0.1.0
 
+  '@mapbox/vector-tile@2.0.5':
+    dependencies:
+      '@mapbox/point-geometry': 1.1.0
+      '@types/geojson': 7946.0.16
+      pbf: 4.0.2
+
   '@mapbox/whoots-js@3.1.0': {}
 
-  '@maplibre/maplibre-gl-style-spec@20.4.0':
+  '@maplibre/geojson-vt@5.0.4': {}
+
+  '@maplibre/geojson-vt@6.1.0':
     dependencies:
-      '@mapbox/jsonlint-lines-primitives': 2.0.2
-      '@mapbox/unitbezier': 0.0.1
-      json-stringify-pretty-compact: 4.0.0
-      minimist: 1.2.8
-      quickselect: 2.0.0
-      rw: 1.3.3
-      tinyqueue: 3.0.0
+      kdbush: 4.1.0
 
   '@maplibre/maplibre-gl-style-spec@23.3.0':
     dependencies:
@@ -2534,14 +2578,37 @@ snapshots:
       rw: 1.3.3
       tinyqueue: 3.0.0
 
+  '@maplibre/maplibre-gl-style-spec@24.8.5':
+    dependencies:
+      '@mapbox/jsonlint-lines-primitives': 2.0.2
+      '@mapbox/unitbezier': 0.0.1
+      json-stringify-pretty-compact: 4.0.0
+      minimist: 1.2.8
+      quickselect: 3.0.0
+      tinyqueue: 3.0.0
+
+  '@maplibre/mlt@1.1.11':
+    dependencies:
+      '@mapbox/point-geometry': 1.1.0
+
+  '@maplibre/vt-pbf@4.3.0':
+    dependencies:
+      '@mapbox/point-geometry': 1.1.0
+      '@mapbox/vector-tile': 2.0.5
+      '@maplibre/geojson-vt': 5.0.4
+      '@types/geojson': 7946.0.16
+      '@types/supercluster': 7.1.3
+      pbf: 4.0.2
+      supercluster: 8.0.1
+
   '@melt-ui/svelte@0.76.2(svelte@5.33.13)':
     dependencies:
-      '@floating-ui/core': 1.7.1
-      '@floating-ui/dom': 1.7.1
-      '@internationalized/date': 3.8.1
+      '@floating-ui/core': 1.7.5
+      '@floating-ui/dom': 1.7.6
+      '@internationalized/date': 3.12.2
       dequal: 2.0.3
-      focus-trap: 7.6.5
-      nanoid: 5.1.5
+      focus-trap: 7.8.0
+      nanoid: 5.1.11
       svelte: 5.33.13
 
   '@nodelib/fs.scandir@2.1.5':
@@ -2626,14 +2693,14 @@ snapshots:
     dependencies:
       acorn: 8.14.1
 
-  '@sveltejs/adapter-static@3.0.8(@sveltejs/kit@2.21.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1)))(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1)))':
+  '@sveltejs/adapter-static@3.0.8(@sveltejs/kit@2.21.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0)))(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0)))':
     dependencies:
-      '@sveltejs/kit': 2.21.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1)))(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1))
+      '@sveltejs/kit': 2.21.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0)))(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0))
 
-  '@sveltejs/kit@2.21.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1)))(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1))':
+  '@sveltejs/kit@2.21.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0)))(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0))':
     dependencies:
       '@sveltejs/acorn-typescript': 1.0.5(acorn@8.14.1)
-      '@sveltejs/vite-plugin-svelte': 4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1))
+      '@sveltejs/vite-plugin-svelte': 4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0))
       '@types/cookie': 0.6.0
       acorn: 8.14.1
       cookie: 0.6.0
@@ -2646,31 +2713,31 @@ snapshots:
       set-cookie-parser: 2.7.1
       sirv: 3.0.1
       svelte: 5.33.13
-      vite: 5.4.19(lightningcss@1.30.1)
+      vite: 5.4.19(lightningcss@1.32.0)
 
-  '@sveltejs/vite-plugin-svelte-inspector@3.0.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1)))(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1))':
+  '@sveltejs/vite-plugin-svelte-inspector@3.0.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0)))(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1))
+      '@sveltejs/vite-plugin-svelte': 4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0))
       debug: 4.4.1
       svelte: 5.33.13
-      vite: 5.4.19(lightningcss@1.30.1)
+      vite: 5.4.19(lightningcss@1.32.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1))':
+  '@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 3.0.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1)))(svelte@5.33.13)(vite@5.4.19(lightningcss@1.30.1))
+      '@sveltejs/vite-plugin-svelte-inspector': 3.0.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0)))(svelte@5.33.13)(vite@5.4.19(lightningcss@1.32.0))
       debug: 4.4.1
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.17
       svelte: 5.33.13
-      vite: 5.4.19(lightningcss@1.30.1)
-      vitefu: 1.0.6(vite@5.4.19(lightningcss@1.30.1))
+      vite: 5.4.19(lightningcss@1.32.0)
+      vitefu: 1.0.6(vite@5.4.19(lightningcss@1.32.0))
     transitivePeerDependencies:
       - supports-color
 
-  '@swc/helpers@0.5.17':
+  '@swc/helpers@0.5.23':
     dependencies:
       tslib: 2.8.1
 
@@ -2792,13 +2859,6 @@ snapshots:
       '@types/geojson': 7946.0.16
       tslib: 2.8.1
 
-  '@turf/bearing@7.2.0':
-    dependencies:
-      '@turf/helpers': 7.2.0
-      '@turf/invariant': 7.2.0
-      '@types/geojson': 7946.0.16
-      tslib: 2.8.1
-
   '@turf/bearing@7.3.5':
     dependencies:
       '@turf/helpers': 7.3.5
@@ -2810,13 +2870,6 @@ snapshots:
     dependencies:
       '@turf/helpers': 7.3.5
       '@turf/invariant': 7.3.5
-      '@types/geojson': 7946.0.16
-      tslib: 2.8.1
-
-  '@turf/boolean-clockwise@7.2.0':
-    dependencies:
-      '@turf/helpers': 7.2.0
-      '@turf/invariant': 7.2.0
       '@types/geojson': 7946.0.16
       tslib: 2.8.1
 
@@ -3021,12 +3074,6 @@ snapshots:
       '@types/geojson': 7946.0.16
       tslib: 2.8.1
 
-  '@turf/clone@7.2.0':
-    dependencies:
-      '@turf/helpers': 7.2.0
-      '@types/geojson': 7946.0.16
-      tslib: 2.8.1
-
   '@turf/clone@7.3.5':
     dependencies:
       '@turf/helpers': 7.3.5
@@ -3097,13 +3144,6 @@ snapshots:
       concaveman: 1.2.1
       tslib: 2.8.1
 
-  '@turf/destination@7.2.0':
-    dependencies:
-      '@turf/helpers': 7.2.0
-      '@turf/invariant': 7.2.0
-      '@types/geojson': 7946.0.16
-      tslib: 2.8.1
-
   '@turf/destination@7.3.5':
     dependencies:
       '@turf/helpers': 7.3.5
@@ -3147,13 +3187,6 @@ snapshots:
       '@turf/helpers': 7.3.5
       '@turf/invariant': 7.3.5
       '@turf/meta': 7.3.5
-      '@types/geojson': 7946.0.16
-      tslib: 2.8.1
-
-  '@turf/distance@7.2.0':
-    dependencies:
-      '@turf/helpers': 7.2.0
-      '@turf/invariant': 7.2.0
       '@types/geojson': 7946.0.16
       tslib: 2.8.1
 
@@ -3221,11 +3254,6 @@ snapshots:
       arc: 0.2.0
       tslib: 2.8.1
 
-  '@turf/helpers@7.2.0':
-    dependencies:
-      '@types/geojson': 7946.0.16
-      tslib: 2.8.1
-
   '@turf/helpers@7.3.5':
     dependencies:
       '@types/geojson': 7946.0.16
@@ -3262,12 +3290,6 @@ snapshots:
       '@turf/meta': 7.3.5
       '@types/geojson': 7946.0.16
       polyclip-ts: 0.16.8
-      tslib: 2.8.1
-
-  '@turf/invariant@7.2.0':
-    dependencies:
-      '@turf/helpers': 7.2.0
-      '@types/geojson': 7946.0.16
       tslib: 2.8.1
 
   '@turf/invariant@7.3.5':
@@ -3416,23 +3438,9 @@ snapshots:
       polyclip-ts: 0.16.8
       tslib: 2.8.1
 
-  '@turf/meta@7.2.0':
-    dependencies:
-      '@turf/helpers': 7.2.0
-      '@types/geojson': 7946.0.16
-
   '@turf/meta@7.3.5':
     dependencies:
       '@turf/helpers': 7.3.5
-      '@types/geojson': 7946.0.16
-      tslib: 2.8.1
-
-  '@turf/midpoint@7.2.0':
-    dependencies:
-      '@turf/bearing': 7.2.0
-      '@turf/destination': 7.2.0
-      '@turf/distance': 7.2.0
-      '@turf/helpers': 7.2.0
       '@types/geojson': 7946.0.16
       tslib: 2.8.1
 
@@ -3620,16 +3628,6 @@ snapshots:
       '@turf/boolean-intersects': 7.3.5
       '@turf/distance': 7.3.5
       '@turf/helpers': 7.3.5
-      '@types/geojson': 7946.0.16
-      tslib: 2.8.1
-
-  '@turf/rewind@7.2.0':
-    dependencies:
-      '@turf/boolean-clockwise': 7.2.0
-      '@turf/clone': 7.2.0
-      '@turf/helpers': 7.2.0
-      '@turf/invariant': 7.2.0
-      '@turf/meta': 7.2.0
       '@types/geojson': 7946.0.16
       tslib: 2.8.1
 
@@ -4116,9 +4114,9 @@ snapshots:
 
   bits-ui@0.21.16(svelte@5.33.13):
     dependencies:
-      '@internationalized/date': 3.8.1
+      '@internationalized/date': 3.12.2
       '@melt-ui/svelte': 0.76.2(svelte@5.33.13)
-      nanoid: 5.1.5
+      nanoid: 5.1.11
       svelte: 5.33.13
 
   brace-expansion@1.1.11:
@@ -4190,13 +4188,16 @@ snapshots:
 
   deepmerge@4.3.1: {}
 
-  delaunator@5.0.1:
+  delaunator@5.1.0:
     dependencies:
-      robust-predicates: 3.0.2
+      robust-predicates: 3.0.3
 
   dequal@2.0.3: {}
 
   detect-libc@2.0.4: {}
+
+  detect-libc@2.1.2:
+    optional: true
 
   devalue@5.1.1: {}
 
@@ -4211,6 +4212,8 @@ snapshots:
   earcut@2.2.4: {}
 
   earcut@3.0.1: {}
+
+  earcut@3.0.2: {}
 
   enhanced-resolve@5.18.1:
     dependencies:
@@ -4372,9 +4375,9 @@ snapshots:
     dependencies:
       reusify: 1.1.0
 
-  fdir@6.4.5(picomatch@4.0.2):
+  fdir@6.4.5(picomatch@4.0.4):
     optionalDependencies:
-      picomatch: 4.0.2
+      picomatch: 4.0.4
 
   fflate@0.8.2: {}
 
@@ -4404,9 +4407,9 @@ snapshots:
       '@popperjs/core': 2.11.8
       mini-svg-data-uri: 1.4.4
 
-  focus-trap@7.6.5:
+  focus-trap@7.8.0:
     dependencies:
-      tabbable: 6.2.0
+      tabbable: 6.4.0
 
   fs.realpath@1.0.0: {}
 
@@ -4426,6 +4429,8 @@ snapshots:
   get-stream@6.0.1: {}
 
   gl-matrix@3.4.3: {}
+
+  gl-matrix@3.4.4: {}
 
   glob-parent@5.1.2:
     dependencies:
@@ -4491,7 +4496,7 @@ snapshots:
 
   ini@4.1.3: {}
 
-  is-any-array@2.0.1: {}
+  is-any-array@3.0.0: {}
 
   is-extglob@2.1.1: {}
 
@@ -4529,6 +4534,8 @@ snapshots:
 
   kdbush@4.0.2: {}
 
+  kdbush@4.1.0: {}
+
   keyv@4.5.4:
     dependencies:
       json-buffer: 3.0.1
@@ -4544,34 +4551,67 @@ snapshots:
       prelude-ls: 1.2.1
       type-check: 0.4.0
 
+  lightningcss-android-arm64@1.32.0:
+    optional: true
+
   lightningcss-darwin-arm64@1.30.1:
+    optional: true
+
+  lightningcss-darwin-arm64@1.32.0:
     optional: true
 
   lightningcss-darwin-x64@1.30.1:
     optional: true
 
+  lightningcss-darwin-x64@1.32.0:
+    optional: true
+
   lightningcss-freebsd-x64@1.30.1:
+    optional: true
+
+  lightningcss-freebsd-x64@1.32.0:
     optional: true
 
   lightningcss-linux-arm-gnueabihf@1.30.1:
     optional: true
 
+  lightningcss-linux-arm-gnueabihf@1.32.0:
+    optional: true
+
   lightningcss-linux-arm64-gnu@1.30.1:
+    optional: true
+
+  lightningcss-linux-arm64-gnu@1.32.0:
     optional: true
 
   lightningcss-linux-arm64-musl@1.30.1:
     optional: true
 
+  lightningcss-linux-arm64-musl@1.32.0:
+    optional: true
+
   lightningcss-linux-x64-gnu@1.30.1:
+    optional: true
+
+  lightningcss-linux-x64-gnu@1.32.0:
     optional: true
 
   lightningcss-linux-x64-musl@1.30.1:
     optional: true
 
+  lightningcss-linux-x64-musl@1.32.0:
+    optional: true
+
   lightningcss-win32-arm64-msvc@1.30.1:
     optional: true
 
+  lightningcss-win32-arm64-msvc@1.32.0:
+    optional: true
+
   lightningcss-win32-x64-msvc@1.30.1:
+    optional: true
+
+  lightningcss-win32-x64-msvc@1.32.0:
     optional: true
 
   lightningcss@1.30.1:
@@ -4589,6 +4629,23 @@ snapshots:
       lightningcss-win32-arm64-msvc: 1.30.1
       lightningcss-win32-x64-msvc: 1.30.1
 
+  lightningcss@1.32.0:
+    dependencies:
+      detect-libc: 2.1.2
+    optionalDependencies:
+      lightningcss-android-arm64: 1.32.0
+      lightningcss-darwin-arm64: 1.32.0
+      lightningcss-darwin-x64: 1.32.0
+      lightningcss-freebsd-x64: 1.32.0
+      lightningcss-linux-arm-gnueabihf: 1.32.0
+      lightningcss-linux-arm64-gnu: 1.32.0
+      lightningcss-linux-arm64-musl: 1.32.0
+      lightningcss-linux-x64-gnu: 1.32.0
+      lightningcss-linux-x64-musl: 1.32.0
+      lightningcss-win32-arm64-msvc: 1.32.0
+      lightningcss-win32-x64-msvc: 1.32.0
+    optional: true
+
   lilconfig@2.1.0: {}
 
   locate-character@3.0.0: {}
@@ -4597,7 +4654,7 @@ snapshots:
     dependencies:
       p-locate: 5.0.0
 
-  lodash-es@4.17.21: {}
+  lodash-es@4.18.1: {}
 
   lodash.merge@4.6.2: {}
 
@@ -4607,34 +4664,27 @@ snapshots:
 
   maplibre-contour@0.1.0: {}
 
-  maplibre-gl@4.7.1:
+  maplibre-gl@5.24.0:
     dependencies:
-      '@mapbox/geojson-rewind': 0.5.2
       '@mapbox/jsonlint-lines-primitives': 2.0.2
-      '@mapbox/point-geometry': 0.1.0
-      '@mapbox/tiny-sdf': 2.0.6
+      '@mapbox/point-geometry': 1.1.0
+      '@mapbox/tiny-sdf': 2.2.0
       '@mapbox/unitbezier': 0.0.1
-      '@mapbox/vector-tile': 1.3.1
+      '@mapbox/vector-tile': 2.0.5
       '@mapbox/whoots-js': 3.1.0
-      '@maplibre/maplibre-gl-style-spec': 20.4.0
+      '@maplibre/geojson-vt': 6.1.0
+      '@maplibre/maplibre-gl-style-spec': 24.8.5
+      '@maplibre/mlt': 1.1.11
+      '@maplibre/vt-pbf': 4.3.0
       '@types/geojson': 7946.0.16
-      '@types/geojson-vt': 3.2.5
-      '@types/mapbox__point-geometry': 0.1.4
-      '@types/mapbox__vector-tile': 1.3.4
-      '@types/pbf': 3.0.5
-      '@types/supercluster': 7.1.3
-      earcut: 3.0.1
-      geojson-vt: 4.0.2
-      gl-matrix: 3.4.3
-      global-prefix: 4.0.0
-      kdbush: 4.0.2
+      earcut: 3.0.2
+      gl-matrix: 3.4.4
+      kdbush: 4.1.0
       murmurhash-js: 1.0.0
-      pbf: 3.3.0
-      potpack: 2.0.0
+      pbf: 4.0.2
+      potpack: 2.1.0
       quickselect: 3.0.0
-      supercluster: 8.0.1
       tinyqueue: 3.0.0
-      vt-pbf: 3.1.3
 
   maplibre-gl@5.5.0:
     dependencies:
@@ -4690,24 +4740,24 @@ snapshots:
 
   mkdirp@3.0.1: {}
 
-  ml-array-max@1.2.4:
+  ml-array-max@2.0.0:
     dependencies:
-      is-any-array: 2.0.1
+      is-any-array: 3.0.0
 
-  ml-array-min@1.2.3:
+  ml-array-min@2.0.0:
     dependencies:
-      is-any-array: 2.0.1
+      is-any-array: 3.0.0
 
-  ml-array-rescale@1.3.7:
+  ml-array-rescale@2.0.0:
     dependencies:
-      is-any-array: 2.0.1
-      ml-array-max: 1.2.4
-      ml-array-min: 1.2.3
+      is-any-array: 3.0.0
+      ml-array-max: 2.0.0
+      ml-array-min: 2.0.0
 
-  ml-matrix@6.12.1:
+  ml-matrix@6.12.2:
     dependencies:
-      is-any-array: 2.0.1
-      ml-array-rescale: 1.3.7
+      is-any-array: 3.0.0
+      ml-array-rescale: 2.0.0
 
   monotone-chain-convex-hull@1.1.0: {}
 
@@ -4721,7 +4771,7 @@ snapshots:
 
   nanoid@3.3.11: {}
 
-  nanoid@5.1.5: {}
+  nanoid@5.1.11: {}
 
   natural-compare-lite@1.4.0: {}
 
@@ -4765,11 +4815,15 @@ snapshots:
       ieee754: 1.2.1
       resolve-protobuf-schema: 2.1.0
 
+  pbf@4.0.2:
+    dependencies:
+      resolve-protobuf-schema: 2.1.0
+
   picocolors@1.1.1: {}
 
   picomatch@2.3.1: {}
 
-  picomatch@4.0.2:
+  picomatch@4.0.4:
     optional: true
 
   pmtiles@3.2.1:
@@ -4815,6 +4869,8 @@ snapshots:
       source-map-js: 1.2.1
 
   potpack@2.0.0: {}
+
+  potpack@2.1.0: {}
 
   prelude-ls@1.2.1: {}
 
@@ -4875,6 +4931,8 @@ snapshots:
   robust-predicates@2.0.4: {}
 
   robust-predicates@3.0.2: {}
+
+  robust-predicates@3.0.3: {}
 
   rollup@4.41.1:
     dependencies:
@@ -4950,11 +5008,11 @@ snapshots:
     dependencies:
       has-flag: 4.0.0
 
-  svelte-check@4.2.1(picomatch@4.0.2)(svelte@5.33.13)(typescript@5.8.3):
+  svelte-check@4.2.1(picomatch@4.0.4)(svelte@5.33.13)(typescript@5.8.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       chokidar: 4.0.3
-      fdir: 6.4.5(picomatch@4.0.2)
+      fdir: 6.4.5(picomatch@4.0.4)
       picocolors: 1.1.1
       sade: 1.8.1
       svelte: 5.33.13
@@ -4995,7 +5053,7 @@ snapshots:
     dependencies:
       tinyqueue: 2.0.3
 
-  tabbable@6.2.0: {}
+  tabbable@6.4.0: {}
 
   tailwindcss@4.1.8: {}
 
@@ -5053,18 +5111,18 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  vite@5.4.19(lightningcss@1.30.1):
+  vite@5.4.19(lightningcss@1.32.0):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.5.4
       rollup: 4.41.1
     optionalDependencies:
       fsevents: 2.3.3
-      lightningcss: 1.30.1
+      lightningcss: 1.32.0
 
-  vitefu@1.0.6(vite@5.4.19(lightningcss@1.30.1)):
+  vitefu@1.0.6(vite@5.4.19(lightningcss@1.32.0)):
     optionalDependencies:
-      vite: 5.4.19(lightningcss@1.30.1)
+      vite: 5.4.19(lightningcss@1.32.0)
 
   vt-pbf@3.1.3:
     dependencies:
@@ -5094,4 +5152,4 @@ snapshots:
 
   zimmerframe@1.1.2: {}
 
-  zod@3.25.48: {}
+  zod@4.4.3: {}
