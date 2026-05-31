@@ -36,8 +36,19 @@
   let container: HTMLElement
   let observer: MutationObserver
 
-  let currentCaption = $derived(
-    index !== undefined ? chaptersArray[index]?.caption : undefined
+  let currentChapter = $derived(
+    index !== undefined ? chaptersArray[index] : undefined
+  )
+  let currentChapterCaption = $derived(currentChapter?.caption)
+  let currentWarpedMaps = $derived(
+    currentChapter?.warpedMaps
+      ? getValueAsArray(currentChapter.warpedMaps)
+      : undefined
+  )
+  let currentWarpedMapsHaveCaptions = $derived(
+    currentWarpedMaps
+      ? currentWarpedMaps.some((warpedMap) => warpedMap.caption)
+      : undefined
   )
 
   onMount(() => {
@@ -78,17 +89,33 @@
       <div class="hidden fragment"></div>
     {/each}
   {/if}
-  {#if currentCaption}
+  {#if currentChapterCaption}
     <div
       class="pointer-events-none absolute top-0 left-0 w-full h-full text-left text-2xl"
     >
       <div class="flex items-end h-full px-24 py-12">
         <MapMonster mood="excited" color="green">
           <p class="p-4 max-w-xl">
-            {@html currentCaption}
+            {@html currentChapterCaption}
           </p>
         </MapMonster>
       </div>
+    </div>
+  {/if}
+  {#if currentWarpedMapsHaveCaptions}
+    <div
+      class="absolute text-left max-w-xl min-w-0 text-xl left-6 top-6 px-4 py-1 shadow-md z-20 bg-white rounded-lg"
+    >
+      {#each currentWarpedMaps as warpedMap}
+        {#if warpedMap.caption}
+          <p>
+            {#if warpedMap.homepage}
+              <a href={warpedMap.homepage}>{@html warpedMap.caption}</a>
+            {/if}
+            {@html warpedMap.caption}
+          </p>
+        {/if}
+      {/each}
     </div>
   {/if}
 </section>
