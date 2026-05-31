@@ -7,6 +7,7 @@
     fullScreen?: boolean
     children?: any
     preload?: boolean
+    horizontal?: boolean
   }
 
   let {
@@ -14,6 +15,7 @@
     preload = false,
     stretch = false,
     fullScreen = false,
+    horizontal = false,
     children
   }: Props = $props()
 
@@ -49,6 +51,7 @@
   bind:this={container}
   class:section-no-logo={hideLogo}
   class:section-stretch={stretch}
+  class:section-horizontal={horizontal}
   class:p-0={fullScreen}
 >
   {#if slideState.active || preload}
