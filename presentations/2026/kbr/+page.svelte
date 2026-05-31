@@ -142,7 +142,7 @@
           url: 'https://annotations.allmaps.org/maps/c885f02932de4c78',
           options: {
             applyMask: false,
-            renderAppliableMask: true,
+            renderMask: true,
             transformationType: 'straight',
             internalProjection: { definition: 'EPSG:3857' },
             debugTiles: false
@@ -422,7 +422,7 @@
             renderTransformedGcps: true,
             renderGcps: true,
             renderVectors: true,
-            renderAppliableMask: true
+            renderMask: true
           },
           caption: `<i>Permalink:</i> <a href="https://mdz-nbn-resolving.de/urn:nbn:de:bvb:12-bsb00108957-7">https://mdz-nbn-resolving.de/urn:nbn:de:bvb:12-bsb00108957-7</a><br><i>IIIF Manifest:</i> <a href="https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00108957/manifest">https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00108957/manifest</a><br><i>By:</i> Ortelius, Abraham<br><i>Title:</i> "Theatro De La Tierra Universal"<br><i>Published:</i> 1588`,
           useBounds: true
@@ -459,7 +459,7 @@
     // 				renderTransformedGcps: true,
     // 				renderGcps: true,
     // 				renderVectors: true
-    // 				renderAppliableMask: true
+    // 				renderMask: true
     // 			}
     // 		},
     // 		{
@@ -487,7 +487,7 @@
             renderTransformedGcps: true,
             renderGcps: true,
             renderVectors: true,
-            renderAppliableMask: true
+            renderMask: true
           },
           caption: `<i>Permalink:</i> <a href="https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~344467~90112435">https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~344467~90112435</a><br><i>IIIF Manifest:</i> <a href="https://www.davidrumsey.com/luna/servlet/iiif/m/RUMSEY~8~1~344467~90112435/manifest">https://www.davidrumsey.com/luna/servlet/iiif/m/RUMSEY~8~1~344467~90112435/manifest</a><br><i>By:</i> Jollain, Gerhard<br><i>Title:</i> "L'Angleterre Novissima Descriptio Angliae Scotiae et Hiberniae"<br><i>Published:</i> 1650`,
           useBounds: true
@@ -519,7 +519,7 @@
             renderVectors: true,
             renderGrid: false,
             distortionMeasure: undefined,
-            renderAppliableMask: true
+            renderMask: true
           },
           useBounds: true
         },
@@ -550,7 +550,7 @@
             renderVectors: true,
             renderGrid: true,
             distortionMeasure: 'log2sigma',
-            renderAppliableMask: true
+            renderMask: true
           },
           useBounds: true
         },

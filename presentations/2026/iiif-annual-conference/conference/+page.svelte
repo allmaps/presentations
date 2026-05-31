@@ -118,7 +118,7 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
         options: {
           applyMask: false,
           transformationType: 'helmert',
-          renderAppliableMask: true
+          renderMask: true
         }
       }
     },
@@ -130,7 +130,7 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
         options: {
           applyMask: false,
           transformationType: 'helmert',
-          renderAppliableMask: true,
+          renderMask: true,
           renderGcps: true
         }
       }
@@ -185,35 +185,40 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
       ]
     },
     {
+      padding: 0,
       warpedMaps: [
         {
-          useBearing: true,
           url: 'https://annotations.allmaps.org/maps/37672d5c9b23bca5@4cad8ccd1996b94f',
           homepage:
-            'https://www.erfgoedleiden.nl/collecties/beeldmateriaal/zoeken-in-beeldmateriaal/detail/ca138c78-26bc-11e3-b15a-3cd92befe4f8/media/d70845bd-bf8c-44a7-ab2d-f96ccdaf10d2'
+            'https://www.erfgoedleiden.nl/collecties/beeldmateriaal/zoeken-in-beeldmateriaal/detail/ca138c78-26bc-11e3-b15a-3cd92befe4f8/media/d70845bd-bf8c-44a7-ab2d-f96ccdaf10d2',
+          useBearing: true,
+          useBounds: true
         },
         {
           url: 'https://annotations.allmaps.org/maps/8d600f869d79b7db',
           caption: 'Stratenboek',
           options: {
             transformationType: 'helmert',
-            opacity: 0
+            visible: false
           }
         }
       ]
     },
     {
+      location: {
+        bearing: 90
+      },
       warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/8d600f869d79b7db',
           caption: 'Stratenboek',
           useBounds: true,
+          useBearing: true,
           options: {
             transformationType: 'helmert'
           }
         },
         {
-          useBearing: true,
           url: 'https://annotations.allmaps.org/maps/37672d5c9b23bca5@4cad8ccd1996b94f',
           homepage:
             'https://www.erfgoedleiden.nl/collecties/beeldmateriaal/zoeken-in-beeldmateriaal/detail/ca138c78-26bc-11e3-b15a-3cd92befe4f8/media/d70845bd-bf8c-44a7-ab2d-f96ccdaf10d2',
@@ -222,17 +227,20 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
       ]
     },
     {
+      location: {
+        bearing: 90
+      },
       warpedMaps: [
         {
           url: 'https://annotations.allmaps.org/maps/8d600f869d79b7db',
           caption: 'Stratenboek',
           useBounds: true,
+          useBearing: true,
           options: {
             transformationType: 'thinPlateSpline'
           }
         },
         {
-          useBearing: true,
           url: 'https://annotations.allmaps.org/maps/37672d5c9b23bca5@4cad8ccd1996b94f',
           homepage:
             'https://www.erfgoedleiden.nl/collecties/beeldmateriaal/zoeken-in-beeldmateriaal/detail/ca138c78-26bc-11e3-b15a-3cd92befe4f8/media/d70845bd-bf8c-44a7-ab2d-f96ccdaf10d2',
@@ -244,7 +252,8 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
       warpedMaps: {
         url: 'https://annotations.allmaps.org/maps/e671f14b3ee110cd@aabc56ed3f9d2bfd',
         homepage: 'https://id.rijksmuseum.nl/200548636',
-        caption: 'Plattegrond van de verwoestingen door de buskruitramp, 1807'
+        caption: 'Plattegrond van de verwoestingen door de buskruitramp, 1807',
+        useBearing: true
       }
     },
     {
