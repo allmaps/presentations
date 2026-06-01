@@ -5,6 +5,8 @@
 </script>
 
 <script lang="ts">
+  import { pink, green } from '@allmaps/tailwind'
+
   import Slide from '$lib/components/Slide.svelte'
   import Title from '$lib/components/Title.svelte'
   import MapMonster from '$lib/components/MapMonster.svelte'
@@ -15,15 +17,67 @@
   import { getExploreLayers, maskLayerIds } from '$lib/shared/explore'
 </script>
 
+{#snippet face(src: string, color: string, name: string)}
+  <img
+    width="24"
+    class="relative inline-block rounded-full -top-[2%] size-[1.5em] border-4"
+    style:border-color={color}
+    {src}
+    alt={name}
+  />
+{/snippet}
+
+{#snippet bert()}
+  {@render face(
+    '/images/iiif-community-call-2025/bert.jpg',
+    pink,
+    'Bert Spaan'
+  )}
+{/snippet}
+
+{#snippet jules()}
+  {@render face(
+    '/images/iiif-community-call-2025/jules.jpg',
+    green,
+    'Jules Schoonman'
+  )}
+{/snippet}
+
 <svelte:head>
   <title>{title}</title>
 </svelte:head>
 
 <Title>
   <!-- Defined white style because tailwind class text-white is overwritten by reveal -->
-  <h2 class="text-white" style="color: white">Towards a IIIF Maps Commons</h2>
-  <p class="text-white text-xl">Presenting the Allmaps - IIIF Partnership</p>
+  <h2 class="text-white text-5xl mb-8">
+    Towards a<br /> <span class="font-bold">IIIF Maps Commons</span>
+  </h2>
+  <p class="text-white text-3xl">
+    Presenting the <br /><span class="font-bold"
+      >Allmaps - IIIF Partnership</span
+    >
+  </p>
 </Title>
+
+<!--
+  BERT:
+    leiden, vliegen, kaarten laten zien
+    verschillende instellingen
+    flipboek: laat de kaarten uit kaart zien achter elkaar,
+    we hebben dit flopboek echt gemaakt: camera
+    gemaakt met kaarten van deze en deze instellingen
+    dit kan van alle plekken in de wereld
+    we hebben meer instellingen nodig! zsgt het monster op de slide
+    En dan het monster onthullen!
+
+JULES:
+  partnership:
+    principles, met voorpagina van partnership-pdf/website
+    lijst met partners, screenshot console
+    roadmap
+  explore!
+
+-->
 
 <!--
 ## Erfgoed Leiden en Omstreken
@@ -53,17 +107,182 @@ https://www.rijnland.net/over-rijnland/archieven-en-erfgoed/onderzoeksgids/handr
 https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
 -->
 
+<Slide preload>
+  <p>
+    Allmaps is an open source ecosystem for <br />
+    curating, georeferencing and exploring IIIF maps
+  </p>
+  <p class="fragment font-light text-4xl max-w-4xl">
+    The project was founded in 2021 by independent creative technologist {@render bert()}
+    Bert Spaan and digital curator {@render jules()}
+    Jules Schoonman, TU Delft Library
+  </p>
+
+  <div class="fragment absolute top-0 left-0 w-full h-full text-left text-3xl">
+    <div class="flex items-end h-full px-24 py-12">
+      <MapMonster mood="happy" color="pink">
+        <p class="p-4 max-w-xl">
+          Allmaps runs in the browser, no need for complicated GIS
+          infrastructure
+        </p>
+      </MapMonster>
+    </div>
+  </div>
+</Slide>
+
+<Slide
+  ><p>
+    Three years ago, we published the <strong>Georeference Annotation</strong>
+    specification.
+  </p>
+  <p>
+    These web annotations are an
+    <a class="underline" href="https://iiif.io/api/extension/georef/"
+      >official extension</a
+    > to the IIIF Presentation API.
+  </p></Slide
+>
+
+<Slide preload>
+  <p class="mb-8">
+    Allmaps doesn't store any image derivatives; just georeference data.
+  </p>
+  <pre class="javascript">
+		<code data-line-numbers="1-115|17-23|24-28|39-50" data-trim data-noescape
+      ><script type="text/template">
+{
+  "type": "AnnotationPage",
+  "@context": [
+    "http://www.w3.org/ns/anno.jsonld"
+  ],
+  "items": [
+    {
+      "@context": [
+        "http://iiif.io/api/extension/georef/1/context.json",
+        "http://iiif.io/api/presentation/3/context.json"
+      ],
+      "id": "https://annotations.allmaps.org/maps/26e384d4efabdb32",
+      "type": "Annotation",
+      "motivation": "georeferencing",
+      "target": {
+        "type": "SpecificResource",
+        "source": {
+          // Reference to a IIIF resource
+          "@id": "https://cdm21033.contentdm.oclc.org/digital/iiif/krt/1022",
+          "type": "ImageService2",
+          "height": 4292,
+          "width": 3493
+        },
+        "selector": {
+          // Optional SVG Selector to select the cartographic part of an image
+          "type": "SvgSelector",
+          "value": "<svg><polygon points=\"196,3324 861,3323 856,4061 369,4057 370,3925 305,3852 191,3851\" /></svg>"
+        }
+      },
+      "body": {
+        "type": "FeatureCollection",
+        "transformation": {
+          "type": "polynomial",
+          "options": {
+            "order": 1
+          }
+        },
+        "features": [
+          {
+            // A list of ground control points (GCPs):
+            // resource coordinates and corresponding geospatial coordinates
+            "type": "Feature",
+            "properties": {
+              "resourceCoords": [578, 3779]
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [97.1805877, 3.2578402]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "resourceCoords": [349, 3855]
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [95.7576865, 2.8399231]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "resourceCoords": [834, 3724]
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [98.6704303, 3.5887634]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "resourceCoords": [396, 3629]
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [96.1302895, 4.1471109]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "resourceCoords": [845, 4039]
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [98.7838046, 1.7403690]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "resourceCoords": [252, 3345]
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [95.3060364, 5.7804199]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "resourceCoords": [625, 3441]
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [97.4831471, 5.2443204]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+      </script></code
+    >
+  </pre>
+</Slide>
+
+<Slide>
+  <MapThumbnails>
+    Since then, <strong>tens of thousands</strong> of IIIF maps have been georeferenced
+    with Allmaps. We publish all this georeference data as open data!
+  </MapThumbnails>
+</Slide>
+
 <MapSlide
   duration={4000}
   sources={{
     conference_locations: {
       type: 'geojson',
       data: '/geojson/iiif-annual-conference-2026/conference-locations.geojson'
-    },
-    masks: {
-      type: 'vector',
-      url: 'pmtiles://https://files.allmaps.org/maps.pmtiles',
-      maxzoom: 14
     }
   }}
   layers={[
@@ -77,8 +296,7 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
       paint: {
         'icon-opacity': 0
       }
-    },
-    ...getExploreLayers('none')
+    }
   ]}
   chapters={[
     {
@@ -188,84 +406,221 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
       padding: 0,
       warpedMaps: [
         {
-          url: 'https://annotations.allmaps.org/maps/37672d5c9b23bca5@4cad8ccd1996b94f',
+          url: 'https://annotations.allmaps.org/manifests/4a787453a585eef5',
           homepage:
             'https://www.erfgoedleiden.nl/collecties/beeldmateriaal/zoeken-in-beeldmateriaal/detail/ca138c78-26bc-11e3-b15a-3cd92befe4f8/media/d70845bd-bf8c-44a7-ab2d-f96ccdaf10d2',
-          useBearing: true,
+          // useBearing: true,
           useBounds: true
-        },
-        {
-          url: 'https://annotations.allmaps.org/maps/8d600f869d79b7db',
-          caption: 'Stratenboek',
-          options: {
-            transformationType: 'helmert',
-            visible: false
-          }
         }
       ]
     },
     {
-      location: {
-        bearing: 90
-      },
       warpedMaps: [
         {
-          url: 'https://annotations.allmaps.org/maps/8d600f869d79b7db',
-          caption: 'Stratenboek',
-          useBounds: true,
-          useBearing: true,
-          options: {
-            transformationType: 'helmert'
-          }
-        },
-        {
-          url: 'https://annotations.allmaps.org/maps/37672d5c9b23bca5@4cad8ccd1996b94f',
-          homepage:
-            'https://www.erfgoedleiden.nl/collecties/beeldmateriaal/zoeken-in-beeldmateriaal/detail/ca138c78-26bc-11e3-b15a-3cd92befe4f8/media/d70845bd-bf8c-44a7-ab2d-f96ccdaf10d2',
-          caption: 'Lugduni Batavor. Leyden in Hollant'
-        }
-      ]
-    },
-    {
-      location: {
-        bearing: 90
-      },
-      warpedMaps: [
-        {
-          url: 'https://annotations.allmaps.org/maps/8d600f869d79b7db',
-          caption: 'Stratenboek',
-          useBounds: true,
-          useBearing: true,
-          options: {
-            transformationType: 'thinPlateSpline'
-          }
-        },
-        {
-          url: 'https://annotations.allmaps.org/maps/37672d5c9b23bca5@4cad8ccd1996b94f',
-          homepage:
-            'https://www.erfgoedleiden.nl/collecties/beeldmateriaal/zoeken-in-beeldmateriaal/detail/ca138c78-26bc-11e3-b15a-3cd92befe4f8/media/d70845bd-bf8c-44a7-ab2d-f96ccdaf10d2',
-          caption: 'Lugduni Batavor. Leyden in Hollant'
-        }
-      ]
-    },
-    {
-      warpedMaps: {
-        url: 'https://annotations.allmaps.org/maps/e671f14b3ee110cd@aabc56ed3f9d2bfd',
-        homepage: 'https://id.rijksmuseum.nl/200548636',
-        caption: 'Plattegrond van de verwoestingen door de buskruitramp, 1807',
-        useBearing: true
-      }
-    },
-    {
-      warpedMaps: [
-        {
-          url: 'https://annotations.allmaps.org/maps/82172b1fdbcd8c40@e8a555b5056c4886',
-          caption:
-            'Ioannes Dou, Chaertbouck van alle de Landen der Unyversiteyt binnen de Stadt Leyden [etc.]',
+          url: 'https://annotations.allmaps.org/maps/ad8314a0cbad9987',
+          caption: 'Kwaliteitskaart (zeer globale verkenning, juli 1958)',
           useBearing: true
         }
       ]
     },
+    {
+      warpedMaps: [
+        {
+          url: 'https://annotations.allmaps.org/maps/a033a0f8f3a5a8a1',
+          caption:
+            'Plattegrond der stad Leyden, volgens opneming in den jare 1825',
+          useBearing: true
+        }
+      ]
+    },
+
+    {
+      warpedMaps: [
+        {
+          url: 'https://annotations.allmaps.org/maps/b68f883f977e8b1f',
+          caption: 'Kwaliteitskaart (zeer globale verkenning, juli 1958)',
+          useBearing: true
+        }
+      ]
+    },
+    {
+      warpedMaps: [
+        {
+          url: 'https://annotations.allmaps.org/maps/7bdf1f12f4eb3b6d',
+          // Jules, deze wil ik helmert en rechtop!
+          caption: 'Ontsettinge der stad Leyden',
+          useBearing: true
+        }
+      ]
+    },
+    {
+      location: {
+        center: [4.5909, 52.2085],
+        zoom: 12
+      },
+      warpedMaps: [
+        {
+          url: 'https://annotations.allmaps.org/maps/626083255d22bf06',
+          caption: "Carte De Hollande Et D'utrecht",
+          useBearing: false
+        }
+      ]
+    },
+    {
+      location: {
+        center: [4.5909, 52.2085],
+        zoom: 12
+      },
+      warpedMaps: [
+        {
+          url: ' https://annotations.allmaps.org/maps/d821bea12c059bd0',
+          caption:
+            'Het Hoogreemraadschap van Rijnland en het Haarlemmermeer met de werken tot Droogmaking',
+          useBearing: false
+        }
+      ]
+    },
+    {
+      location: {
+        center: [4.6433, 52.2569],
+        zoom: 11.5
+      },
+      warpedMaps: [
+        {
+          url: 'https://sammeltassen.nl/iiif-manifests/allmaps/bonnebladen-dans-1.json',
+          caption: '',
+          useBearing: false
+        }
+      ]
+    },
+
+    {
+      location: {
+        center: [4.6828, 52.2968],
+        zoom: 11
+      },
+      warpedMaps: [
+        {
+          url: 'https://sammeltassen.nl/iiif-manifests/allmaps/top25-1.json',
+          caption: '',
+          useBearing: false
+        }
+      ]
+    },
+
+    {
+      hideBasemap: true,
+      warpedMaps: [
+        {
+          url: 'https://gist.githubusercontent.com/sammeltassen/fa3dbfaf4dfa800e00824478c4bd1928/raw/79b2a1a9e864238c988278899555812dd90390f7/nl-railway-map-polynomial.json',
+          caption: 'Spoorkaart van Nederland',
+          useBearing: true,
+          options: {
+            transformationType: 'helmert'
+          }
+        }
+      ]
+    },
+    {
+      hideBasemap: false,
+      warpedMaps: [
+        {
+          url: 'https://gist.githubusercontent.com/sammeltassen/fa3dbfaf4dfa800e00824478c4bd1928/raw/79b2a1a9e864238c988278899555812dd90390f7/nl-railway-map-polynomial.json',
+          caption: 'Spoorkaart van Nederland',
+          useBearing: false,
+          options: {
+            transformationType: 'thinPlateSpline'
+          }
+        }
+      ]
+    }
+  ]}
+></MapSlide>
+
+<Slide preload>
+  <p><strong>IIIF + Allmaps =</strong></p>
+  <ol class="space-y-8 p-8">
+    <li>Millions of digitized maps, accessible in a standardized way</li>
+    <li class="">Georeference them with Allmaps Editor</li>
+    <li class="">Make IIIF images geospatial!</li>
+    <li class="">Search, display, print, analyze, overlay, compare!</li>
+  </ol>
+</Slide>
+
+<Slide stretch>
+  <video
+    class="rounded-xl shadow-xl"
+    title="Leiden in 80 maps"
+    src="/videos/iiif-annual-conference-2026/leiden-flipbook.webm"
+    autoplay
+    loop
+    muted
+    playsinline
+  ></video>
+</Slide>
+
+<Slide stretch>
+  <iframe
+    class="rounded-xl shadow-xl"
+    title="Leiden in 80 maps"
+    src="https://video.allmaps.org/"
+    allow="camera; microphone; display-capture; autoplay"
+    width="100%"
+    height="100%"
+  ></iframe>
+</Slide>
+
+<Slide>
+  <div>
+    <span class="text-pink">4TU.ResearchData</span> ●
+    <span class="text-green">Allard Pierson</span> ●
+    <span class="text-blue">Bayerische Staatsbibliothek</span> ●
+    <span class="text-orange">Bibliothèque nationale de France</span> ●
+    <span class="text-red">David Rumsey Map Collection</span> ●
+    <span class="text-purple">Erfgoed Leiden en Omstreken</span> ●
+    <span class="text-pink">Leventhal Map & Education Center</span> ●
+    <span class="text-green">Library of Congress</span> ●
+    <span class="text-blue">Nationaal Archief</span> ●
+    <span class="text-orange">Regionaal Archief Noord-Holland</span> ●
+    <span class="text-red">Rijksmuseum</span> ●
+    <span class="text-purple">Stanford Libraries</span> ●
+    <span class="text-pink">TU Delft Library</span> ●
+    <span class="text-green">Universitaire Bibliotheken Leiden</span> ●
+    <span class="text-blue">Universitätsbibliothek Wien</span> ●
+    <span class="text-orange">Universiteitsbibliotheek Utrecht</span> ●
+    <span class="text-red">Universiteitsbibliotheek Vrije Universiteit</span> ●
+    <span class="text-purple">University of Wisconsin-Milwaukee Libraries</span>
+    ●
+    <span class="text-pink">Utrecht University Library</span> ●
+    <span class="text-green">Wageningen University & Research Library</span>
+  </div>
+  <div
+    class="fragment absolute top-0 left-0 w-full h-full bg-white/70 text-left"
+  >
+    <div class="flex items-center justify-center h-full px-24 py-12">
+      <MapMonster mood="happy" color="pink">
+        <p class="p-4 strong max-w-xl">More maps! More institutions!</p>
+      </MapMonster>
+    </div>
+  </div>
+</Slide>
+
+<!-- <Slide preload>
+  <LargeTextShadow>Allmaps!</LargeTextShadow
+  ></Slide
+> -->
+
+<MapSlide
+  duration={4000}
+  sources={{
+    masks: {
+      type: 'vector',
+      url: 'pmtiles://https://files.allmaps.org/maps.pmtiles',
+      maxzoom: 14
+    }
+  }}
+  layers={getExploreLayers('none')}
+  chapters={[
     {
       // location: {
       // 	center: [4.569164, 52.3022714],
@@ -309,3 +664,21 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
     }
   ]}
 ></MapSlide>
+
+<Slide preload>
+  <p>Allmaps Supporters and Innovators in the new Allmaps Console</p>
+  <img
+    alt="Allmaps Supporters and Innovators in the new Allmaps Console"
+    loading="lazy"
+    src="/images/images/iiif-annual-conference-2026/allmaps-console.webp"
+  />
+</Slide>
+
+<Slide preload>
+  <p>Allmaps API Docs</p>
+  <img
+    alt="Allmaps API Docs"
+    loading="lazy"
+    src="/images/images/iiif-annual-conference-2026/api-docs.webp"
+  />
+</Slide>
