@@ -1,10 +1,12 @@
 import type { MapChapterProps } from '$lib/types/warped-map'
 
-const explainer = (
-  annotationUrl: string,
-  caption?: string,
+const explainer = (options: {
+  annotationUrl: string
+  caption?: string
+  homepage: string
   tpsLocation?: MapChapterProps['location']
-) => {
+}) => {
+  const { annotationUrl, caption, homepage, tpsLocation } = options
   return [
     {
       caption: 'IIIF Image',
@@ -13,6 +15,7 @@ const explainer = (
         {
           url: annotationUrl,
           caption,
+          homepage,
           useBearing: true,
           options: {
             applyMask: false,
@@ -28,6 +31,7 @@ const explainer = (
         {
           url: annotationUrl,
           caption,
+          homepage,
           useBearing: true,
           options: {
             applyMask: false,
@@ -44,6 +48,7 @@ const explainer = (
         {
           url: annotationUrl,
           caption,
+          homepage,
           useBearing: true,
           options: {
             applyMask: false,
@@ -61,6 +66,7 @@ const explainer = (
         {
           url: annotationUrl,
           caption,
+          homepage,
           options: {
             applyMask: true,
             renderTransformedGcps: true,
@@ -77,6 +83,7 @@ const explainer = (
         {
           url: annotationUrl,
           caption,
+          homepage,
           options: {
             applyMask: true,
             renderGcps: true,
@@ -97,6 +104,7 @@ const explainer = (
         {
           url: annotationUrl,
           caption,
+          homepage,
           options: {
             applyMask: true,
             renderGcps: true,
@@ -116,6 +124,7 @@ const explainer = (
         {
           url: annotationUrl,
           caption,
+          homepage,
           options: {
             applyMask: true,
             renderGcps: true,

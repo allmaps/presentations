@@ -48,7 +48,10 @@
   )
   let currentWarpedMapsHaveCaptions = $derived(
     currentWarpedMaps
-      ? currentWarpedMaps.some((warpedMap) => warpedMap.caption)
+      ? currentWarpedMaps.some(
+          (warpedMap) =>
+            warpedMap.caption && !warpedMap?.options?.visible !== false
+        )
       : undefined
   )
 
@@ -110,12 +113,14 @@
       transition:fade
     >
       {#each currentWarpedMaps as warpedMap}
-        {#if warpedMap.caption}
+        {#if warpedMap.caption && warpedMap.options?.visible !== false}
           <p>
+            ●
             {#if warpedMap.homepage}
               <a href={warpedMap.homepage}>{@html warpedMap.caption}</a>
+            {:else}
+              {@html warpedMap.caption}
             {/if}
-            {@html warpedMap.caption}
           </p>
         {/if}
       {/each}

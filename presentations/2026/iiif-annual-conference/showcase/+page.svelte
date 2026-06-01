@@ -139,11 +139,13 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
 <MapSlide
   duration={4000}
   chapters={[
-    ...createExplainer(
-      'https://annotations.allmaps.org/maps/e9aa6ec10276bf65@d2d0044d129ea2d5',
-      'Van Berckenrodekaart (Allard Pierson)',
-      { center: [4.897004, 52.3691733], zoom: 16, duration: 5000 }
-    )
+    ...createExplainer({
+      annotationUrl:
+        'https://annotations.allmaps.org/maps/e9aa6ec10276bf65@d2d0044d129ea2d5',
+      caption: 'Van Berckenrodekaart (Allard Pierson)',
+      homepage: 'https://hdl.handle.net/11245/3.39844',
+      tpsLocation: { center: [4.897004, 52.3691733], zoom: 16, duration: 5000 }
+    })
   ]}
 ></MapSlide>
 
