@@ -55,8 +55,8 @@
       "geometry": { "type": "Point", "coordinates": [-86.177058, 39.770318] },
       "bbox": [-86.190716, 39.767162, -86.168536, 39.788717],
       "properties": {
-        "name": "Universiteit van Indiana",
-        "label": "Universiteit van Indiana, Indianapolis, IN, USA",
+        "name": "Indiana University",
+        "label": "Indiana University, Indianapolis, IN, USA",
         "type": "supporter"
       }
     },
