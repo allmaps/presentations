@@ -773,8 +773,8 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
   <h2 class="font-medium">Partnership goals</h2>
   <div class="grid grid-cols-4 gap-4 text-xl font-light">
     <div class="bg-pink/5 p-4 md:p-8 rounded-xl">
-      Support maintenance & development of Allmaps as <span class="font-medium"
-        >open infrastructure</span
+      Support maintenance & further development of Allmaps as <span
+        class="font-medium">open infrastructure</span
       >
     </div>
     <div class="bg-blue/10 p-4 md:p-8 rounded-xl">
@@ -782,8 +782,8 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
       integrations without limiting overall openness
     </div>
     <div class="bg-green/10 p-4 md:p-8 rounded-xl">
-      Promote IIIF membership, Allmaps implementations, and create a shared
-      discovery layer for <span class="font-medium">IIIF Commons</span>
+      Promote <span class="font-medium">IIIF Maps Commons</span> as a shared discovery
+      layer for maps accross institutions
     </div>
     <div class="bg-yellow/10 p-4 md:p-8 rounded-xl">
       Implement a <span class="font-medium">governance structure</span> through the
