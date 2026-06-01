@@ -440,23 +440,25 @@
   }
 
   function setBasemapOpacityTransition() {
-    if (mapLoaded && start) {
-      if (debug) {
-        console.log('Setting foreground opacity-transition')
-      }
-      start = false
-      map.setPaintProperty('foreground', 'background-opacity-transition', {
-        duration: duration || DEFAULT_DURATION
-      })
+    if (debug) {
+      console.log('Setting foreground opacity-transition')
     }
+    start = false
+    map.setPaintProperty('foreground', 'background-opacity-transition', {
+      duration: duration || DEFAULT_DURATION
+    })
   }
 
+  $effect(() => {
+    if (mapLoaded && index !== undefined && start) {
+      return setBasemapOpacityTransition
+    }
+  })
   $effect(setWarpedMaps)
   $effect(highlightMaps)
   $effect(setLayersOpacity)
   $effect(setBasemapVisiblity)
   $effect(setLocation)
-  $effect(setBasemapOpacityTransition)
 
   onMount(() => {
     map = new maplibregl.Map({
