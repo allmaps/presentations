@@ -792,6 +792,28 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
   </div>
 </Slide>
 
+<Slide preload>
+  <h2 class="font-medium">Roadmap highlights</h2>
+  <div class="grid grid-rows-3 gap-4 text-xl font-light">
+    <div class="bg-pink/5 p-4 md:p-8 rounded-xl">
+      <p class="font-medium">Allmaps Curator</p>
+      <p>Create collections of maps and manage crowdsourcing projects</p>
+    </div>
+    <div class="bg-blue/10 p-4 md:p-8 rounded-xl">
+      <p class="font-medium">Allmaps Explore</p>
+      <p>Discover and reuse IIIF maps accross institutions</p>
+    </div>
+    <div class="bg-blue/10 p-4 md:p-8 rounded-xl">
+      <p class="font-medium">Narrative mapping template</p>
+      <p>Create custom storymaps with Allmaps</p>
+    </div>
+    <div class="bg-green/10 p-4 md:p-8 rounded-xl">
+      <p class="font-medium">More benefits</p>
+      <p>More control over institutional collections in Allmaps</p>
+    </div>
+  </div>
+</Slide>
+
 <MapSlide
   sources={{
     allmaps_partners: {
