@@ -24,8 +24,10 @@
 
 <Title>
   <!-- Defined white style because tailwind class text-white is overwritten by reveal -->
-  <h2 class="text-white" style="color: white">Allmaps</h2>
-  <p class="text-white text-3xl font-light">IIIF Showcase</p>
+  <h2 class="text-white text-6xl font-bold mb-4" style="color: white">
+    Allmaps
+  </h2>
+  <p class="text-white text-4xl font-light">IIIF Showcase</p>
 </Title>
 
 {#snippet face(src: string, color: string, name: string)}
@@ -87,7 +89,7 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
     curating, georeferencing and exploring IIIF maps
   </p>
   <p class="fragment font-light text-2xl">
-    The project was founded in 2021 by independent cartographer {@render bert()}
+    The project was founded in 2021 by independent creative technologist {@render bert()}
     Bert Spaan<br />and digital curator {@render jules()}
     Jules Schoonman, TU Delft Library
   </p>
@@ -112,11 +114,11 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
 </Slide>
 
 <Slide preload>
-  <h2 class="font-medium">Allmaps goals</h2>
+  <h2 class="font-medium">The goals of the Allmaps project:</h2>
 
   <div class="max-w-4xl">
     <span class="fragment text-pink">
-      make <em>all</em> digitized maps more easy to find and use
+      Make <em>all</em> digitized maps more easy to find and use
     </span>
     <span class="fragment"
       >● <span class="text-orange"

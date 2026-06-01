@@ -82,6 +82,7 @@ const explainer = (
             renderGcps: true,
             renderTransformedGcps: true,
             renderVectors: true,
+            renderVectorsColor: '#ffffff',
             transformationType: 'polynomial',
             opacity: 0.8
           }
