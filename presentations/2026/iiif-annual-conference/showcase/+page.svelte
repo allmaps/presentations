@@ -362,6 +362,7 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
           url: 'https://annotations.allmaps.org/images/7936d9f015e49c54',
           caption: 'Loman Atlas (City Archive)',
           useBearing: true,
+          useBounds: true,
           options: {
             applyMask: false,
             renderMask: false,
@@ -372,7 +373,6 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
         {
           url: 'https://annotations.allmaps.org/maps/b3872b1138d6830f',
           caption: 'Galgenveld (Stadsarchief)',
-          useBearing: true,
           options: {
             transformationType: 'helmert',
             visible: false
