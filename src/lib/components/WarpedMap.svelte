@@ -23,8 +23,6 @@
     LAYER_TYPES
   } from '$lib/shared/constants'
 
-  import { bboxPolygon, featureCollection } from '@turf/turf'
-
   import type { WarpedMapProps, MapChapterProps } from '$lib/types/warped-map'
 
   type Props = {
@@ -415,6 +413,9 @@
   }
 
   function setBasemapVisiblity() {
+    if (debug) {
+      console.log('Setting current basemap visibility')
+    }
     const alwaysShow = [warpedMapLayer?.id, 'foreground']
     if (mapLoaded && currentHideBasemap) {
       if (debug) {
@@ -441,7 +442,7 @@
   function setBasemapOpacityTransition() {
     if (mapLoaded && start) {
       if (debug) {
-        console.log('Setting basemap background-opacity-transition')
+        console.log('Setting foreground opacity-transition')
       }
       start = false
       map.setPaintProperty('foreground', 'background-opacity-transition', {
