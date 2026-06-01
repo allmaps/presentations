@@ -14,9 +14,6 @@ importers:
       '@allmaps/basemap':
         specifier: 1.0.0-beta.9
         version: 1.0.0-beta.9
-      '@allmaps/bearing':
-        specifier: 1.0.0-beta.12
-        version: 1.0.0-beta.12
       '@allmaps/maplibre':
         specifier: 1.0.0-beta.43
         version: 1.0.0-beta.43

@@ -3,12 +3,13 @@
 
   import maplibregl from 'maplibre-gl'
   import 'maplibre-gl/dist/maplibre-gl.css'
-  import type { SourceSpecification, LayerSpecification } from 'maplibre-gl'
+  import type {
+    SourceSpecification,
+    LayerSpecification,
+    CenterZoomBearing
+  } from 'maplibre-gl'
 
   import { WarpedMapLayer } from '@allmaps/maplibre'
-  import { computeWarpedMapBearing } from '@allmaps/bearing'
-
-  import { getAxisAlignedBboxAndCenter } from '$lib/shared/bounds'
   import { createFauxGeoreferencedMap } from '$lib/shared/image-annotation'
   import { getLayers, getStyleWithoutLayers } from '$lib/shared/basemap'
   import { getValueAsArray } from '$lib/shared/utils'
@@ -72,7 +73,11 @@
   let currentHideBasemap = $derived(
     currentImageSlide || currentChapter.hideBasemap
   )
-  let currentPadding = $derived(currentChapter.padding)
+  let currentPadding = $derived(
+    currentChapter.padding !== undefined
+      ? currentChapter.padding
+      : DEFAULT_PADDING
+  )
 
   let sprite = $derived(currentChapter.sprite)
 
@@ -219,41 +224,31 @@
         })
       } else mapIdsForBounds = mapIds
 
-      // Get bounds of visible maps
-      let bounds = warpedMapLayer.getMapsBounds(mapIdsForBounds)
-      // Get optional bearing for map
-      let bearing = currentLocation.bearing || 0
-      let center: maplibregl.LngLat | undefined
+      let camera: CenterZoomBearing | undefined
 
       const firstMapWithBearingProp = currentWarpedMaps.find(
         (annotation) => annotation.useBearing == true
       )
       if (firstMapWithBearingProp) {
-        const warpedMapIds = mapIdsByAnnotationUrl.get(
-          firstMapWithBearingProp.url
+        const warpedMapIdsUsedForBearing =
+          mapIdsByAnnotationUrl.get(firstMapWithBearingProp.url) || []
+        const sortedMapIds: Set<string> = new Set(
+          warpedMapIdsUsedForBearing.concat(mapIdsForBounds)
         )
-
-        if (warpedMapIds?.length) {
-          const warpedMap = warpedMapLayer.getWarpedMap(warpedMapIds[0])
-
-          const geoMasks = mapIdsForBounds
-            .map((id) => {
-              const warpedMap = warpedMapLayer.getWarpedMap(id)
-              if (warpedMap) {
-                return warpedMap.geoMask
-              }
-            })
-            .filter(Boolean)
-
-          if (warpedMap) {
-            const computedBearing = computeWarpedMapBearing(warpedMap)
-            bearing = computedBearing - bearing
-          }
-
-          ;({ bounds, center } = getAxisAlignedBboxAndCenter(geoMasks, bearing))
+        camera = warpedMapLayer.getMapsCenterZoomBearing([...sortedMapIds], {
+          bearingSelection: 'first',
+          padding: currentPadding
+        })
+      } else {
+        const bounds = warpedMapLayer.getMapsBounds(mapIdsForBounds)
+        if (bounds) {
+          camera = map.cameraForBounds(bounds, {
+            padding:
+              currentPadding !== undefined ? currentPadding : DEFAULT_PADDING
+          })
         }
       }
-      if (bounds && debug) {
+      if (debug) {
         // console.log('Updating bounds layer', bounds)
         // const boundsSource = map.getSource('bounds') as maplibregl.GeoJSONSource
         // const features = featureCollection([bboxPolygon(bounds)])
@@ -261,20 +256,10 @@
         //   boundsSource.setData(features)
         // }
       }
-      if (bounds) {
-        const camera = map.cameraForBounds(bounds, {
-          padding:
-            currentPadding !== undefined ? currentPadding : DEFAULT_PADDING
-        })
-        // Add optional center if bearing is used
-        if (camera && center) {
-          camera.center = center
-        }
+      if (camera) {
         const flyToOptions = {
           ...camera,
-          // Apply manual overrides
-          ...currentLocation,
-          bearing
+          ...currentLocation
         }
         if (currentImageSlide || start) {
           flyToOptions.duration = 0
@@ -542,8 +527,10 @@
     })
 
     return () => {
-      warpedMapLayer.clear()
-      map.remove()
+      if (mapLoaded) {
+        warpedMapLayer.clear()
+        map.remove()
+      }
     }
   })
 </script>
