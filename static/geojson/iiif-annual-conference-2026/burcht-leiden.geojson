@@ -1,0 +1,57 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 1,
+      "properties": {
+        "alt_name": "Burcht van Leiden",
+        "barrier": "city_wall",
+        "castle_type": "defensive",
+        "description": "De burcht Leiden",
+        "heritage": "2",
+        "heritage:operator": "rce",
+        "heritage:website": "https://monumentenregister.cultureelerfgoed.nl/monumenten/532258",
+        "historic": "castle",
+        "historic:civilization": "medieval",
+        "material": "stone",
+        "name": "De Burcht",
+        "name:en": "Leiden Castle",
+        "name:nl": "De Burcht",
+        "ref:rce": "532258",
+        "tourism": "viewpoint",
+        "wheelchair": "no",
+        "wikidata": "Q2345558",
+        "wikipedia": "nl:Burcht van Leiden",
+        "id": "way/30714513"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [4.4926981, 52.1589564],
+            [4.4926981, 52.1590141],
+            [4.4926663, 52.1590683],
+            [4.4926066, 52.1591128],
+            [4.492526, 52.1591424],
+            [4.4924338, 52.1591535],
+            [4.4923409, 52.1591449],
+            [4.4922582, 52.1591176],
+            [4.4921954, 52.1590747],
+            [4.4921613, 52.1590256],
+            [4.4921541, 52.1589723],
+            [4.4921745, 52.1589204],
+            [4.4922203, 52.158875],
+            [4.4922871, 52.1588406],
+            [4.492368, 52.1588209],
+            [4.4924549, 52.1588177],
+            [4.4925391, 52.1588313],
+            [4.492612, 52.1588605],
+            [4.4926665, 52.1589022],
+            [4.4926981, 52.1589564]
+          ]
+        ]
+      }
+    }
+  ]
+}

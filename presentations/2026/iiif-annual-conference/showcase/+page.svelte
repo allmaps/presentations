@@ -808,10 +808,10 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
 
 <Slide preload>
   <h2 class="font-medium">Roadmap highlights</h2>
-  <div class="grid grid-rows-3 gap-4 text-xl font-light">
+  <div class="grid grid-rows-2 grid-cols-2 gap-4 text-xl font-light">
     <div class="bg-pink/5 p-4 md:p-8 rounded-xl">
       <p class="font-medium">Allmaps Curator</p>
-      <p>Create collections of maps and manage crowdsourcing projects</p>
+      <p>Create collections and manage crowdsourcing projects</p>
     </div>
     <div class="bg-blue/10 p-4 md:p-8 rounded-xl">
       <p class="font-medium">Allmaps Explore</p>
@@ -946,10 +946,6 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
       center: [-48.715718, 45.0214871513297],
       zoom: 2
     }
-    // layers: {
-    //   layer: 'allmaps_partners',
-    //   opacity: 1
-    // }
   }}
 ></MapSlide>
 
