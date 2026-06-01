@@ -639,7 +639,9 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
       filter: ['has', 'point_count'],
       layout: {
         'icon-image': '/images/iiif-annual-conference-2026/cluster.png',
-        'icon-size': 0.2
+        'icon-size': 0.2,
+        'icon-allow-overlap': true,
+        'icon-ignore-placement': true
       },
       paint: {
         'icon-opacity': [
