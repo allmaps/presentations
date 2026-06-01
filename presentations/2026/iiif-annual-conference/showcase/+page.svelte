@@ -598,30 +598,120 @@ https://viewer.allmaps.org/?url=https://annotations.allmaps.org/images/f74a9c322
   sources={{
     allmaps_partners: {
       type: 'geojson',
-      data: '/geojson/iiif-annual-conference-2026/allmaps-partners.geojson'
+      data: '/geojson/iiif-annual-conference-2026/allmaps-partners.geojson',
+      cluster: true,
+      clusterMaxZoom: 3,
+      clusterRadius: 32
     }
   }}
-  layers={{
-    id: 'allmaps_partners',
-    type: 'symbol',
-    source: 'allmaps_partners',
-    layout: {
-      'icon-image': '/images/iiif-annual-conference-2026/iiif-logo-small.png'
+  layers={[
+    {
+      id: 'allmaps_partners-cluster-count',
+      type: 'symbol',
+      source: 'allmaps_partners',
+      filter: ['has', 'point_count'],
+      layout: {
+        'text-field': ['get', 'point_count_abbreviated'],
+        'text-font': ['Noto Sans Medium'],
+        'text-size': 13,
+        'text-allow-overlap': true,
+        'text-ignore-placement': true
+      },
+      paint: {
+        'text-color': '#000000',
+        'text-opacity': [
+          'interpolate',
+          ['linear'],
+          ['zoom'],
+          2,
+          1,
+          3.75,
+          1,
+          4,
+          0
+        ]
+      }
     },
-    paint: {
-      'icon-opacity': 0
+    {
+      id: 'allmaps_partners-clusters',
+      type: 'symbol',
+      source: 'allmaps_partners',
+      filter: ['has', 'point_count'],
+      layout: {
+        'icon-image': '/images/iiif-annual-conference-2026/cluster.png',
+        'icon-size': 0.2
+      },
+      paint: {
+        'icon-opacity': [
+          'interpolate',
+          ['linear'],
+          ['zoom'],
+          2,
+          1,
+          3.75,
+          1,
+          4,
+          0
+        ]
+      }
+    },
+    {
+      id: 'allmaps_partners-labels',
+      type: 'symbol',
+      source: 'allmaps_partners',
+      filter: ['!has', 'point_count'],
+      layout: {
+        'text-field': ['get', 'name'],
+        'text-font': ['Noto Sans Medium'],
+        'text-size': 16,
+        'text-offset': [0, 1.5],
+        'text-anchor': 'top',
+        'text-allow-overlap': false,
+        'text-ignore-placement': false
+      },
+      paint: {
+        'text-color': '#2b2b2b',
+        'text-halo-color': '#ffffff',
+        'text-halo-width': 2,
+        'text-opacity': ['interpolate', ['linear'], ['zoom'], 3, 0, 4, 1]
+      }
+    },
+    {
+      id: 'allmaps_partners',
+      type: 'symbol',
+      source: 'allmaps_partners',
+      filter: ['!has', 'point_count'],
+      layout: {
+        'icon-image': [
+          'match',
+          ['get', 'type'],
+          'innovator',
+          '/images/iiif-annual-conference-2026/innovator.png',
+          'supporter',
+          '/images/iiif-annual-conference-2026/supporter.png',
+          'contributor',
+          '/images/iiif-annual-conference-2026/contributor.png',
+          '/images/iiif-annual-conference-2026/iiif-logo-small.png'
+        ],
+        'icon-size': 0.2,
+        'icon-allow-overlap': true,
+        'icon-ignore-placement': true
+      },
+      paint: {
+        'icon-opacity': 1
+      }
     }
-  }}
+  ]}
   chapters={{
     caption: 'Innovators, Supporters, and Contributors',
     location: {
       center: [-48.715718, 45.0214871513297],
       zoom: 2
-    },
-    layers: {
-      layer: 'allmaps_partners',
-      opacity: 1
     }
+    // layers: {
+    //   layer: 'allmaps_partners',
+    //   opacity: 1
+    // }
   }}
 ></MapSlide>
 
