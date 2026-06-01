@@ -105,8 +105,11 @@ https://annotations.allmaps.org/maps/d66aeed38a9e80e5
 
 ## Hoogheemraadschap van Rijnland
 https://www.erfgoedleiden.nl/collecties/beeldmateriaal/zoeken-in-beeldmateriaal/detail/a84699be-26bc-11e3-85c2-3cd92befe4f8/media/bde13425-9c11-43ef-a7f1-dd34a86eccca
-https://www.rijnland.net/over-rijnland/archieven-en-erfgoed/onderzoeksgids/handreiking-voor-cartografisch-onderzoek/de-overzichtskaart-van-1615/
+https://www.rijnland.net/over-rijnland/archieven-en-erfgoed/onderzoeksgids/handreiking-voor-cartografisch-onderzoek/
 https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
+
+## Nationaal Archief
+https://service.archief.nl/iip/iipsrv?IIIF=cc/7c/b0/4a/f2/c4/4e/8e/8c/49/bd/a7/1d/ba/39/f2/2f4f402d-0317-40dd-8872-c4ed45537c0b.jp2/info.json
 -->
 
 <Slide preload>
@@ -474,47 +477,67 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
       ]
     },
     {
+      warpedMaps: {
+        url: 'https://annotations.allmaps.org/images/a609fde4fb492879',
+        caption: 'De Haarlemmermeer en omgeving',
+        useBearing: true,
+        homepage:
+          'https://nationaalarchief.nl/onderzoeken/archief/4.ZHPB4/invnr/@50/file/NL-HaNA_4.ZHPB4_50_43'
+      }
+    },
+    {
+      warpedMaps: {
+        url: 'https://annotations.allmaps.org/images/bb91750e3e88949f',
+        caption: '’t Hooge Heemraedschap van Rhynland (1746)',
+        useBearing: true,
+        homepage:
+          'https://www.rijnland.net/over-rijnland/archieven-en-erfgoed/onderzoeksgids/handreiking-voor-cartografisch-onderzoek/de-overzichtskaarten-van-1647-1687-1746/'
+      }
+    },
+    {
+      warpedMaps: {
+        url: 'https://annotations.allmaps.org/images/bb91750e3e88949f',
+        caption: '’t Hooge Heemraedschap van Rhynland (1746)',
+        useBearing: true,
+        homepage:
+          'https://www.rijnland.net/over-rijnland/archieven-en-erfgoed/onderzoeksgids/handreiking-voor-cartografisch-onderzoek/de-overzichtskaarten-van-1647-1687-1746/',
+        options: {
+          applyMask: false
+        }
+      }
+    },
+    {
       location: {
         center: [4.5909, 52.2085],
         zoom: 12
       },
-      warpedMaps: [
-        {
-          url: ' https://annotations.allmaps.org/maps/d821bea12c059bd0',
-          caption:
-            'Het Hoogreemraadschap van Rijnland en het Haarlemmermeer met de werken tot Droogmaking',
-          useBearing: false
-        }
-      ]
+      warpedMaps: {
+        url: ' https://annotations.allmaps.org/maps/d821bea12c059bd0',
+        caption:
+          'Het Hoogreemraadschap van Rijnland en het Haarlemmermeer met de werken tot Droogmaking',
+        useBearing: false
+      }
     },
     {
       location: {
-        center: [4.6433, 52.2569],
-        zoom: 11.5
-      },
-      warpedMaps: [
-        {
-          url: 'https://sammeltassen.nl/iiif-manifests/allmaps/bonnebladen-dans-1.json',
-          caption: '',
-          useBearing: false
-        }
-      ]
-    },
-
-    {
-      location: {
-        center: [4.6828, 52.2968],
+        center: [4.5909, 52.2085],
         zoom: 11
       },
-      warpedMaps: [
-        {
-          url: 'https://sammeltassen.nl/iiif-manifests/allmaps/top25-1.json',
-          caption: '',
-          useBearing: false
-        }
-      ]
+      warpedMaps: {
+        url: 'https://annotations.allmaps.org/images/4b0744d638b7a139',
+        caption: 'Hoogheemraadschap van Rijnland (1884)',
+        homepage:
+          'https://www.rijnland.net/over-rijnland/archieven-en-erfgoed/onderzoeksgids/handreiking-voor-cartografisch-onderzoek/de-boezemkaarten-van-1884-1917/'
+      }
     },
-
+    {
+      warpedMaps: {
+        url: 'https://annotations.allmaps.org/images/4ad68cd401882aaa',
+        caption: 'Duinen en Duingronden langs de Noord-Zee. Gedeelte H.',
+        homepage:
+          'https://www.nationaalarchief.nl/onderzoeken/archief/4.FIDZ/invnr/870.2H/file/NL-HaNA_4.FIDZ_870.2H'
+      }
+    },
     {
       hideBasemap: true,
       warpedMaps: [
@@ -541,6 +564,32 @@ https://sammeltassen-rijks.web.val.run/200738930 (Rijksmuseum)
         }
       ]
     }
+    // {
+    //   location: {
+    //     center: [4.6433, 52.2569],
+    //     zoom: 11.5
+    //   },
+    //   warpedMaps: [
+    //     {
+    //       url: 'https://sammeltassen.nl/iiif-manifests/allmaps/bonnebladen-dans-1.json',
+    //       caption: '',
+    //       useBearing: false
+    //     }
+    //   ]
+    // },
+    // {
+    //   location: {
+    //     center: [4.6828, 52.2968],
+    //     zoom: 11
+    //   },
+    //   warpedMaps: [
+    //     {
+    //       url: 'https://sammeltassen.nl/iiif-manifests/allmaps/top25-1.json',
+    //       caption: '',
+    //       useBearing: false
+    //     }
+    //   ]
+    // },
   ]}
 ></MapSlide>
 
