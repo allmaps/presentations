@@ -137,14 +137,16 @@ https://service.archief.nl/iip/iipsrv?IIIF=cc/7c/b0/4a/f2/c4/4e/8e/8c/49/bd/a7/1
 
 <Slide
   ><p>
-    Three years ago, we published the <strong>Georeference Annotation</strong>
+    Three years ago, we published the<br />
+    <strong>Georeference Annotation</strong>
     specification.
   </p>
   <p>
     These web annotations are an
     <a class="underline" href="https://iiif.io/api/extension/georef/"
       >official extension</a
-    > to the IIIF Presentation API.
+    >
+    to <br />the IIIF Presentation API.
   </p></Slide
 >
 
@@ -563,20 +565,20 @@ https://service.archief.nl/iip/iipsrv?IIIF=cc/7c/b0/4a/f2/c4/4e/8e/8c/49/bd/a7/1
           }
         }
       ]
+    },
+    {
+      location: {
+        center: [4.6433, 52.2569],
+        zoom: 11.5
+      },
+      warpedMaps: [
+        {
+          url: 'https://sammeltassen.nl/iiif-manifests/allmaps/bonnebladen-dans-1.json',
+          caption: '',
+          useBearing: false
+        }
+      ]
     }
-    // {
-    //   location: {
-    //     center: [4.6433, 52.2569],
-    //     zoom: 11.5
-    //   },
-    //   warpedMaps: [
-    //     {
-    //       url: 'https://sammeltassen.nl/iiif-manifests/allmaps/bonnebladen-dans-1.json',
-    //       caption: '',
-    //       useBearing: false
-    //     }
-    //   ]
-    // },
     // {
     //   location: {
     //     center: [4.6828, 52.2968],
@@ -596,10 +598,23 @@ https://service.archief.nl/iip/iipsrv?IIIF=cc/7c/b0/4a/f2/c4/4e/8e/8c/49/bd/a7/1
 <Slide preload>
   <p><strong>IIIF + Allmaps =</strong></p>
   <ol class="space-y-8 p-8">
-    <li>Millions of digitized maps, accessible in a standardized way</li>
-    <li class="">Georeference them with Allmaps Editor</li>
-    <li class="">Make IIIF images geospatial!</li>
-    <li class="">Search, display, print, analyze, overlay, compare!</li>
+    <li class="fragment">
+      Millions of digitized maps, accessible in a standardized way
+    </li>
+    <li class="fragment">
+      Georeferenced with <a href="https://editor.allmaps.org/" class="underline"
+        >Allmaps Editor</a
+      >
+    </li>
+    <li class="font-medium fragment">Allmaps makes IIIF images geospatial!</li>
+    <li class="font-bold fragment">
+      <span class="text-blue">Search</span>,
+      <span class="text-green">Display</span>,
+      <span class="text-yellow">Print</span>,
+      <span class="text-red">Analyze</span>,
+      <span class="text-purple">Overlay</span>,
+      <span class="text-pink">Compare</span>!
+    </li>
   </ol>
 </Slide>
 
@@ -654,8 +669,10 @@ https://service.archief.nl/iip/iipsrv?IIIF=cc/7c/b0/4a/f2/c4/4e/8e/8c/49/bd/a7/1
     class="fragment absolute top-0 left-0 w-full h-full bg-white/70 text-left"
   >
     <div class="flex items-center justify-center h-full px-24 py-12">
-      <MapMonster mood="happy" color="pink">
-        <p class="p-4 strong max-w-xl">More maps! More institutions!</p>
+      <MapMonster mood="excited" color="pink">
+        <p class="p-4 strong max-w-xl">
+          No sleep until all maps are georeferenced!
+        </p>
       </MapMonster>
     </div>
   </div>
@@ -698,7 +715,7 @@ https://service.archief.nl/iip/iipsrv?IIIF=cc/7c/b0/4a/f2/c4/4e/8e/8c/49/bd/a7/1
 </Slide>
 
 <Slide preload>
-  <p>Allmaps Supporters and Innovators in the new Allmaps Console</p>
+  <p>Allmaps Supporters & Innovators</p>
   <img
     alt="Allmaps Supporters and Innovators in the new Allmaps Console"
     loading="lazy"
