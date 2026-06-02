@@ -1,0 +1,890 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4887014, 52.1630747, 0]
+      },
+      "properties": {
+        "title": "Scheltema Leiden",
+        "styleUrl": "#icon-1899-0288D1-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#0288d1",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Conference location"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4842887, 52.1649812, 0]
+      },
+      "properties": {
+        "title": "Paco Ciao",
+        "styleUrl": "#icon-1899-0F9D58-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#0f9d58",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Restaurant"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4844235, 52.1578475, 0]
+      },
+      "properties": {
+        "title": "Pakhuis Leiden",
+        "styleUrl": "#icon-1899-F57C00-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#f57c00",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Bar"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4846089, 52.1596659, 0]
+      },
+      "properties": {
+        "title": "Japan Museum SieboldHuis",
+        "styleUrl": "#icon-1899-673AB7-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#673ab7",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Place of interest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4732128, 52.1647779, 0]
+      },
+      "properties": {
+        "title": "Naturalis Biodiversity Center",
+        "styleUrl": "#icon-1899-0288D1-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#0288d1",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Conference location"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4742924, 52.1675956, 0]
+      },
+      "properties": {
+        "title": "Lab071",
+        "styleUrl": "#icon-1899-0F9D58-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#0f9d58",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Restaurant"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [4.4887512, 52.160075, 0] },
+      "properties": {
+        "title": "Het Stadsbrouwhuis",
+        "styleUrl": "#icon-1899-F57C00-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#f57c00",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Bar"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4858978, 52.1584668, 0]
+      },
+      "properties": {
+        "title": "National Museum of Antiquities",
+        "styleUrl": "#icon-1899-673AB7-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#673ab7",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Place of interest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4789215, 52.1596191, 0]
+      },
+      "properties": {
+        "title": "Culture Cafe Leidse Lente",
+        "styleUrl": "#icon-1899-0288D1-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#0288d1",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Conference location"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4935707, 52.1565972, 0]
+      },
+      "properties": {
+        "title": "Midi Marché",
+        "styleUrl": "#icon-1899-0F9D58-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#0f9d58",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Restaurant"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [4.484587, 52.1601559, 0] },
+      "properties": {
+        "title": "North End",
+        "styleUrl": "#icon-1899-F57C00-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#f57c00",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Bar"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4878087, 52.1576184, 0]
+      },
+      "properties": {
+        "title": "Pieterskerk, Leiden",
+        "styleUrl": "#icon-1899-673AB7-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#673ab7",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Place of interest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.9032097, 52.3831832, 0]
+      },
+      "properties": {
+        "title": "Tolhuistuin",
+        "styleUrl": "#icon-1899-0288D1-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#0288d1",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Conference location"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4904573, 52.1593617, 0]
+      },
+      "properties": {
+        "title": "WAAG",
+        "styleUrl": "#icon-1899-0F9D58-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#0f9d58",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Restaurant"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4951691, 52.1577088, 0]
+      },
+      "properties": {
+        "title": "De Bonte Koe",
+        "styleUrl": "#icon-1899-F57C00-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#f57c00",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Bar"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [4.4838994, 52.154917, 0] },
+      "properties": {
+        "title": "Oude Sterrewacht (Old Observatory Leiden)",
+        "styleUrl": "#icon-1899-673AB7-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#673ab7",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Place of interest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [4.3275166, 52.081702, 0] },
+      "properties": {
+        "title": "Royal Library",
+        "styleUrl": "#icon-1899-0288D1-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#0288d1",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Conference location"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4822106, 52.1591933, 0]
+      },
+      "properties": {
+        "title": "Tabú",
+        "styleUrl": "#icon-1899-0F9D58-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#0f9d58",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Restaurant"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4861101, 52.1570862, 0]
+      },
+      "properties": {
+        "title": "Café Barrera",
+        "styleUrl": "#icon-1899-F57C00-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#f57c00",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Bar"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [4.484888, 52.1571223, 0] },
+      "properties": {
+        "title": "Hortus Botanicus Leiden",
+        "styleUrl": "#icon-1899-673AB7-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#673ab7",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Place of interest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.3266699, 52.0806739, 0]
+      },
+      "properties": {
+        "title": "Nationaal Archief",
+        "styleUrl": "#icon-1899-0288D1-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#0288d1",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Conference location"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4833661, 52.1601635, 0]
+      },
+      "properties": {
+        "title": "Thais Restaurant Sabai-Sabai",
+        "styleUrl": "#icon-1899-0F9D58-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#0f9d58",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Restaurant"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4888169, 52.1604196, 0]
+      },
+      "properties": {
+        "title": "Restaurant Proeflokaal 1574",
+        "styleUrl": "#icon-1899-F57C00-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#f57c00",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Bar"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [4.4535999, 52.1705, 0] },
+      "properties": {
+        "title": "Corpus",
+        "styleUrl": "#icon-1899-673AB7-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#673ab7",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Place of interest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.3260927, 52.0810302, 0]
+      },
+      "properties": {
+        "title": "CBG | Center for family history",
+        "styleUrl": "#icon-1899-0288D1-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#0288d1",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Conference location"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [4.482847, 52.1600804, 0] },
+      "properties": {
+        "title": "Oost-Afrikaans Eethuis Djebena",
+        "styleUrl": "#icon-1899-0F9D58-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#0f9d58",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Restaurant"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4862942, 52.1616178, 0]
+      },
+      "properties": {
+        "title": "Café De Vergulde Kruik",
+        "styleUrl": "#icon-1899-F57C00-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#f57c00",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Bar"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.3143148, 52.0804322, 0]
+      },
+      "properties": {
+        "title": "Mauritshuis",
+        "styleUrl": "#icon-1899-673AB7-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#673ab7",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Place of interest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.3194515, 52.0811411, 0]
+      },
+      "properties": {
+        "title": "T&C Haus",
+        "styleUrl": "#icon-1899-0F9D58-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#0f9d58",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Restaurant"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4862229, 52.1559498, 0]
+      },
+      "properties": {
+        "title": "Café de Keyzer",
+        "styleUrl": "#icon-1899-F57C00-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#f57c00",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Bar"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.3034284, 52.0846659, 0]
+      },
+      "properties": {
+        "title": "Panorama Mesdag",
+        "styleUrl": "#icon-1899-673AB7-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#673ab7",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Place of interest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.3184613, 52.0807051, 0]
+      },
+      "properties": {
+        "title": "Takumi Ramen Den Haag Herengracht",
+        "styleUrl": "#icon-1899-0F9D58-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#0f9d58",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Restaurant"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4890521, 52.1581156, 0]
+      },
+      "properties": {
+        "title": "Dranklokaal 1650",
+        "styleUrl": "#icon-1899-F57C00-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#f57c00",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Bar"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4875113, 52.1628978, 0]
+      },
+      "properties": {
+        "title": "Museum De Lakenhal",
+        "styleUrl": "#icon-1899-673AB7-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#673ab7",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Place of interest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [4.495619, 52.1575207, 0] },
+      "properties": {
+        "title": "Loetje Leiden",
+        "styleUrl": "#icon-1899-0F9D58-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#0f9d58",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Restaurant"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [4.492006, 52.1583121, 0] },
+      "properties": {
+        "title": "Einstein Leiden",
+        "styleUrl": "#icon-1899-F57C00-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#f57c00",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Bar"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4924928, 52.1589575, 0]
+      },
+      "properties": {
+        "title": "Burcht van Leiden",
+        "styleUrl": "#icon-1899-673AB7-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#673ab7",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Place of interest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [4.4845968, 52.162196, 0] },
+      "properties": {
+        "title": "'t Pannenkoekenhuysje Oudt Leyden",
+        "styleUrl": "#icon-1899-0F9D58-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#0f9d58",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Restaurant"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4938345, 52.1579284, 0]
+      },
+      "properties": {
+        "title": "Hooglandse Kerk",
+        "styleUrl": "#icon-1899-673AB7-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#673ab7",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Place of interest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [4.485812, 52.1561124, 0] },
+      "properties": {
+        "title": "Verboden Toegang Restaurant Artikel 461",
+        "styleUrl": "#icon-1899-0F9D58-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#0f9d58",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Restaurant"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [4.488983, 52.161401, 0] },
+      "properties": {
+        "title": "Rijksmuseum Boerhaave",
+        "styleUrl": "#icon-1899-673AB7-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#673ab7",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Place of interest"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4899347, 52.1528214, 0]
+      },
+      "properties": {
+        "title": "Dining Tokyo",
+        "styleUrl": "#icon-1899-0F9D58-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#0f9d58",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Restaurant"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.4905631, 52.1586417, 0]
+      },
+      "properties": {
+        "title": "Mizūmi Ramen Bar | Leiden ラーメン",
+        "styleUrl": "#icon-1899-0F9D58-nodesc",
+        "label-scale": 0,
+        "icon-opacity": 1,
+        "icon-color": "#0f9d58",
+        "icon-scale": 1,
+        "icon-offset": [32, 64],
+        "icon-offset-units": ["pixels", "insetPixels"],
+        "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+        "description": "Restaurant"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "@type": "route:walking" },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [4.488619, 52.163078],
+          [4.488608, 52.162781],
+          [4.487965, 52.162798],
+          [4.48793, 52.1628],
+          [4.487823, 52.1628],
+          [4.486771, 52.162801],
+          [4.486238, 52.162803],
+          [4.486009, 52.162803],
+          [4.485829, 52.16277],
+          [4.48574, 52.162753],
+          [4.485596, 52.162687],
+          [4.485464, 52.16259],
+          [4.485218, 52.162391],
+          [4.485037, 52.162214],
+          [4.484884, 52.162006],
+          [4.484845, 52.161954],
+          [4.4848, 52.1619],
+          [4.484699, 52.161856],
+          [4.484666, 52.161867],
+          [4.483594, 52.161936],
+          [4.482462, 52.162014],
+          [4.482299, 52.162027],
+          [4.482197, 52.162035],
+          [4.482081, 52.162039],
+          [4.482034, 52.162043],
+          [4.481982, 52.162047],
+          [4.481876, 52.162054],
+          [4.481696, 52.162068],
+          [4.481696, 52.162068],
+          [4.481465, 52.162079],
+          [4.481388, 52.162074],
+          [4.481318, 52.162081],
+          [4.481274, 52.162085],
+          [4.481141, 52.162209],
+          [4.480975, 52.162584],
+          [4.480903, 52.162692],
+          [4.480854, 52.162759],
+          [4.480822, 52.162827],
+          [4.480785, 52.162932],
+          [4.480783, 52.16302],
+          [4.480769, 52.163088],
+          [4.480687, 52.163143],
+          [4.480652, 52.163165],
+          [4.480549, 52.163232],
+          [4.480524, 52.163229],
+          [4.480473, 52.163236],
+          [4.480354, 52.163285],
+          [4.48029, 52.163317],
+          [4.480283, 52.16332],
+          [4.479798, 52.163567],
+          [4.479513, 52.163691],
+          [4.479234, 52.163805],
+          [4.479163, 52.163822],
+          [4.478266, 52.164033],
+          [4.477876, 52.164099],
+          [4.477544, 52.164133],
+          [4.477369, 52.16414],
+          [4.477369, 52.164167],
+          [4.477368, 52.164193],
+          [4.477268, 52.164196],
+          [4.47712, 52.164198],
+          [4.477046, 52.164225],
+          [4.477022, 52.164244],
+          [4.477003, 52.164268],
+          [4.476988, 52.164296],
+          [4.476989, 52.16431],
+          [4.476992, 52.164377],
+          [4.476996, 52.164457],
+          [4.476636, 52.164466],
+          [4.476434, 52.164471],
+          [4.476329, 52.164551],
+          [4.476287, 52.164676],
+          [4.476245, 52.164672],
+          [4.476027, 52.164649],
+          [4.475964, 52.164642],
+          [4.475764, 52.165332],
+          [4.475355, 52.165285],
+          [4.475152, 52.165263],
+          [4.475093, 52.165459],
+          [4.47504, 52.165623],
+          [4.47477, 52.165593],
+          [4.474511, 52.165567],
+          [4.474471, 52.165687],
+          [4.474405, 52.165674],
+          [4.474154, 52.165583],
+          [4.473967, 52.165519],
+          [4.473926, 52.165505],
+          [4.473865, 52.165499],
+          [4.473743, 52.165492],
+          [4.473605, 52.165484],
+          [4.473467, 52.165476],
+          [4.473489, 52.165425],
+          [4.473337, 52.165407],
+          [4.473379, 52.164973],
+          [4.473498, 52.164985]
+        ]
+      }
+    }
+  ]
+}
