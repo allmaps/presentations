@@ -89,6 +89,21 @@
         caption: 'Overijssel door Nicolaas ten Have',
         url: 'https://annotations.allmaps.org/images/c533d73fdeba82ca'
       }
+    },
+    {
+      warpedMaps: {
+        caption:
+          'Geographische Land Kaart Van Alle Compangnies Landen Ten Oosten en Westen van Samarang',
+        url: 'https://annotations.allmaps.org/maps/6c9ee5c955f7bde1'
+      }
+    },
+    {
+      warpedMaps: {
+        useBearing: true,
+        caption:
+          'Geographische Land Kaart Van Alle Compangnies Landen Ten Oosten en Westen van Samarang',
+        url: 'https://annotations.allmaps.org/maps/6c9ee5c955f7bde1'
+      }
     }
   ]}
 />
