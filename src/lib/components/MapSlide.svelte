@@ -109,7 +109,7 @@
   {/if}
   {#if currentWarpedMapsHaveCaptions}
     <div
-      class="absolute text-left max-w-xl min-w-0 text-xl left-6 top-6 px-4 py-1 shadow-md z-20 bg-white rounded-lg"
+      class="absolute text-left max-w-full min-w-0 text-xl left-6 top-6 px-4 py-1 shadow-md z-20 bg-white rounded-lg"
       transition:fade
     >
       {#each currentWarpedMaps as warpedMap}
