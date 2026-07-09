@@ -2,7 +2,7 @@
   export const title = 'Watertijdreis'
   export const subtitle =
     'Digital Tools to Investigate New Histories of Technology & Environment @ 4TU'
-  export const date = Date.parse('8 July 2026')
+  export const date = Date.parse('9 July 2026')
 </script>
 
 <script lang="ts">
@@ -77,7 +77,19 @@
       caption: 'Van Berckenrodekaart (Allard Pierson)',
       homepage: 'https://hdl.handle.net/11245/3.39844',
       tpsLocation: { center: [4.897004, 52.3691733], zoom: 16, duration: 5000 }
-    })
+    }),
+    {
+      warpedMaps: {
+        caption: 'Bedrijfstelling, 31 December 1930',
+        url: 'https://annotations.allmaps.org/images/4fc2bd0be60c4384'
+      }
+    },
+    {
+      warpedMaps: {
+        caption: 'Overijssel door Nicolaas ten Have',
+        url: 'https://annotations.allmaps.org/images/c533d73fdeba82ca'
+      }
+    }
   ]}
 />
 
